@@ -148,18 +148,14 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              AI-powered solutions that deliver measurable results from day one
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Service: Custom AI Solutions That Force Growth and Efficiency</h2>
           </motion.div>
 
           <div className="space-y-24">
-            {services.map((service, index) => {
+            {services.slice(0, 1).map((service, index) => {
               const serviceProofs = proofs.filter((p) =>
                 service.proofSlugs.includes(p.slug)
               );
-              const isReversed = index % 2 === 1;
 
               return (
                 <motion.div
@@ -171,12 +167,8 @@ export default function Home() {
                   transition={{ duration: 0.6 }}
                   className="relative"
                 >
-                  <div
-                    className={`grid lg:grid-cols-2 gap-12 items-center ${
-                      isReversed ? 'lg:flex-row-reverse' : ''
-                    }`}
-                  >
-                    <div className={isReversed ? 'lg:order-2' : ''}>
+                  <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
                       <VideoCard
                         poster={service.vsl.poster}
                         src={service.vsl.src}
@@ -184,7 +176,7 @@ export default function Home() {
                       />
                     </div>
 
-                    <div className={isReversed ? 'lg:order-1' : ''}>
+                    <div>
                       <Badge className="mb-4 bg-primary/10 text-primary border-primary/30">
                         {service.short}
                       </Badge>
