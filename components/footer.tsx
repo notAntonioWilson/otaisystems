@@ -110,26 +110,26 @@ export function Footer() {
             <ul className="space-y-4 mb-6">
               <li>
                 <Link
-                  href="/services/ai-sales-automation/data"
+                  href="/services/automated-lead-generation/data"
                   className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
                 >
-                  AI Sales Automation
+                  Automated Lead Generation
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services/ai-customer-support/data"
+                  href="/services/backend-optimization/data"
                   className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
                 >
-                  AI Customer Support
+                  Backend Optimization
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services/workflow-automation/data"
+                  href="/services/ai-marketing/data"
                   className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
                 >
-                  Workflow Automation
+                  AI Marketing
                 </Link>
               </li>
             </ul>

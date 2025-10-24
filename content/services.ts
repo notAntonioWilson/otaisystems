@@ -11,10 +11,10 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: 'ai-sales-automation',
-    name: 'AI Sales Automation',
+    slug: 'automated-lead-generation',
+    name: 'Automated Lead Generation',
     short: 'Turn every lead into a qualified prospect',
-    description: 'Our AI-powered sales automation system qualifies, nurtures, and books meetings with your ideal customers 24/7. No more cold calling. No more manual follow-ups. Just consistent, predictable pipeline growth.',
+    description: 'Our AI-powered lead generation system qualifies, nurtures, and books meetings with your ideal customers 24/7. No more cold calling. No more manual follow-ups. Just consistent, predictable pipeline growth.',
     benefits: [
       'Qualify leads instantly with AI-powered conversations',
       'Automated follow-up sequences that feel human',
@@ -66,16 +66,16 @@ export const services: Service[] = [
     proofSlugs: ['tech-startup-3x', 'saas-company-42', 'consulting-firm-roi'],
   },
   {
-    slug: 'ai-customer-support',
-    name: 'AI Customer Support',
-    short: 'Scale support without scaling headcount',
-    description: 'Deploy an AI support agent that handles 80% of customer inquiries instantly, escalates complex issues intelligently, and continuously learns from every interaction. Your customers get 24/7 support, your team focuses on high-value problems.',
+    slug: 'backend-optimization',
+    name: 'Backend Optimization',
+    short: 'Scale operations without scaling headcount',
+    description: 'Deploy AI-powered backend optimization that handles complex processes automatically, streamlines operations, and continuously improves efficiency. Your business scales seamlessly while your team focuses on strategic growth.',
     benefits: [
-      'Resolve 80%+ of inquiries without human intervention',
-      '24/7 instant response across all channels',
-      'Reduces support costs by 60% on average',
-      'Improves CSAT scores by 35% on average',
-      'Seamless handoff to human agents when needed',
+      'Optimize 80%+ of backend processes automatically',
+      '24/7 system monitoring and adjustment',
+      'Reduces operational costs by 60% on average',
+      'Improves system efficiency by 35% on average',
+      'Seamless integration with existing infrastructure',
     ],
     pricing: [
       {
@@ -121,16 +121,16 @@ export const services: Service[] = [
     proofSlugs: ['ecommerce-80-automated', 'fintech-csat-increase', 'healthcare-24-7'],
   },
   {
-    slug: 'workflow-automation',
-    name: 'Workflow Automation',
-    short: 'Eliminate repetitive work, amplify your team',
-    description: 'We analyze your operations, identify bottlenecks, and build custom AI workflows that eliminate hours of manual work. From data entry to document processing to cross-platform integrations, we automate what matters most.',
+    slug: 'ai-marketing',
+    name: 'AI Marketing',
+    short: 'Amplify your reach, maximize ROI',
+    description: 'We analyze your market, identify opportunities, and deploy AI-powered marketing strategies that drive results. From content creation to campaign optimization to audience targeting, we automate what matters most for growth.',
     benefits: [
-      'Save 15-25 hours per employee per week',
-      'Reduce operational errors by 95%',
-      'Improve process speed by 10x or more',
+      'Generate high-converting content in minutes',
+      'Reduce marketing costs by 60% on average',
+      'Improve campaign performance by 10x or more',
       'ROI typically achieved within 60 days',
-      'Scale operations without adding headcount',
+      'Scale marketing without adding headcount',
     ],
     pricing: [
       {

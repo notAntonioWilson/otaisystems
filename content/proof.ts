@@ -13,7 +13,7 @@ export type Proof = {
 export const proofs: Proof[] = [
   {
     slug: 'tech-startup-3x',
-    serviceSlug: 'ai-sales-automation',
+    serviceSlug: 'automated-lead-generation',
     client: 'TechFlow Solutions',
     logo: 'https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=200',
     headline: '3x Pipeline Growth in 90 Days',
@@ -27,7 +27,7 @@ export const proofs: Proof[] = [
   },
   {
     slug: 'saas-company-42',
-    serviceSlug: 'ai-sales-automation',
+    serviceSlug: 'automated-lead-generation',
     client: 'CloudMetrics',
     logo: 'https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=200',
     headline: '42% Demo-to-Close Rate',
@@ -40,7 +40,7 @@ export const proofs: Proof[] = [
   },
   {
     slug: 'consulting-firm-roi',
-    serviceSlug: 'ai-sales-automation',
+    serviceSlug: 'automated-lead-generation',
     client: 'Apex Advisory',
     logo: 'https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=200',
     headline: 'ROI Positive in 22 Days',
@@ -50,7 +50,7 @@ export const proofs: Proof[] = [
   },
   {
     slug: 'ecommerce-80-automated',
-    serviceSlug: 'ai-customer-support',
+    serviceSlug: 'backend-optimization',
     client: 'StyleHub Commerce',
     logo: 'https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=200',
     headline: '82% of Support Tickets Automated',
@@ -64,7 +64,7 @@ export const proofs: Proof[] = [
   },
   {
     slug: 'fintech-csat-increase',
-    serviceSlug: 'ai-customer-support',
+    serviceSlug: 'backend-optimization',
     client: 'PayFlow Financial',
     logo: 'https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=200',
     headline: 'CSAT Increased from 3.1 to 4.7 Stars',
@@ -74,7 +74,7 @@ export const proofs: Proof[] = [
   },
   {
     slug: 'healthcare-24-7',
-    serviceSlug: 'ai-customer-support',
+    serviceSlug: 'backend-optimization',
     client: 'MedConnect Portal',
     logo: 'https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=200',
     headline: 'True 24/7 Support Without Night Shift',
@@ -84,7 +84,7 @@ export const proofs: Proof[] = [
   },
   {
     slug: 'manufacturing-20hrs',
-    serviceSlug: 'workflow-automation',
+    serviceSlug: 'ai-marketing',
     client: 'Precision Parts Co',
     logo: 'https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=200',
     headline: '20 Hours Saved Per Employee Per Week',
@@ -97,7 +97,7 @@ export const proofs: Proof[] = [
   },
   {
     slug: 'real-estate-10x',
-    serviceSlug: 'workflow-automation',
+    serviceSlug: 'ai-marketing',
     client: 'Premier Realty Group',
     logo: 'https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=200',
     headline: 'Document Processing 10x Faster',
@@ -107,7 +107,7 @@ export const proofs: Proof[] = [
   },
   {
     slug: 'legal-firm-95',
-    serviceSlug: 'workflow-automation',
+    serviceSlug: 'ai-marketing',
     client: 'Morrison & Associates Law',
     logo: 'https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=200',
     headline: '95% Reduction in Document Errors',
