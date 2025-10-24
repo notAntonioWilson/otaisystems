@@ -49,7 +49,7 @@ export function NavBar() {
           <Link href="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 relative">
               <Image
-                src="/Images/logo.png"
+                src="/images/logo.png"
                 alt="OTAI Systems Logo"
                 width={40}
                 height={40}
