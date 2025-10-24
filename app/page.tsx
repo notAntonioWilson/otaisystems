@@ -113,8 +113,8 @@ export default function Home() {
                 Leverage the Power of AI
               </Badge>
               <h1 className="font-bold mb-6 leading-tight">
-                <div className="text-4xl md:text-5xl lg:text-6xl mb-2">Custom AI Solutions</div>
-                <div className="text-3xl md:text-4xl lg:text-5xl text-primary">For Ambitious Businesses</div>
+                <div className="text-4xl md:text-5xl lg:text-6xl mb-2 gradient-text-header">Custom AI Solutions</div>
+                <div className="text-3xl md:text-4xl lg:text-5xl gradient-text-header">For Ambitious Businesses</div>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                 Reality check: AI is no longer the future of business it's a necessity now! If you don't adapt you will fall behind.
@@ -195,7 +195,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">The Process</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text-header">The Process</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               From discovery to deployment in weeks, not months
             </p>
@@ -247,7 +247,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Transparent Pricing</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text-header">Pricing</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Choose the plan that fits your business. Scale as you grow.
             </p>
@@ -272,7 +272,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto"
           >
-            <h3 className="text-2xl font-bold mb-6 text-center">
+            <h3 className="text-2xl font-bold mb-6 text-center gradient-text-header">
               Frequently Asked Questions
             </h3>
             <Accordion type="single" collapsible className="space-y-4">
@@ -303,7 +303,7 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text-header">
                 Ready to transform your business?
               </h2>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">

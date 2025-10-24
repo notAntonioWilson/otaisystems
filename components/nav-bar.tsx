@@ -56,7 +56,7 @@ export function NavBar() {
           <div className="hidden md:flex items-center gap-8">
             <Link
               href="/"
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium gradient-text hover:opacity-80 transition-opacity"
             >
               Home
             </Link>
