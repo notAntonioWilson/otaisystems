@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Clock, Target, Zap, TrendingUp, CheckCircle2 } from 'lucide-react';
 import { VideoCard } from '@/components/video-card';
 import { GlowButton } from '@/components/glow-button';
+import { DripButton } from '@/components/drip-button';
 import { TestimonialCard } from '@/components/testimonial-card';
 import { PricingCard } from '@/components/pricing-card';
 import { Badge } from '@/components/ui/badge';
@@ -12,10 +13,8 @@ import { services } from '@/content/services';
 import { proofs } from '@/content/proof';
 import Link from 'next/link';
 import { InlineWidget } from 'react-calendly';
-import { useState } from 'react';
 
 export default function Home() {
-  const [heroMode, setHeroMode] = useState<'services' | 'proof'>('services');
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -121,68 +120,9 @@ export default function Home() {
                 Reality check: AI is no longer the future of business it's a necessity now! If you don't adapt you will fall behind.
               </p>
 
-              {/* Toggle Switch */}
-              <div className="inline-flex rounded-lg border border-border bg-card p-1 mb-6">
-                <button
-                  onClick={() => setHeroMode('services')}
-                  className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
-                    heroMode === 'services'
-                      ? 'bg-primary text-primary-foreground shadow-sm'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  Services
-                </button>
-                <button
-                  onClick={() => setHeroMode('proof')}
-                  className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
-                    heroMode === 'proof'
-                      ? 'bg-primary text-primary-foreground shadow-sm'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  Proof
-                </button>
-              </div>
-
-              {/* Dynamic Buttons */}
-              {heroMode === 'services' ? (
-                <div className="flex flex-col gap-3">
-                  <GlowButton size="lg" onClick={() => scrollToSection('automated-lead-generation')}>
-                    Automated Lead Generation
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </GlowButton>
-                  <GlowButton size="lg" variant="outline" onClick={() => scrollToSection('backend-optimization')}>
-                    Backend Optimization
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </GlowButton>
-                  <GlowButton size="lg" variant="outline" onClick={() => scrollToSection('ai-marketing')}>
-                    AI Marketing
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </GlowButton>
-                </div>
-              ) : (
-                <div className="flex flex-col gap-3">
-                  <GlowButton size="lg" asChild>
-                    <Link href="/proof?service=automated-lead-generation">
-                      Automated Lead Generation Proof
-                      <ArrowRight className="ml-2 w-5 h-5" />
-                    </Link>
-                  </GlowButton>
-                  <GlowButton size="lg" variant="outline" asChild>
-                    <Link href="/proof?service=backend-optimization">
-                      Backend Optimization Proof
-                      <ArrowRight className="ml-2 w-5 h-5" />
-                    </Link>
-                  </GlowButton>
-                  <GlowButton size="lg" variant="outline" asChild>
-                    <Link href="/proof?service=ai-marketing">
-                      AI Marketing Proof
-                      <ArrowRight className="ml-2 w-5 h-5" />
-                    </Link>
-                  </GlowButton>
-                </div>
-              )}
+              <DripButton onClick={() => scrollToSection('book')}>
+                Book a Consult
+              </DripButton>
             </motion.div>
 
             <motion.div
@@ -195,12 +135,6 @@ export default function Home() {
                 src="/videos/hero-vsl.mp4"
                 alt="OTAI Systems Introduction"
               />
-              <div className="mt-6">
-                <GlowButton size="lg" className="w-full" onClick={() => scrollToSection('book')}>
-                  Book a Call
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </GlowButton>
-              </div>
             </motion.div>
           </div>
         </div>
