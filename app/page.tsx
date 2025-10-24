@@ -149,12 +149,12 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="mb-16"
           >
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 gradient-text-header">
+                <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 gradient-text-header leading-tight">
                   What we do:
                 </h2>
-                <h3 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                <h3 className="text-3xl md:text-4xl font-bold mb-6 text-foreground leading-tight">
                   Custom AI Solutions
                 </h3>
                 <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
@@ -166,9 +166,6 @@ export default function Home() {
                   </p>
                   <p>
                     At OTAI, we analyze your business, identify your goals, then build custom AI automations that not only drive growth and efficiency but continue to evolve as your company grows.
-                  </p>
-                  <p className="text-xl font-semibold text-foreground pt-4">
-                    Don't get it? Here's how it works ↓
                   </p>
                 </div>
               </div>
