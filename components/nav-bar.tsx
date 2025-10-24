@@ -50,7 +50,7 @@ export function NavBar() {
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors border border-primary/30">
               <Zap className="w-6 h-6 text-primary" />
             </div>
-            <span className="text-xl font-bold">OTAI Systems</span>
+            <span className="text-xl font-bold gradient-text">OTAI Systems</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
@@ -62,25 +62,25 @@ export function NavBar() {
             </Link>
             <button
               onClick={() => scrollToSection('services')}
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium gradient-text hover:opacity-80 transition-opacity"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection('process')}
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium gradient-text hover:opacity-80 transition-opacity"
             >
               Process
             </button>
             <Link
               href="/proof"
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium gradient-text hover:opacity-80 transition-opacity"
             >
               Proof
             </Link>
             <button
               onClick={() => scrollToSection('pricing')}
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium gradient-text hover:opacity-80 transition-opacity"
             >
               Pricing
             </button>

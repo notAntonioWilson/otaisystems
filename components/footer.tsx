@@ -36,7 +36,7 @@ export function Footer() {
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors border border-primary/30">
                 <Zap className="w-6 h-6 text-primary" />
               </div>
-              <span className="text-xl font-bold">OTAI Systems</span>
+              <span className="text-xl font-bold gradient-text">OTAI Systems</span>
             </Link>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Empowering businesses with AI automation solutions. Stay connected and see what's
@@ -60,7 +60,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6">Navigation</h3>
+            <h3 className="text-lg font-semibold mb-6 gradient-text">Navigation</h3>
             <ul className="space-y-4">
               <li>
                 <button
@@ -106,7 +106,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6">Services & Legal</h3>
+            <h3 className="text-lg font-semibold mb-6 gradient-text">Services & Legal</h3>
             <ul className="space-y-4 mb-6">
               <li>
                 <Link

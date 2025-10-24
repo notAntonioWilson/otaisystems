@@ -146,96 +146,47 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Service: Custom AI Solutions That Force Growth and Efficiency</h2>
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <div>
+                <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 gradient-text-header">
+                  What we do:
+                </h2>
+                <h3 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                  Custom AI Solutions
+                </h3>
+                <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                  <p>
+                    Unlike other AI agencies, consultants, or software companies, we understand one simple truth... no two businesses are the same.
+                  </p>
+                  <p>
+                    That means a template, a pre-built system, or a one-size-fits-all solution will never deliver high-quality results.
+                  </p>
+                  <p>
+                    At OTAI Systems, we analyze your business, identify your goals, and build custom AI systems designed to force growth and efficiency — systems that evolve with your company, not against it.
+                  </p>
+                  <p className="text-xl font-semibold text-foreground pt-4">
+                    Don't get it? Here's how it works ↓
+                  </p>
+                </div>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <VideoCard
+                  poster={services[0].vsl.poster}
+                  src={services[0].vsl.src}
+                  alt={services[0].name}
+                />
+              </motion.div>
+            </div>
           </motion.div>
-
-          <div className="space-y-24">
-            {services.slice(0, 1).map((service, index) => {
-              const serviceProofs = proofs.filter((p) =>
-                service.proofSlugs.includes(p.slug)
-              );
-
-              return (
-                <motion.div
-                  key={service.slug}
-                  id={service.slug}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="relative"
-                >
-                  <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                      <VideoCard
-                        poster={service.vsl.poster}
-                        src={service.vsl.src}
-                        alt={service.name}
-                      />
-                    </div>
-
-                    <div>
-                      <Badge className="mb-4 bg-primary/10 text-primary border-primary/30">
-                        {service.short}
-                      </Badge>
-                      <h3 className="text-3xl md:text-4xl font-bold mb-4">{service.name}</h3>
-                      <p className="text-muted-foreground mb-6 leading-relaxed">
-                        {service.description}
-                      </p>
-
-                      <ul className="space-y-3 mb-8">
-                        {service.benefits.map((benefit, i) => (
-                          <li key={i} className="flex items-start gap-3">
-                            <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                            <span className="text-foreground/90">{benefit}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      <div className="flex flex-wrap gap-4">
-                        <GlowButton onClick={() => scrollToSection('book')}>
-                          Book a Call
-                        </GlowButton>
-                        <GlowButton
-                          variant="outline"
-                          glow={false}
-                          asChild
-                        >
-                          <Link href={`/services/${service.slug}/data`}>
-                            In-Depth Data
-                          </Link>
-                        </GlowButton>
-                        <GlowButton
-                          variant="outline"
-                          glow={false}
-                          asChild
-                        >
-                          <Link href={`/proof?service=${service.slug}`}>
-                            See More Proof
-                          </Link>
-                        </GlowButton>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-3 gap-6 mt-12">
-                    {serviceProofs.map((proof) => (
-                      <TestimonialCard
-                        key={proof.slug}
-                        slug={proof.slug}
-                        client={proof.client}
-                        logo={proof.logo}
-                        quote={proof.quote}
-                        metric={proof.metric}
-                      />
-                    ))}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
         </div>
       </section>
 
