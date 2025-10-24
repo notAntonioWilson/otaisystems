@@ -175,12 +175,31 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
+                className="flex flex-col items-center"
               >
                 <VideoCard
                   poster={services[0].vsl.poster}
                   src={services[0].vsl.src}
                   alt={services[0].name}
                 />
+                <div className="flex flex-col sm:flex-row gap-4 mt-8 w-full justify-center">
+                  <Link href="/services/ai-customer-support/data" className="flex-1 sm:flex-none">
+                    <button className="w-full sm:w-auto px-6 py-3 bg-card border border-primary/30 rounded-lg font-semibold hover:bg-primary/10 transition-colors text-sm whitespace-nowrap">
+                      In-Depth Data
+                    </button>
+                  </Link>
+                  <button
+                    onClick={() => scrollToSection('book')}
+                    className="flex-1 sm:flex-none px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm whitespace-nowrap"
+                  >
+                    Book a Consult
+                  </button>
+                  <Link href="/proof" className="flex-1 sm:flex-none">
+                    <button className="w-full sm:w-auto px-6 py-3 bg-card border border-primary/30 rounded-lg font-semibold hover:bg-primary/10 transition-colors text-sm whitespace-nowrap">
+                      Testimonials & Proof
+                    </button>
+                  </Link>
+                </div>
               </motion.div>
             </div>
           </motion.div>
