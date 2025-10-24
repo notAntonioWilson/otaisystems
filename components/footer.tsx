@@ -40,7 +40,7 @@ export function Footer() {
             </Link>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Empowering businesses with AI automation solutions. Stay connected and see what's
-              next — follow us on Social Media.
+              next, follow us on Social Media.
             </p>
             <div className="flex gap-4">
               {socialLinks.map(({ icon: Icon, href, label }) => (

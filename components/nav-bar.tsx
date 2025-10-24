@@ -53,7 +53,7 @@ export function NavBar() {
                 alt="OTAI Systems Logo"
                 width={40}
                 height={40}
-                className="object-contain"
+                className="object-contain brightness-0 invert"
               />
             </div>
             <span className="text-xl font-bold gradient-text">OTAI Systems</span>
