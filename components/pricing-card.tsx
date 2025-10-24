@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { GlowButton } from '@/components/glow-button';
+import { DripButton } from '@/components/drip-button';
 
 interface PricingCardProps {
   label: string;
@@ -53,14 +54,23 @@ export function PricingCard({ label, price, features, popular = false, onBookCal
           ))}
         </ul>
 
-        <GlowButton
-          onClick={onBookCall}
-          className="w-full"
-          size="lg"
-          variant={popular ? 'default' : 'outline'}
-        >
-          Book a Call
-        </GlowButton>
+        {popular ? (
+          <DripButton
+            onClick={onBookCall}
+            className="w-full"
+          >
+            Book a Call
+          </DripButton>
+        ) : (
+          <GlowButton
+            onClick={onBookCall}
+            className="w-full"
+            size="lg"
+            variant="outline"
+          >
+            Book a Call
+          </GlowButton>
+        )}
       </Card>
     </motion.div>
   );

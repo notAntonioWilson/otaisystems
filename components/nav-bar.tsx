@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { DripButton } from '@/components/drip-button';
 
 export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -83,12 +84,12 @@ export function NavBar() {
             >
               Pricing
             </button>
-            <button
+            <DripButton
               onClick={() => scrollToSection('book')}
-              className="px-6 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:glow-accent transition-all duration-300"
+              className="px-6 py-2 text-base"
             >
               Contact
-            </button>
+            </DripButton>
           </div>
         </div>
       </div>

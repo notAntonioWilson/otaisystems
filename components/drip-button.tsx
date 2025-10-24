@@ -66,9 +66,121 @@ export const DripButton = forwardRef<HTMLButtonElement, DripButtonProps>(
           />
         </div>
 
-        {/* Base glow on hover */}
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="absolute inset-0 bg-primary/20 blur-xl" />
+        {/* Pulsating purple and white aura glow waves */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Purple aura wave 1 */}
+          <motion.div
+            className="absolute inset-0 rounded-lg"
+            style={{
+              boxShadow: '0 0 40px 10px rgba(139, 92, 246, 0.6)',
+              opacity: 0,
+            }}
+            animate={{
+              opacity: [0, 0, 0],
+              scale: [1, 1, 1],
+            }}
+            whileHover={{
+              opacity: [0, 0.8, 0],
+              scale: [1, 1.3, 1.6],
+              transition: {
+                duration: 2,
+                repeat: Infinity,
+                ease: 'easeOut',
+              },
+            }}
+          />
+
+          {/* Purple aura wave 2 */}
+          <motion.div
+            className="absolute inset-0 rounded-lg"
+            style={{
+              boxShadow: '0 0 40px 10px rgba(139, 92, 246, 0.5)',
+              opacity: 0,
+            }}
+            animate={{
+              opacity: [0, 0, 0],
+              scale: [1, 1, 1],
+            }}
+            whileHover={{
+              opacity: [0, 0.6, 0],
+              scale: [1, 1.3, 1.6],
+              transition: {
+                duration: 2,
+                delay: 0.4,
+                repeat: Infinity,
+                ease: 'easeOut',
+              },
+            }}
+          />
+
+          {/* White aura wave 1 */}
+          <motion.div
+            className="absolute inset-0 rounded-lg"
+            style={{
+              boxShadow: '0 0 30px 8px rgba(255, 255, 255, 0.7)',
+              opacity: 0,
+            }}
+            animate={{
+              opacity: [0, 0, 0],
+              scale: [1, 1, 1],
+            }}
+            whileHover={{
+              opacity: [0, 0.9, 0],
+              scale: [1, 1.2, 1.5],
+              transition: {
+                duration: 2,
+                delay: 0.2,
+                repeat: Infinity,
+                ease: 'easeOut',
+              },
+            }}
+          />
+
+          {/* White aura wave 2 */}
+          <motion.div
+            className="absolute inset-0 rounded-lg"
+            style={{
+              boxShadow: '0 0 30px 8px rgba(255, 255, 255, 0.5)',
+              opacity: 0,
+            }}
+            animate={{
+              opacity: [0, 0, 0],
+              scale: [1, 1, 1],
+            }}
+            whileHover={{
+              opacity: [0, 0.7, 0],
+              scale: [1, 1.2, 1.5],
+              transition: {
+                duration: 2,
+                delay: 0.6,
+                repeat: Infinity,
+                ease: 'easeOut',
+              },
+            }}
+          />
+
+          {/* Purple outer glow */}
+          <motion.div
+            className="absolute inset-0 rounded-lg"
+            style={{
+              boxShadow: '0 0 60px 20px rgba(139, 92, 246, 0.4)',
+              opacity: 0,
+            }}
+            animate={{
+              opacity: [0, 0, 0],
+              scale: [1, 1, 1],
+            }}
+            whileHover={{
+              opacity: [0, 0.5, 0],
+              scale: [1, 1.4, 1.8],
+              transition: {
+                duration: 2,
+                delay: 0.8,
+                repeat: Infinity,
+                ease: 'easeOut',
+              },
+            }}
+          />
         </div>
       </motion.button>
     );
