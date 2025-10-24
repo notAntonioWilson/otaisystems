@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 240 5% 4%;
+    --foreground: 240 5% 92%;
+    --card: 240 4% 6%;
+    --card-foreground: 240 5% 92%;
+    --popover: 240 4% 6%;
+    --popover-foreground: 240 5% 92%;
+    --primary: 270 76% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 4% 15%;
+    --secondary-foreground: 240 5% 92%;
+    --muted: 240 4% 15%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 270 76% 53%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 15%;
+    --input: 240 4% 15%;
+    --ring: 270 76% 53%;
+    --chart-1: 270 76% 53%;
+    --chart-2: 280 65% 60%;
+    --chart-3: 260 70% 50%;
+    --chart-4: 290 60% 55%;
+    --chart-5: 250 65% 58%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.3), 0 0 40px rgba(138, 43, 226, 0.1);
+  }
+
+  .glow-accent-sm {
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.2), 0 0 20px rgba(138, 43, 226, 0.05);
+  }
+
+  .border-glow {
+    border: 1px solid rgba(138, 43, 226, 0.3);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
