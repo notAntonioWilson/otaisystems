@@ -112,8 +112,8 @@ export default function Home() {
                 AI-Powered Business Automation
               </Badge>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                <div className="mb-2">CUSTOM AI SOLUTIONS</div>
-                <div className="text-primary">FOR AMBITIOUS BUSINESSES</div>
+                <div className="mb-2">Custom AI Solutions</div>
+                <div className="text-primary">For Ambitious Businesses</div>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                 Reality check, AI is no longer the future of business it's a necessity now! If you don't adapt you will fall behind.
