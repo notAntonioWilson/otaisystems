@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Zap } from 'lucide-react';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { DripButton } from '@/components/drip-button';
 
@@ -47,8 +47,14 @@ export function NavBar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors border border-primary/30">
-              <Zap className="w-6 h-6 text-primary" />
+            <div className="w-10 h-10 relative">
+              <Image
+                src="/Images/logo.png"
+                alt="OTAI Systems Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
             </div>
             <span className="text-xl font-bold gradient-text">OTAI Systems</span>
           </Link>
