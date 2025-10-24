@@ -24,11 +24,7 @@ export default function Home() {
     }
   };
 
-  const heroMetrics = [
-    { label: 'Avg. payback', value: '< 30 days' },
-    { label: 'Demo-to-close', value: '~42%' },
-    { label: 'Client satisfaction', value: '4.8/5' },
-  ];
+  const heroMetrics: any[] = [];
 
   const processSteps = [
     {
@@ -115,40 +111,18 @@ export default function Home() {
               <Badge className="mb-6 bg-primary/10 text-primary border-primary/30">
                 AI-Powered Business Automation
               </Badge>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-balance">
-                Close the deal{' '}
-                <span className="text-primary">before the call</span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <div className="mb-2">CUSTOM AI SOLUTIONS</div>
+                <div className="text-primary">FOR AMBITIOUS BUSINESSES</div>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                VSLs + undeniable proof → prospects show up ready to buy.
+                Reality check, AI is no longer the future of business it's a necessity now! If you don't adapt you will fall behind.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <GlowButton size="lg" onClick={() => scrollToSection('book')}>
                   Book a Call
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </GlowButton>
-                <GlowButton
-                  size="lg"
-                  variant="outline"
-                  glow={false}
-                  onClick={() => scrollToSection('pricing')}
-                >
-                  See Pricing
-                </GlowButton>
-              </div>
-              <div className="flex flex-wrap gap-6">
-                {heroMetrics.map((metric, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                    className="flex flex-col"
-                  >
-                    <span className="text-2xl font-bold text-primary">{metric.value}</span>
-                    <span className="text-sm text-muted-foreground">{metric.label}</span>
-                  </motion.div>
-                ))}
               </div>
             </motion.div>
 
