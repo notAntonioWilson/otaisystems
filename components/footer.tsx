@@ -113,34 +113,8 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6 gradient-text">Services & Legal</h3>
-            <ul className="space-y-4 mb-6">
-              <li>
-                <Link
-                  href="/services/automated-lead-generation/data"
-                  className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
-                >
-                  Automated Lead Generation
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/backend-optimization/data"
-                  className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
-                >
-                  Backend Optimization
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/ai-marketing/data"
-                  className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
-                >
-                  AI Marketing
-                </Link>
-              </li>
-            </ul>
-            <ul className="space-y-4 pt-4 border-t border-border/50">
+            <h3 className="text-lg font-semibold mb-6 gradient-text">Legal</h3>
+            <ul className="space-y-4">
               <li>
                 <Link
                   href="/terms"
