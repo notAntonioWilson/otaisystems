@@ -162,10 +162,10 @@ export default function Home() {
                     Unlike other AI agencies, consultants, or software companies, we understand one simple truth... no two businesses are the same.
                   </p>
                   <p>
-                    That means a template, a pre-built system, or a one-size-fits-all solution will never deliver high-quality results.
+                    Commonly, you're given a tool or a template that helps for a month, then needs an upgrade.
                   </p>
                   <p>
-                    At OTAI Systems, we analyze your business, identify your goals, and build custom AI systems designed to force growth and efficiency — systems that evolve with your company, not against it.
+                    At OTAI, we analyze your business, identify your goals, then build custom AI automations that not only drive growth and efficiency but continue to evolve as your company grows.
                   </p>
                   <p className="text-xl font-semibold text-foreground pt-4">
                     Don't get it? Here's how it works ↓
