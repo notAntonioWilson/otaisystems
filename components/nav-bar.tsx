@@ -56,7 +56,7 @@ export function NavBar() {
                 className="object-contain brightness-0 invert"
               />
             </div>
-            <span className="text-xl font-bold gradient-text">OTAI Systems</span>
+            <span className="text-2xl font-bold gradient-text">OTAI Systems</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">

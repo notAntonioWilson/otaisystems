@@ -20,11 +20,11 @@ export function Footer() {
   };
 
   const socialLinks = [
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
-    { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Youtube, href: 'https://youtube.com', label: 'YouTube' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/otaisystems/', label: 'LinkedIn' },
+    { icon: Instagram, href: 'https://www.instagram.com/otai.systems?igsh=bDRiaDQxdzdtcDR0&utm_source=qr', label: 'Instagram' },
+    { icon: Facebook, href: 'https://www.facebook.com/share/1Bi6GWYdqe/?mibextid=wwXIfr', label: 'Facebook' },
+    { icon: Twitter, href: 'https://x.com/antoniowilsonx?s=21', label: 'Twitter' },
+    { icon: Youtube, href: 'https://youtube.com/@antoniowilson_yt?si=I0VGC0371w6PBgJF', label: 'YouTube' },
   ];
 
   return (
