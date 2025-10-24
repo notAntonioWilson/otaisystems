@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Zap, Linkedin, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -33,8 +34,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
             <Link href="/" className="flex items-center gap-2 mb-6 group">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors border border-primary/30">
-                <Zap className="w-6 h-6 text-primary" />
+              <div className="w-10 h-10 relative">
+                <Image
+                  src="/images/logo.png"
+                  alt="OTAI Systems Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain brightness-0 invert"
+                />
               </div>
               <span className="text-xl font-bold gradient-text">OTAI Systems</span>
             </Link>
