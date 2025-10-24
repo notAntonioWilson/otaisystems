@@ -110,7 +110,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <Badge className="mb-6 bg-primary/10 text-primary border-primary/30">
-                AI-Powered Business Automation
+                Leverage the Power of AI
               </Badge>
               <h1 className="font-bold mb-6 leading-tight">
                 <div className="text-4xl md:text-5xl lg:text-6xl mb-2">Custom AI Solutions</div>
