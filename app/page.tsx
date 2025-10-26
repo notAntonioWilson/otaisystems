@@ -56,34 +56,34 @@ export default function Home() {
 
   const faqs = [
     {
-      question: 'How long does implementation take?',
+      question: 'Can you help my specific company?',
       answer:
-        'Most implementations are complete within 2-4 weeks. We handle all technical setup, integrations, and team training to ensure a smooth launch with minimal disruption to your operations.',
+        'Absolutely. We help companies of all sizes integrate AI and automation across every channel, from phone and chat to social media and internal systems. Our team specializes in building intelligent workflows that save time, boost efficiency, and elevate your customer experience.',
     },
     {
-      question: 'What if the AI does not work for my business?',
+      question: 'What industries can benefit the most from AI automation?',
       answer:
-        'We offer a 30-day money-back guarantee. If you are not satisfied with the results, we will refund your investment. Additionally, you can opt-out at any time with 30 days notice.',
+        'AI and automation can transform any industry, but the right approach depends on your business model. For B2B companies, AI works best on the front end by handling leads, outreach, and communication. For B2C businesses, automation shines on the back end by streamlining support, order management, and marketing. In short, the best solution depends on your company\'s structure and goals.',
     },
     {
-      question: 'Do I need technical expertise to use your solutions?',
+      question: 'Is the system difficult to integrate?',
       answer:
-        'Not at all. Our solutions are designed to be user-friendly with intuitive interfaces. We provide comprehensive training and ongoing support to ensure your team feels confident using the system.',
+        'Not at all. We handle the entire integration process, whether you\'re implementing a completely new AI system or connecting automation to your existing tools. Everything follows a transparent, step-by-step flow to ensure a smooth and stress-free setup.',
     },
     {
-      question: 'How do you handle data security and privacy?',
+      question: 'Do I need any technical experience to use your AI solutions?',
       answer:
-        'Security is our top priority. All data is encrypted in transit and at rest. We are SOC 2 Type II compliant and follow industry best practices for data protection. We can also sign BAAs for healthcare clients and custom DPAs.',
+        'No technical experience required. We take care of all the heavy lifting including setup, connections, and configurations. If your input is ever needed, our team walks you through it step-by-step, ensuring the process is simple and straightforward.',
     },
     {
-      question: 'Can the AI integrate with our existing tools?',
+      question: 'Do you provide ongoing support and maintenance after setup?',
       answer:
-        'Yes! We integrate with 100+ popular business tools including CRMs (Salesforce, HubSpot), support platforms (Zendesk, Intercom), and workflow tools (Slack, Microsoft Teams). Custom integrations are available for Enterprise plans.',
+        'Yes, absolutely. We provide full ongoing support and continuous improvements. As AI evolves, your system evolves with it, and if issues ever arise, we fix them quickly. We also enhance your automations over time to keep your business aligned with growth and new technology.',
     },
     {
-      question: 'What kind of ongoing support do you provide?',
+      question: 'Can I cancel or change my subscription at any time?',
       answer:
-        'All plans include email support and access to our knowledge base. Growth and Enterprise plans include dedicated success managers, priority support, and regular optimization sessions to maximize your ROI.',
+        'Yes, you can. You\'re free to cancel at any time, and you\'ll still keep ownership of the system we\'ve built for you. Our goal is to build lasting partnerships, not lock-in contracts, and your AI stays yours.',
     },
   ];
 
