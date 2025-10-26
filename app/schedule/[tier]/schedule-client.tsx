@@ -4,9 +4,9 @@ import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 const bookingLinks = {
-  starter: 'https://cal.com/antonio-wilson-qfqybv/30min',
-  professional: 'https://cal.com/antonio-wilson-qfqybv/30min-copy',
-  enterprise: 'https://cal.com/antonio-wilson-qfqybv/30min-copy-copy',
+  starter: 'https://cal.com/antonio-wilson-qfqybv/30min-starter',
+  professional: 'https://cal.com/antonio-wilson-qfqybv/30min-professional',
+  enterprise: 'https://cal.com/antonio-wilson-qfqybv/30min-enterprise',
 };
 
 export function ScheduleClient() {
