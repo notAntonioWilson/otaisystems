@@ -264,16 +264,42 @@ export default function Home() {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {services[0].pricing.map((tier, index) => (
-              <PricingCard
-                key={index}
-                label={tier.label}
-                price={tier.price}
-                features={tier.features}
-                popular={index === 1}
-                onBookCall={() => scrollToSection('book')}
-              />
-            ))}
+            <PricingCard
+              label="Starter"
+              description="Perfect for any business size wanting a single AI automation."
+              features={[
+                'Basic AI agent or automation',
+                'Standard analytics & reporting',
+                'Up to 3 AI integrations',
+                '12hr customer support with COO',
+                '1 Developer'
+              ]}
+              popular={false}
+            />
+            <PricingCard
+              label="Professional"
+              description="Perfect for any business size wanting a multi-layer or complex AI system."
+              features={[
+                'Advance AI / automation',
+                'Personalized data dashboard with analytics & insights',
+                'Up to 15 integrations',
+                '24/7 customer support with CEO & COO',
+                '2 Developers'
+              ]}
+              popular={true}
+            />
+            <PricingCard
+              label="Enterprise"
+              description="Perfect for enterprise organizations seeking AI ecosystems."
+              features={[
+                'Fully suite automation',
+                'Enterprise-grade compliance',
+                'Corprate level data dashboard',
+                'Unlimited Integrations',
+                '24/7 VIP Support'
+              ]}
+              popular={false}
+            />
           </div>
 
           <motion.div

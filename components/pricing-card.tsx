@@ -1,20 +1,27 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { Check, Zap, Briefcase, Building2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { GlowButton } from '@/components/glow-button';
 import { DripButton } from '@/components/drip-button';
 
 interface PricingCardProps {
   label: string;
-  price: string;
+  description: string;
   features: string[];
   popular?: boolean;
-  onBookCall: () => void;
 }
 
-export function PricingCard({ label, price, features, popular = false, onBookCall }: PricingCardProps) {
+export function PricingCard({ label, description, features, popular = false }: PricingCardProps) {
+  const getIcon = () => {
+    switch(label) {
+      case 'Starter': return <Zap className="w-6 h-6 text-primary" />;
+      case 'Professional': return <Briefcase className="w-6 h-6 text-primary" />;
+      case 'Enterprise': return <Building2 className="w-6 h-6 text-primary" />;
+      default: return <Zap className="w-6 h-6 text-primary" />;
+    }
+  };
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -29,23 +36,34 @@ export function PricingCard({ label, price, features, popular = false, onBookCal
           popular ? 'border-primary glow-accent-sm' : 'hover:border-primary/50'
         }`}
       >
-        {popular && (
-          <div className="mb-4">
-            <span className="inline-block px-3 py-1 text-xs font-semibold bg-primary/20 text-primary rounded-full border border-primary/30">
-              Most Popular
-            </span>
-          </div>
-        )}
-
         <div className="mb-6">
-          <h3 className="text-2xl font-bold mb-2">{label}</h3>
-          <div className="flex items-baseline gap-1">
-            <span className="text-4xl font-bold text-primary">{price}</span>
-            {price !== 'Custom' && <span className="text-muted-foreground">/month</span>}
+          <div className="flex items-center gap-3 mb-4">
+            {getIcon()}
+            <h3 className="text-2xl font-bold">{label}</h3>
+            {popular && (
+              <span className="ml-auto text-xs font-semibold bg-primary/20 text-primary px-3 py-1 rounded-full border border-primary/30">
+                Popular
+              </span>
+            )}
           </div>
+          <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
         </div>
 
-        <ul className="space-y-4 mb-8 flex-grow">
+        <button
+          className={`w-full py-3 px-6 rounded-lg font-semibold mb-8 transition-all ${
+            popular
+              ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+              : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
+          }`}
+        >
+          Schedule a call
+        </button>
+
+        <div className="mb-4">
+          <h4 className="text-sm font-semibold text-muted-foreground">What's Included:</h4>
+        </div>
+
+        <ul className="space-y-3 flex-grow">
           {features.map((feature, index) => (
             <li key={index} className="flex items-start gap-3">
               <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
@@ -53,24 +71,6 @@ export function PricingCard({ label, price, features, popular = false, onBookCal
             </li>
           ))}
         </ul>
-
-        {popular ? (
-          <DripButton
-            onClick={onBookCall}
-            className="w-full"
-          >
-            Book a Call
-          </DripButton>
-        ) : (
-          <GlowButton
-            onClick={onBookCall}
-            className="w-full"
-            size="lg"
-            variant="outline"
-          >
-            Book a Call
-          </GlowButton>
-        )}
       </Card>
     </motion.div>
   );
