@@ -217,7 +217,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="space-y-16">
+          <div className="grid md:grid-cols-2 gap-8">
             {processSteps.map((step, index) => (
               <motion.div
                 key={index}
@@ -225,25 +225,23 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="grid md:grid-cols-2 gap-8 items-center"
+                className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-lg p-8 hover:border-primary/40 transition-all hover:glow-accent-sm"
               >
-                <div className={index % 2 === 1 ? 'md:order-2' : ''}>
-                  <div className="mb-4 text-sm font-semibold text-primary">
+                <div className="mb-6">
+                  <div className="text-sm font-semibold text-primary mb-3">
                     Step {index + 1} ({step.step})
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">{step.title}</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">{step.title}</h3>
+                  <p className="text-base text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
                 </div>
-                <div className={index % 2 === 1 ? 'md:order-1' : ''}>
-                  <div className="relative rounded-lg overflow-hidden border border-primary/20 hover:border-primary/40 transition-colors">
-                    <img
-                      src={step.image}
-                      alt={step.title}
-                      className="w-full h-[300px] object-cover"
-                    />
-                  </div>
+                <div className="relative rounded-lg overflow-hidden border border-primary/10">
+                  <img
+                    src={step.image}
+                    alt={step.title}
+                    className="w-full h-[220px] object-cover"
+                  />
                 </div>
               </motion.div>
             ))}
