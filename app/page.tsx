@@ -229,7 +229,7 @@ export default function Home() {
               >
                 <div className="mb-6">
                   <div className="text-sm font-semibold text-primary mb-3">
-                    Step {index + 1} ({step.step})
+                    Step {index + 1}
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">{step.title}</h3>
                   <p className="text-base text-muted-foreground leading-relaxed">
