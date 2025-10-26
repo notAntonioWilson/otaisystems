@@ -3,8 +3,7 @@
 import { motion } from 'framer-motion';
 import { Check, Zap, Briefcase, Building2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import { GlowButton } from '@/components/glow-button';
-import { DripButton } from '@/components/drip-button';
+import { useRouter } from 'next/navigation';
 
 interface PricingCardProps {
   label: string;
@@ -14,6 +13,8 @@ interface PricingCardProps {
 }
 
 export function PricingCard({ label, description, features, popular = false }: PricingCardProps) {
+  const router = useRouter();
+
   const getIcon = () => {
     switch(label) {
       case 'Starter': return <Zap className="w-6 h-6 text-primary" />;
@@ -21,6 +22,11 @@ export function PricingCard({ label, description, features, popular = false }: P
       case 'Enterprise': return <Building2 className="w-6 h-6 text-primary" />;
       default: return <Zap className="w-6 h-6 text-primary" />;
     }
+  };
+
+  const handleScheduleClick = () => {
+    const tier = label.toLowerCase();
+    router.push(`/schedule/${tier}`);
   };
   return (
     <motion.div
@@ -50,6 +56,7 @@ export function PricingCard({ label, description, features, popular = false }: P
         </div>
 
         <button
+          onClick={handleScheduleClick}
           className={`w-full py-3 px-6 rounded-lg font-semibold mb-8 transition-all ${
             popular
               ? 'bg-primary text-primary-foreground hover:bg-primary/90'
