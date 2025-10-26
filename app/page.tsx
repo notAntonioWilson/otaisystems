@@ -12,7 +12,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { services } from '@/content/services';
 import { proofs } from '@/content/proof';
 import Link from 'next/link';
-import { InlineWidget } from 'react-calendly';
 
 export default function Home() {
   const scrollToSection = (id: string) => {
@@ -388,11 +387,12 @@ export default function Home() {
                   Choose a time that works for you. All times shown in your local timezone.
                 </p>
                 <div className="rounded-lg overflow-hidden">
-                  <InlineWidget
-                    url="https://calendly.com/otai_systems/consultation-with-owner-of-otai-systems"
-                    styles={{
+                  <iframe
+                    src="https://cal.com/antonio-wilson-qfqybv/30min-professional"
+                    style={{
+                      width: '100%',
                       height: '700px',
-                      minWidth: '100%'
+                      border: 'none'
                     }}
                   />
                 </div>
