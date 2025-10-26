@@ -24,12 +24,12 @@ export function ScheduleClient() {
           className="max-w-5xl mx-auto"
         >
           <div className="text-center mb-12">
-            <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed max-w-3xl mx-auto">
-              AI isn't the future, it's now. The smartest move any company can make is to embrace it. Schedule your meeting today and start changing your business tomorrow.
-            </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-white">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
               Schedule a Consult with OTAI's CEO
             </h1>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              AI isn't the future, it's now. The smartest move any company can make is to embrace it. Schedule your meeting today and start changing your business tomorrow.
+            </p>
           </div>
 
           <div className="w-full h-[800px] bg-card rounded-lg shadow-lg overflow-hidden">

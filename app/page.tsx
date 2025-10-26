@@ -104,8 +104,8 @@ export default function Home() {
                 Leverage the Power of AI
               </Badge>
               <h1 className="font-bold mb-6 leading-tight">
-                <div className="text-4xl md:text-5xl lg:text-6xl mb-2 text-muted-foreground">What we do:</div>
-                <div className="text-3xl md:text-4xl lg:text-5xl text-primary">Custom AI Solutions</div>
+                <div className="text-4xl md:text-5xl lg:text-6xl mb-2 text-primary">Custom AI Solutions</div>
+                <div className="text-3xl md:text-4xl lg:text-5xl text-white">For Ambitious Businesses</div>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                 Reality check: AI is no longer the future of business it's a necessity now! If you don't adapt you will fall behind.
@@ -142,12 +142,10 @@ export default function Home() {
           >
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-primary leading-tight">
-                  What we do:
+                <h2 className="font-bold mb-6 leading-tight">
+                  <div className="text-4xl md:text-5xl lg:text-6xl mb-2 text-primary">What we do:</div>
+                  <div className="text-3xl md:text-4xl lg:text-5xl text-foreground">Custom AI Solutions</div>
                 </h2>
-                <h3 className="text-3xl md:text-4xl font-bold mb-6 text-foreground leading-tight">
-                  Custom AI Solutions
-                </h3>
                 <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                   <p>
                     Unlike other AI agencies, consultants, or software companies, we understand one simple truth... no two businesses are the same.
