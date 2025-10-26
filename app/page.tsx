@@ -281,7 +281,7 @@ export default function Home() {
               description="Perfect for any business size wanting a multi-layer or complex AI system."
               features={[
                 'Advance AI / automation',
-                'Personalized data dashboard with analytics & insights',
+                'Personalized dashboard with analytics & insights',
                 'Up to 15 integrations',
                 '24/7 customer support with CEO & COO',
                 '2 Developers'
@@ -294,7 +294,7 @@ export default function Home() {
               features={[
                 'Fully suite automation',
                 'Enterprise-grade compliance',
-                'Corprate level data dashboard',
+                'Corprate level dashboard',
                 'Unlimited Integrations',
                 '24/7 VIP Support'
               ]}
