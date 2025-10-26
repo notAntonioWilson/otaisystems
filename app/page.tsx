@@ -29,37 +29,28 @@ export default function Home() {
 
   const processSteps = [
     {
-      icon: Target,
-      title: 'Setup',
-      description: 'We analyze your workflow, identify bottlenecks, and design custom AI solutions.',
-      details: [
-        'Deep-dive discovery call',
-        'Process mapping & analysis',
-        'Custom solution design',
-        'Integration planning',
-      ],
+      step: 'One',
+      title: 'Workflow Analysis',
+      description: 'We consult your systems, uncover inefficiencies, and pinpoint high-ROI opportunities for AI automation.',
+      image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
     {
-      icon: Zap,
-      title: 'Launch',
-      description: 'Rapid deployment with zero disruption to your operations.',
-      details: [
-        'Seamless system integration',
-        'Team training & onboarding',
-        'Testing & optimization',
-        'Go-live in 2-4 weeks',
-      ],
+      step: 'Two',
+      title: 'Create AI System',
+      description: 'We architect and train your custom AI solutions to optimize your workflows and drive measurable growth.',
+      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
     {
-      icon: TrendingUp,
-      title: 'Upgrade',
-      description: 'Continuous optimization and scaling as your business grows.',
-      details: [
-        'Performance monitoring',
-        'Regular optimization cycles',
-        'Feature enhancements',
-        'Dedicated support team',
-      ],
+      step: 'Three',
+      title: 'Deploy Power',
+      description: 'We embed the automation into your company, integrate or fully replace your systems, forcing advancement within your organization.',
+      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+    },
+    {
+      step: 'Four',
+      title: 'Evolve Relentlessly',
+      description: 'We monitor, refine, and evolve your automations, analyzing performance data to ensure long-term efficiency and compound growth.',
+      image: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800',
     },
   ];
 
@@ -220,43 +211,39 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">The Process</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From discovery to deployment in weeks, not months
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Our Intelligent, Impact-Driven Process</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              We consult, engineer, and optimize AI solutions that integrate seamlessly, built to perform, adapt, and scale without limits.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 relative">
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/50 via-primary to-primary/50 -translate-y-1/2 z-0" />
-
+          <div className="space-y-16">
             {processSteps.map((step, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="relative z-10"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="grid md:grid-cols-2 gap-8 items-center"
               >
-                <div className="bg-card border border-border hover:border-primary/50 rounded-lg p-8 h-full transition-all duration-300 hover:glow-accent-sm">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 border border-primary/30 glow-accent-sm">
-                    <step.icon className="w-8 h-8 text-primary" />
+                <div className={index % 2 === 1 ? 'md:order-2' : ''}>
+                  <div className="mb-4 text-sm font-semibold text-primary">
+                    Step {index + 1} ({step.step})
                   </div>
-                  <div className="mb-2 text-sm font-semibold text-primary">
-                    Step {index + 1}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                  <h3 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">{step.title}</h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
-                  <ul className="space-y-2">
-                    {step.details.map((detail, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        <span className="text-foreground/80">{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
+                </div>
+                <div className={index % 2 === 1 ? 'md:order-1' : ''}>
+                  <div className="relative rounded-lg overflow-hidden border border-primary/20 hover:border-primary/40 transition-colors">
+                    <img
+                      src={step.image}
+                      alt={step.title}
+                      className="w-full h-[300px] object-cover"
+                    />
+                  </div>
                 </div>
               </motion.div>
             ))}
