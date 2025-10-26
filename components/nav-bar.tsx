@@ -62,31 +62,31 @@ export function NavBar() {
           <div className="hidden md:flex items-center gap-8">
             <Link
               href="/"
-              className="text-sm font-medium gradient-text hover:opacity-80 transition-opacity"
+              className="text-sm font-medium text-white hover:opacity-80 transition-opacity"
             >
               Home
             </Link>
             <button
               onClick={() => scrollToSection('services')}
-              className="text-sm font-medium gradient-text hover:opacity-80 transition-opacity"
+              className="text-sm font-medium text-white hover:opacity-80 transition-opacity"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection('process')}
-              className="text-sm font-medium gradient-text hover:opacity-80 transition-opacity"
+              className="text-sm font-medium text-white hover:opacity-80 transition-opacity"
             >
               Process
             </button>
             <Link
               href="/proof"
-              className="text-sm font-medium gradient-text hover:opacity-80 transition-opacity"
+              className="text-sm font-medium text-white hover:opacity-80 transition-opacity"
             >
               Proof
             </Link>
             <button
               onClick={() => scrollToSection('pricing')}
-              className="text-sm font-medium gradient-text hover:opacity-80 transition-opacity"
+              className="text-sm font-medium text-white hover:opacity-80 transition-opacity"
             >
               Pricing
             </button>

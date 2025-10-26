@@ -67,7 +67,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6 gradient-text">Navigation</h3>
+            <h3 className="text-lg font-semibold mb-6 text-primary">Navigation</h3>
             <ul className="space-y-4">
               <li>
                 <button
@@ -113,7 +113,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6 gradient-text">Legal</h3>
+            <h3 className="text-lg font-semibold mb-6 text-primary">Legal</h3>
             <ul className="space-y-4">
               <li>
                 <Link
