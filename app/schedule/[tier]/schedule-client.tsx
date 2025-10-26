@@ -24,7 +24,7 @@ export function ScheduleClient() {
           className="max-w-5xl mx-auto"
         >
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Schedule a Consult with OTAI's CEO
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">

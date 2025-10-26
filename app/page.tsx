@@ -104,8 +104,8 @@ export default function Home() {
                 Leverage the Power of AI
               </Badge>
               <h1 className="font-bold mb-6 leading-tight">
-                <div className="text-4xl md:text-5xl lg:text-6xl mb-2" style={{ color: '#a855f7' }}>Custom AI Solutions</div>
-                <div className="text-3xl md:text-4xl lg:text-5xl text-white">For Ambitious Businesses</div>
+                <div className="text-4xl md:text-5xl lg:text-6xl mb-2 text-white">Custom AI Solutions</div>
+                <div className="text-3xl md:text-4xl lg:text-5xl" style={{ color: '#a855f7' }}>For Ambitious Businesses</div>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                 Reality check: AI is no longer the future of business it's a necessity now! If you don't adapt you will fall behind.
