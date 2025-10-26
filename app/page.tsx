@@ -330,75 +330,39 @@ export default function Home() {
 
       <section id="book" className="py-20 px-4 bg-card/30 backdrop-blur-sm">
         <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
-                Ready to transform your business?
-              </h2>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                Book a free strategy call. We'll analyze your workflow, identify
-                opportunities, and show you exactly how AI can scale your operations.
-              </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-                  <div>
-                    <div className="font-semibold mb-1">30-Day Money-Back Guarantee</div>
-                    <div className="text-sm text-muted-foreground">
-                      Not satisfied? Get a full refund, no questions asked.
-                    </div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-                  <div>
-                    <div className="font-semibold mb-1">2-4 Week Turnaround</div>
-                    <div className="text-sm text-muted-foreground">
-                      From kickoff to go-live in under a month.
-                    </div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
-                  <div>
-                    <div className="font-semibold mb-1">What Happens on the Call</div>
-                    <div className="text-sm text-muted-foreground">
-                      45-minute discovery session. We'll map your process, identify quick wins,
-                      and design a custom solution.
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Ready to transcend your business?
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              Book a free consult with OTAI's CEO. You'll analyze your workflow, identify opportunities, and show you exactly how AI can scale your operations.
+            </p>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="bg-card border border-primary/30 rounded-lg p-8 glow-accent-sm">
-                <h3 className="text-2xl font-bold mb-4">Schedule Your Call</h3>
-                <p className="text-muted-foreground mb-6">
-                  Choose a time that works for you. All times shown in your local timezone.
-                </p>
-                <div className="rounded-lg overflow-hidden">
-                  <iframe
-                    src="https://cal.com/antonio-wilson-qfqybv/30min-professional"
-                    style={{
-                      width: '100%',
-                      height: '700px',
-                      border: 'none'
-                    }}
-                  />
-                </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-6xl mx-auto"
+          >
+            <div className="bg-card border border-primary/30 rounded-lg p-8 glow-accent-sm">
+              <div className="rounded-lg overflow-hidden">
+                <iframe
+                  src="https://cal.com/antonio-wilson-qfqybv/30min-professional"
+                  style={{
+                    width: '100%',
+                    height: '700px',
+                    border: 'none'
+                  }}
+                />
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>
