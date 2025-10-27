@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Clock, Target, Zap, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Clock, Target, Zap, TrendingUp, CheckCircle2, Moon, Activity, AlertCircle, BarChart3, DollarSign, Brain, Users, Layers, Eye, Rocket, Settings, Link2 } from 'lucide-react';
 import { VideoCard } from '@/components/video-card';
 import { GlowButton } from '@/components/glow-button';
 import { DripButton } from '@/components/drip-button';
@@ -71,6 +71,71 @@ export default function Home() {
         return null;
     }
   };
+
+  const aiFoundationCards = [
+    {
+      icon: Moon,
+      title: '24/7 Performance',
+      description: 'AI never sleeps. It operates continuously, delivering consistent output and monitoring systems around the clock.'
+    },
+    {
+      icon: Activity,
+      title: 'Zero Complaints, Zero Fatigue',
+      description: 'AI doesn\'t get tired, emotional, or distracted. It executes tasks reliably every single time.'
+    },
+    {
+      icon: AlertCircle,
+      title: 'Error-Free Execution',
+      description: 'AI systems don\'t make careless mistakes. They work with precision and consistency.'
+    },
+    {
+      icon: BarChart3,
+      title: 'Proven Results Across Every Industry',
+      description: 'Companies using AI see measurable increases in productivity, revenue, and accuracy.'
+    },
+    {
+      icon: DollarSign,
+      title: 'Cost Reduction and Efficiency',
+      description: 'AI eliminates redundant labor, reduces human overhead, and optimizes workflows for maximum ROI.'
+    },
+    {
+      icon: Brain,
+      title: 'Data-Driven Decision Making',
+      description: 'AI analyzes data instantly and objectively to help leaders make smarter, faster, evidence-based decisions.'
+    },
+    {
+      icon: Clock,
+      title: 'Time Back for Business Owners',
+      description: 'Automating repetitive workflows gives founders and teams more time to focus on growth, not busywork.'
+    },
+    {
+      icon: Layers,
+      title: 'Instant Scalability',
+      description: 'AI adapts to your company\'s workload automatically, scaling up or down without additional overhead.'
+    },
+    {
+      icon: Eye,
+      title: 'Predictive Intelligence',
+      description: 'AI anticipates problems and opportunities before they happen.'
+    },
+    {
+      icon: Rocket,
+      title: 'Competitive Edge',
+      description: 'Businesses that adopt AI today are the ones dominating tomorrow. It is the new infrastructure of business.'
+    },
+    {
+      icon: Settings,
+      title: 'Fully Customizable Intelligence',
+      description: 'AI can match your exact workflow and style, from hyper-personalized automations to precise robotic execution.'
+    },
+    {
+      icon: Link2,
+      title: 'Instant Integration',
+      description: 'AI connects seamlessly with your existing systems to start improving operations immediately.'
+    }
+  ];
+
+  const mobileVisibleCards = [0, 1, 3, 4, 6]; // Indices for cards to show on mobile
 
   const faqs = [
     {
@@ -262,6 +327,93 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* AI Foundation Section */}
+      <section className="py-16 px-4 lg:px-8">
+        <div className="container mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
+              Why AI Is the New Foundation of Business
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
+              When intelligence runs your operations, you scale faster, work smarter, and eliminate limits. This is what modern infrastructure looks like.
+            </p>
+          </motion.div>
+
+          {/* Desktop: 3x2 grid (6 cards per row, 2 rows = 12 cards) */}
+          <div className="hidden md:grid md:grid-cols-6 gap-4 mb-10">
+            {aiFoundationCards.map((card, index) => {
+              const Icon = card.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="glass-card rounded-xl p-5 flex flex-col items-center text-center group hover:shadow-[0_0_30px_rgba(155,92,246,0.4)] transition-all duration-300"
+                >
+                  <div className="mb-4 p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                    <Icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-sm font-bold mb-2 text-foreground leading-tight">
+                    {card.title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {card.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Mobile: Single column, filtered cards */}
+          <div className="md:hidden flex flex-col gap-4 mb-10">
+            {aiFoundationCards.filter((_, index) => mobileVisibleCards.includes(index)).map((card, displayIndex) => {
+              const Icon = card.icon;
+              const originalIndex = mobileVisibleCards[displayIndex];
+              return (
+                <motion.div
+                  key={originalIndex}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: displayIndex * 0.1 }}
+                  className="glass-card rounded-xl p-6 flex flex-col items-center text-center"
+                >
+                  <div className="mb-4 p-3 rounded-lg bg-primary/10">
+                    <Icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="text-base font-bold mb-2 text-foreground leading-tight">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {card.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <GlowButton onClick={() => scrollToSection('booking')}>
+              Implement AI
+            </GlowButton>
+          </motion.div>
         </div>
       </section>
 
