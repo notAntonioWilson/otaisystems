@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Zap, Linkedin, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
+import { Linkedin, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function Footer() {
@@ -29,25 +29,27 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t border-primary/10 bg-card/30 backdrop-blur-sm">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+    <footer className="relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/10 to-black" />
+
+      <div className="relative container mx-auto px-4 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-6 group">
-              <div className="w-10 h-10 relative">
+            <Link href="/" className="flex items-center gap-3 mb-6 group">
+              <div className="w-12 h-12 relative">
                 <Image
                   src="/images/logo.png"
                   alt="OTAI Systems Logo"
-                  width={40}
-                  height={40}
+                  width={48}
+                  height={48}
                   className="object-contain brightness-0 invert"
                 />
               </div>
-              <span className="text-xl font-bold gradient-text">OTAI Systems</span>
+              <span className="text-2xl font-black gradient-text">OTAI SYSTEMS</span>
             </Link>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              Empowering businesses with AI automation solutions. Stay connected and see what's
-              next, follow us on Social Media.
+            <p className="text-gray-400 mb-8 leading-relaxed text-sm">
+              Empowering businesses with cutting-edge AI automation solutions. Stay connected and see what's next.
             </p>
             <div className="flex gap-4">
               {socialLinks.map(({ icon: Icon, href, label }) => (
@@ -57,22 +59,22 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 hover:glow-accent-sm transition-all duration-300 border border-primary/20"
+                  whileHover={{ scale: 1.15, y: -3 }}
+                  className="w-11 h-11 rounded-xl glass-card flex items-center justify-center hover:neon-border transition-all duration-300"
                 >
-                  <Icon className="w-5 h-5 text-primary" />
+                  <Icon className="w-5 h-5 text-purple-400" />
                 </motion.a>
               ))}
             </div>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-primary">Navigation</h3>
+            <h3 className="text-sm font-black uppercase-wide mb-8 text-white tracking-widest">Navigation</h3>
             <ul className="space-y-4">
               <li>
                 <button
                   onClick={() => scrollToSection('services')}
-                  className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
+                  className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
                 >
                   Services
                 </button>
@@ -80,7 +82,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection('process')}
-                  className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
+                  className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
                 >
                   Process
                 </button>
@@ -88,7 +90,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/proof"
-                  className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
+                  className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
                 >
                   Testimonial & Proof
                 </Link>
@@ -96,7 +98,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection('pricing')}
-                  className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
+                  className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
                 >
                   Pricing
                 </button>
@@ -104,7 +106,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={() => scrollToSection('book')}
-                  className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
+                  className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
                 >
                   Contact
                 </button>
@@ -113,12 +115,12 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-primary">Legal</h3>
+            <h3 className="text-sm font-black uppercase-wide mb-8 text-white tracking-widest">Legal</h3>
             <ul className="space-y-4">
               <li>
                 <Link
                   href="/terms"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
+                  className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
                 >
                   Terms of Service
                 </Link>
@@ -126,7 +128,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/privacy"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
+                  className="text-gray-400 hover:text-white transition-colors text-sm font-medium"
                 >
                   Privacy Policy
                 </Link>
@@ -135,12 +137,14 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border/50 text-center">
-          <p className="text-sm text-muted-foreground">
+        <div className="pt-10 border-t border-purple-500/20">
+          <p className="text-sm text-gray-500 text-center font-medium">
             © OTAI Systems 2025. All Rights Reserved.
           </p>
         </div>
       </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-50" />
     </footer>
   );
 }

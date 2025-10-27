@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { DripButton } from '@/components/drip-button';
 
 export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,13 +39,13 @@ export function NavBar() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-background/80 backdrop-blur-lg border-b border-primary/20'
+          ? 'glass-card border-b border-purple-500/20'
           : 'bg-transparent'
       )}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 relative">
               <Image
                 src="/images/logo.png"
@@ -56,46 +55,48 @@ export function NavBar() {
                 className="object-contain brightness-0 invert"
               />
             </div>
-            <span className="text-2xl font-bold gradient-text">OTAI Systems</span>
+            <span className="text-2xl font-black gradient-text">OTAI SYSTEMS</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
             <Link
               href="/"
-              className="text-sm font-medium text-white hover:opacity-80 transition-opacity"
+              className="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors"
             >
               Home
             </Link>
             <button
               onClick={() => scrollToSection('services')}
-              className="text-sm font-medium text-white hover:opacity-80 transition-opacity"
+              className="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection('process')}
-              className="text-sm font-medium text-white hover:opacity-80 transition-opacity"
+              className="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors"
             >
               Process
             </button>
             <Link
               href="/proof"
-              className="text-sm font-medium text-white hover:opacity-80 transition-opacity"
+              className="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors"
             >
               Proof
             </Link>
             <button
               onClick={() => scrollToSection('pricing')}
-              className="text-sm font-medium text-white hover:opacity-80 transition-opacity"
+              className="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors"
             >
               Pricing
             </button>
-            <DripButton
+            <motion.button
               onClick={() => scrollToSection('book')}
-              className="px-6 py-2 text-base"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-bold uppercase text-sm tracking-wider neon-glow-sm"
             >
               Book a call
-            </DripButton>
+            </motion.button>
           </div>
         </div>
       </div>
