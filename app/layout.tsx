@@ -1,8 +1,11 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import { NavBar } from '@/components/nav-bar';
 import { Footer } from '@/components/footer';
 import { CursorTrail } from '@/components/cursor-trail';
+
+const inter = Inter({ subsets: ['latin'], weight: ['400', '500', '600', '700'] });
 
 export const metadata: Metadata = {
   title: 'OTAI Systems - AI-Powered Business Automation',
@@ -17,10 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet" />
-      </head>
-      <body>
+      <body className={inter.className}>
         <CursorTrail />
         <NavBar />
         <main>{children}</main>

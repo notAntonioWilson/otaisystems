@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Check, Rocket, Zap, Crown } from 'lucide-react';
+import { Check, Zap, Briefcase, Building2 } from 'lucide-react';
+import { Card } from '@/components/ui/card';
 import { useRouter } from 'next/navigation';
 
 interface PricingCardProps {
@@ -16,10 +17,10 @@ export function PricingCard({ label, description, features, popular = false }: P
 
   const getIcon = () => {
     switch(label) {
-      case 'Starter': return <Rocket className="w-8 h-8" />;
-      case 'Professional': return <Zap className="w-8 h-8" />;
-      case 'Enterprise': return <Crown className="w-8 h-8" />;
-      default: return <Rocket className="w-8 h-8" />;
+      case 'Starter': return <Zap className="w-6 h-6 text-primary" />;
+      case 'Professional': return <Briefcase className="w-6 h-6 text-primary" />;
+      case 'Enterprise': return <Building2 className="w-6 h-6 text-primary" />;
+      default: return <Zap className="w-6 h-6 text-primary" />;
     }
   };
 
@@ -27,76 +28,57 @@ export function PricingCard({ label, description, features, popular = false }: P
     const tier = label.toLowerCase();
     router.push(`/schedule/${tier}`);
   };
-
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      whileHover={{ y: -12, scale: 1.02 }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ y: -8 }}
       className="h-full"
     >
-      <div
-        className={`glass-card p-8 h-full flex flex-col rounded-2xl transition-all duration-500 relative overflow-hidden ${
-          popular ? 'neon-glow' : ''
+      <Card
+        className={`p-8 h-full flex flex-col border-border bg-card/50 backdrop-blur-sm transition-all duration-300 ${
+          popular ? 'border-primary glow-accent-sm' : 'hover:border-primary/50'
         }`}
       >
-        {popular && (
-          <div className="absolute top-0 right-0 bg-gradient-to-br from-purple-500 to-pink-500 text-white text-xs font-bold uppercase px-4 py-1 rounded-bl-lg">
-            Popular
+        <div className="mb-6">
+          <div className="flex items-center gap-3 mb-4">
+            {getIcon()}
+            <h3 className="text-2xl font-bold">{label}</h3>
+            {popular && (
+              <span className="ml-auto text-xs font-semibold bg-primary/20 text-primary px-3 py-1 rounded-full border border-primary/30">
+                Popular
+              </span>
+            )}
           </div>
-        )}
-
-        <div className="mb-8">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="text-purple-400">
-              {getIcon()}
-            </div>
-            <h3 className="text-3xl font-black uppercase-wide text-white">{label}</h3>
-          </div>
+          <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
         </div>
 
-        <div className="mb-8">
-          <div className="text-5xl font-black mb-2 gradient-text">Request for pricing</div>
-          <p className="text-sm text-gray-400 leading-relaxed mt-4">{description}</p>
-        </div>
-
-        <motion.button
+        <button
           onClick={handleScheduleClick}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className={`w-full py-4 px-6 rounded-xl font-bold uppercase text-sm tracking-wider mb-10 transition-all duration-300 ${
+          className={`w-full py-3 px-6 rounded-lg font-semibold mb-8 transition-all ${
             popular
-              ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white neon-glow-sm hover:from-purple-500 hover:to-pink-500'
-              : 'bg-white/5 text-white hover:bg-white/10 neon-border'
+              ? 'bg-primary text-primary-foreground hover:bg-primary/90'
+              : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
           }`}
         >
           Schedule a call
-        </motion.button>
+        </button>
 
-        <div className="mb-6">
-          <h4 className="text-xs font-bold uppercase-wide text-gray-500 tracking-widest">What's Included:</h4>
+        <div className="mb-4">
+          <h4 className="text-sm font-semibold text-muted-foreground">What's Included:</h4>
         </div>
 
-        <ul className="space-y-4 flex-grow">
+        <ul className="space-y-3 flex-grow">
           {features.map((feature, index) => (
-            <motion.li
-              key={index}
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="flex items-start gap-3"
-            >
-              <div className="shrink-0 mt-1">
-                <Check className="w-5 h-5 text-purple-400" />
-              </div>
-              <span className="text-sm text-gray-300 leading-relaxed">{feature}</span>
-            </motion.li>
+            <li key={index} className="flex items-start gap-3">
+              <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+              <span className="text-sm text-foreground/90 leading-relaxed">{feature}</span>
+            </li>
           ))}
         </ul>
-      </div>
+      </Card>
     </motion.div>
   );
 }

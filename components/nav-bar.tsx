@@ -39,7 +39,7 @@ export function NavBar() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'glass-card border-b border-purple-500/20'
+          ? 'bg-background/95 backdrop-blur-sm border-b border-border'
           : 'bg-transparent'
       )}
     >
@@ -55,37 +55,37 @@ export function NavBar() {
                 className="object-contain brightness-0 invert"
               />
             </div>
-            <span className="text-2xl font-black gradient-text">OTAI SYSTEMS</span>
+            <span className="text-xl font-bold text-primary">OTAI Systems</span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             <Link
               href="/"
-              className="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors"
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
               Home
             </Link>
             <button
               onClick={() => scrollToSection('services')}
-              className="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors"
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection('process')}
-              className="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors"
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
               Process
             </button>
             <Link
               href="/proof"
-              className="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors"
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
               Proof
             </Link>
             <button
               onClick={() => scrollToSection('pricing')}
-              className="text-sm font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-colors"
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
               Pricing
             </button>
@@ -93,7 +93,7 @@ export function NavBar() {
               onClick={() => scrollToSection('book')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-bold uppercase text-sm tracking-wider neon-glow-sm"
+              className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium text-sm"
             >
               Book a call
             </motion.button>
