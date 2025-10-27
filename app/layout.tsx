@@ -5,9 +5,12 @@ import { Footer } from '@/components/footer';
 import { CursorTrail } from '@/components/cursor-trail';
 
 export const metadata: Metadata = {
-  title: 'OTAI Systems - AI-Powered Business Automation',
-  description: 'Close the deal before the call. VSLs + undeniable proof → prospects show up ready to buy. Transform your business with AI sales automation, customer support, and workflow optimization.',
+  title: 'OTAI Systems',
+  description: 'We build custom intelligent automation systems for businesses that want to scale faster, cut costs, and work smarter. Our AI solutions operate 24/7 to help you grow efficiently and stay ahead.',
   keywords: 'AI automation, sales automation, customer support AI, workflow automation, business automation',
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
