@@ -2,11 +2,20 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter, usePathname } from 'next/navigation';
 import { Zap, Linkedin, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function Footer() {
+  const router = useRouter();
+  const pathname = usePathname();
+
   const scrollToSection = (id: string) => {
+    if (pathname !== '/') {
+      router.push(`/#${id}`);
+      return;
+    }
+
     const element = document.getElementById(id);
     if (element) {
       const offset = 80;

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 import { ArrowRight, Clock, Target, Zap, TrendingUp, CheckCircle2, Moon, Activity, AlertCircle, BarChart3, DollarSign, Brain, Users, Layers, Eye, Rocket, Settings, Link2 } from 'lucide-react';
 import { VideoCard } from '@/components/video-card';
 import { GlowButton } from '@/components/glow-button';
@@ -27,6 +28,15 @@ export default function Home() {
       window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
   };
+
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+      setTimeout(() => {
+        scrollToSection(hash);
+      }, 100);
+    }
+  }, []);
 
   const heroMetrics: any[] = [];
 
@@ -410,7 +420,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <GlowButton onClick={() => scrollToSection('booking')}>
+            <GlowButton onClick={() => scrollToSection('book')}>
               Implement AI
             </GlowButton>
           </motion.div>
