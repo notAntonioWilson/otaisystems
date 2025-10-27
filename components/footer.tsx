@@ -34,7 +34,7 @@ export function Footer() {
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          <div className="max-w-md">
+          <div className="relative md:pr-12">
             <Link href="/" className="flex items-center gap-2 mb-6 group">
               <div className="w-7 h-7 relative">
                 <Image
@@ -66,9 +66,10 @@ export function Footer() {
                 </motion.a>
               ))}
             </div>
+            <div className="hidden md:block absolute right-0 top-0 bottom-0 w-px bg-border/50" />
           </div>
 
-          <div>
+          <div className="relative md:px-12">
             <h3 className="text-lg font-semibold mb-4 text-white">Navigation</h3>
             <div className="grid grid-cols-2 gap-x-16 gap-y-3">
               <button
@@ -102,10 +103,10 @@ export function Footer() {
                 Testimonial & Proof
               </Link>
             </div>
+            <div className="hidden md:block absolute right-0 top-0 bottom-0 w-px bg-border/50" />
           </div>
 
           <div className="relative md:pl-12">
-            <div className="hidden md:block absolute left-0 top-0 bottom-0 w-px bg-border/50" />
             <h3 className="text-lg font-semibold mb-4 text-white">Legal</h3>
             <div className="flex flex-col gap-3">
               <Link
