@@ -221,21 +221,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="process" className="py-14 px-6 lg:px-8 bg-card/30 backdrop-blur-sm">
+      <section id="process" className="py-14 px-3 sm:px-6 lg:px-8 bg-card/30 backdrop-blur-sm">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white leading-[1.2]">Our Intelligent, Impact-Driven Process</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-[1.6]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 text-white leading-[1.2]">Our Intelligent, Impact-Driven Process</h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-[1.6] px-2">
               We consult, engineer, and optimize AI solutions that integrate seamlessly, built to perform, adapt, and scale without limits.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 max-w-7xl mx-auto px-2 sm:px-4">
             {processSteps.map((step, index) => (
               <motion.div
                 key={index}
@@ -243,18 +243,18 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card rounded-xl p-6"
+                className="glass-card rounded-xl p-4 sm:p-6"
               >
-                <div className="mb-5">
-                  <div className="text-sm font-semibold text-primary mb-2">
+                <div className="mb-4 sm:mb-5">
+                  <div className="text-xs sm:text-sm font-semibold text-primary mb-1.5 sm:mb-2">
                     Step {index + 1}
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-foreground leading-[1.2]">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-[1.6]">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-foreground leading-[1.2]">{step.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-[1.5] sm:leading-[1.6]">
                     {step.description}
                   </p>
                 </div>
-                <div className="mt-6 scale-90">
+                <div className="mt-4 sm:mt-6 scale-75 sm:scale-90">
                   {getAnimationComponent(step.animationType)}
                 </div>
               </motion.div>
