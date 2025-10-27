@@ -1,14 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { NavBar } from '@/components/nav-bar';
-import { Footer } from '@/components/footer';
 
 export default function StarterSchedule() {
   return (
     <div className="min-h-screen bg-background">
-      <NavBar />
-
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -47,8 +43,6 @@ export default function StarterSchedule() {
           </motion.div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

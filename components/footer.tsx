@@ -33,8 +33,8 @@ export function Footer() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#32005C]/20 via-transparent to-transparent pointer-events-none" />
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
       <div className="container mx-auto px-4 py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          <div>
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-12 mb-12">
+          <div className="max-w-md">
             <Link href="/" className="flex items-center gap-2 mb-6 group">
               <div className="w-7 h-7 relative">
                 <Image
@@ -68,72 +68,37 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-6 text-primary">Navigation</h3>
-            <ul className="space-y-4">
-              <li>
-                <button
-                  onClick={() => scrollToSection('services')}
-                  className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
-                >
-                  Services
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('process')}
-                  className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
-                >
-                  Process
-                </button>
-              </li>
-              <li>
-                <Link
-                  href="/proof"
-                  className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
-                >
-                  Testimonial & Proof
-                </Link>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('pricing')}
-                  className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
-                >
-                  Pricing
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection('book')}
-                  className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
-                >
-                  Contact
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-6 text-primary">Legal</h3>
-            <ul className="space-y-4">
-              <li>
-                <Link
-                  href="/terms"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
-                >
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/privacy"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-            </ul>
+          <div className="grid grid-cols-2 gap-x-16 gap-y-3">
+            <button
+              onClick={() => scrollToSection('services')}
+              className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
+            >
+              Services
+            </button>
+            <button
+              onClick={() => scrollToSection('pricing')}
+              className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
+            >
+              Pricing
+            </button>
+            <button
+              onClick={() => scrollToSection('process')}
+              className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
+            >
+              Process
+            </button>
+            <button
+              onClick={() => scrollToSection('book')}
+              className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
+            >
+              Contact
+            </button>
+            <Link
+              href="/proof"
+              className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
+            >
+              Testimonial & Proof
+            </Link>
           </div>
         </div>
 
