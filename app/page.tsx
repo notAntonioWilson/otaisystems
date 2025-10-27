@@ -245,17 +245,19 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="glass-card rounded-xl p-4 sm:p-6"
               >
-                <div className="mb-4 sm:mb-5">
-                  <div className="text-xs sm:text-sm font-semibold text-primary mb-1.5 sm:mb-2">
+                <div className="mb-3 sm:mb-5">
+                  <div className="text-xs sm:text-sm font-semibold text-primary mb-1 sm:mb-2">
                     Step {index + 1}
                   </div>
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 text-foreground leading-[1.2]">{step.title}</h3>
+                  <h3 className="text-base sm:text-xl md:text-2xl font-bold mb-1.5 sm:mb-3 text-foreground leading-[1.2]">{step.title}</h3>
                   <p className="text-xs sm:text-sm text-muted-foreground leading-[1.5] sm:leading-[1.6]">
                     {step.description}
                   </p>
                 </div>
-                <div className="mt-4 sm:mt-6 scale-75 sm:scale-90">
-                  {getAnimationComponent(step.animationType)}
+                <div className="mt-3 sm:mt-6 h-32 sm:h-auto flex items-center justify-center">
+                  <div className="scale-[0.6] sm:scale-90 w-full">
+                    {getAnimationComponent(step.animationType)}
+                  </div>
                 </div>
               </motion.div>
             ))}
