@@ -180,7 +180,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-16"
           >
-            <Link href="/services/ai-customer-support/data">
+            <Link href="/coming-soon">
               <button className="px-8 py-4 bg-card border border-primary/30 rounded-lg font-semibold hover:bg-primary/10 transition-all hover:border-primary/50 text-base whitespace-nowrap min-w-[200px]">
                 In-Depth Data
               </button>
