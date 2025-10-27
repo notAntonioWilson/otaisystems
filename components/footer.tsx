@@ -68,37 +68,40 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-16 gap-y-3">
-            <button
-              onClick={() => scrollToSection('services')}
-              className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection('pricing')}
-              className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
-            >
-              Pricing
-            </button>
-            <button
-              onClick={() => scrollToSection('process')}
-              className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
-            >
-              Process
-            </button>
-            <button
-              onClick={() => scrollToSection('book')}
-              className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
-            >
-              Contact
-            </button>
-            <Link
-              href="/proof"
-              className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
-            >
-              Testimonial & Proof
-            </Link>
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-white">Navigation</h3>
+            <div className="grid grid-cols-2 gap-x-16 gap-y-3">
+              <button
+                onClick={() => scrollToSection('services')}
+                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
+              >
+                Services
+              </button>
+              <button
+                onClick={() => scrollToSection('pricing')}
+                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
+              >
+                Pricing
+              </button>
+              <button
+                onClick={() => scrollToSection('process')}
+                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
+              >
+                Process
+              </button>
+              <button
+                onClick={() => scrollToSection('book')}
+                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
+              >
+                Contact
+              </button>
+              <Link
+                href="/proof"
+                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
+              >
+                Testimonial & Proof
+              </Link>
+            </div>
           </div>
         </div>
 
