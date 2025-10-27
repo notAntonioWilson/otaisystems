@@ -63,12 +63,12 @@ export default function ResultsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center mb-12"
+            className="flex justify-center mb-12 px-2"
           >
-            <div className="inline-flex bg-card/50 backdrop-blur-sm border border-primary/30 rounded-xl p-1.5 gap-1">
+            <div className="inline-flex bg-card/50 backdrop-blur-sm border border-primary/30 rounded-xl p-1 sm:p-1.5 gap-0.5 sm:gap-1 w-full sm:w-auto overflow-x-auto">
               <button
                 onClick={() => setActiveTab('all')}
-                className={`px-7 py-2.5 rounded-lg font-semibold transition-all duration-300 ${
+                className={`flex-1 sm:flex-none px-2 sm:px-7 py-2 sm:py-2.5 rounded-lg font-semibold text-xs sm:text-base transition-all duration-300 whitespace-nowrap ${
                   activeTab === 'all'
                     ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/50'
                     : 'text-muted-foreground hover:text-foreground'
@@ -78,7 +78,7 @@ export default function ResultsPage() {
               </button>
               <button
                 onClick={() => setActiveTab('testimonials')}
-                className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`flex-1 sm:flex-none px-2 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold text-xs sm:text-base transition-all duration-300 whitespace-nowrap ${
                   activeTab === 'testimonials'
                     ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/50'
                     : 'text-muted-foreground hover:text-foreground'
@@ -88,7 +88,7 @@ export default function ResultsPage() {
               </button>
               <button
                 onClick={() => setActiveTab('statistics')}
-                className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`flex-1 sm:flex-none px-2 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold text-xs sm:text-base transition-all duration-300 whitespace-nowrap ${
                   activeTab === 'statistics'
                     ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/50'
                     : 'text-muted-foreground hover:text-foreground'
@@ -98,7 +98,7 @@ export default function ResultsPage() {
               </button>
               <button
                 onClick={() => setActiveTab('builds')}
-                className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`flex-1 sm:flex-none px-2 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold text-xs sm:text-base transition-all duration-300 whitespace-nowrap ${
                   activeTab === 'builds'
                     ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/50'
                     : 'text-muted-foreground hover:text-foreground'
@@ -289,7 +289,7 @@ export default function ResultsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="space-y-20"
+                className="space-y-12 sm:space-y-20"
               >
                 {builds.map((build, index) => (
                   <div key={build.id}>
@@ -298,7 +298,7 @@ export default function ResultsPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6 }}
-                      className={`grid md:grid-cols-2 gap-8 items-center ${
+                      className={`grid md:grid-cols-2 gap-6 sm:gap-8 items-center ${
                         index % 2 === 1 ? 'md:flex-row-reverse' : ''
                       }`}
                     >
@@ -306,43 +306,43 @@ export default function ResultsPage() {
                         <div className="relative aspect-video bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl overflow-hidden group cursor-pointer">
                           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent" />
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <Play className="w-20 h-20 text-primary group-hover:scale-110 transition-transform" />
+                            <Play className="w-12 sm:w-20 h-12 sm:h-20 text-primary group-hover:scale-110 transition-transform" />
                           </div>
                           <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
                           <div className="absolute bottom-4 left-4 right-4">
-                            <p className="text-white font-semibold">AI Build Demo Video</p>
+                            <p className="text-white font-semibold text-sm sm:text-base">AI Build Demo Video</p>
                           </div>
                         </div>
                       </div>
 
                       <div className={`${index % 2 === 1 ? 'md:order-1' : ''}`}>
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
                           {build.name}
                         </h2>
-                        <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                        <p className="text-base sm:text-lg text-muted-foreground mb-5 sm:mb-6 leading-[1.6]">
                           {build.description}
                         </p>
-                        <div className="grid grid-cols-3 gap-4 mb-6">
-                          <div className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-lg p-4">
-                            <div className="flex items-center gap-2 mb-2">
-                              <TrendingUp className="w-5 h-5 text-primary" />
-                              <p className="text-sm text-muted-foreground">ROI</p>
+                        <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-5 sm:mb-6">
+                          <div className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-lg p-3 sm:p-4">
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+                              <TrendingUp className="w-4 sm:w-5 h-4 sm:h-5 text-primary" />
+                              <p className="text-xs sm:text-sm text-muted-foreground">ROI</p>
                             </div>
-                            <p className="text-2xl font-bold text-white">{build.roi}</p>
+                            <p className="text-lg sm:text-2xl font-bold text-white">{build.roi}</p>
                           </div>
-                          <div className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-lg p-4">
-                            <div className="flex items-center gap-2 mb-2">
-                              <Clock className="w-5 h-5 text-primary" />
-                              <p className="text-sm text-muted-foreground">Time Saved</p>
+                          <div className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-lg p-3 sm:p-4">
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+                              <Clock className="w-4 sm:w-5 h-4 sm:h-5 text-primary" />
+                              <p className="text-xs sm:text-sm text-muted-foreground">Time Saved</p>
                             </div>
-                            <p className="text-2xl font-bold text-white">{build.timeSaved}</p>
+                            <p className="text-lg sm:text-2xl font-bold text-white">{build.timeSaved}</p>
                           </div>
-                          <div className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-lg p-4">
-                            <div className="flex items-center gap-2 mb-2">
-                              <CheckCircle2 className="w-5 h-5 text-primary" />
-                              <p className="text-sm text-muted-foreground">Tasks</p>
+                          <div className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-lg p-3 sm:p-4">
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+                              <CheckCircle2 className="w-4 sm:w-5 h-4 sm:h-5 text-primary" />
+                              <p className="text-xs sm:text-sm text-muted-foreground">Tasks</p>
                             </div>
-                            <p className="text-2xl font-bold text-white">{build.tasksAutomated}</p>
+                            <p className="text-lg sm:text-2xl font-bold text-white">{build.tasksAutomated}</p>
                           </div>
                         </div>
                         <p className="text-sm text-muted-foreground italic">
@@ -356,13 +356,13 @@ export default function ResultsPage() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="flex justify-center mt-16"
+                        className="flex justify-center mt-10 sm:mt-16"
                       >
                         <a href="/schedule/professional">
                           <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-12 py-5 bg-primary text-primary-foreground rounded-xl font-bold text-lg shadow-lg shadow-primary/50 hover:shadow-primary/70 transition-all"
+                            className="px-8 sm:px-12 py-4 sm:py-5 bg-primary text-primary-foreground rounded-xl font-bold text-base sm:text-lg shadow-lg shadow-primary/50 hover:shadow-primary/70 transition-all"
                           >
                             Upgrade My Company With AI
                           </motion.button>

@@ -199,21 +199,21 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-5 justify-center items-center mt-12"
+            className="flex flex-row gap-3 sm:gap-5 justify-center items-center mt-12 px-2"
           >
-            <Link href="/coming-soon">
-              <button className="sleek-button px-7 py-3.5 rounded-xl font-medium text-sm whitespace-nowrap min-w-[180px]">
+            <Link href="/coming-soon" className="flex-1 sm:flex-none">
+              <button className="sleek-button w-full sm:w-auto px-3 sm:px-7 py-3.5 rounded-xl font-medium text-xs sm:text-sm whitespace-nowrap sm:min-w-[180px]">
                 In-Depth Data
               </button>
             </Link>
             <button
               onClick={() => scrollToSection('book')}
-              className="px-7 py-3.5 bg-primary text-primary-foreground rounded-xl font-medium text-sm whitespace-nowrap min-w-[180px] hover:bg-primary/90 transition-all glow-accent-sm"
+              className="flex-1 sm:flex-none px-3 sm:px-7 py-3.5 bg-primary text-primary-foreground rounded-xl font-medium text-xs sm:text-sm whitespace-nowrap sm:min-w-[180px] hover:bg-primary/90 transition-all glow-accent-sm"
             >
               Book a Consult
             </button>
-            <Link href="/results">
-              <button className="sleek-button px-7 py-3.5 rounded-xl font-medium text-sm whitespace-nowrap min-w-[180px]">
+            <Link href="/results" className="flex-1 sm:flex-none">
+              <button className="sleek-button w-full sm:w-auto px-3 sm:px-7 py-3.5 rounded-xl font-medium text-xs sm:text-sm whitespace-nowrap sm:min-w-[180px]">
                 Testimonials & Proof
               </button>
             </Link>
