@@ -36,7 +36,7 @@ export default function ResultsPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-24 pb-14 px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#32005C]/20 via-transparent to-transparent pointer-events-none" />
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-pulse" />
@@ -48,13 +48,13 @@ export default function ResultsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white relative">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-white relative leading-[1.2]">
               Results & Systems from OTAI
               <div className="absolute -inset-4 bg-primary/20 blur-3xl -z-10" />
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-[1.6]">
               Our results show what happens when you stop talking about AI automation and start using it. Save time, grow revenue, and dominate your market with intelligent systems that work for you 24/7.
             </p>
           </motion.div>
@@ -63,12 +63,12 @@ export default function ResultsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center mb-16"
+            className="flex justify-center mb-12"
           >
             <div className="inline-flex bg-card/50 backdrop-blur-sm border border-primary/30 rounded-xl p-1.5 gap-1">
               <button
                 onClick={() => setActiveTab('all')}
-                className={`px-8 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-7 py-2.5 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'all'
                     ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/50'
                     : 'text-muted-foreground hover:text-foreground'

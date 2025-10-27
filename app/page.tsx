@@ -107,25 +107,25 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
+      <section className="relative pt-24 pb-14 px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 particle-bg opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
         <div className="container mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Badge className="mb-6 bg-primary/10 text-primary border-primary/30">
+              <Badge className="mb-4 bg-primary/10 text-primary border-primary/30">
                 Leverage the Power of AI
               </Badge>
-              <h1 className="font-bold mb-6 leading-tight">
-                <div className="text-4xl md:text-5xl lg:text-6xl mb-2 text-white">Custom AI Solutions</div>
-                <div className="text-3xl md:text-4xl lg:text-5xl" style={{ color: '#a855f7' }}>For Ambitious Businesses</div>
+              <h1 className="font-bold mb-5 leading-[1.15]">
+                <div className="text-3xl md:text-4xl lg:text-5xl mb-2 text-white">Custom AI Solutions</div>
+                <div className="text-2xl md:text-3xl lg:text-4xl" style={{ color: '#a855f7' }}>For Ambitious Businesses</div>
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-6 leading-[1.6]">
                 Reality check: AI is no longer the future of business it's a necessity now! If you don't adapt you will fall behind.
               </p>
 
@@ -138,6 +138,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              className="scale-90"
             >
               <VideoCard
                 poster="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200"
@@ -149,22 +150,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="py-20 px-4">
+      <section id="services" className="py-14 px-6 lg:px-8">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-16"
+            className="mb-12"
           >
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-10 items-center">
               <div>
-                <h2 className="font-bold mb-6 leading-tight">
-                  <div className="text-4xl md:text-5xl lg:text-6xl mb-2 text-primary">What we do:</div>
-                  <div className="text-3xl md:text-4xl lg:text-5xl text-foreground">Custom AI Solutions</div>
+                <h2 className="font-bold mb-5 leading-[1.15]">
+                  <div className="text-3xl md:text-4xl lg:text-5xl mb-2 text-primary">What we do:</div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl text-foreground">Custom AI Solutions</div>
                 </h2>
-                <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                <div className="space-y-5 text-base text-muted-foreground leading-[1.6]">
                   <p>
                     Unlike other AI agencies, consultants, or software companies, we understand one simple truth... no two businesses are the same.
                   </p>
@@ -182,6 +183,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
+                className="scale-90"
               >
                 <VideoCard
                   poster={services[0].vsl.poster}
@@ -197,21 +199,21 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-16"
+            className="flex flex-col sm:flex-row gap-5 justify-center items-center mt-12"
           >
             <Link href="/coming-soon">
-              <button className="sleek-button px-8 py-4 rounded-xl font-medium text-sm whitespace-nowrap min-w-[200px]">
+              <button className="sleek-button px-7 py-3.5 rounded-xl font-medium text-sm whitespace-nowrap min-w-[180px]">
                 In-Depth Data
               </button>
             </Link>
             <button
               onClick={() => scrollToSection('book')}
-              className="px-8 py-4 bg-primary text-primary-foreground rounded-xl font-medium text-sm whitespace-nowrap min-w-[200px] hover:bg-primary/90 transition-all glow-accent-sm"
+              className="px-7 py-3.5 bg-primary text-primary-foreground rounded-xl font-medium text-sm whitespace-nowrap min-w-[180px] hover:bg-primary/90 transition-all glow-accent-sm"
             >
               Book a Consult
             </button>
             <Link href="/results">
-              <button className="sleek-button px-8 py-4 rounded-xl font-medium text-sm whitespace-nowrap min-w-[200px]">
+              <button className="sleek-button px-7 py-3.5 rounded-xl font-medium text-sm whitespace-nowrap min-w-[180px]">
                 Testimonials & Proof
               </button>
             </Link>
@@ -219,21 +221,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="process" className="py-20 px-4 bg-card/30 backdrop-blur-sm">
+      <section id="process" className="py-14 px-6 lg:px-8 bg-card/30 backdrop-blur-sm">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Our Intelligent, Impact-Driven Process</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white leading-[1.2]">Our Intelligent, Impact-Driven Process</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-[1.6]">
               We consult, engineer, and optimize AI solutions that integrate seamlessly, built to perform, adapt, and scale without limits.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 max-w-7xl mx-auto px-4">
             {processSteps.map((step, index) => (
               <motion.div
                 key={index}
@@ -241,18 +243,18 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card rounded-xl p-8"
+                className="glass-card rounded-xl p-6"
               >
-                <div className="mb-6">
-                  <div className="text-sm font-semibold text-primary mb-3">
+                <div className="mb-5">
+                  <div className="text-sm font-semibold text-primary mb-2">
                     Step {index + 1}
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">{step.title}</h3>
-                  <p className="text-base text-muted-foreground leading-relaxed">
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 text-foreground leading-[1.2]">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-[1.6]">
                     {step.description}
                   </p>
                 </div>
-                <div className="mt-8">
+                <div className="mt-6 scale-90">
                   {getAnimationComponent(step.animationType)}
                 </div>
               </motion.div>
@@ -261,21 +263,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="pricing" className="py-20 px-4">
+      <section id="pricing" className="py-14 px-6 lg:px-8">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Pricing</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white leading-[1.2]">Pricing</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-[1.6]">
               Choose the plan that fits your business. Scale as you grow.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
             <PricingCard
               label="Starter"
               description="Perfect for any business size wanting a single AI automation."
@@ -320,10 +322,10 @@ export default function Home() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto"
           >
-            <h3 className="text-2xl font-bold mb-6 text-center text-white">
+            <h3 className="text-xl font-bold mb-5 text-center text-white leading-[1.2]">
               Frequently Asked Questions
             </h3>
-            <Accordion type="single" collapsible className="space-y-4">
+            <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, index) => (
                 <AccordionItem
                   key={index}
@@ -333,7 +335,7 @@ export default function Home() {
                   <AccordionTrigger className="text-left hover:text-primary">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-relaxed">
+                  <AccordionContent className="text-muted-foreground leading-[1.6]">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -343,18 +345,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="book" className="py-20 px-4 bg-card/30 backdrop-blur-sm">
+      <section id="book" className="py-14 px-6 lg:px-8 bg-card/30 backdrop-blur-sm">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-10"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white leading-[1.2]">
               Ready to transcend your business?
             </h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-[1.6]">
               Book a free consult with OTAI's CEO. You'll analyze your workflow, identify opportunities, and show you exactly how AI can scale your operations.
             </p>
           </motion.div>
@@ -365,13 +367,13 @@ export default function Home() {
             viewport={{ once: true }}
             className="max-w-6xl mx-auto"
           >
-            <div className="bg-card border border-primary/30 rounded-lg p-8 glow-accent-sm">
+            <div className="bg-card border border-primary/30 rounded-lg p-6 glow-accent-sm">
               <div className="rounded-lg overflow-hidden">
                 <iframe
                   src="https://cal.com/otai-systems/30min-professional"
                   style={{
                     width: '100%',
-                    height: '700px',
+                    height: '650px',
                     border: 'none'
                   }}
                 />
