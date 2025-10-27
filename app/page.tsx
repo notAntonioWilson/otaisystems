@@ -187,7 +187,7 @@ export default function Home() {
             </Link>
             <button
               onClick={() => scrollToSection('book')}
-              className="sleek-button px-8 py-4 rounded-xl font-medium text-sm whitespace-nowrap min-w-[200px]"
+              className="px-8 py-4 bg-primary text-primary-foreground rounded-xl font-medium text-sm whitespace-nowrap min-w-[200px] hover:bg-primary/90 transition-all glow-accent-sm"
             >
               Book a Consult
             </button>
