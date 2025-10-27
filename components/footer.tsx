@@ -36,12 +36,12 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
             <Link href="/" className="flex items-center gap-2 mb-6 group">
-              <div className="w-10 h-10 relative">
+              <div className="w-7 h-7 relative">
                 <Image
                   src="/images/logo.png"
                   alt="OTAI Systems Logo"
-                  width={40}
-                  height={40}
+                  width={28}
+                  height={28}
                   className="object-contain brightness-0 invert"
                 />
               </div>
