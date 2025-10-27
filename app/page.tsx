@@ -9,6 +9,10 @@ import { TestimonialCard } from '@/components/testimonial-card';
 import { PricingCard } from '@/components/pricing-card';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { RadarSweep } from '@/components/radar-sweep';
+import { CodeEditorAnimation } from '@/components/code-editor-animation';
+import { EnergyTransfer } from '@/components/energy-transfer';
+import { GrowthChart } from '@/components/growth-chart';
 import { services } from '@/content/services';
 import { proofs } from '@/content/proof';
 import Link from 'next/link';
@@ -31,25 +35,25 @@ export default function Home() {
       step: 'One',
       title: 'Workflow Analysis',
       description: 'We consult your systems, uncover inefficiencies, and pinpoint high-ROI opportunities for AI automation.',
-      checks: ['System check', 'Process check', 'Speed check', 'Manual work', 'Repetitive task']
+      animation: <RadarSweep />
     },
     {
       step: 'Two',
       title: 'Create AI System',
       description: 'We architect and train your custom AI solutions to optimize your workflows and drive measurable growth.',
-      checks: ['Our solution', 'Your stack', 'Integration ready', 'Custom build']
+      animation: <CodeEditorAnimation />
     },
     {
       step: 'Three',
       title: 'Deploy Power',
       description: 'We embed the automation into your company, integrate or fully replace your systems, forcing advancement within your organization.',
-      checks: ['Chatbot system', 'Workflow system', 'Sales system', 'All systems active']
+      animation: <EnergyTransfer />
     },
     {
       step: 'Four',
       title: 'Evolve Relentlessly',
       description: 'We monitor, refine, and evolve your automations, analyzing performance data to ensure long-term efficiency and compound growth.',
-      checks: ['Performance tracking', 'Continuous updates', 'System optimization', 'Growth analytics']
+      animation: <GrowthChart />
     },
   ];
 
@@ -224,7 +228,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="glass-card rounded-xl p-8"
               >
-                <div className="mb-8">
+                <div className="mb-6">
                   <div className="text-sm font-semibold text-primary mb-3">
                     Step {index + 1}
                   </div>
@@ -233,20 +237,8 @@ export default function Home() {
                     {step.description}
                   </p>
                 </div>
-                <div className="space-y-3">
-                  {step.checks.map((check, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: index * 0.1 + i * 0.05 }}
-                      className="flex items-center gap-3 p-3 rounded-lg bg-black/30 border border-primary/10 hover:border-primary/30 transition-all"
-                    >
-                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
-                      <span className="text-sm text-foreground/90">{check}</span>
-                    </motion.div>
-                  ))}
+                <div className="mt-8">
+                  {step.animation}
                 </div>
               </motion.div>
             ))}
