@@ -29,8 +29,10 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t border-primary/10 bg-card/30 backdrop-blur-sm">
-      <div className="container mx-auto px-4 py-16">
+    <footer className="relative border-t border-primary/10 bg-card/30 backdrop-blur-sm overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-[#32005C]/20 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
+      <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
             <Link href="/" className="flex items-center gap-2 mb-6 group">

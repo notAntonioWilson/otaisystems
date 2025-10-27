@@ -89,7 +89,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <section className="relative pt-32 pb-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-30" />
+        <div className="absolute inset-0 particle-bg opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
         <div className="container mx-auto relative z-10">
@@ -222,7 +222,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-lg p-8 hover:border-primary/40 transition-all hover:glow-accent-sm"
+                className="glass-card rounded-xl p-8"
               >
                 <div className="mb-6">
                   <div className="text-sm font-semibold text-primary mb-3">
@@ -233,11 +233,11 @@ export default function Home() {
                     {step.description}
                   </p>
                 </div>
-                <div className="relative rounded-lg overflow-hidden border border-primary/10">
+                <div className="relative rounded-lg overflow-hidden neon-border">
                   <img
                     src={step.image}
                     alt={step.title}
-                    className="w-full h-[220px] object-cover"
+                    className="w-full h-[220px] object-cover opacity-80"
                   />
                 </div>
               </motion.div>

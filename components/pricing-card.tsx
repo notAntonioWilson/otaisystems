@@ -37,9 +37,9 @@ export function PricingCard({ label, description, features, popular = false }: P
       whileHover={{ y: -8 }}
       className="h-full"
     >
-      <Card
-        className={`p-8 h-full flex flex-col border-border bg-card/50 backdrop-blur-sm transition-all duration-300 ${
-          popular ? 'border-primary glow-accent-sm' : 'hover:border-primary/50'
+      <div
+        className={`glass-card p-8 h-full flex flex-col rounded-xl transition-all duration-300 ${
+          popular ? 'glow-accent-sm' : ''
         }`}
       >
         <div className="mb-6">
@@ -78,7 +78,7 @@ export function PricingCard({ label, description, features, popular = false }: P
             </li>
           ))}
         </ul>
-      </Card>
+      </div>
     </motion.div>
   );
 }
