@@ -35,27 +35,42 @@ export default function Home() {
       step: 'One',
       title: 'Workflow Analysis',
       description: 'We consult your systems, uncover inefficiencies, and pinpoint high-ROI opportunities for AI automation.',
-      animation: <RadarSweep />
+      animationType: 'radar'
     },
     {
       step: 'Two',
       title: 'Create AI System',
       description: 'We architect and train your custom AI solutions to optimize your workflows and drive measurable growth.',
-      animation: <CodeEditorAnimation />
+      animationType: 'code'
     },
     {
       step: 'Three',
       title: 'Deploy Power',
       description: 'We embed the automation into your company, integrate or fully replace your systems, forcing advancement within your organization.',
-      animation: <EnergyTransfer />
+      animationType: 'energy'
     },
     {
       step: 'Four',
       title: 'Evolve Relentlessly',
       description: 'We monitor, refine, and evolve your automations, analyzing performance data to ensure long-term efficiency and compound growth.',
-      animation: <GrowthChart />
+      animationType: 'growth'
     },
   ];
+
+  const getAnimationComponent = (type: string) => {
+    switch (type) {
+      case 'radar':
+        return <RadarSweep />;
+      case 'code':
+        return <CodeEditorAnimation />;
+      case 'energy':
+        return <EnergyTransfer />;
+      case 'growth':
+        return <GrowthChart />;
+      default:
+        return null;
+    }
+  };
 
   const faqs = [
     {
@@ -238,7 +253,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="mt-8">
-                  {step.animation}
+                  {getAnimationComponent(step.animationType)}
                 </div>
               </motion.div>
             ))}
