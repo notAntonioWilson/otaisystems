@@ -353,7 +353,7 @@ export default function Home() {
             <div className="bg-card border border-primary/30 rounded-lg p-8 glow-accent-sm">
               <div className="rounded-lg overflow-hidden">
                 <iframe
-                  src="https://cal.com/antonio-wilson-qfqybv/30min-professional"
+                  src="https://cal.com/otai-systems/30min-professional"
                   style={{
                     width: '100%',
                     height: '700px',

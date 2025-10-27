@@ -94,7 +94,7 @@ export function NavBar() {
               onClick={() => scrollToSection('book')}
               className="px-6 py-2 text-base"
             >
-              Contact
+              Book a call
             </DripButton>
           </div>
         </div>
