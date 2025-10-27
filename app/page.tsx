@@ -31,25 +31,25 @@ export default function Home() {
       step: 'One',
       title: 'Workflow Analysis',
       description: 'We consult your systems, uncover inefficiencies, and pinpoint high-ROI opportunities for AI automation.',
-      image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
+      checks: ['System check', 'Process check', 'Speed check', 'Manual work', 'Repetitive task']
     },
     {
       step: 'Two',
       title: 'Create AI System',
       description: 'We architect and train your custom AI solutions to optimize your workflows and drive measurable growth.',
-      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
+      checks: ['Our solution', 'Your stack', 'Integration ready', 'Custom build']
     },
     {
       step: 'Three',
       title: 'Deploy Power',
       description: 'We embed the automation into your company, integrate or fully replace your systems, forcing advancement within your organization.',
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
+      checks: ['Chatbot system', 'Workflow system', 'Sales system', 'All systems active']
     },
     {
       step: 'Four',
       title: 'Evolve Relentlessly',
       description: 'We monitor, refine, and evolve your automations, analyzing performance data to ensure long-term efficiency and compound growth.',
-      image: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=800',
+      checks: ['Performance tracking', 'Continuous updates', 'System optimization', 'Growth analytics']
     },
   ];
 
@@ -181,18 +181,18 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-16"
           >
             <Link href="/coming-soon">
-              <button className="px-8 py-4 bg-card border border-primary/30 rounded-lg font-semibold hover:bg-primary/10 transition-all hover:border-primary/50 text-base whitespace-nowrap min-w-[200px]">
+              <button className="sleek-button px-8 py-4 rounded-xl font-medium text-sm whitespace-nowrap min-w-[200px]">
                 In-Depth Data
               </button>
             </Link>
             <button
               onClick={() => scrollToSection('book')}
-              className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all text-base whitespace-nowrap min-w-[200px] glow-accent-sm"
+              className="sleek-button px-8 py-4 rounded-xl font-medium text-sm whitespace-nowrap min-w-[200px]"
             >
               Book a Consult
             </button>
             <Link href="/proof">
-              <button className="px-8 py-4 bg-card border border-primary/30 rounded-lg font-semibold hover:bg-primary/10 transition-all hover:border-primary/50 text-base whitespace-nowrap min-w-[200px]">
+              <button className="sleek-button px-8 py-4 rounded-xl font-medium text-sm whitespace-nowrap min-w-[200px]">
                 Testimonials & Proof
               </button>
             </Link>
@@ -208,7 +208,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Our Intelligent, Impact-Driven Process</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Our Intelligent, Impact-Driven Process</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               We consult, engineer, and optimize AI solutions that integrate seamlessly, built to perform, adapt, and scale without limits.
             </p>
@@ -224,7 +224,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="glass-card rounded-xl p-8"
               >
-                <div className="mb-6">
+                <div className="mb-8">
                   <div className="text-sm font-semibold text-primary mb-3">
                     Step {index + 1}
                   </div>
@@ -233,12 +233,20 @@ export default function Home() {
                     {step.description}
                   </p>
                 </div>
-                <div className="relative rounded-lg overflow-hidden neon-border">
-                  <img
-                    src={step.image}
-                    alt={step.title}
-                    className="w-full h-[220px] object-cover opacity-80"
-                  />
+                <div className="space-y-3">
+                  {step.checks.map((check, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: index * 0.1 + i * 0.05 }}
+                      className="flex items-center gap-3 p-3 rounded-lg bg-black/30 border border-primary/10 hover:border-primary/30 transition-all"
+                    >
+                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                      <span className="text-sm text-foreground/90">{check}</span>
+                    </motion.div>
+                  ))}
                 </div>
               </motion.div>
             ))}
@@ -254,7 +262,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Pricing</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Pricing</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Choose the plan that fits your business. Scale as you grow.
             </p>
@@ -305,7 +313,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto"
           >
-            <h3 className="text-2xl font-bold mb-6 text-center text-primary">
+            <h3 className="text-2xl font-bold mb-6 text-center text-white">
               Frequently Asked Questions
             </h3>
             <Accordion type="single" collapsible className="space-y-4">
