@@ -235,7 +235,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 max-w-7xl mx-auto px-2 sm:px-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 max-w-7xl mx-auto px-1 sm:px-2 md:px-4">
             {processSteps.map((step, index) => (
               <motion.div
                 key={index}
@@ -243,19 +243,19 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card rounded-xl p-4 sm:p-6"
+                className="glass-card rounded-lg sm:rounded-xl p-2.5 sm:p-4 md:p-6"
               >
-                <div className="mb-3 sm:mb-5">
-                  <div className="text-xs sm:text-sm font-semibold text-primary mb-1 sm:mb-2">
+                <div className="mb-2 sm:mb-3 md:mb-5">
+                  <div className="text-[10px] sm:text-xs md:text-sm font-semibold text-primary mb-0.5 sm:mb-1 md:mb-2">
                     Step {index + 1}
                   </div>
-                  <h3 className="text-base sm:text-xl md:text-2xl font-bold mb-1.5 sm:mb-3 text-foreground leading-[1.2]">{step.title}</h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-[1.5] sm:leading-[1.6]">
+                  <h3 className="text-xs sm:text-base md:text-xl lg:text-2xl font-bold mb-1 sm:mb-1.5 md:mb-3 text-foreground leading-[1.2]">{step.title}</h3>
+                  <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground leading-[1.4] sm:leading-[1.5] md:leading-[1.6]">
                     {step.description}
                   </p>
                 </div>
-                <div className="mt-3 sm:mt-6 h-32 sm:h-auto flex items-center justify-center">
-                  <div className="scale-[0.6] sm:scale-90 w-full">
+                <div className="mt-2 sm:mt-3 md:mt-6 h-24 sm:h-32 md:h-auto flex items-center justify-center overflow-hidden">
+                  <div className="scale-[0.5] sm:scale-[0.6] md:scale-90 w-full">
                     {getAnimationComponent(step.animationType)}
                   </div>
                 </div>
