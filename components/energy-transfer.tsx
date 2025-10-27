@@ -4,121 +4,125 @@ import { motion } from 'framer-motion';
 
 export function EnergyTransfer() {
   return (
-    <div className="relative w-full h-64 flex items-center justify-center px-4">
-      <div className="relative w-full max-w-2xl h-full flex items-center justify-between">
-        <motion.div
-          className="relative z-10 px-6 py-8 rounded-xl border border-white/20 bg-black/40 backdrop-blur-sm"
-          style={{
-            boxShadow: '0 0 30px rgba(155, 92, 246, 0.2)',
-          }}
-        >
-          <div className="text-white font-semibold text-lg tracking-wide whitespace-nowrap">
-            OTAI System
+    <div className="relative w-full h-64 flex items-center justify-center p-4">
+      <div className="w-full max-w-lg bg-black/90 backdrop-blur-sm border border-white/10 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent rounded-2xl pointer-events-none" />
+
+        <div className="relative flex items-center justify-between gap-8">
+          <div className="relative z-10 flex-1">
+            <div className="px-4 py-3 rounded-xl bg-gradient-to-br from-gray-900/50 to-black/50 border border-white/10 backdrop-blur-sm">
+              <div className="text-white font-semibold text-sm tracking-wide text-center">
+                OTAI System
+              </div>
+              <div className="text-purple-400 text-[10px] text-center mt-1 font-mono">
+                Active
+              </div>
+            </div>
           </div>
-        </motion.div>
 
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <svg
-            viewBox="0 0 400 100"
-            className="w-full h-full"
-            style={{ maxHeight: '100px' }}
-          >
-            <defs>
-              <linearGradient id="energyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#9B5CF6" stopOpacity="0" />
-                <stop offset="50%" stopColor="#9B5CF6" stopOpacity="1" />
-                <stop offset="100%" stopColor="#ffffff" stopOpacity="0.8" />
-              </linearGradient>
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none px-8">
+            <svg
+              viewBox="0 0 200 60"
+              className="w-full h-full"
+              style={{ maxHeight: '60px' }}
+            >
+              <defs>
+                <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#9B5CF6" stopOpacity="0.3" />
+                  <stop offset="50%" stopColor="#9B5CF6" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#ffffff" stopOpacity="0.9" />
+                </linearGradient>
 
-              <filter id="energyGlow">
-                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                <feMerge>
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
+                <filter id="flowGlow">
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
 
-            <motion.circle
-              cx="50"
-              cy="50"
-              r="8"
-              fill="#9B5CF6"
-              filter="url(#energyGlow)"
-              initial={{ cx: 50 }}
-              animate={{ cx: [50, 350] }}
-              transition={{
-                duration: 2.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                repeatDelay: 0.5
-              }}
-            />
-
-            <motion.line
-              x1="80"
-              y1="50"
-              x2="320"
-              y2="50"
-              stroke="url(#energyGradient)"
-              strokeWidth="3"
-              filter="url(#energyGlow)"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{
-                pathLength: [0, 1, 0],
-                opacity: [0, 1, 0]
-              }}
-              transition={{
-                duration: 2.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                repeatDelay: 0.5
-              }}
-            />
-
-            {[0, 1, 2, 3, 4].map((i) => (
-              <motion.circle
-                key={i}
-                r="2"
-                fill="#9B5CF6"
-                initial={{ cx: 50, cy: 50, opacity: 0 }}
-                animate={{
-                  cx: [50, 350],
-                  cy: [50, 50 + (Math.random() - 0.5) * 20],
-                  opacity: [0, 0.8, 0]
-                }}
+              <motion.line
+                x1="20"
+                y1="30"
+                x2="180"
+                y2="30"
+                stroke="url(#flowGradient)"
+                strokeWidth="2"
+                filter="url(#flowGlow)"
+                strokeDasharray="100 100"
+                initial={{ strokeDashoffset: 200 }}
+                animate={{ strokeDashoffset: 0 }}
                 transition={{
-                  duration: 2.5,
+                  duration: 2,
                   repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: i * 0.15,
-                  repeatDelay: 0.5
+                  ease: "linear"
                 }}
               />
-            ))}
-          </svg>
+
+              {[0, 1, 2].map((i) => (
+                <motion.circle
+                  key={i}
+                  r="3"
+                  fill="#9B5CF6"
+                  filter="url(#flowGlow)"
+                  initial={{ cx: 20, cy: 30, opacity: 0 }}
+                  animate={{
+                    cx: [20, 180],
+                    opacity: [0, 1, 0.8, 0]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: i * 0.4,
+                    ease: "easeInOut"
+                  }}
+                />
+              ))}
+
+              <motion.polygon
+                points="175,30 165,25 165,35"
+                fill="#9B5CF6"
+                filter="url(#flowGlow)"
+                animate={{ opacity: [0.5, 1, 0.5] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              />
+            </svg>
+          </div>
+
+          <motion.div
+            className="relative z-10 flex-1"
+            animate={{
+              filter: [
+                'drop-shadow(0 0 10px rgba(155, 92, 246, 0.3))',
+                'drop-shadow(0 0 25px rgba(155, 92, 246, 0.6))',
+                'drop-shadow(0 0 10px rgba(155, 92, 246, 0.3))',
+              ],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
+            <div className="px-4 py-3 rounded-xl bg-gradient-to-br from-gray-900/50 to-black/50 border border-purple-500/30 backdrop-blur-sm">
+              <div className="text-white font-semibold text-sm tracking-wide text-center">
+                Your Company
+              </div>
+              <motion.div
+                className="text-purple-400 text-[10px] text-center mt-1 font-mono"
+                animate={{ opacity: [0.5, 1, 0.5] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                Deploying...
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
 
-        <motion.div
-          className="relative z-10 px-6 py-8 rounded-xl border border-white/20 bg-black/40 backdrop-blur-sm"
-          animate={{
-            boxShadow: [
-              '0 0 30px rgba(155, 92, 246, 0.2)',
-              '0 0 50px rgba(155, 92, 246, 0.6)',
-              '0 0 30px rgba(155, 92, 246, 0.2)',
-            ],
-          }}
-          transition={{
-            duration: 2.5,
-            repeat: Infinity,
-            ease: "easeInOut",
-            repeatDelay: 0.5
-          }}
-        >
-          <div className="text-white font-semibold text-lg tracking-wide whitespace-nowrap">
-            Your Company
-          </div>
-        </motion.div>
+        <div className="absolute bottom-3 left-6 text-[10px] text-gray-600 font-mono">
+          System integration in progress
+        </div>
       </div>
     </div>
   );
