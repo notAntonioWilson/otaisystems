@@ -96,7 +96,7 @@ export function Footer() {
                 Contact
               </button>
               <Link
-                href="/proof"
+                href="/results"
                 className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
               >
                 Testimonial & Proof

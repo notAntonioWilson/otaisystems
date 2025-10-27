@@ -78,7 +78,7 @@ export function NavBar() {
               Process
             </button>
             <Link
-              href="/proof"
+              href="/results"
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
               Proof

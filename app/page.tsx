@@ -210,7 +210,7 @@ export default function Home() {
             >
               Book a Consult
             </button>
-            <Link href="/proof">
+            <Link href="/results">
               <button className="sleek-button px-8 py-4 rounded-xl font-medium text-sm whitespace-nowrap min-w-[200px]">
                 Testimonials & Proof
               </button>
