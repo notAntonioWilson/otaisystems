@@ -1,6 +1,3 @@
-import { NavBar } from '@/components/nav-bar';
-import { Footer } from '@/components/footer';
-
 export default function TermsPage() {
   const today = new Date().toLocaleDateString('en-US', {
     year: 'numeric',
@@ -9,9 +6,7 @@ export default function TermsPage() {
   });
 
   return (
-    <>
-      <NavBar />
-      <main className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-32 max-w-4xl">
           <h1 className="text-5xl font-bold text-white mb-8">Terms of Service</h1>
 
@@ -101,8 +96,6 @@ export default function TermsPage() {
             </section>
           </div>
         </div>
-      </main>
-      <Footer />
-    </>
+      </div>
   );
 }
