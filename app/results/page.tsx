@@ -20,10 +20,13 @@ export default function ResultsPage() {
     ratio: i % 2 === 0 ? '16:9' : '9:16',
   }));
 
-  const statistics = Array.from({ length: 25 }, (_, i) => ({
-    id: i + 1,
-    size: i % 4 === 0 ? 'large' : i % 4 === 1 ? 'tall' : 'square',
-  }));
+  const statistics = [
+    {
+      id: 1,
+      image: '/images/IMAGE 2025-10-29 20:53:16.jpg',
+      size: 'square',
+    },
+  ];
 
   const builds = Array.from({ length: 25 }, (_, i) => ({
     id: i + 1,
@@ -240,40 +243,30 @@ export default function ResultsPage() {
                   <motion.div
                     className="flex gap-4"
                     animate={{
-                      x: [0, -2000],
+                      x: [0, -1000],
                     }}
                     transition={{
                       x: {
                         repeat: Infinity,
                         repeatType: "loop",
-                        duration: 60,
+                        duration: 30,
                         ease: "linear",
                       },
                     }}
                   >
-                    {[...statistics, ...statistics].map((item, index) => (
+                    {[...statistics, ...statistics, ...statistics, ...statistics].map((item, index) => (
                       <motion.div
                         key={`stat-${index}`}
                         whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(139, 92, 246, 0.3)' }}
-                        className={`flex-shrink-0 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl overflow-hidden group cursor-pointer ${
-                          item.size === 'large'
-                            ? 'w-96 h-64'
-                            : item.size === 'tall'
-                            ? 'w-64 h-80'
-                            : 'w-64 h-64'
-                        }`}
+                        className="flex-shrink-0 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl overflow-hidden group cursor-pointer w-80 h-80"
                       >
-                        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 to-transparent relative p-6">
-                          <TrendingUp className="w-12 h-12 text-primary mb-4" />
-                          <h3 className="text-3xl font-bold text-white mb-2">
-                            {Math.floor(Math.random() * 300 + 50)}%
-                          </h3>
-                          <p className="text-sm text-muted-foreground text-center">
-                            Statistical Proof {item.id}
-                          </p>
-                          <p className="text-xs text-muted-foreground mt-2 text-center">
-                            Revenue Growth / Time Saved / Efficiency Increase
-                          </p>
+                        <div className="w-full h-full relative">
+                          <img
+                            src={item.image}
+                            alt="Statistical proof"
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                         </div>
                       </motion.div>
                     ))}
