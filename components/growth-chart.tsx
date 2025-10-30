@@ -29,17 +29,17 @@ export function GrowthChart() {
 
   return (
     <div className="relative w-full h-64 flex items-center justify-center p-4">
-      <div className="w-full max-w-lg bg-black/90 backdrop-blur-sm border border-white/10 rounded-2xl p-5 shadow-2xl relative overflow-hidden">
+      <div className="w-full max-w-lg bg-black/90 backdrop-blur-sm border border-white/10 rounded-2xl p-4 md:p-5 shadow-2xl relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent rounded-2xl pointer-events-none" />
 
-        <div className="flex items-center justify-between mb-3">
-          <div className="text-xs text-white font-semibold tracking-wide">Performance Dashboard</div>
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-3 gap-2">
+          <div className="text-[10px] md:text-xs text-white font-semibold tracking-wide">Performance Dashboard</div>
           <div className="flex gap-1">
-            {tabs.map((tab, i) => (
+            {tabs.slice(0, 2).map((tab, i) => (
               <motion.button
                 key={tab}
                 onClick={() => setActiveTab(i)}
-                className="px-2 py-1 text-[9px] rounded-md border transition-all font-medium"
+                className="px-2 py-1 text-[8px] md:text-[9px] rounded-md border transition-all font-medium"
                 animate={{
                   borderColor: activeTab === i ? '#9B5CF6' : '#333',
                   backgroundColor: activeTab === i ? 'rgba(155, 92, 246, 0.15)' : 'rgba(0, 0, 0, 0.3)',
@@ -54,6 +54,27 @@ export function GrowthChart() {
                 {tab}
               </motion.button>
             ))}
+            <div className="hidden md:flex gap-1">
+              {tabs.slice(2).map((tab, i) => (
+                <motion.button
+                  key={tab}
+                  onClick={() => setActiveTab(i + 2)}
+                  className="px-2 py-1 text-[9px] rounded-md border transition-all font-medium"
+                  animate={{
+                    borderColor: activeTab === i + 2 ? '#9B5CF6' : '#333',
+                    backgroundColor: activeTab === i + 2 ? 'rgba(155, 92, 246, 0.15)' : 'rgba(0, 0, 0, 0.3)',
+                    color: activeTab === i + 2 ? '#9B5CF6' : '#666',
+                  }}
+                  whileHover={{
+                    borderColor: '#9B5CF6',
+                    boxShadow: '0 0 12px rgba(155, 92, 246, 0.3)',
+                  }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {tab}
+                </motion.button>
+              ))}
+            </div>
           </div>
         </div>
 
