@@ -26,6 +26,36 @@ export default function ResultsPage() {
       image: '/images/IMAGE 2025-10-29 20:53:16.jpg',
       size: 'square',
     },
+    {
+      id: 2,
+      image: '/images/IMAGE 2025-10-29 20:55:45.jpg',
+      size: 'square',
+    },
+    {
+      id: 3,
+      image: '/images/IMAGE 2025-10-29 21:39:03.jpg',
+      size: 'square',
+    },
+    {
+      id: 4,
+      image: '/images/IMAGE 2025-10-29 21:39:14.jpg',
+      size: 'square',
+    },
+    {
+      id: 5,
+      image: '/images/IMAGE 2025-10-29 21:39:25.jpg',
+      size: 'square',
+    },
+    {
+      id: 6,
+      image: '/images/IMAGE 2025-10-29 21:39:29.jpg',
+      size: 'square',
+    },
+    {
+      id: 7,
+      image: '/images/IMAGE 2025-10-29 21:39:37.jpg',
+      size: 'square',
+    },
   ];
 
   const builds = Array.from({ length: 25 }, (_, i) => ({
