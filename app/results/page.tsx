@@ -24,27 +24,32 @@ export default function ResultsPage() {
     {
       id: 1,
       image: '/images/IMAGE 2025-10-29 21:39:03.jpg',
-      size: 'square',
+      aspectRatio: 1280 / 205,
+      height: 'short',
     },
     {
       id: 2,
       image: '/images/IMAGE 2025-10-29 21:39:37.jpg',
-      size: 'square',
+      aspectRatio: 1280 / 322,
+      height: 'short',
     },
     {
       id: 3,
       image: '/images/IMAGE 2025-10-29 21:39:29.jpg',
-      size: 'square',
+      aspectRatio: 1280 / 541,
+      height: 'medium',
     },
     {
       id: 4,
       image: '/images/IMAGE 2025-10-29 21:39:14.jpg',
-      size: 'square',
+      aspectRatio: 1280 / 549,
+      height: 'medium',
     },
     {
       id: 5,
       image: '/images/IMAGE 2025-10-29 21:39:25.jpg',
-      size: 'square',
+      aspectRatio: 1280 / 301,
+      height: 'short',
     },
   ];
 
@@ -259,37 +264,69 @@ export default function ResultsPage() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden h-[600px]">
                   <motion.div
-                    className="flex gap-4"
+                    className="absolute flex flex-col gap-4"
                     animate={{
-                      x: [0, -1000],
+                      x: [0, -3000],
                     }}
                     transition={{
                       x: {
                         repeat: Infinity,
                         repeatType: "loop",
-                        duration: 30,
+                        duration: 90,
                         ease: "linear",
                       },
                     }}
                   >
-                    {[...statistics, ...statistics, ...statistics, ...statistics].map((item, index) => (
-                      <motion.div
-                        key={`stat-${index}`}
-                        whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(139, 92, 246, 0.3)' }}
-                        className="flex-shrink-0 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl overflow-hidden group cursor-pointer w-80 h-80"
-                      >
-                        <div className="w-full h-full relative">
-                          <img
-                            src={item.image}
-                            alt="Statistical proof"
-                            className="w-full h-full object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </div>
-                      </motion.div>
-                    ))}
+                    <div className="flex gap-4">
+                      {[...statistics, ...statistics, ...statistics].map((item, index) => {
+                        const heightClass = item.height === 'short' ? 'h-48' : item.height === 'medium' ? 'h-80' : 'h-64';
+                        const widthStyle = { width: item.height === 'short' ? '600px' : item.height === 'medium' ? '480px' : '400px' };
+
+                        return (
+                          <motion.div
+                            key={`stat-row1-${index}`}
+                            whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(139, 92, 246, 0.3)' }}
+                            className={`flex-shrink-0 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl overflow-hidden group cursor-pointer ${heightClass}`}
+                            style={widthStyle}
+                          >
+                            <div className="w-full h-full relative">
+                              <img
+                                src={item.image}
+                                alt="Statistical proof"
+                                className="w-full h-full object-cover"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                            </div>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
+                    <div className="flex gap-4">
+                      {[...statistics.slice().reverse(), ...statistics.slice().reverse(), ...statistics.slice().reverse()].map((item, index) => {
+                        const heightClass = item.height === 'short' ? 'h-56' : item.height === 'medium' ? 'h-72' : 'h-64';
+                        const widthStyle = { width: item.height === 'short' ? '560px' : item.height === 'medium' ? '440px' : '400px' };
+
+                        return (
+                          <motion.div
+                            key={`stat-row2-${index}`}
+                            whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(139, 92, 246, 0.3)' }}
+                            className={`flex-shrink-0 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl overflow-hidden group cursor-pointer ${heightClass}`}
+                            style={widthStyle}
+                          >
+                            <div className="w-full h-full relative">
+                              <img
+                                src={item.image}
+                                alt="Statistical proof"
+                                className="w-full h-full object-cover"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                            </div>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
                   </motion.div>
                 </div>
               </motion.div>
