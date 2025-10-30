@@ -329,8 +329,8 @@ export default function Home() {
                     {step.description}
                   </p>
                 </div>
-                <div className="mt-4 md:mt-6 h-40 md:h-auto flex items-center justify-center overflow-hidden">
-                  <div className="scale-75 md:scale-90 w-full">
+                <div className="mt-4 md:mt-6 min-h-[200px] md:h-auto flex items-center justify-center">
+                  <div className="w-full scale-90 md:scale-95">
                     {getAnimationComponent(step.animationType)}
                   </div>
                 </div>
