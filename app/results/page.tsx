@@ -264,70 +264,27 @@ export default function ResultsPage() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="relative overflow-hidden h-[600px]">
-                  <motion.div
-                    className="absolute flex flex-col gap-4"
-                    animate={{
-                      x: [0, -3000],
-                    }}
-                    transition={{
-                      x: {
-                        repeat: Infinity,
-                        repeatType: "loop",
-                        duration: 90,
-                        ease: "linear",
-                      },
-                    }}
-                  >
-                    <div className="flex gap-4">
-                      {[...statistics, ...statistics, ...statistics].map((item, index) => {
-                        const heightClass = item.height === 'short' ? 'h-48' : item.height === 'medium' ? 'h-80' : 'h-64';
-                        const widthStyle = { width: item.height === 'short' ? '600px' : item.height === 'medium' ? '480px' : '400px' };
-
-                        return (
-                          <motion.div
-                            key={`stat-row1-${index}`}
-                            whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(139, 92, 246, 0.3)' }}
-                            className={`flex-shrink-0 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl overflow-hidden group cursor-pointer ${heightClass}`}
-                            style={widthStyle}
-                          >
-                            <div className="w-full h-full relative">
-                              <img
-                                src={item.image}
-                                alt="Statistical proof"
-                                className="w-full h-full object-cover"
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                            </div>
-                          </motion.div>
-                        );
-                      })}
-                    </div>
-                    <div className="flex gap-4">
-                      {[...statistics.slice().reverse(), ...statistics.slice().reverse(), ...statistics.slice().reverse()].map((item, index) => {
-                        const heightClass = item.height === 'short' ? 'h-56' : item.height === 'medium' ? 'h-72' : 'h-64';
-                        const widthStyle = { width: item.height === 'short' ? '560px' : item.height === 'medium' ? '440px' : '400px' };
-
-                        return (
-                          <motion.div
-                            key={`stat-row2-${index}`}
-                            whileHover={{ scale: 1.02, boxShadow: '0 0 30px rgba(139, 92, 246, 0.3)' }}
-                            className={`flex-shrink-0 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl overflow-hidden group cursor-pointer ${heightClass}`}
-                            style={widthStyle}
-                          >
-                            <div className="w-full h-full relative">
-                              <img
-                                src={item.image}
-                                alt="Statistical proof"
-                                className="w-full h-full object-cover"
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                            </div>
-                          </motion.div>
-                        );
-                      })}
-                    </div>
-                  </motion.div>
+                <div className="space-y-6 max-w-6xl mx-auto">
+                  {statistics.map((item, index) => (
+                    <motion.div
+                      key={`stat-${index}`}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      whileHover={{ scale: 1.01, boxShadow: '0 0 30px rgba(139, 92, 246, 0.3)' }}
+                      className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl overflow-hidden group cursor-pointer"
+                    >
+                      <div className="w-full relative">
+                        <img
+                          src={item.image}
+                          alt={`Statistical proof ${index + 1}`}
+                          className="w-full h-auto object-contain"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
               </motion.div>
             )}
