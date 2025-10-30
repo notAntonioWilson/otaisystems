@@ -4,12 +4,15 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 const dataPoints = [
-  { x: 30, y: 110 },
-  { x: 70, y: 95 },
+  { x: 20, y: 120 },
+  { x: 50, y: 105 },
+  { x: 80, y: 85 },
   { x: 110, y: 70 },
-  { x: 150, y: 50 },
-  { x: 190, y: 30 },
-  { x: 230, y: 20 },
+  { x: 140, y: 50 },
+  { x: 170, y: 35 },
+  { x: 200, y: 22 },
+  { x: 230, y: 15 },
+  { x: 250, y: 10 },
 ];
 
 const tabs = ['ROI', 'Time Earned Back', 'Efficiency', 'Accuracy'];
@@ -81,7 +84,7 @@ export function GrowthChart() {
         <div className="grid grid-cols-2 gap-4">
           <div className="relative bg-black/40 rounded-lg p-3 border border-white/5">
             <svg
-              viewBox="0 0 260 130"
+              viewBox="0 0 270 135"
               className="w-full"
               style={{ height: '130px' }}
             >
@@ -109,13 +112,39 @@ export function GrowthChart() {
                 </pattern>
               </defs>
 
-              <rect width="260" height="130" fill="url(#dashboardGrid)" opacity="0.6" />
+              <rect width="270" height="135" fill="url(#dashboardGrid)" opacity="0.6" />
+
+              <line x1="15" y1="125" x2="260" y2="125" stroke="#333" strokeWidth="1" />
+              <line x1="15" y1="10" x2="15" y2="125" stroke="#333" strokeWidth="1" />
+
+              {[0, 1, 2, 3, 4].map((i) => (
+                <g key={i}>
+                  <line
+                    x1="15"
+                    y1={125 - (i * 28.75)}
+                    x2="260"
+                    y2={125 - (i * 28.75)}
+                    stroke="#222"
+                    strokeWidth="0.5"
+                    strokeDasharray="2 2"
+                  />
+                  <text
+                    x="8"
+                    y={128 - (i * 28.75)}
+                    fill="#555"
+                    fontSize="7"
+                    textAnchor="end"
+                  >
+                    {i * 25}%
+                  </text>
+                </g>
+              ))}
 
               <motion.path
-                d={`${pathData} L 230,130 L 30,130 Z`}
+                d={`${pathData} L 250,135 L 20,135 Z`}
                 fill="url(#chartAreaGradient)"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 0.5 }}
+                animate={{ opacity: 0.6 }}
                 transition={{ duration: 1 }}
               />
 
@@ -123,7 +152,7 @@ export function GrowthChart() {
                 d={pathData}
                 fill="none"
                 stroke="url(#chartLineGradient)"
-                strokeWidth="2.5"
+                strokeWidth="3"
                 filter="url(#chartGlow)"
                 initial={{ pathLength: 0 }}
                 animate={{ pathLength: 1 }}
@@ -140,7 +169,7 @@ export function GrowthChart() {
                     filter="url(#chartGlow)"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    transition={{ duration: 0.3, delay: 0.3 + (i * 0.2) }}
+                    transition={{ duration: 0.3, delay: 0.3 + (i * 0.15) }}
                   />
                   <motion.circle
                     cx={point.x}
@@ -155,7 +184,7 @@ export function GrowthChart() {
                     }}
                     transition={{
                       duration: 2,
-                      delay: 0.3 + (i * 0.2),
+                      delay: 0.3 + (i * 0.15),
                       repeat: Infinity,
                       repeatDelay: 1
                     }}
