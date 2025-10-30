@@ -51,6 +51,12 @@ export default function ResultsPage() {
       aspectRatio: 1280 / 301,
       height: 'short',
     },
+    {
+      id: 6,
+      image: '/images/IMAGE 2025-10-29 20:55:45.jpg',
+      aspectRatio: 1280 / 880,
+      height: 'medium',
+    },
   ];
 
   const builds = Array.from({ length: 25 }, (_, i) => ({
@@ -264,84 +270,100 @@ export default function ResultsPage() {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="space-y-8 max-w-7xl mx-auto px-4">
-                  <div className="grid grid-cols-2 gap-8 items-center">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6 }}
-                      whileHover={{ scale: 1.03 }}
-                      className="bg-card/50 backdrop-blur-sm border-2 border-primary/40 rounded-xl overflow-hidden cursor-pointer p-4 shadow-lg shadow-primary/20"
-                    >
-                      <img
-                        src={statistics[0].image}
-                        alt="Statistical proof 1"
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
-                    </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 0.1 }}
-                      whileHover={{ scale: 1.03 }}
-                      className="bg-card/50 backdrop-blur-sm border-2 border-primary/40 rounded-xl overflow-hidden cursor-pointer p-4 shadow-lg shadow-primary/20"
-                    >
-                      <img
-                        src={statistics[1].image}
-                        alt="Statistical proof 2"
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
-                    </motion.div>
-                  </div>
+                <div className="max-w-7xl mx-auto px-4">
+                  <div className="grid grid-cols-3 gap-6">
+                    <div className="space-y-6">
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        whileHover={{ scale: 1.03 }}
+                        className="bg-card/50 backdrop-blur-sm border-2 border-primary/40 rounded-xl overflow-hidden cursor-pointer p-1 shadow-lg shadow-primary/20"
+                      >
+                        <img
+                          src={statistics[0].image}
+                          alt="Statistical proof 1"
+                          className="w-full h-auto object-contain rounded-lg"
+                        />
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                        whileHover={{ scale: 1.03 }}
+                        className="bg-card/50 backdrop-blur-sm border-2 border-primary/40 rounded-xl overflow-hidden cursor-pointer p-1 shadow-lg shadow-primary/20"
+                      >
+                        <img
+                          src={statistics[1].image}
+                          alt="Statistical proof 2"
+                          className="w-full h-auto object-contain rounded-lg"
+                        />
+                      </motion.div>
+                    </div>
 
-                  <div className="grid grid-cols-2 gap-8 items-center">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 0.2 }}
-                      whileHover={{ scale: 1.03 }}
-                      className="bg-card/50 backdrop-blur-sm border-2 border-primary/40 rounded-xl overflow-hidden cursor-pointer p-4 shadow-lg shadow-primary/20"
-                    >
-                      <img
-                        src={statistics[2].image}
-                        alt="Statistical proof 3"
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
-                    </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 0.3 }}
-                      whileHover={{ scale: 1.03 }}
-                      className="bg-card/50 backdrop-blur-sm border-2 border-primary/40 rounded-xl overflow-hidden cursor-pointer p-4 shadow-lg shadow-primary/20"
-                    >
-                      <img
-                        src={statistics[3].image}
-                        alt="Statistical proof 4"
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
-                    </motion.div>
-                  </div>
+                    <div className="space-y-6">
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        whileHover={{ scale: 1.03 }}
+                        className="bg-card/50 backdrop-blur-sm border-2 border-primary/40 rounded-xl overflow-hidden cursor-pointer p-1 shadow-lg shadow-primary/20"
+                      >
+                        <img
+                          src={statistics[2].image}
+                          alt="Statistical proof 3"
+                          className="w-full h-auto object-contain rounded-lg"
+                        />
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        whileHover={{ scale: 1.03 }}
+                        className="bg-card/50 backdrop-blur-sm border-2 border-primary/40 rounded-xl overflow-hidden cursor-pointer p-1 shadow-lg shadow-primary/20"
+                      >
+                        <img
+                          src={statistics[3].image}
+                          alt="Statistical proof 4"
+                          className="w-full h-auto object-contain rounded-lg"
+                        />
+                      </motion.div>
+                    </div>
 
-                  <div className="flex justify-center">
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 0.4 }}
-                      whileHover={{ scale: 1.03 }}
-                      className="bg-card/50 backdrop-blur-sm border-2 border-primary/40 rounded-xl overflow-hidden cursor-pointer p-4 shadow-lg shadow-primary/20 w-1/2"
-                    >
-                      <img
-                        src={statistics[4].image}
-                        alt="Statistical proof 5"
-                        className="w-full h-auto object-contain rounded-lg"
-                      />
-                    </motion.div>
+                    <div className="space-y-6">
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        whileHover={{ scale: 1.03 }}
+                        className="bg-card/50 backdrop-blur-sm border-2 border-primary/40 rounded-xl overflow-hidden cursor-pointer p-1 shadow-lg shadow-primary/20"
+                      >
+                        <img
+                          src={statistics[4].image}
+                          alt="Statistical proof 5"
+                          className="w-full h-auto object-contain rounded-lg"
+                        />
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.5 }}
+                        whileHover={{ scale: 1.03 }}
+                        className="bg-card/50 backdrop-blur-sm border-2 border-primary/40 rounded-xl overflow-hidden cursor-pointer p-1 shadow-lg shadow-primary/20"
+                      >
+                        <img
+                          src={statistics[5].image}
+                          alt="Statistical proof 6"
+                          className="w-full h-auto object-contain rounded-lg"
+                        />
+                      </motion.div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
