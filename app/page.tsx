@@ -216,9 +216,10 @@ export default function Home() {
               className="scale-90"
             >
               <VideoCard
-                poster="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                src="/videos/hero-vsl.mp4"
+                poster=""
+                src="https://www.youtube.com/watch?v=8tQmzy2baXo"
                 alt="OTAI Systems Introduction"
+                isYouTube={true}
               />
             </motion.div>
           </div>
