@@ -261,9 +261,10 @@ export default function Home() {
                 className="scale-90"
               >
                 <VideoCard
-                  poster={services[0].vsl.poster}
-                  src={services[0].vsl.src}
-                  alt={services[0].name}
+                  poster=""
+                  src="https://www.youtube.com/watch?v=2xRRKxVNbB0"
+                  alt="What we do - Custom AI Solutions"
+                  isYouTube={true}
                 />
               </motion.div>
             </div>

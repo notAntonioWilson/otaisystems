@@ -7,9 +7,34 @@ interface VideoCardProps {
   src: string;
   alt?: string;
   className?: string;
+  isYouTube?: boolean;
 }
 
-export function VideoCard({ poster, src, alt = 'Video', className = '' }: VideoCardProps) {
+export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTube = false }: VideoCardProps) {
+  const getYouTubeEmbedUrl = (url: string) => {
+    const videoId = url.split('v=')[1]?.split('&')[0] || url.split('/').pop();
+    return `https://www.youtube.com/embed/${videoId}`;
+  };
+
+  if (isYouTube) {
+    return (
+      <motion.div
+        whileHover={{ scale: 1.02 }}
+        className={`relative overflow-hidden rounded-lg ${className}`}
+      >
+        <div className="relative aspect-video w-full border-2 border-primary/30 rounded-lg overflow-hidden">
+          <iframe
+            src={getYouTubeEmbedUrl(src)}
+            title={alt}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="absolute inset-0 w-full h-full"
+          />
+        </div>
+      </motion.div>
+    );
+  }
+
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
