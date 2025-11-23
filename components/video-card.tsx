@@ -36,11 +36,13 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [ytPlayer, setYtPlayer] = useState<any>(null);
+  const [apiReady, setApiReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const modalVideoRef = useRef<HTMLVideoElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const modalIframeRef = useRef<HTMLIFrameElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const iframeIdRef = useRef(`youtube-player-${Math.random().toString(36).substr(2, 9)}`);
 
   const youtubeId = extractYouTubeId(src);
   const isYouTubeVideo = isYouTube || youtubeId !== null;
@@ -60,22 +62,18 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
       setIsLoading(false);
       setHasError(false);
 
-      const tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+      if (!(window as any).YT) {
+        const tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
 
-      (window as any).onYouTubeIframeAPIReady = () => {
-        if (iframeRef.current) {
-          const player = new (window as any).YT.Player(iframeRef.current, {
-            events: {
-              onReady: (event: any) => {
-                setYtPlayer(event.target);
-              }
-            }
-          });
-        }
-      };
+        (window as any).onYouTubeIframeAPIReady = () => {
+          setApiReady(true);
+        };
+      } else if ((window as any).YT.Player) {
+        setApiReady(true);
+      }
 
       return;
     }
@@ -102,6 +100,28 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
       observer.disconnect();
     };
   }, [isYouTubeVideo]);
+
+  useEffect(() => {
+    if (isYouTubeVideo && apiReady && !ytPlayer) {
+      const initPlayer = () => {
+        try {
+          const player = new (window as any).YT.Player(iframeIdRef.current, {
+            events: {
+              onReady: (event: any) => {
+                setYtPlayer(event.target);
+                event.target.mute();
+              },
+            },
+          });
+        } catch (error) {
+          console.error('Error initializing YouTube player:', error);
+        }
+      };
+
+      const timer = setTimeout(initPlayer, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [isYouTubeVideo, apiReady, ytPlayer]);
 
   const handleVideoLoaded = () => {
     setIsLoading(false);
@@ -152,13 +172,18 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
 
   const toggleMute = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (isYouTubeVideo && ytPlayer) {
-      if (isMuted) {
-        ytPlayer.unMute();
-      } else {
-        ytPlayer.mute();
+    if (isYouTubeVideo && ytPlayer && ytPlayer.unMute) {
+      try {
+        if (isMuted) {
+          ytPlayer.unMute();
+          ytPlayer.setVolume(100);
+        } else {
+          ytPlayer.mute();
+        }
+        setIsMuted(!isMuted);
+      } catch (error) {
+        console.error('Error toggling mute:', error);
       }
-      setIsMuted(!isMuted);
     } else if (videoRef.current) {
       videoRef.current.muted = !isMuted;
       setIsMuted(!isMuted);
@@ -195,15 +220,24 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
         <div className="relative aspect-video w-full border-2 border-primary/30 rounded-lg overflow-hidden bg-black">
           {isYouTubeVideo ? (
             <>
-              <iframe
-                ref={iframeRef}
-                src={`https://www.youtube.com/embed/${embedId}?autoplay=1&mute=1&loop=1&playlist=${embedId}&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&enablejsapi=1`}
-                className="absolute inset-0 w-full h-full pointer-events-none"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                title={alt}
+              <div className="absolute inset-0 w-full h-full">
+                <iframe
+                  id={iframeIdRef.current}
+                  ref={iframeRef}
+                  src={`https://www.youtube.com/embed/${embedId}?autoplay=1&mute=1&loop=1&playlist=${embedId}&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
+                  className="absolute inset-0 w-full h-full pointer-events-none"
+                  style={{ border: 'none' }}
+                  allow="autoplay; encrypted-media"
+                  title={alt}
+                />
+              </div>
+              <div
+                className="absolute inset-0 pointer-events-none z-10"
+                style={{
+                  background: 'linear-gradient(to top, rgba(0,0,0,0) 85%, rgba(0,0,0,0.95) 100%)',
+                  mixBlendMode: 'normal'
+                }}
               />
-              <div className="absolute inset-0 bg-black/0 pointer-events-none z-10" style={{ backdropFilter: 'none' }} />
             </>
           ) : (
             <video
