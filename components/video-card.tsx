@@ -306,7 +306,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm pt-20"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-6 pt-28 pb-12"
             onClick={handleCloseModal}
           >
             <motion.button
@@ -315,7 +315,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.2 }}
               onClick={handleCloseModal}
-              className="absolute top-24 right-6 w-12 h-12 rounded-full bg-purple-600 hover:bg-purple-700 flex items-center justify-center transition-colors shadow-lg z-[110]"
+              className="absolute top-28 right-8 w-12 h-12 rounded-full bg-purple-600 hover:bg-purple-700 flex items-center justify-center transition-colors shadow-lg z-[110]"
             >
               <X className="w-6 h-6 text-white" />
             </motion.button>
@@ -325,7 +325,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="relative w-[90vw] max-w-[1400px]" style={{ aspectRatio: '16/9' }}
+              className="relative w-full max-w-[1200px]" style={{ aspectRatio: '16/9' }}
               onClick={(e) => e.stopPropagation()}
             >
               {isYouTubeVideo ? (
