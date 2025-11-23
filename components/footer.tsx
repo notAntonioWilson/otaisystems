@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
-import { Zap, Linkedin, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
+import { Zap, Linkedin, Instagram, Facebook, Twitter } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function Footer() {
@@ -34,7 +34,6 @@ export function Footer() {
     { icon: Instagram, href: 'https://www.instagram.com/otai.systems?igsh=bDRiaDQxdzdtcDR0&utm_source=qr', label: 'Instagram' },
     { icon: Facebook, href: 'https://www.facebook.com/share/1Bi6GWYdqe/?mibextid=wwXIfr', label: 'Facebook' },
     { icon: Twitter, href: 'https://x.com/antoniowilsonx?s=21', label: 'Twitter' },
-    { icon: Youtube, href: 'https://youtube.com/@antoniowilson_yt?si=I0VGC0371w6PBgJF', label: 'YouTube' },
   ];
 
   return (

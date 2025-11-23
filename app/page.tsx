@@ -217,7 +217,7 @@ export default function Home() {
             >
               <VideoCard
                 poster=""
-                src="dQw4w9WgXcQ"
+                src="8tQmzy2baXo"
                 alt="OTAI Systems Introduction"
                 videoId="hero-video"
                 isYouTube={true}
@@ -264,7 +264,7 @@ export default function Home() {
               >
                 <VideoCard
                   poster=""
-                  src="dQw4w9WgXcQ"
+                  src="2xRRKxVNbB0"
                   alt="What we do - Custom AI Solutions"
                   videoId="services-video"
                   isYouTube={true}

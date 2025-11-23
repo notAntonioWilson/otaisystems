@@ -168,14 +168,17 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
       >
         <div className="relative aspect-video w-full border-2 border-primary/30 rounded-lg overflow-hidden bg-black">
           {isYouTubeVideo ? (
-            <iframe
-              ref={iframeRef}
-              src={`https://www.youtube.com/embed/${embedId}?autoplay=1&mute=1&loop=1&playlist=${embedId}&controls=0&modestbranding=1&rel=0`}
-              className="absolute inset-0 w-full h-full"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              title={alt}
-            />
+            <>
+              <iframe
+                ref={iframeRef}
+                src={`https://www.youtube.com/embed/${embedId}?autoplay=1&mute=1&loop=1&playlist=${embedId}&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1`}
+                className="absolute inset-0 w-full h-full pointer-events-none"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                title={alt}
+              />
+              <div className="absolute inset-0 pointer-events-none" />
+            </>
           ) : (
             <video
               ref={videoRef}
@@ -270,7 +273,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
               {isYouTubeVideo ? (
                 <iframe
                   ref={modalIframeRef}
-                  src={`https://www.youtube.com/embed/${embedId}?autoplay=1&controls=1&modestbranding=1&rel=0`}
+                  src={`https://www.youtube.com/embed/${embedId}?autoplay=1&controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3`}
                   className="w-full h-full rounded-lg"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
