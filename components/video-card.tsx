@@ -35,6 +35,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
   const [isMuted, setIsMuted] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [ytPlayer, setYtPlayer] = useState<any>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const modalVideoRef = useRef<HTMLVideoElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -58,6 +59,24 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
     if (isYouTubeVideo) {
       setIsLoading(false);
       setHasError(false);
+
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+
+      (window as any).onYouTubeIframeAPIReady = () => {
+        if (iframeRef.current) {
+          const player = new (window as any).YT.Player(iframeRef.current, {
+            events: {
+              onReady: (event: any) => {
+                setYtPlayer(event.target);
+              }
+            }
+          });
+        }
+      };
+
       return;
     }
 
@@ -133,7 +152,14 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
 
   const toggleMute = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (videoRef.current) {
+    if (isYouTubeVideo && ytPlayer) {
+      if (isMuted) {
+        ytPlayer.unMute();
+      } else {
+        ytPlayer.mute();
+      }
+      setIsMuted(!isMuted);
+    } else if (videoRef.current) {
       videoRef.current.muted = !isMuted;
       setIsMuted(!isMuted);
     }
@@ -171,13 +197,13 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
             <>
               <iframe
                 ref={iframeRef}
-                src={`https://www.youtube.com/embed/${embedId}?autoplay=1&mute=1&loop=1&playlist=${embedId}&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1`}
+                src={`https://www.youtube.com/embed/${embedId}?autoplay=1&mute=1&loop=1&playlist=${embedId}&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&enablejsapi=1`}
                 className="absolute inset-0 w-full h-full pointer-events-none"
                 allow="autoplay; encrypted-media"
                 allowFullScreen
                 title={alt}
               />
-              <div className="absolute inset-0 pointer-events-none" />
+              <div className="absolute inset-0 bg-black/0 pointer-events-none z-10" style={{ backdropFilter: 'none' }} />
             </>
           ) : (
             <video
@@ -200,18 +226,16 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
             </div>
           )}
 
-          {!isYouTubeVideo && (
-            <button
-              onClick={toggleMute}
-              className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center transition-colors z-10"
-            >
-              {isMuted ? (
-                <VolumeX className="w-5 h-5 text-white" />
-              ) : (
-                <Volume2 className="w-5 h-5 text-white" />
-              )}
-            </button>
-          )}
+          <button
+            onClick={toggleMute}
+            className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-purple-600/80 hover:bg-purple-700 flex items-center justify-center transition-colors z-20 pointer-events-auto"
+          >
+            {isMuted ? (
+              <VolumeX className="w-5 h-5 text-white" />
+            ) : (
+              <Volume2 className="w-5 h-5 text-white" />
+            )}
+          </button>
 
           <AnimatePresence>
             {isHovered && !isModalOpen && (
@@ -267,7 +291,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="relative w-[85vw] h-[75vh] max-w-[1200px]"
+              className="relative w-[90vw] max-w-[1400px]" style={{ aspectRatio: '16/9' }}
               onClick={(e) => e.stopPropagation()}
             >
               {isYouTubeVideo ? (
