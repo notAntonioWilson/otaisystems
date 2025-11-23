@@ -217,9 +217,9 @@ export default function Home() {
             >
               <VideoCard
                 poster=""
-                src="https://www.youtube.com/watch?v=8tQmzy2baXo"
+                src="/videos/hero-vsl.mp4"
                 alt="OTAI Systems Introduction"
-                isYouTube={true}
+                videoId="hero-video"
               />
             </motion.div>
           </div>
@@ -263,9 +263,9 @@ export default function Home() {
               >
                 <VideoCard
                   poster=""
-                  src="https://www.youtube.com/watch?v=2xRRKxVNbB0"
+                  src="/videos/services-vsl.mp4"
                   alt="What we do - Custom AI Solutions"
-                  isYouTube={true}
+                  videoId="services-video"
                 />
               </motion.div>
             </div>
