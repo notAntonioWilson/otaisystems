@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, X, Volume2, VolumeX } from 'lucide-react';
+import { Play, X, Volume2, VolumeX, Maximize2 } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
 interface VideoCardProps {
@@ -15,7 +15,21 @@ interface VideoCardProps {
 
 const activeVideos = new Map<string, HTMLVideoElement>();
 
-export function VideoCard({ poster, src, alt = 'Video', className = '', videoId = '' }: VideoCardProps) {
+function extractYouTubeId(url: string): string | null {
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
+    /^([a-zA-Z0-9_-]{11})$/
+  ];
+
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match) return match[1];
+  }
+
+  return null;
+}
+
+export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTube = false, videoId = '' }: VideoCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
@@ -23,18 +37,30 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', videoId 
   const [isLoading, setIsLoading] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const modalVideoRef = useRef<HTMLVideoElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const modalIframeRef = useRef<HTMLIFrameElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const youtubeId = extractYouTubeId(src);
+  const isYouTubeVideo = isYouTube || youtubeId !== null;
+  const embedId = youtubeId || src;
+
   useEffect(() => {
-    if (videoRef.current && videoId) {
+    if (videoRef.current && videoId && !isYouTubeVideo) {
       activeVideos.set(videoId, videoRef.current);
       return () => {
         activeVideos.delete(videoId);
       };
     }
-  }, [videoId]);
+  }, [videoId, isYouTubeVideo]);
 
   useEffect(() => {
+    if (isYouTubeVideo) {
+      setIsLoading(false);
+      setHasError(false);
+      return;
+    }
+
     const video = videoRef.current;
     if (!video) return;
 
@@ -56,7 +82,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', videoId 
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [isYouTubeVideo]);
 
   const handleVideoLoaded = () => {
     setIsLoading(false);
@@ -68,7 +94,9 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', videoId 
   };
 
   const handlePlayClick = () => {
-    if (videoRef.current) {
+    if (isYouTubeVideo) {
+      setIsModalOpen(true);
+    } else if (videoRef.current) {
       const currentTime = videoRef.current.currentTime;
 
       activeVideos.forEach((video, id) => {
@@ -94,7 +122,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', videoId 
 
   const handleCloseModal = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (modalVideoRef.current && videoRef.current) {
+    if (!isYouTubeVideo && modalVideoRef.current && videoRef.current) {
       const currentTime = modalVideoRef.current.currentTime;
       videoRef.current.currentTime = currentTime;
       modalVideoRef.current.pause();
@@ -111,7 +139,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', videoId 
     }
   };
 
-  if (hasError) {
+  if (hasError && !isYouTubeVideo) {
     return (
       <motion.div
         whileHover={{ scale: 1.02 }}
@@ -139,35 +167,48 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', videoId 
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="relative aspect-video w-full border-2 border-primary/30 rounded-lg overflow-hidden bg-black">
-          <video
-            ref={videoRef}
-            src={src}
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            onLoadedData={handleVideoLoaded}
-            onError={handleVideoError}
-          />
+          {isYouTubeVideo ? (
+            <iframe
+              ref={iframeRef}
+              src={`https://www.youtube.com/embed/${embedId}?autoplay=1&mute=1&loop=1&playlist=${embedId}&controls=0&modestbranding=1&rel=0`}
+              className="absolute inset-0 w-full h-full"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              title={alt}
+            />
+          ) : (
+            <video
+              ref={videoRef}
+              src={src}
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              onLoadedData={handleVideoLoaded}
+              onError={handleVideoError}
+            />
+          )}
 
-          {isLoading && (
+          {isLoading && !isYouTubeVideo && (
             <div className="absolute inset-0 flex items-center justify-center bg-black/50">
               <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
             </div>
           )}
 
-          <button
-            onClick={toggleMute}
-            className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center transition-colors z-10"
-          >
-            {isMuted ? (
-              <VolumeX className="w-5 h-5 text-white" />
-            ) : (
-              <Volume2 className="w-5 h-5 text-white" />
-            )}
-          </button>
+          {!isYouTubeVideo && (
+            <button
+              onClick={toggleMute}
+              className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center transition-colors z-10"
+            >
+              {isMuted ? (
+                <VolumeX className="w-5 h-5 text-white" />
+              ) : (
+                <Volume2 className="w-5 h-5 text-white" />
+              )}
+            </button>
+          )}
 
           <AnimatePresence>
             {isHovered && !isModalOpen && (
@@ -185,7 +226,11 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', videoId 
                   exit={{ scale: 0.8 }}
                   className="w-16 h-16 rounded-full bg-purple-600 hover:bg-purple-700 flex items-center justify-center transition-colors shadow-lg"
                 >
-                  <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                  {isYouTubeVideo ? (
+                    <Maximize2 className="w-8 h-8 text-white" />
+                  ) : (
+                    <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                  )}
                 </motion.div>
               </motion.div>
             )}
@@ -222,14 +267,25 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', videoId 
               className="relative w-[85vw] h-[75vh] max-w-[1200px]"
               onClick={(e) => e.stopPropagation()}
             >
-              <video
-                ref={modalVideoRef}
-                src={src}
-                className="w-full h-full object-contain rounded-lg"
-                controls
-                playsInline
-                preload="metadata"
-              />
+              {isYouTubeVideo ? (
+                <iframe
+                  ref={modalIframeRef}
+                  src={`https://www.youtube.com/embed/${embedId}?autoplay=1&controls=1&modestbranding=1&rel=0`}
+                  className="w-full h-full rounded-lg"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  title={alt}
+                />
+              ) : (
+                <video
+                  ref={modalVideoRef}
+                  src={src}
+                  className="w-full h-full object-contain rounded-lg"
+                  controls
+                  playsInline
+                  preload="metadata"
+                />
+              )}
             </motion.div>
           </motion.div>
         )}
