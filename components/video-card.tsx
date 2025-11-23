@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, X } from 'lucide-react';
+import { Play, X, Volume2, VolumeX } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 
 interface VideoCardProps {
@@ -18,9 +18,12 @@ const activeVideos = new Map<string, HTMLVideoElement>();
 export function VideoCard({ poster, src, alt = 'Video', className = '', videoId = '' }: VideoCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const [hasError, setHasError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const modalVideoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (videoRef.current && videoId) {
@@ -35,17 +38,34 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', videoId 
     const video = videoRef.current;
     if (!video) return;
 
-    const handlePlay = () => setIsPlaying(true);
-    const handlePause = () => setIsPlaying(false);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && video.paused) {
+            video.play().catch(() => {
+              setHasError(false);
+            });
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-    video.addEventListener('play', handlePlay);
-    video.addEventListener('pause', handlePause);
+    observer.observe(video);
 
     return () => {
-      video.removeEventListener('play', handlePlay);
-      video.removeEventListener('pause', handlePause);
+      observer.disconnect();
     };
   }, []);
+
+  const handleVideoLoaded = () => {
+    setIsLoading(false);
+  };
+
+  const handleVideoError = () => {
+    setHasError(true);
+    setIsLoading(false);
+  };
 
   const handlePlayClick = () => {
     if (videoRef.current) {
@@ -62,6 +82,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', videoId 
       setTimeout(() => {
         if (modalVideoRef.current) {
           modalVideoRef.current.currentTime = currentTime;
+          modalVideoRef.current.muted = false;
           modalVideoRef.current.play();
         }
         if (videoRef.current) {
@@ -71,7 +92,8 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', videoId 
     }
   };
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (e: React.MouseEvent) => {
+    e.stopPropagation();
     if (modalVideoRef.current && videoRef.current) {
       const currentTime = modalVideoRef.current.currentTime;
       videoRef.current.currentTime = currentTime;
@@ -81,9 +103,36 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', videoId 
     setIsModalOpen(false);
   };
 
+  const toggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  if (hasError) {
+    return (
+      <motion.div
+        whileHover={{ scale: 1.02 }}
+        className={`relative overflow-hidden rounded-lg ${className}`}
+      >
+        <div className="relative aspect-video w-full bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center border-2 border-primary/30 rounded-lg">
+          <div className="text-center p-6">
+            <h3 className="text-2xl font-bold text-primary mb-2">Video Coming Soon</h3>
+            <p className="text-muted-foreground text-sm">
+              Add your video files to /public/videos/
+            </p>
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
+
   return (
     <>
       <motion.div
+        ref={containerRef}
         whileHover={{ scale: 1.02 }}
         className={`relative overflow-hidden rounded-lg ${className}`}
         onMouseEnter={() => setIsHovered(true)}
@@ -96,10 +145,29 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', videoId 
             className="absolute inset-0 w-full h-full object-cover"
             autoPlay
             loop
-            muted={false}
+            muted
             playsInline
             preload="metadata"
+            onLoadedData={handleVideoLoaded}
+            onError={handleVideoError}
           />
+
+          {isLoading && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+            </div>
+          )}
+
+          <button
+            onClick={toggleMute}
+            className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 flex items-center justify-center transition-colors z-10"
+          >
+            {isMuted ? (
+              <VolumeX className="w-5 h-5 text-white" />
+            ) : (
+              <Volume2 className="w-5 h-5 text-white" />
+            )}
+          </button>
 
           <AnimatePresence>
             {isHovered && !isModalOpen && (
@@ -132,7 +200,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', videoId 
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm pt-20"
             onClick={handleCloseModal}
           >
             <motion.button
@@ -141,7 +209,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', videoId 
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.2 }}
               onClick={handleCloseModal}
-              className="absolute top-6 right-6 w-12 h-12 rounded-full bg-purple-600 hover:bg-purple-700 flex items-center justify-center transition-colors shadow-lg z-10"
+              className="absolute top-24 right-6 w-12 h-12 rounded-full bg-purple-600 hover:bg-purple-700 flex items-center justify-center transition-colors shadow-lg z-[110]"
             >
               <X className="w-6 h-6 text-white" />
             </motion.button>
@@ -151,7 +219,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', videoId 
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="relative w-[90vw] h-[90vh] max-w-[1400px]"
+              className="relative w-[85vw] h-[75vh] max-w-[1200px]"
               onClick={(e) => e.stopPropagation()}
             >
               <video
