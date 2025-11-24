@@ -291,7 +291,7 @@ export default function Home() {
             >
               Book a Consult
             </button>
-            <Link href="/results" className="flex-1 sm:flex-none">
+            <Link href="/coming-soon" className="flex-1 sm:flex-none">
               <button className="sleek-button w-full sm:w-auto px-3 sm:px-7 py-3.5 rounded-xl font-medium text-xs sm:text-sm whitespace-nowrap sm:min-w-[180px]">
                 Testimonials & Proof
               </button>
