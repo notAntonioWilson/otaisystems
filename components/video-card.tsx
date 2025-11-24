@@ -227,7 +227,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
                   src={`https://www.youtube.com/embed/${embedId}?autoplay=1&mute=1&loop=1&playlist=${embedId}&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
                   className="absolute inset-0 w-full h-full pointer-events-none"
                   style={{ border: 'none' }}
-                  allow="autoplay; encrypted-media"
+                  allow="autoplay; encrypted-media; fullscreen"
                   title={alt}
                 />
               </div>
