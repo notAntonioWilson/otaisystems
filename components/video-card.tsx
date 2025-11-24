@@ -331,7 +331,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
               {isYouTubeVideo ? (
                 <iframe
                   ref={modalIframeRef}
-                  src={`https://www.youtube.com/embed/${embedId}?autoplay=1&controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3`}
+                  src={`https://www.youtube.com/embed/${embedId}?autoplay=1&mute=0&controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3`}
                   className="w-full h-full rounded-lg"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
