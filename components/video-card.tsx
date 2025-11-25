@@ -260,20 +260,6 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
             </div>
           )}
 
-          <motion.button
-            onClick={toggleMute}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-purple-600/90 hover:bg-purple-700 flex items-center justify-center transition-colors z-20 cursor-pointer shadow-lg"
-            style={{ pointerEvents: 'auto' }}
-          >
-            {isMuted ? (
-              <VolumeX className="w-5 h-5 text-white" />
-            ) : (
-              <Volume2 className="w-5 h-5 text-white" />
-            )}
-          </motion.button>
-
           <AnimatePresence>
             {isHovered && !isModalOpen && (
               <motion.div
@@ -281,7 +267,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer"
+                className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer z-10"
                 onClick={handlePlayClick}
               >
                 <motion.div
@@ -299,6 +285,19 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
               </motion.div>
             )}
           </AnimatePresence>
+
+          <motion.button
+            onClick={toggleMute}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-purple-600/90 hover:bg-purple-700 flex items-center justify-center transition-colors z-30 cursor-pointer shadow-lg"
+          >
+            {isMuted ? (
+              <VolumeX className="w-5 h-5 text-white" />
+            ) : (
+              <Volume2 className="w-5 h-5 text-white" />
+            )}
+          </motion.button>
         </div>
       </motion.div>
 
