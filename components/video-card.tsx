@@ -260,16 +260,19 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
             </div>
           )}
 
-          <button
+          <motion.button
             onClick={toggleMute}
-            className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-purple-600/80 hover:bg-purple-700 flex items-center justify-center transition-colors z-20 pointer-events-auto"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-purple-600/90 hover:bg-purple-700 flex items-center justify-center transition-colors z-20 cursor-pointer shadow-lg"
+            style={{ pointerEvents: 'auto' }}
           >
             {isMuted ? (
               <VolumeX className="w-5 h-5 text-white" />
             ) : (
               <Volume2 className="w-5 h-5 text-white" />
             )}
-          </button>
+          </motion.button>
 
           <AnimatePresence>
             {isHovered && !isModalOpen && (
