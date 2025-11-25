@@ -94,7 +94,7 @@ export function NavBar() {
                 Process
               </button>
               <Link
-                href="/results"
+                href="/coming-soon"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
                 Proof
@@ -169,7 +169,7 @@ export function NavBar() {
                   Process
                 </button>
                 <Link
-                  href="/results"
+                  href="/coming-soon"
                   onClick={handleLinkClick}
                   className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
                 >
