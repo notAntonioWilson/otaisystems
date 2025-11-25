@@ -185,8 +185,9 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
         console.error('Error toggling mute:', error);
       }
     } else if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
+      const newMutedState = !videoRef.current.muted;
+      videoRef.current.muted = newMutedState;
+      setIsMuted(newMutedState);
     }
   };
 
