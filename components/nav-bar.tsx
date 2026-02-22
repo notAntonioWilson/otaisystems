@@ -90,7 +90,7 @@ export function NavBar() {
                 AI Agents
               </Link>
               <Link
-                href="#"
+                href="/automations"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
                 Automations
@@ -166,7 +166,7 @@ export function NavBar() {
                   AI Agents
                 </Link>
                 <Link
-                  href="#"
+                  href="/automations"
                   onClick={handleLinkClick}
                   className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
                 >

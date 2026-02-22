@@ -86,7 +86,7 @@ export function Footer() {
                 AI Agents
               </Link>
               <Link
-                href="#"
+                href="/automations"
                 className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
               >
                 Automations
