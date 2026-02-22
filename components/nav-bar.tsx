@@ -78,7 +78,13 @@ export function NavBar() {
 
             <div className="hidden md:flex items-center gap-6">
               <Link
-                href="#"
+                href="/"
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
+                Home
+              </Link>
+              <Link
+                href="/ai-agents"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
                 AI Agents
@@ -146,7 +152,14 @@ export function NavBar() {
             >
               <div className="flex flex-col p-6 space-y-4">
                 <Link
-                  href="#"
+                  href="/"
+                  onClick={handleLinkClick}
+                  className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/ai-agents"
                   onClick={handleLinkClick}
                   className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
                 >
