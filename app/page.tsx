@@ -465,27 +465,38 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/30 via-primary/5 to-transparent" />
 
         <div className="container mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
-              Most Business Owners Wait Until It's Too Late.
-            </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed">
-              The ones moving now are the ones who will dominate. Answer 5 questions and find out exactly how AI can change your business.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 bg-primary text-primary-foreground rounded-xl font-bold text-lg hover:bg-primary/90 transition-all glow-accent inline-flex items-center gap-3"
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
             >
-              See If You Qualify
-              <ArrowRight className="w-6 h-6" />
-            </motion.button>
-          </motion.div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
+                Most Business Owners Wait Until It's Too Late.
+              </h2>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed">
+                The ones moving now are the ones who will dominate. Book a call and find out exactly how AI can change your business.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:pl-8"
+            >
+              <div className="glass-card rounded-xl overflow-hidden">
+                <iframe
+                  src="https://cal.com/otai-systems/30min-professional"
+                  style={{
+                    width: '100%',
+                    height: '700px',
+                    border: 'none'
+                  }}
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
     </div>
