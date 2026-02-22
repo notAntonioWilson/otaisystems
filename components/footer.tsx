@@ -80,7 +80,7 @@ export function Footer() {
             <h3 className="text-base font-semibold mb-3 text-white">Navigation</h3>
             <div className="grid grid-cols-2 gap-x-14 gap-y-2.5">
               <Link
-                href="#"
+                href="/ai-agents"
                 className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
               >
                 AI Agents
@@ -92,7 +92,7 @@ export function Footer() {
                 Automations
               </Link>
               <Link
-                href="#"
+                href="/outreach-lead-gen"
                 className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
               >
                 Outreach & Lead Gen
@@ -103,11 +103,17 @@ export function Footer() {
               >
                 Proof
               </Link>
+              <Link
+                href="/about"
+                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
+              >
+                About
+              </Link>
               <button
                 onClick={() => scrollToSection('qualify')}
                 className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
               >
-                Work With Us
+                Book a Call
               </button>
             </div>
             <div className="hidden md:block absolute right-0 top-0 bottom-0 w-px bg-border/50" />

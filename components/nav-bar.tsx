@@ -96,7 +96,7 @@ export function NavBar() {
                 Automations
               </Link>
               <Link
-                href="#"
+                href="/outreach-lead-gen"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
                 Outreach & Lead Gen
@@ -107,13 +107,19 @@ export function NavBar() {
               >
                 Proof
               </Link>
+              <Link
+                href="/about"
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
+                About
+              </Link>
               <motion.button
                 onClick={() => scrollToSection('qualify')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium text-sm hover:bg-primary/90 transition-colors glow-accent-sm"
               >
-                Work With Us
+                Book a Call
               </motion.button>
             </div>
 
@@ -173,7 +179,7 @@ export function NavBar() {
                   Automations
                 </Link>
                 <Link
-                  href="#"
+                  href="/outreach-lead-gen"
                   onClick={handleLinkClick}
                   className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
                 >
@@ -186,11 +192,18 @@ export function NavBar() {
                 >
                   Proof
                 </Link>
+                <Link
+                  href="/about"
+                  onClick={handleLinkClick}
+                  className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
+                >
+                  About
+                </Link>
                 <button
                   onClick={() => scrollToSection('qualify')}
                   className="mt-4 px-4 py-3 bg-primary text-primary-foreground rounded-lg font-medium text-base text-center hover:bg-primary/90 transition-colors glow-accent-sm"
                 >
-                  Work With Us
+                  Book a Call
                 </button>
               </div>
             </motion.div>
