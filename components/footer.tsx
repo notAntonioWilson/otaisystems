@@ -56,8 +56,7 @@ export function Footer() {
               <span className="text-xl font-bold gradient-text">OTAI Systems</span>
             </Link>
             <p className="text-sm text-muted-foreground mb-5 leading-[1.6]">
-              Empowering businesses with AI automation solutions. Stay connected and see what's
-              next, follow us on Social Media.
+              Building the AI infrastructure of tomorrow's most dominant businesses.
             </p>
             <div className="flex gap-4">
               {socialLinks.map(({ icon: Icon, href, label }) => (
@@ -80,36 +79,36 @@ export function Footer() {
           <div className="relative md:px-12">
             <h3 className="text-base font-semibold mb-3 text-white">Navigation</h3>
             <div className="grid grid-cols-2 gap-x-14 gap-y-2.5">
-              <button
-                onClick={() => scrollToSection('services')}
-                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
               >
-                Services
-              </button>
-              <button
-                onClick={() => scrollToSection('pricing')}
-                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
+                AI Agents
+              </Link>
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
               >
-                Pricing
-              </button>
-              <button
-                onClick={() => scrollToSection('process')}
-                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
+                Automations
+              </Link>
+              <Link
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
               >
-                Process
-              </button>
-              <button
-                onClick={() => scrollToSection('book')}
-                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
-              >
-                Contact
-              </button>
+                Outreach & Lead Gen
+              </Link>
               <Link
                 href="/coming-soon"
                 className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
               >
-                Testimonial & Proof
+                Proof
               </Link>
+              <button
+                onClick={() => scrollToSection('qualify')}
+                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
+              >
+                Work With Us
+              </button>
             </div>
             <div className="hidden md:block absolute right-0 top-0 bottom-0 w-px bg-border/50" />
           </div>

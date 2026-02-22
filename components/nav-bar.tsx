@@ -78,42 +78,36 @@ export function NavBar() {
 
             <div className="hidden md:flex items-center gap-6">
               <Link
-                href="/"
+                href="#"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
-                Home
+                AI Agents
               </Link>
-              <button
-                onClick={() => scrollToSection('services')}
+              <Link
+                href="#"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
-                Services
-              </button>
-              <button
-                onClick={() => scrollToSection('process')}
+                Automations
+              </Link>
+              <Link
+                href="#"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
-                Process
-              </button>
+                Outreach & Lead Gen
+              </Link>
               <Link
                 href="/coming-soon"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
                 Proof
               </Link>
-              <button
-                onClick={() => scrollToSection('pricing')}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
-                Pricing
-              </button>
               <motion.button
-                onClick={() => scrollToSection('book')}
+                onClick={() => scrollToSection('qualify')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium text-sm"
+                className="px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium text-sm hover:bg-primary/90 transition-colors glow-accent-sm"
               >
-                Book a call
+                Work With Us
               </motion.button>
             </div>
 
@@ -152,24 +146,26 @@ export function NavBar() {
             >
               <div className="flex flex-col p-6 space-y-4">
                 <Link
-                  href="/"
+                  href="#"
                   onClick={handleLinkClick}
                   className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
                 >
-                  Home
+                  AI Agents
                 </Link>
-                <button
-                  onClick={() => scrollToSection('services')}
-                  className="text-base font-medium text-foreground hover:text-primary transition-colors text-left py-2"
+                <Link
+                  href="#"
+                  onClick={handleLinkClick}
+                  className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
                 >
-                  Services
-                </button>
-                <button
-                  onClick={() => scrollToSection('process')}
-                  className="text-base font-medium text-foreground hover:text-primary transition-colors text-left py-2"
+                  Automations
+                </Link>
+                <Link
+                  href="#"
+                  onClick={handleLinkClick}
+                  className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
                 >
-                  Process
-                </button>
+                  Outreach & Lead Gen
+                </Link>
                 <Link
                   href="/coming-soon"
                   onClick={handleLinkClick}
@@ -178,16 +174,10 @@ export function NavBar() {
                   Proof
                 </Link>
                 <button
-                  onClick={() => scrollToSection('pricing')}
-                  className="text-base font-medium text-foreground hover:text-primary transition-colors text-left py-2"
+                  onClick={() => scrollToSection('qualify')}
+                  className="mt-4 px-4 py-3 bg-primary text-primary-foreground rounded-lg font-medium text-base text-center hover:bg-primary/90 transition-colors glow-accent-sm"
                 >
-                  Pricing
-                </button>
-                <button
-                  onClick={() => scrollToSection('book')}
-                  className="mt-4 px-4 py-3 bg-primary text-primary-foreground rounded-lg font-medium text-base text-center"
-                >
-                  Book a call
+                  Work With Us
                 </button>
               </div>
             </motion.div>

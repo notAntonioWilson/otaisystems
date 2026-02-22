@@ -2,20 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
-import { ArrowRight, Clock, Target, Zap, TrendingUp, CheckCircle2, Moon, Activity, AlertCircle, BarChart3, DollarSign, Brain, Users, Layers, Eye, Rocket, Settings, Link2 } from 'lucide-react';
+import { ArrowRight, Clock, Zap, TrendingUp, Brain, Sparkles, Target, Rocket, Settings2, BarChart3 } from 'lucide-react';
 import { VideoCard } from '@/components/video-card';
-import { GlowButton } from '@/components/glow-button';
-import { DripButton } from '@/components/drip-button';
-import { TestimonialCard } from '@/components/testimonial-card';
-import { PricingCard } from '@/components/pricing-card';
-import { Badge } from '@/components/ui/badge';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { RadarSweep } from '@/components/radar-sweep';
 import { CodeEditorAnimation } from '@/components/code-editor-animation';
 import { EnergyTransfer } from '@/components/energy-transfer';
 import { GrowthChart } from '@/components/growth-chart';
-import { services } from '@/content/services';
-import { proofs } from '@/content/proof';
 import Link from 'next/link';
 
 export default function Home() {
@@ -37,8 +29,6 @@ export default function Home() {
       }, 100);
     }
   }, []);
-
-  const heroMetrics: any[] = [];
 
   const processSteps = [
     {
@@ -82,131 +72,80 @@ export default function Home() {
     }
   };
 
-  const aiFoundationCards = [
+  const whyAICards = [
     {
-      icon: Moon,
-      title: '24/7 Performance',
-      description: 'AI never sleeps. It operates continuously, delivering consistent output and monitoring systems around the clock.'
+      icon: Clock,
+      title: 'The Window Is Closing Fast',
+      description: 'Within 1 to 3 years AI will run nearly all business functions entirely. The businesses that adapted early will be untouchable.'
     },
     {
-      icon: Activity,
-      title: 'Zero Complaints, Zero Fatigue',
-      description: 'AI doesn\'t get tired, emotional, or distracted. It executes tasks reliably every single time.'
+      icon: Zap,
+      title: 'Revenue That Never Sleeps',
+      description: 'Your AI agents work every hour you don\'t. Selling, booking, following up, and closing while you\'re off the clock.'
     },
     {
-      icon: AlertCircle,
-      title: 'Error-Free Execution',
-      description: 'AI systems don\'t make careless mistakes. They work with precision and consistency.'
+      icon: TrendingUp,
+      title: 'Scale Without the Overhead',
+      description: 'Add capacity without adding salaries. AI absorbs the volume so you can focus on growth not management.'
     },
     {
-      icon: BarChart3,
-      title: 'Proven Results Across Every Industry',
-      description: 'Companies using AI see measurable increases in productivity, revenue, and accuracy.'
-    },
-    {
-      icon: DollarSign,
-      title: 'Cost Reduction and Efficiency',
-      description: 'AI eliminates redundant labor, reduces human overhead, and optimizes workflows for maximum ROI.'
+      icon: Target,
+      title: 'Built Specifically For You',
+      description: 'No templates. No off-the-shelf tools. Every system is engineered around your exact business, your workflow, your goals.'
     },
     {
       icon: Brain,
-      title: 'Data-Driven Decision Making',
-      description: 'AI analyzes data instantly and objectively to help leaders make smarter, faster, evidence-based decisions.'
-    },
-    {
-      icon: Clock,
-      title: 'Time Back for Business Owners',
-      description: 'Automating repetitive workflows gives founders and teams more time to focus on growth, not busywork.'
-    },
-    {
-      icon: Layers,
-      title: 'Instant Scalability',
-      description: 'AI adapts to your company\'s workload automatically, scaling up or down without additional overhead.'
-    },
-    {
-      icon: Eye,
-      title: 'Predictive Intelligence',
-      description: 'AI anticipates problems and opportunities before they happen.'
+      title: 'Compound Intelligence',
+      description: 'Every system we build learns and improves over time. The longer it runs, the more powerful it becomes.'
     },
     {
       icon: Rocket,
-      title: 'Competitive Edge',
-      description: 'Businesses that adopt AI today are the ones dominating tomorrow. It is the new infrastructure of business.'
-    },
-    {
-      icon: Settings,
-      title: 'Fully Customizable Intelligence',
-      description: 'AI can match your exact workflow and style, from hyper-personalized automations to precise robotic execution.'
-    },
-    {
-      icon: Link2,
-      title: 'Instant Integration',
-      description: 'AI connects seamlessly with your existing systems to start improving operations immediately.'
+      title: 'Deployed in Days',
+      description: 'Most clients have a live AI system running inside 2 weeks. Fast implementation, immediate impact.'
     }
-  ];
-
-  const mobileVisibleCards = [0, 1, 3, 4, 6]; // Indices for cards to show on mobile
-
-  const faqs = [
-    {
-      question: 'Can you help my specific company?',
-      answer:
-        'Absolutely. We help companies of all sizes integrate AI and automation across every channel, from phone and chat to social media and internal systems. Our team specializes in building intelligent workflows that save time, boost efficiency, and elevate your customer experience.',
-    },
-    {
-      question: 'What industries can benefit the most from AI automation?',
-      answer:
-        'AI and automation can transform any industry, but the right approach depends on your business model. For B2B companies, AI works best on the front end by handling leads, outreach, and communication. For B2C businesses, automation shines on the back end by streamlining support, order management, and marketing. In short, the best solution depends on your company\'s structure and goals.',
-    },
-    {
-      question: 'Is the system difficult to integrate?',
-      answer:
-        'Not at all. We handle the entire integration process, whether you\'re implementing a completely new AI system or connecting automation to your existing tools. Everything follows a transparent, step-by-step flow to ensure a smooth and stress-free setup.',
-    },
-    {
-      question: 'Do I need any technical experience to use your AI solutions?',
-      answer:
-        'No technical experience required. We take care of all the heavy lifting including setup, connections, and configurations. If your input is ever needed, our team walks you through it step-by-step, ensuring the process is simple and straightforward.',
-    },
-    {
-      question: 'Do you provide ongoing support and maintenance after setup?',
-      answer:
-        'Yes, absolutely. We provide full ongoing support and continuous improvements. As AI evolves, your system evolves with it, and if issues ever arise, we fix them quickly. We also enhance your automations over time to keep your business aligned with growth and new technology.',
-    },
-    {
-      question: 'Can I cancel or change my subscription at any time?',
-      answer:
-        'Yes, you can. You\'re free to cancel at any time, and you\'ll still keep ownership of the system we\'ve built for you. Our goal is to build lasting partnerships, not lock-in contracts, and your AI stays yours.',
-    },
   ];
 
   return (
     <div className="min-h-screen">
+      {/* Hero Section */}
       <section className="relative pt-24 pb-14 px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 particle-bg opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
         <div className="container mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Badge className="mb-4 bg-primary/10 text-primary border-primary/30">
-                Leverage the Power of AI
-              </Badge>
-              <h1 className="font-bold mb-5 leading-[1.15]">
-                <div className="text-3xl md:text-4xl lg:text-5xl mb-2 text-white">Custom AI Solutions</div>
-                <div className="text-2xl md:text-3xl lg:text-4xl" style={{ color: '#a855f7' }}>For Ambitious Businesses</div>
+              <h1 className="font-bold mb-6 leading-[1.1]">
+                <div className="text-4xl md:text-5xl lg:text-6xl text-white">
+                  The Businesses That Adapt to AI Now Will Own Their Industries. The Rest Will Watch.
+                </div>
               </h1>
-              <p className="text-lg text-muted-foreground mb-6 leading-[1.6]">
-                Reality check: AI is no longer the future of business it's a necessity now! If you don't adapt you will fall behind.
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-[1.6]">
+                We build custom AI agents, automations, and outreach systems using Claude 4.6 and GPT-4o Codex — the most powerful models ever built — to eliminate your manual work, capture more revenue, and scale your operations before your competitors do.
               </p>
 
-              <DripButton onClick={() => scrollToSection('book')}>
-                Book a Consult
-              </DripButton>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <motion.button
+                  onClick={() => scrollToSection('services')}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-8 py-4 bg-primary text-primary-foreground rounded-xl font-semibold text-base hover:bg-primary/90 transition-all glow-accent-sm"
+                >
+                  See What We Build
+                </motion.button>
+                <motion.button
+                  onClick={() => scrollToSection('qualify')}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-8 py-4 bg-transparent border-2 border-primary text-primary rounded-xl font-semibold text-base hover:bg-primary/10 transition-all"
+                >
+                  See If You Qualify
+                </motion.button>
+              </div>
             </motion.div>
 
             <motion.div
@@ -227,80 +166,210 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="py-14 px-6 lg:px-8">
+      {/* Pain Strip Section */}
+      <section className="py-16 px-6 lg:px-8 bg-gradient-to-b from-transparent via-primary/5 to-transparent">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center md:text-left"
+            >
+              <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white">
+                You're Still Doing It Manually
+              </h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                Every task you touch by hand is a task your competitor has already automated.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-center md:text-left"
+            >
+              <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white">
+                You're Losing Leads Right Now
+              </h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                Every minute you're not responding, someone else is. AI closes that gap permanently.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-center md:text-left"
+            >
+              <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white">
+                Hiring More Won't Fix It
+              </h3>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                More headcount means more cost and more management. The businesses winning right now are running leaner with AI.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-16 px-6 lg:px-8">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
+            className="text-center mb-12"
           >
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="font-bold mb-5 leading-[1.15]">
-                  <div className="text-3xl md:text-4xl lg:text-5xl mb-2 text-primary">What we do:</div>
-                  <div className="text-2xl md:text-3xl lg:text-4xl text-foreground">Custom AI Solutions</div>
-                </h2>
-                <div className="space-y-5 text-base text-muted-foreground leading-[1.6]">
-                  <p>
-                    Unlike other AI agencies, consultants, or software companies, we understand one simple truth... no two businesses are the same.
-                  </p>
-                  <p>
-                    Commonly, you're given a tool or a template that helps for a month, then needs an upgrade.
-                  </p>
-                  <p>
-                    At OTAI, we analyze your business, identify your goals, then build custom AI automations that not only drive growth and efficiency but continue to evolve as your company grows.
-                  </p>
-                </div>
-              </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
+              Three Weapons. One Objective: Dominate Your Market.
+            </h2>
+          </motion.div>
 
+          <div className="grid md:grid-cols-3 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -8 }}
+            >
+              <Link href="#" className="block h-full">
+                <div className="glass-card rounded-xl p-8 h-full flex flex-col group cursor-pointer">
+                  <div className="mb-4 p-4 rounded-lg bg-primary/10 w-fit group-hover:bg-primary/20 transition-colors">
+                    <Brain className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-primary transition-colors">
+                    AI Agents
+                  </h3>
+                  <p className="text-base text-muted-foreground leading-relaxed mb-6 flex-grow">
+                    Intelligent agents that sell, book, support, and operate inside your business 24 hours a day without you lifting a finger.
+                  </p>
+                  <div className="flex items-center text-primary group-hover:translate-x-2 transition-transform">
+                    <ArrowRight className="w-5 h-5" />
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              whileHover={{ y: -8 }}
+            >
+              <Link href="#" className="block h-full">
+                <div className="glass-card rounded-xl p-8 h-full flex flex-col group cursor-pointer">
+                  <div className="mb-4 p-4 rounded-lg bg-primary/10 w-fit group-hover:bg-primary/20 transition-colors">
+                    <Settings2 className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-primary transition-colors">
+                    Automations
+                  </h3>
+                  <p className="text-base text-muted-foreground leading-relaxed mb-6 flex-grow">
+                    Kill the manual processes draining your time and margin. Build it once, run it forever, watch your business compound.
+                  </p>
+                  <div className="flex items-center text-primary group-hover:translate-x-2 transition-transform">
+                    <ArrowRight className="w-5 h-5" />
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ y: -8 }}
+            >
+              <Link href="#" className="block h-full">
+                <div className="glass-card rounded-xl p-8 h-full flex flex-col group cursor-pointer">
+                  <div className="mb-4 p-4 rounded-lg bg-primary/10 w-fit group-hover:bg-primary/20 transition-colors">
+                    <BarChart3 className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-primary transition-colors">
+                    Outreach & Lead Gen
+                  </h3>
+                  <p className="text-base text-muted-foreground leading-relaxed mb-6 flex-grow">
+                    A fully automated system that finds your ideal client, reaches out, and books the call — while you focus on delivering.
+                  </p>
+                  <div className="flex items-center text-primary group-hover:translate-x-2 transition-transform">
+                    <ArrowRight className="w-5 h-5" />
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Proof Strip Section */}
+      <section className="py-16 px-6 lg:px-8 bg-card/30 backdrop-blur-sm">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">
+              The Results Don't Lie.
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Real businesses. Real numbers. Real growth.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {[1, 2, 3, 4].map((item, index) => (
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
+                key={item}
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="scale-90"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="glass-card rounded-xl p-6"
               >
-                <VideoCard
-                  poster=""
-                  src="CAL6ql635Es"
-                  alt="What we do - Custom AI Solutions"
-                  videoId="services-video"
-                  isYouTube={true}
-                />
+                <div className="aspect-video bg-primary/10 rounded-lg mb-4 flex items-center justify-center">
+                  <Sparkles className="w-12 h-12 text-primary/40" />
+                </div>
+                <p className="text-sm text-muted-foreground mb-2">
+                  Client Result #{item}
+                </p>
+                <p className="text-2xl font-bold text-primary">
+                  +{item * 25}% Growth
+                </p>
               </motion.div>
-            </div>
-          </motion.div>
+            ))}
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-row gap-3 sm:gap-5 justify-center items-center mt-12 px-2"
+            className="text-center"
           >
-            <Link href="/coming-soon" className="flex-1 sm:flex-none">
-              <button className="sleek-button w-full sm:w-auto px-3 sm:px-7 py-3.5 rounded-xl font-medium text-xs sm:text-sm whitespace-nowrap sm:min-w-[180px]">
-                In-Depth Data
-              </button>
-            </Link>
-            <button
-              onClick={() => scrollToSection('book')}
-              className="flex-1 sm:flex-none px-3 sm:px-7 py-3.5 bg-primary text-primary-foreground rounded-xl font-medium text-xs sm:text-sm whitespace-nowrap sm:min-w-[180px] hover:bg-primary/90 transition-all glow-accent-sm"
+            <Link
+              href="/coming-soon"
+              className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
             >
-              Book a Consult
-            </button>
-            <Link href="/coming-soon" className="flex-1 sm:flex-none">
-              <button className="sleek-button w-full sm:w-auto px-3 sm:px-7 py-3.5 rounded-xl font-medium text-xs sm:text-sm whitespace-nowrap sm:min-w-[180px]">
-                Testimonials & Proof
-              </button>
+              See Every Result
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
         </div>
       </section>
 
-      <section id="process" className="py-14 px-3 sm:px-6 lg:px-8 bg-card/30 backdrop-blur-sm">
+      {/* Process Section - PRESERVED WITH ENHANCED STYLING */}
+      <section id="process" className="py-14 px-3 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -344,94 +413,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* AI Foundation Section */}
-      <section className="py-16 px-4 lg:px-8">
-        <div className="container mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
-              Why AI Is the New Foundation of Business
-            </h2>
-            <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
-              When intelligence runs your operations, you scale faster, work smarter, and eliminate limits. This is what modern infrastructure looks like.
-            </p>
-          </motion.div>
-
-          {/* Desktop: 3x2 grid (6 cards per row, 2 rows = 12 cards) */}
-          <div className="hidden md:grid md:grid-cols-6 gap-4 mb-10">
-            {aiFoundationCards.map((card, index) => {
-              const Icon = card.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  className="glass-card rounded-xl p-5 flex flex-col items-center text-center group hover:shadow-[0_0_30px_rgba(155,92,246,0.4)] transition-all duration-300"
-                >
-                  <div className="mb-4 p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                    <Icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-sm font-bold mb-2 text-foreground leading-tight">
-                    {card.title}
-                  </h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    {card.description}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* Mobile: Single column, filtered cards */}
-          <div className="md:hidden flex flex-col gap-4 mb-10">
-            {aiFoundationCards.filter((_, index) => mobileVisibleCards.includes(index)).map((card, displayIndex) => {
-              const Icon = card.icon;
-              const originalIndex = mobileVisibleCards[displayIndex];
-              return (
-                <motion.div
-                  key={originalIndex}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: displayIndex * 0.1 }}
-                  className="glass-card rounded-xl p-6 flex flex-col items-center text-center"
-                >
-                  <div className="mb-4 p-3 rounded-lg bg-primary/10">
-                    <Icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="text-base font-bold mb-2 text-foreground leading-tight">
-                    {card.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {card.description}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <GlowButton onClick={() => scrollToSection('book')}>
-              Implement AI
-            </GlowButton>
-          </motion.div>
-        </div>
-      </section>
-
-      <section id="pricing" className="py-14 px-6 lg:px-8">
+      {/* Why AI Section */}
+      <section className="py-16 px-6 lg:px-8 bg-card/30 backdrop-blur-sm">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -439,114 +422,69 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white leading-[1.2]">Pricing</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-[1.6]">
-              Choose the plan that fits your business. Scale as you grow.
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white">
+              Why AI Is No Longer Optional
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              Claude 4.6. GPT-4o Codex. Near-AGI level intelligence. The gap between businesses using this and businesses that aren't is growing every single day.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <PricingCard
-              label="Starter"
-              description="Perfect for any business size wanting a single AI automation."
-              features={[
-                'Basic AI agent or automation',
-                'Standard analytics & reporting',
-                'Up to 3 AI integrations',
-                '12hr customer support with COO',
-                '1 Developer'
-              ]}
-              popular={false}
-            />
-            <PricingCard
-              label="Professional"
-              description="Perfect for any business size wanting a multi-layer or complex AI system."
-              features={[
-                'Advance AI / automation',
-                'Personalized dashboard with analytics',
-                'Up to 15 integrations',
-                '24/7 customer support with CEO & COO',
-                '2 Developers'
-              ]}
-              popular={true}
-            />
-            <PricingCard
-              label="Enterprise"
-              description="Perfect for enterprise organizations seeking AI ecosystems."
-              features={[
-                'Fully suite automation',
-                'Enterprise-grade compliance',
-                'Corprate level dashboard',
-                'Unlimited Integrations',
-                '24/7 VIP Support'
-              ]}
-              popular={false}
-            />
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto"
-          >
-            <h3 className="text-xl font-bold mb-5 text-center text-white leading-[1.2]">
-              Frequently Asked Questions
-            </h3>
-            <Accordion type="single" collapsible className="space-y-3">
-              {faqs.map((faq, index) => (
-                <AccordionItem
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {whyAICards.map((card, index) => {
+              const Icon = card.icon;
+              return (
+                <motion.div
                   key={index}
-                  value={`item-${index}`}
-                  className="border border-border rounded-lg px-6 bg-card/50 backdrop-blur-sm"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ y: -8 }}
+                  className="glass-card rounded-xl p-8 group"
                 >
-                  <AccordionTrigger className="text-left hover:text-primary">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-[1.6]">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </motion.div>
+                  <div className="mb-5 p-4 rounded-lg bg-primary/10 w-fit group-hover:bg-primary/20 transition-colors">
+                    <Icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white leading-tight">
+                    {card.title}
+                  </h3>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    {card.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      <section id="book" className="py-14 px-6 lg:px-8 bg-card/30 backdrop-blur-sm">
-        <div className="container mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white leading-[1.2]">
-              Ready to transcend your business?
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-[1.6]">
-              Book a free consult with OTAI's CEO. You'll analyze your workflow, identify opportunities, and show you exactly how AI can scale your operations.
-            </p>
-          </motion.div>
+      {/* Bottom CTA Section */}
+      <section id="qualify" className="relative py-20 px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-primary/10 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/30 via-primary/5 to-transparent" />
 
+        <div className="container mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-6xl mx-auto"
+            className="text-center max-w-4xl mx-auto"
           >
-            <div className="bg-card border border-primary/30 rounded-lg p-6 glow-accent-sm">
-              <div className="rounded-lg overflow-hidden">
-                <iframe
-                  src="https://cal.com/otai-systems/30min-professional"
-                  style={{
-                    width: '100%',
-                    height: '650px',
-                    border: 'none'
-                  }}
-                />
-              </div>
-            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
+              Most Business Owners Wait Until It's Too Late.
+            </h2>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed">
+              The ones moving now are the ones who will dominate. Answer 5 questions and find out exactly how AI can change your business.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-5 bg-primary text-primary-foreground rounded-xl font-bold text-lg hover:bg-primary/90 transition-all glow-accent inline-flex items-center gap-3"
+            >
+              See If You Qualify
+              <ArrowRight className="w-6 h-6" />
+            </motion.button>
           </motion.div>
         </div>
       </section>
