@@ -39,6 +39,35 @@ export default function RootLayout({
             `,
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "@id": "https://otaisystems.com/#business",
+              "name": "OTAI Systems",
+              "url": "https://otaisystems.com/",
+              "description": "OTAI Systems builds AI agents, automation systems, and AI-powered lead generation systems for ambitious business owners looking to scale operations and revenue.",
+              "areaServed": {
+                "@type": "Country",
+                "name": "United States"
+              },
+              "serviceType": [
+                "AI Agents",
+                "Business Automation",
+                "Lead Generation Systems",
+                "Workflow Automation",
+                "AI Sales Systems"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "availableLanguage": ["English"]
+              }
+            })
+          }}
+        />
       </head>
       <body>
         <CursorTrail />

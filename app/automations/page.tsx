@@ -106,7 +106,7 @@ export default function AutomationsPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-semibold mb-4 text-gray-200">Data That Matter</h3>
+              <h3 className="text-lg font-semibold mb-4 text-gray-200">Data That Matters</h3>
               <div className="space-y-3 text-gray-400 text-sm">
                 <p className="flex items-start gap-2">
                   <span className="text-primary mt-1">+</span>
