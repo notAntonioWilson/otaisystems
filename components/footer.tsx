@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
-import { Zap, Linkedin, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Zap, Linkedin, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function Footer() {
@@ -34,6 +34,7 @@ export function Footer() {
     { icon: Instagram, href: 'https://www.instagram.com/otai.systems?igsh=bDRiaDQxdzdtcDR0&utm_source=qr', label: 'Instagram' },
     { icon: Facebook, href: 'https://www.facebook.com/share/1Bi6GWYdqe/?mibextid=wwXIfr', label: 'Facebook' },
     { icon: Twitter, href: 'https://x.com/antoniowilsonx?s=21', label: 'Twitter' },
+    { icon: Youtube, href: 'https://www.youtube.com/@antoniowilson_yt', label: 'YouTube' },
   ];
 
   return (
@@ -80,12 +81,38 @@ export function Footer() {
           <div className="relative md:px-12">
             <h3 className="text-base font-semibold mb-3 text-white">Navigation</h3>
             <div className="grid grid-cols-2 gap-x-14 gap-y-2.5">
+              <Link
+                href="/"
+                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
+              >
+                Home
+              </Link>
               <button
-                onClick={() => scrollToSection('services')}
                 className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
               >
-                Services
+                About
               </button>
+              <button
+                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
+              >
+                AI Agents
+              </button>
+              <button
+                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
+              >
+                Automations
+              </button>
+              <button
+                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
+              >
+                Lead Gen
+              </button>
+              <Link
+                href="/coming-soon"
+                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
+              >
+                Proof
+              </Link>
               <button
                 onClick={() => scrollToSection('pricing')}
                 className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
@@ -93,23 +120,11 @@ export function Footer() {
                 Pricing
               </button>
               <button
-                onClick={() => scrollToSection('process')}
-                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
-              >
-                Process
-              </button>
-              <button
                 onClick={() => scrollToSection('book')}
                 className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
               >
-                Contact
+                Book a Call
               </button>
-              <Link
-                href="/coming-soon"
-                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
-              >
-                Testimonial & Proof
-              </Link>
             </div>
             <div className="hidden md:block absolute right-0 top-0 bottom-0 w-px bg-border/50" />
           </div>
