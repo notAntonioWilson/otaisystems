@@ -88,11 +88,12 @@ export function NavBar() {
               >
                 About
               </button>
-              <button
+              <Link
+                href="/ai-agents"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
                 AI Agents
-              </button>
+              </Link>
               <button
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
@@ -171,11 +172,13 @@ export function NavBar() {
                 >
                   About
                 </button>
-                <button
-                  className="text-base font-medium text-foreground hover:text-primary transition-colors text-left py-2"
+                <Link
+                  href="/ai-agents"
+                  onClick={handleLinkClick}
+                  className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
                 >
                   AI Agents
-                </button>
+                </Link>
                 <button
                   className="text-base font-medium text-foreground hover:text-primary transition-colors text-left py-2"
                 >
