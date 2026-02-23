@@ -85,7 +85,7 @@ export default function ResultsPage() {
             className="text-center mb-12"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 text-white relative leading-[1.2]">
-              Results & Systems from OTAI
+              Proven Results From AI Systems Deployed In Real Businesses
               <div className="absolute -inset-4 bg-primary/20 blur-3xl -z-10" />
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-[1.6]">

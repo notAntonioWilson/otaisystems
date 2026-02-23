@@ -182,7 +182,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <section className="relative pt-24 pb-14 px-6 lg:px-8 overflow-hidden">
+        <section className="relative pt-24 pb-14 px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 particle-bg opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
@@ -196,9 +196,8 @@ export default function Home() {
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/30">
                 Leverage the Power of AI
               </Badge>
-              <h1 className="font-bold mb-5 leading-[1.15]">
-                <div className="text-2xl md:text-3xl lg:text-4xl text-white">ONLY Ambitious Business Owners Ready On</div>
-                <div className="text-2xl md:text-3xl lg:text-4xl mt-2" style={{ color: '#a855f7' }}>It's Time To Dominate With AI.</div>
+              <h1 className="font-bold mb-5 leading-[1.15] text-2xl md:text-3xl lg:text-4xl">
+                <span className="text-white">AI Systems That Replace Manual Work and Multiply Revenue</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-6 leading-[1.6]">
                 If you are looking to stay ahead of your competition we are perfect for you, we are constantly up to date with the latest and truly greatest advancements in the AI / Automations space like GPT-5.3 Codex, Claude 4.6 and OpenClaw. Not only that we always build custom solutions, a copy paste one-off template will never advance your company.
@@ -236,7 +235,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-8 sm:mb-12"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 text-white leading-[1.2]">Our Intelligent, Impact-Driven Process</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 text-white leading-[1.2]">AI Agents That Work 24/7 For Your Business</h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-[1.6] px-2">
               We consult, engineer, and optimize AI solutions that integrate seamlessly, built to perform, adapt, and scale without limits.
             </p>
@@ -282,7 +281,7 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
-              Why AI Is the New Foundation of Business
+              Automation Systems That Eliminate Bottlenecks
             </h2>
             <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
               When intelligence runs your operations, you scale faster, work smarter, and eliminate limits. This is what modern infrastructure looks like.
@@ -367,7 +366,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white leading-[1.2]">Pricing</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white leading-[1.2]">Predictable Lead Generation Powered by AI</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-[1.6]">
               Choose the plan that fits your business. Scale as you grow.
             </p>
@@ -450,7 +449,7 @@ export default function Home() {
             className="text-center mb-10"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white leading-[1.2]">
-              Ready to transcend your business?
+              Book Your AI Strategy Call
             </h2>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-[1.6]">
               Book a free consult with OTAI's CEO. You'll analyze your workflow, identify opportunities, and show you exactly how AI can scale your operations.

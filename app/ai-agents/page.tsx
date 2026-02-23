@@ -39,6 +39,9 @@ export default function AIAgentsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-8"
           >
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white leading-[1.2]">
+              Custom AI Agents Built to Run Core Parts of Your Business
+            </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               If you are looking for an AI agent that answers every call, books appointments, and provides custom support, hit the{' '}
               <button onClick={() => scrollToSection('voice')} className="font-semibold hover:underline cursor-pointer transition-all" style={{ color: '#a855f7' }}>Voice Agents</button> button. If you are looking for a strategic AI partner that thinks at the level of a world-class operator and helps you make your next business move, hit{' '}

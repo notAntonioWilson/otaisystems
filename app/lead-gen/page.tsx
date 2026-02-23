@@ -38,6 +38,9 @@ export default function LeadGenPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-8"
           >
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white leading-[1.2]">
+              AI Lead Generation Systems That Fill Your Pipeline
+            </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               If you are looking for an AI system that researches your ideal prospects and sends fully personalized outreach at scale without you writing a single email, hit{' '}
               <button onClick={() => scrollToSection('email')} className="font-semibold hover:underline cursor-pointer transition-all" style={{ color: '#a855f7' }}>Email Outreach</button>. If you are looking for an AI that calls your prospect list, qualifies leads in real time, and books appointments directly into your calendar, hit{' '}

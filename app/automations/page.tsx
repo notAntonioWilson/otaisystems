@@ -38,6 +38,9 @@ export default function AutomationsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-8"
           >
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white leading-[1.2]">
+              Automation Systems That Remove Bottlenecks and Scale Operations
+            </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               If you are looking for an automation that gives you a real-time command center over every system, agent, and client in your business, hit{' '}
               <button onClick={() => scrollToSection('b2b-b2c')} className="font-semibold hover:underline cursor-pointer transition-all" style={{ color: '#a855f7' }}>B2B & B2C</button>. If you are looking for automations that eliminate the back-office work draining your time and margins as a business that serves other businesses, hit{' '}

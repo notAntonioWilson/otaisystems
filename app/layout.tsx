@@ -5,9 +5,12 @@ import { Footer } from '@/components/footer';
 import { CursorTrail } from '@/components/cursor-trail';
 
 export const metadata: Metadata = {
-  title: 'OTAI Systems',
-  description: 'We build custom intelligent automation systems for businesses that want to scale faster, cut costs, and work smarter. Our AI solutions operate 24/7 to help you grow efficiently and stay ahead.',
-  keywords: 'AI automation, sales automation, customer support AI, workflow automation, business automation',
+  title: {
+    default: 'AI Automation Agency | AI Agents & Lead Gen Systems',
+    template: '%s | OTAI Systems'
+  },
+  description: 'We build AI agents, workflow automations, and lead generation systems for ambitious business owners. Scale faster. Book your strategy call today.',
+  keywords: 'AI automation, sales automation, customer support AI, workflow automation, business automation, AI agents, lead generation',
   icons: {
     icon: '/favicon.svg',
   },

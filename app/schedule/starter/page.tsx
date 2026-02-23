@@ -14,7 +14,7 @@ export default function StarterSchedule() {
             className="text-center mb-12"
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              Schedule Your Starter Plan Consultation
+              Book Your AI Starter Strategy Call
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Let's discuss how AI automation can transform your business. Book a free consultation with our team.
