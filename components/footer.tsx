@@ -98,9 +98,10 @@ export function Footer() {
                 AI Agents
               </button>
               <button
+                onClick={() => scrollToSection('pricing')}
                 className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
               >
-                Automations
+                Pricing
               </button>
               <button
                 className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
@@ -114,10 +115,9 @@ export function Footer() {
                 Proof
               </Link>
               <button
-                onClick={() => scrollToSection('pricing')}
                 className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
               >
-                Pricing
+                Automations
               </button>
               <button
                 onClick={() => scrollToSection('book')}
