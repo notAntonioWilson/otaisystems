@@ -39,13 +39,13 @@ export default function AIAgentsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-8"
           >
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-white leading-[1.3]">
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               If you are looking for an AI agent that answers every call, books appointments, and provides custom support, hit the{' '}
               <span style={{ color: '#a855f7' }}>Voice Agents</span> button. If you are looking for a strategic AI partner that thinks at the level of a world-class operator and helps you make your next business move, hit{' '}
               <span style={{ color: '#a855f7' }}>CEO Agents</span>. If you are looking for an AI Chatbot that turns your website visitors into booked calls and handles your customer support without you, hit{' '}
               <span style={{ color: '#a855f7' }}>Website Agents</span>. If you are looking for an AI Agent that works your Social Media DMs and runs your content strategy so you can focus on what you do best, hit{' '}
               <span style={{ color: '#a855f7' }}>Social Media Agents</span>.
-            </h1>
+            </p>
           </motion.div>
         </div>
       </section>
@@ -80,7 +80,7 @@ export default function AIAgentsPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-white leading-[1.2]"
+            className="text-2xl md:text-3xl font-bold text-center mb-12 text-white leading-[1.3]"
           >
             The Agent That Answers EVERY Call and Fills Your Calendar While You Provide For Your Client
           </motion.h2>
@@ -105,8 +105,8 @@ export default function AIAgentsPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-4 text-white">Stats That Matter</h3>
-              <div className="space-y-3 text-muted-foreground text-sm">
+              <h3 className="text-lg font-semibold mb-4 text-gray-200">Stats That Matter</h3>
+              <div className="space-y-3 text-gray-400 text-sm">
                 <p className="flex items-start gap-2">
                   <span className="text-primary mt-1">+</span>
                   <span>82% of callers who reach voicemail never call back</span>
@@ -128,7 +128,7 @@ export default function AIAgentsPage() {
           </div>
 
           <div className="mb-8">
-            <h4 className="text-lg font-semibold mb-3 text-white">Top 5 Industries:</h4>
+            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
             <div className="flex flex-wrap gap-2">
               {['Gyms & Fitness Studios', 'Med Spas & Wellness Centers', 'Dental & Orthodontic Offices', 'Chiropractic Clinics', 'IV Therapy & Alt Med Locations'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
@@ -144,7 +144,7 @@ export default function AIAgentsPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-base text-gray-400 mb-6">
               If you are a business owner looking to increase your bookings through the phone with a hyper realistic AI Phone Agent book a meeting with our CEO:
             </p>
             <Link href="/#book">
@@ -161,7 +161,7 @@ export default function AIAgentsPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-white leading-[1.2]"
+            className="text-2xl md:text-3xl font-bold text-center mb-12 text-white leading-[1.3]"
           >
             An AI Agent That Operates Within Your Compliance Requirements and Transfers to a Human the Moment It Matters
           </motion.h2>
@@ -172,8 +172,8 @@ export default function AIAgentsPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-4 text-white">Industry Stats That Matter</h3>
-              <div className="space-y-3 text-muted-foreground text-sm">
+              <h3 className="text-lg font-semibold mb-4 text-gray-200">Industry Stats That Matter</h3>
+              <div className="space-y-3 text-gray-400 text-sm">
                 <p className="flex items-start gap-2">
                   <span className="text-primary mt-1">+</span>
                   <span>Businesses in regulated industries lose significant revenue annually from missed initial consultations</span>
@@ -209,7 +209,7 @@ export default function AIAgentsPage() {
           </div>
 
           <div className="mb-8">
-            <h4 className="text-lg font-semibold mb-3 text-white">Top 5 Industries:</h4>
+            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
             <div className="flex flex-wrap gap-2">
               {['Law Firms', 'Financial Advisory Firms', 'Insurance Agencies', 'Real Estate Brokerages', 'Medical & Mental Health Practices'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
@@ -225,7 +225,7 @@ export default function AIAgentsPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-base text-gray-400 mb-6">
               If you are a business owner who needs time back with clients and is compliant book a call with our CEO:
             </p>
             <Link href="/#book">
@@ -242,7 +242,7 @@ export default function AIAgentsPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-white leading-[1.2]"
+            className="text-2xl md:text-3xl font-bold text-center mb-12 text-white leading-[1.3]"
           >
             A Billionaire-Level Business Mind Inside Your Operations. Available 24/7. Knows Your Business Better Every Day.
           </motion.h2>
@@ -267,8 +267,8 @@ export default function AIAgentsPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-4 text-white">Industry Stats That Matter</h3>
-              <div className="space-y-3 text-muted-foreground text-sm">
+              <h3 className="text-lg font-semibold mb-4 text-gray-200">Industry Stats That Matter</h3>
+              <div className="space-y-3 text-gray-400 text-sm">
                 <p className="flex items-start gap-2">
                   <span className="text-primary mt-1">+</span>
                   <span>Founders with access to strategic advisory grow 2.3x faster than those operating without it</span>
@@ -290,7 +290,7 @@ export default function AIAgentsPage() {
           </div>
 
           <div className="mb-8">
-            <h4 className="text-lg font-semibold mb-3 text-white">Top 5 Industries:</h4>
+            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
             <div className="flex flex-wrap gap-2">
               {['Startups & Early-Stage Founders', 'E-Commerce Business Owners', 'Agency Owners & Consultants', 'Real Estate Investors & Developers', 'Service Businesses Scaling Past $1M'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
@@ -306,7 +306,7 @@ export default function AIAgentsPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-base text-gray-400 mb-6">
               If your company is stuck and you are ready to advance to the next level, or a startup looking to get their company going this AI Agent is for you:
             </p>
             <Link href="/#book">
@@ -323,7 +323,7 @@ export default function AIAgentsPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-white leading-[1.2]"
+            className="text-2xl md:text-3xl font-bold text-center mb-12 text-white leading-[1.3]"
           >
             The Agent That Increases Your Website Conversion
           </motion.h2>
@@ -334,8 +334,8 @@ export default function AIAgentsPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-4 text-white">Industry Stats That Matter</h3>
-              <div className="space-y-3 text-muted-foreground text-sm">
+              <h3 className="text-lg font-semibold mb-4 text-gray-200">Industry Stats That Matter</h3>
+              <div className="space-y-3 text-gray-400 text-sm">
                 <p className="flex items-start gap-2">
                   <span className="text-primary mt-1">+</span>
                   <span>96% of website visitors leave without taking action</span>
@@ -371,7 +371,7 @@ export default function AIAgentsPage() {
           </div>
 
           <div className="mb-8">
-            <h4 className="text-lg font-semibold mb-3 text-white">Top 5 Industries:</h4>
+            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
             <div className="flex flex-wrap gap-2">
               {['Marketing & Growth Agencies', 'Branding & Creative Studios', 'PR & Communications Firms', 'Business Consulting Practices', 'Web Design & Development Agencies'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
@@ -387,7 +387,7 @@ export default function AIAgentsPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-base text-gray-400 mb-6">
               If you have heavy traffic on your website but a low conversion rate then this agent will increase it:
             </p>
             <Link href="/#book">
@@ -404,7 +404,7 @@ export default function AIAgentsPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-white leading-[1.2]"
+            className="text-2xl md:text-3xl font-bold text-center mb-12 text-white leading-[1.3]"
           >
             An AI Support Agent That Knows Your Product Inside Out and Escalates to a Human the Second It's Requested
           </motion.h2>
@@ -429,8 +429,8 @@ export default function AIAgentsPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-4 text-white">Industry Stats That Matter</h3>
-              <div className="space-y-3 text-muted-foreground text-sm">
+              <h3 className="text-lg font-semibold mb-4 text-gray-200">Industry Stats That Matter</h3>
+              <div className="space-y-3 text-gray-400 text-sm">
                 <p className="flex items-start gap-2">
                   <span className="text-primary mt-1">+</span>
                   <span>Businesses using AI support agents resolve up to 70% of tickets without any human involvement</span>
@@ -452,7 +452,7 @@ export default function AIAgentsPage() {
           </div>
 
           <div className="mb-8">
-            <h4 className="text-lg font-semibold mb-3 text-white">Top 5 Industries:</h4>
+            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
             <div className="flex flex-wrap gap-2">
               {['SaaS & Software Platforms', 'Tech Products & Apps', 'Online Course & Membership Platforms', 'E-Commerce Brands with Complex Products', 'Managed Service Providers'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
@@ -468,7 +468,7 @@ export default function AIAgentsPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-base text-gray-400 mb-6">
               If you have a complex support system and need an advanced AI Agent to support your customer this agent is for you:
             </p>
             <Link href="/#book">
@@ -485,7 +485,7 @@ export default function AIAgentsPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-white leading-[1.2]"
+            className="text-2xl md:text-3xl font-bold text-center mb-12 text-white leading-[1.3]"
           >
             The Agent That Lives in Your DMs, Responds Like You, and Converts Followers Into Paying Clients
           </motion.h2>
@@ -496,8 +496,8 @@ export default function AIAgentsPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-4 text-white">Industry Stats That Matter</h3>
-              <div className="space-y-3 text-muted-foreground text-sm">
+              <h3 className="text-lg font-semibold mb-4 text-gray-200">Industry Stats That Matter</h3>
+              <div className="space-y-3 text-gray-400 text-sm">
                 <p className="flex items-start gap-2">
                   <span className="text-primary mt-1">+</span>
                   <span>Business owners spend 4+ hours per week manually managing DMs that could be automated</span>
@@ -533,7 +533,7 @@ export default function AIAgentsPage() {
           </div>
 
           <div className="mb-8">
-            <h4 className="text-lg font-semibold mb-3 text-white">Top 5 Industries:</h4>
+            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
             <div className="flex flex-wrap gap-2">
               {['Health & Fitness Coaches', 'Life & Mindset Coaches', 'Nutrition & Wellness Coaches', 'Online Course Creators', 'Personal Brand Businesses'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
@@ -549,7 +549,7 @@ export default function AIAgentsPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-base text-gray-400 mb-6">
               If you have a high level of DMs flowing to you this is the best agent for you:
             </p>
             <Link href="/#book">
@@ -566,7 +566,7 @@ export default function AIAgentsPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-white leading-[1.2]"
+            className="text-2xl md:text-3xl font-bold text-center mb-12 text-white leading-[1.3]"
           >
             A Master Marketing Strategist in Your Pocket That Knows Your Industry and Tells You Exactly What to Create
           </motion.h2>
@@ -591,8 +591,8 @@ export default function AIAgentsPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-4 text-white">Industry Stats That Matter</h3>
-              <div className="space-y-3 text-muted-foreground text-sm">
+              <h3 className="text-lg font-semibold mb-4 text-gray-200">Industry Stats That Matter</h3>
+              <div className="space-y-3 text-gray-400 text-sm">
                 <p className="flex items-start gap-2">
                   <span className="text-primary mt-1">+</span>
                   <span>Businesses posting consistent social content generate up to 3x more inbound leads than those that don't</span>
@@ -614,7 +614,7 @@ export default function AIAgentsPage() {
           </div>
 
           <div className="mb-8">
-            <h4 className="text-lg font-semibold mb-3 text-white">Top 5 Industries:</h4>
+            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
             <div className="flex flex-wrap gap-2">
               {['Roofing & Exterior Contractors', 'Landscaping & Hardscape Companies', 'General Contractors & Builders', 'HVAC, Plumbing & Electrical', 'Interior Design & Renovation Firms'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
@@ -630,7 +630,7 @@ export default function AIAgentsPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-base text-gray-400 mb-6">
               If you are looking to start building a powerful social media presence this is the agent for you:
             </p>
             <Link href="/#book">
