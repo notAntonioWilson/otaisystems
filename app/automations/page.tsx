@@ -125,9 +125,9 @@ export default function AutomationsPage() {
             </motion.div>
           </div>
 
-          <div className="mb-8">
-            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-8 text-center">
+            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
+            <div className="flex flex-wrap justify-center gap-2">
               {['AI & Automation Agencies', 'Marketing & Growth Agencies', 'Managed Service Providers', 'SaaS & Tech Companies', 'Multi-Client Service Businesses'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
                   {industry}
@@ -206,9 +206,9 @@ export default function AutomationsPage() {
             </motion.div>
           </div>
 
-          <div className="mb-8">
-            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-8 text-center">
+            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
+            <div className="flex flex-wrap justify-center gap-2">
               {['General Contractors & Builders', 'Commercial Construction Firms', 'Specialty Trade Contractors', 'Real Estate Developers', 'Property Management Companies'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
                   {industry}
@@ -287,9 +287,9 @@ export default function AutomationsPage() {
             </motion.div>
           </div>
 
-          <div className="mb-8">
-            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-8 text-center">
+            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
+            <div className="flex flex-wrap justify-center gap-2">
               {['Multi-Family Property Operators', 'Apartment Complex Management', 'Student Housing Providers', 'Short-Term Rental Operators', 'HOA & Residential Community Management'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
                   {industry}
@@ -368,9 +368,9 @@ export default function AutomationsPage() {
             </motion.div>
           </div>
 
-          <div className="mb-8">
-            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-8 text-center">
+            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
+            <div className="flex flex-wrap justify-center gap-2">
               {['Trim & Finish Carpenters', 'Specialty Trade Contractors', 'General Contractors', 'Landscaping & Hardscape Companies', 'Home Renovation & Remodeling Firms'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
                   {industry}
@@ -449,9 +449,9 @@ export default function AutomationsPage() {
             </motion.div>
           </div>
 
-          <div className="mb-8">
-            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-8 text-center">
+            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
+            <div className="flex flex-wrap justify-center gap-2">
               {['E-Commerce Brands', 'Retail Stores & Boutiques', 'Health & Beauty Product Companies', 'Supplement & Nutrition Brands', 'Wholesale & Distribution Businesses'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
                   {industry}

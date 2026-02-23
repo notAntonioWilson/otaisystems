@@ -127,9 +127,9 @@ export default function AIAgentsPage() {
             </motion.div>
           </div>
 
-          <div className="mb-8">
-            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-8 text-center">
+            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
+            <div className="flex flex-wrap justify-center gap-2">
               {['Gyms & Fitness Studios', 'Med Spas & Wellness Centers', 'Dental & Orthodontic Offices', 'Chiropractic Clinics', 'IV Therapy & Alt Med Locations'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
                   {industry}
@@ -208,9 +208,9 @@ export default function AIAgentsPage() {
             </motion.div>
           </div>
 
-          <div className="mb-8">
-            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-8 text-center">
+            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
+            <div className="flex flex-wrap justify-center gap-2">
               {['Law Firms', 'Financial Advisory Firms', 'Insurance Agencies', 'Real Estate Brokerages', 'Medical & Mental Health Practices'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
                   {industry}
@@ -289,9 +289,9 @@ export default function AIAgentsPage() {
             </motion.div>
           </div>
 
-          <div className="mb-8">
-            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-8 text-center">
+            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
+            <div className="flex flex-wrap justify-center gap-2">
               {['Startups & Early-Stage Founders', 'E-Commerce Business Owners', 'Agency Owners & Consultants', 'Real Estate Investors & Developers', 'Service Businesses Scaling Past $1M'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
                   {industry}
@@ -370,9 +370,9 @@ export default function AIAgentsPage() {
             </motion.div>
           </div>
 
-          <div className="mb-8">
-            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-8 text-center">
+            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
+            <div className="flex flex-wrap justify-center gap-2">
               {['Marketing & Growth Agencies', 'Branding & Creative Studios', 'PR & Communications Firms', 'Business Consulting Practices', 'Web Design & Development Agencies'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
                   {industry}
@@ -451,9 +451,9 @@ export default function AIAgentsPage() {
             </motion.div>
           </div>
 
-          <div className="mb-8">
-            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-8 text-center">
+            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
+            <div className="flex flex-wrap justify-center gap-2">
               {['SaaS & Software Platforms', 'Tech Products & Apps', 'Online Course & Membership Platforms', 'E-Commerce Brands with Complex Products', 'Managed Service Providers'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
                   {industry}
@@ -532,9 +532,9 @@ export default function AIAgentsPage() {
             </motion.div>
           </div>
 
-          <div className="mb-8">
-            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-8 text-center">
+            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
+            <div className="flex flex-wrap justify-center gap-2">
               {['Health & Fitness Coaches', 'Life & Mindset Coaches', 'Nutrition & Wellness Coaches', 'Online Course Creators', 'Personal Brand Businesses'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
                   {industry}
@@ -613,9 +613,9 @@ export default function AIAgentsPage() {
             </motion.div>
           </div>
 
-          <div className="mb-8">
-            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-8 text-center">
+            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
+            <div className="flex flex-wrap justify-center gap-2">
               {['Roofing & Exterior Contractors', 'Landscaping & Hardscape Companies', 'General Contractors & Builders', 'HVAC, Plumbing & Electrical', 'Interior Design & Renovation Firms'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
                   {industry}

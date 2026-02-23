@@ -125,9 +125,9 @@ export default function LeadGenPage() {
             </motion.div>
           </div>
 
-          <div className="mb-8">
-            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-8 text-center">
+            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
+            <div className="flex flex-wrap justify-center gap-2">
               {['Business Consultants & Advisors', 'Marketing & Growth Agencies', 'B2B SaaS & Tech Companies', 'Recruiting & Staffing Firms', 'Financial & Accounting Services'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
                   {industry}
@@ -206,9 +206,9 @@ export default function LeadGenPage() {
             </motion.div>
           </div>
 
-          <div className="mb-8">
-            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-8 text-center">
+            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
+            <div className="flex flex-wrap justify-center gap-2">
               {['Solar Installation Companies', 'Insurance Agencies & Brokers', 'Real Estate Teams & Brokerages', 'Home Services & Improvement Companies', 'Debt Settlement & Financial Services'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
                   {industry}
@@ -287,9 +287,9 @@ export default function LeadGenPage() {
             </motion.div>
           </div>
 
-          <div className="mb-8">
-            <h4 className="text-base font-semibold mb-3 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-8 text-center">
+            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
+            <div className="flex flex-wrap justify-center gap-2">
               {['Online Coaches & Course Creators', 'Personal Development & Mindset Brands', 'Health & Fitness Online Businesses', 'Business & Entrepreneurship Coaches', 'Spiritual & Life Transformation Coaches'].map((industry) => (
                 <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
                   {industry}
