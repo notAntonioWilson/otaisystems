@@ -177,9 +177,17 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
+              <div className="inline-flex items-center justify-center mb-6">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full"></div>
+                  <div className="relative px-6 py-2 bg-gradient-to-r from-primary/80 to-primary rounded-full border border-primary/50">
+                    <span className="text-sm font-semibold text-white">Leverage the power of AI</span>
+                  </div>
+                </div>
+              </div>
               <h1 className="font-bold mb-6 leading-[1.1]">
                 <div className="text-4xl md:text-5xl lg:text-6xl text-white">
-                  The Businesses That Adapt to AI Now Will Own Their Industries. The Rest Will Watch.
+                  Ambitious Business Owners ONLY Continue Reading
                 </div>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-[1.6]">

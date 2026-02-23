@@ -84,6 +84,12 @@ export function NavBar() {
                 Home
               </Link>
               <Link
+                href="/about"
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
+                About
+              </Link>
+              <Link
                 href="/ai-agents"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
@@ -99,19 +105,13 @@ export function NavBar() {
                 href="/outreach-lead-gen"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
-                Outreach & Lead Gen
+                Lead Gen
               </Link>
               <Link
                 href="/coming-soon"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
                 Proof
-              </Link>
-              <Link
-                href="/about"
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
-                About
               </Link>
               <Link href="/book-a-call">
                 <motion.button
@@ -166,6 +166,13 @@ export function NavBar() {
                   Home
                 </Link>
                 <Link
+                  href="/about"
+                  onClick={handleLinkClick}
+                  className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
+                >
+                  About
+                </Link>
+                <Link
                   href="/ai-agents"
                   onClick={handleLinkClick}
                   className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
@@ -184,7 +191,7 @@ export function NavBar() {
                   onClick={handleLinkClick}
                   className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
                 >
-                  Outreach & Lead Gen
+                  Lead Gen
                 </Link>
                 <Link
                   href="/coming-soon"
@@ -192,13 +199,6 @@ export function NavBar() {
                   className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
                 >
                   Proof
-                </Link>
-                <Link
-                  href="/about"
-                  onClick={handleLinkClick}
-                  className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
-                >
-                  About
                 </Link>
                 <Link
                   href="/book-a-call"
