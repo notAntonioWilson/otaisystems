@@ -197,11 +197,11 @@ export default function Home() {
                 Leverage the Power of AI
               </Badge>
               <h1 className="font-bold mb-5 leading-[1.15]">
-                <div className="text-3xl md:text-4xl lg:text-5xl text-white">ONLY Ambitious Business Owners Ready On</div>
-                <div className="text-3xl md:text-4xl lg:text-5xl mt-2" style={{ color: '#a855f7' }}>It's Time To Dominate With AI.</div>
+                <div className="text-2xl md:text-3xl lg:text-4xl text-white">ONLY Ambitious Business Owners Ready On</div>
+                <div className="text-2xl md:text-3xl lg:text-4xl mt-2" style={{ color: '#a855f7' }}>It's Time To Dominate With AI.</div>
               </h1>
               <p className="text-lg text-muted-foreground mb-6 leading-[1.6]">
-                If you are looking to stay ahead of your competition we are perfect for you, we are constantly up to date with the latest and truly greatest things in the space like GPT-5.3 Codex, Claude 4.6 and OpenClaw. Not only that we always build custom solutions. But if you want someone whose going to leave you with a system that is going to be out of date in a month we are not for you.
+                If you are looking to stay ahead of your competition we are perfect for you, we are constantly up to date with the latest and truly greatest advancements in the AI / Automations space like GPT-5.3 Codex, Claude 4.6 and OpenClaw. Not only that we always build custom solutions, a copy paste one-off template will never advance your company.
               </p>
 
               <DripButton onClick={() => scrollToSection('book')}>
