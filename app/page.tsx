@@ -197,11 +197,10 @@ export default function Home() {
                 Leverage the Power of AI
               </Badge>
               <h1 className="font-bold mb-5 leading-[1.15]">
-                <div className="text-3xl md:text-4xl lg:text-5xl mb-2 text-white">Custom AI Solutions</div>
-                <div className="text-2xl md:text-3xl lg:text-4xl" style={{ color: '#a855f7' }}>For Ambitious Businesses</div>
+                <div className="text-3xl md:text-4xl lg:text-5xl mb-2 text-white">This Website Is ONLY Ment For Ambitious Business Owners <span style={{ color: '#a855f7' }}>Desiring To Advance With AI Automations</span></div>
               </h1>
               <p className="text-lg text-muted-foreground mb-6 leading-[1.6]">
-                Reality check: AI is no longer the future of business it's a necessity now! If you don't adapt you will fall behind.
+                If you are looking to stay ahead of your competition we are perfect for you, we are constantly up to date with the latest and truly greatest things in the space like GPT-5.3 Codex, Claude 4.6 and OpenClaw. Not only that we always build custom solutions. But if you want someone whose going to leave you with a system that is going to be out of date in a month we are not for you.
               </p>
 
               <DripButton onClick={() => scrollToSection('book')}>
@@ -227,78 +226,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="py-14 px-6 lg:px-8">
-        <div className="container mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-12"
-          >
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 className="font-bold mb-5 leading-[1.15]">
-                  <div className="text-3xl md:text-4xl lg:text-5xl mb-2 text-primary">What we do:</div>
-                  <div className="text-2xl md:text-3xl lg:text-4xl text-foreground">Custom AI Solutions</div>
-                </h2>
-                <div className="space-y-5 text-base text-muted-foreground leading-[1.6]">
-                  <p>
-                    Unlike other AI agencies, consultants, or software companies, we understand one simple truth... no two businesses are the same.
-                  </p>
-                  <p>
-                    Commonly, you're given a tool or a template that helps for a month, then needs an upgrade.
-                  </p>
-                  <p>
-                    At OTAI, we analyze your business, identify your goals, then build custom AI automations that not only drive growth and efficiency but continue to evolve as your company grows.
-                  </p>
-                </div>
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="scale-90"
-              >
-                <VideoCard
-                  poster=""
-                  src="CAL6ql635Es"
-                  alt="What we do - Custom AI Solutions"
-                  videoId="services-video"
-                  isYouTube={true}
-                />
-              </motion.div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-row gap-3 sm:gap-5 justify-center items-center mt-12 px-2"
-          >
-            <Link href="/coming-soon" className="flex-1 sm:flex-none">
-              <button className="sleek-button w-full sm:w-auto px-3 sm:px-7 py-3.5 rounded-xl font-medium text-xs sm:text-sm whitespace-nowrap sm:min-w-[180px]">
-                In-Depth Data
-              </button>
-            </Link>
-            <button
-              onClick={() => scrollToSection('book')}
-              className="flex-1 sm:flex-none px-3 sm:px-7 py-3.5 bg-primary text-primary-foreground rounded-xl font-medium text-xs sm:text-sm whitespace-nowrap sm:min-w-[180px] hover:bg-primary/90 transition-all glow-accent-sm"
-            >
-              Book a Consult
-            </button>
-            <Link href="/coming-soon" className="flex-1 sm:flex-none">
-              <button className="sleek-button w-full sm:w-auto px-3 sm:px-7 py-3.5 rounded-xl font-medium text-xs sm:text-sm whitespace-nowrap sm:min-w-[180px]">
-                Testimonials & Proof
-              </button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
 
       <section id="process" className="py-14 px-3 sm:px-6 lg:px-8 bg-card/30 backdrop-blur-sm">
         <div className="container mx-auto">
