@@ -5,17 +5,17 @@
 @layer base {
   :root {
     --background: 0 0% 4%;
-    --foreground: 0 0% 95%;
+    --foreground: 0 0% 100%;
     --card: 0 0% 6%;
-    --card-foreground: 0 0% 95%;
+    --card-foreground: 0 0% 100%;
     --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 95%;
+    --popover-foreground: 0 0% 100%;
     --primary: 262 83% 58%;
     --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted-foreground: 0 0% 63%;
     --accent: 262 83% 58%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
@@ -34,20 +34,85 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    color: #A0A0A0;
     background-color: #0A0A0A;
     background-image: radial-gradient(ellipse at top, rgba(155, 92, 246, 0.08) 0%, transparent 50%);
     background-attachment: fixed;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Satoshi', sans-serif;
+  h1 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+  }
+
+  h2, h3 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  h4, h5, h6 {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  p, span, div {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  button {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+  }
+
+  strong, b {
     font-weight: 700;
   }
 }
 
 @layer utilities {
+  .hero-text {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+  }
+
+  .headline-text {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+  }
+
+  .section-heading {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  .body-text {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    color: #A0A0A0;
+  }
+
+  .body-text-medium {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 500;
+    color: #A0A0A0;
+  }
+
+  .button-text {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+  }
+
   .glass-card {
     background: rgba(15, 15, 15, 0.6);
     backdrop-filter: blur(20px);
