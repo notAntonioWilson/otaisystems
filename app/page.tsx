@@ -125,7 +125,7 @@ export default function Home() {
                 </div>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-[1.6]">
-                We build custom AI agents, automations, and outreach systems using Claude 4.6 and GPT-4o Codex — the most powerful models ever built — to eliminate your manual work, capture more revenue, and scale your operations before your competitors do.
+                If you are looking to stay ahead of your competition we are perfect for you, we are constantly up to date with the latest and truly greatest things in the space like GPT-5.3 Codex, Claude 4.6 and OpenClaw. Not only that we always build custom solutions. But if you want someone whose going to leave you with a system that is going to be out of date in a month we are not for you.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
