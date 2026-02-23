@@ -83,45 +83,38 @@ export function NavBar() {
               >
                 Home
               </Link>
-              <Link
-                href="/about"
+              <button
+                onClick={() => scrollToSection('services')}
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
-                About
-              </Link>
-              <Link
-                href="/ai-agents"
+                Services
+              </button>
+              <button
+                onClick={() => scrollToSection('process')}
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
-                AI Agents
-              </Link>
-              <Link
-                href="/automations"
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
-                Automations
-              </Link>
-              <Link
-                href="/outreach-lead-gen"
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
-                Lead Gen
-              </Link>
+                Process
+              </button>
               <Link
                 href="/coming-soon"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
                 Proof
               </Link>
-              <Link href="/book-a-call">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium text-sm hover:bg-primary/90 transition-colors glow-accent-sm"
-                >
-                  Book a Call
-                </motion.button>
-              </Link>
+              <button
+                onClick={() => scrollToSection('pricing')}
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
+                Pricing
+              </button>
+              <motion.button
+                onClick={() => scrollToSection('book')}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-4 py-2 bg-primary text-primary-foreground rounded-lg font-medium text-sm"
+              >
+                Book a call
+              </motion.button>
             </div>
 
             <button
@@ -165,34 +158,18 @@ export function NavBar() {
                 >
                   Home
                 </Link>
-                <Link
-                  href="/about"
-                  onClick={handleLinkClick}
-                  className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
+                <button
+                  onClick={() => scrollToSection('services')}
+                  className="text-base font-medium text-foreground hover:text-primary transition-colors text-left py-2"
                 >
-                  About
-                </Link>
-                <Link
-                  href="/ai-agents"
-                  onClick={handleLinkClick}
-                  className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
+                  Services
+                </button>
+                <button
+                  onClick={() => scrollToSection('process')}
+                  className="text-base font-medium text-foreground hover:text-primary transition-colors text-left py-2"
                 >
-                  AI Agents
-                </Link>
-                <Link
-                  href="/automations"
-                  onClick={handleLinkClick}
-                  className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
-                >
-                  Automations
-                </Link>
-                <Link
-                  href="/outreach-lead-gen"
-                  onClick={handleLinkClick}
-                  className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
-                >
-                  Lead Gen
-                </Link>
+                  Process
+                </button>
                 <Link
                   href="/coming-soon"
                   onClick={handleLinkClick}
@@ -200,13 +177,18 @@ export function NavBar() {
                 >
                   Proof
                 </Link>
-                <Link
-                  href="/book-a-call"
-                  onClick={handleLinkClick}
-                  className="mt-4 px-4 py-3 bg-primary text-primary-foreground rounded-lg font-medium text-base text-center hover:bg-primary/90 transition-colors glow-accent-sm block"
+                <button
+                  onClick={() => scrollToSection('pricing')}
+                  className="text-base font-medium text-foreground hover:text-primary transition-colors text-left py-2"
                 >
-                  Book a Call
-                </Link>
+                  Pricing
+                </button>
+                <button
+                  onClick={() => scrollToSection('book')}
+                  className="mt-4 px-4 py-3 bg-primary text-primary-foreground rounded-lg font-medium text-base text-center"
+                >
+                  Book a call
+                </button>
               </div>
             </motion.div>
           </>
