@@ -94,16 +94,18 @@ export function NavBar() {
               >
                 AI Agents
               </Link>
-              <button
+              <Link
+                href="/automations"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
                 Automations
-              </button>
-              <button
+              </Link>
+              <Link
+                href="/lead-gen"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
               >
                 Lead Gen
-              </button>
+              </Link>
               <Link
                 href="/coming-soon"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
@@ -179,16 +181,20 @@ export function NavBar() {
                 >
                   AI Agents
                 </Link>
-                <button
-                  className="text-base font-medium text-foreground hover:text-primary transition-colors text-left py-2"
+                <Link
+                  href="/automations"
+                  onClick={handleLinkClick}
+                  className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
                 >
                   Automations
-                </button>
-                <button
-                  className="text-base font-medium text-foreground hover:text-primary transition-colors text-left py-2"
+                </Link>
+                <Link
+                  href="/lead-gen"
+                  onClick={handleLinkClick}
+                  className="text-base font-medium text-foreground hover:text-primary transition-colors py-2"
                 >
                   Lead Gen
-                </button>
+                </Link>
                 <Link
                   href="/coming-soon"
                   onClick={handleLinkClick}
