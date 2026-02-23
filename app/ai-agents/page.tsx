@@ -41,10 +41,10 @@ export default function AIAgentsPage() {
           >
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               If you are looking for an AI agent that answers every call, books appointments, and provides custom support, hit the{' '}
-              <span style={{ color: '#a855f7' }}>Voice Agents</span> button. If you are looking for a strategic AI partner that thinks at the level of a world-class operator and helps you make your next business move, hit{' '}
-              <span style={{ color: '#a855f7' }}>CEO Agents</span>. If you are looking for an AI Chatbot that turns your website visitors into booked calls and handles your customer support without you, hit{' '}
-              <span style={{ color: '#a855f7' }}>Website Agents</span>. If you are looking for an AI Agent that works your Social Media DMs and runs your content strategy so you can focus on what you do best, hit{' '}
-              <span style={{ color: '#a855f7' }}>Social Media Agents</span>.
+              <button onClick={() => scrollToSection('voice')} className="font-semibold hover:underline cursor-pointer transition-all" style={{ color: '#a855f7' }}>Voice Agents</button> button. If you are looking for a strategic AI partner that thinks at the level of a world-class operator and helps you make your next business move, hit{' '}
+              <button onClick={() => scrollToSection('ceo')} className="font-semibold hover:underline cursor-pointer transition-all" style={{ color: '#a855f7' }}>CEO Agents</button>. If you are looking for an AI Chatbot that turns your website visitors into booked calls and handles your customer support without you, hit{' '}
+              <button onClick={() => scrollToSection('website')} className="font-semibold hover:underline cursor-pointer transition-all" style={{ color: '#a855f7' }}>Website Agents</button>. If you are looking for an AI Agent that works your Social Media DMs and runs your content strategy so you can focus on what you do best, hit{' '}
+              <button onClick={() => scrollToSection('social')} className="font-semibold hover:underline cursor-pointer transition-all" style={{ color: '#a855f7' }}>Social Media Agents</button>.
             </p>
           </motion.div>
         </div>

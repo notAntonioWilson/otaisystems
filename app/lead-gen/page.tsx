@@ -40,9 +40,9 @@ export default function LeadGenPage() {
           >
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               If you are looking for an AI system that researches your ideal prospects and sends fully personalized outreach at scale without you writing a single email, hit{' '}
-              <span style={{ color: '#a855f7' }}>Email Outreach</span>. If you are looking for an AI that calls your prospect list, qualifies leads in real time, and books appointments directly into your calendar, hit{' '}
-              <span style={{ color: '#a855f7' }}>Voice Outreach</span>. If you are looking for an AI that slides into DMs across every social platform and converts cold followers into booked calls on autopilot, hit{' '}
-              <span style={{ color: '#a855f7' }}>Social Outreach</span>.
+              <button onClick={() => scrollToSection('email')} className="font-semibold hover:underline cursor-pointer transition-all" style={{ color: '#a855f7' }}>Email Outreach</button>. If you are looking for an AI that calls your prospect list, qualifies leads in real time, and books appointments directly into your calendar, hit{' '}
+              <button onClick={() => scrollToSection('voice')} className="font-semibold hover:underline cursor-pointer transition-all" style={{ color: '#a855f7' }}>Voice Outreach</button>. If you are looking for an AI that slides into DMs across every social platform and converts cold followers into booked calls on autopilot, hit{' '}
+              <button onClick={() => scrollToSection('social')} className="font-semibold hover:underline cursor-pointer transition-all" style={{ color: '#a855f7' }}>Social Outreach</button>.
             </p>
           </motion.div>
         </div>

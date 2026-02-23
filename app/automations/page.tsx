@@ -40,9 +40,9 @@ export default function AutomationsPage() {
           >
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               If you are looking for an automation that gives you a real-time command center over every system, agent, and client in your business, hit{' '}
-              <span style={{ color: '#a855f7' }}>B2B & B2C</span>. If you are looking for automations that eliminate the back-office work draining your time and margins as a business that serves other businesses, hit{' '}
-              <span style={{ color: '#a855f7' }}>B2B</span>. If you are looking for automations built specifically for businesses that serve consumers directly, hit{' '}
-              <span style={{ color: '#a855f7' }}>B2C</span>. This is only some of our most powerful automations, we couldn't show you all so find the automation closest to what your company needs, understand our ability and book a meeting.
+              <button onClick={() => scrollToSection('b2b-b2c')} className="font-semibold hover:underline cursor-pointer transition-all" style={{ color: '#a855f7' }}>B2B & B2C</button>. If you are looking for automations that eliminate the back-office work draining your time and margins as a business that serves other businesses, hit{' '}
+              <button onClick={() => scrollToSection('b2b')} className="font-semibold hover:underline cursor-pointer transition-all" style={{ color: '#a855f7' }}>B2B</button>. If you are looking for automations built specifically for businesses that serve consumers directly, hit{' '}
+              <button onClick={() => scrollToSection('b2c')} className="font-semibold hover:underline cursor-pointer transition-all" style={{ color: '#a855f7' }}>B2C</button>. This is only some of our most powerful automations, we couldn't show you all so find the automation closest to what your company needs, understand our ability and book a meeting.
             </p>
           </motion.div>
         </div>
