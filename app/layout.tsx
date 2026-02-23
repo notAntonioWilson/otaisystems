@@ -19,6 +19,31 @@ export const metadata: Metadata = {
   },
 };
 
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://otaisystems.com/#business",
+  "name": "OTAI Systems",
+  "url": "https://otaisystems.com/",
+  "description": "OTAI Systems builds AI agents, automation systems, and AI-powered lead generation systems for ambitious business owners looking to scale operations and revenue.",
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "serviceType": [
+    "AI Agents",
+    "Business Automation",
+    "Lead Generation Systems",
+    "Workflow Automation",
+    "AI Sales Systems"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "availableLanguage": ["English"]
+  }
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -39,37 +64,14 @@ export default function RootLayout({
             `,
           }}
         />
+      </head>
+      <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              "@id": "https://otaisystems.com/#business",
-              "name": "OTAI Systems",
-              "url": "https://otaisystems.com/",
-              "description": "OTAI Systems builds AI agents, automation systems, and AI-powered lead generation systems for ambitious business owners looking to scale operations and revenue.",
-              "areaServed": {
-                "@type": "Country",
-                "name": "United States"
-              },
-              "serviceType": [
-                "AI Agents",
-                "Business Automation",
-                "Lead Generation Systems",
-                "Workflow Automation",
-                "AI Sales Systems"
-              ],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "sales",
-                "availableLanguage": ["English"]
-              }
-            })
+            __html: JSON.stringify(schemaData)
           }}
         />
-      </head>
-      <body>
         <CursorTrail />
         <NavBar />
         <main>{children}</main>
