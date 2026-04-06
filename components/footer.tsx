@@ -81,50 +81,13 @@ export function Footer() {
           <div className="relative md:px-12">
             <h3 className="text-base font-semibold mb-3 text-white">Navigation</h3>
             <div className="grid grid-cols-2 gap-x-14 gap-y-2.5">
-              <Link
-                href="/"
-                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
-              >
-                Home
-              </Link>
-              <button
-                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
-              >
-                About
-              </button>
-              <button
-                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
-              >
-                AI Agents
-              </button>
-              <button
-                onClick={() => scrollToSection('pricing')}
-                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
-              >
-                Pricing
-              </button>
-              <button
-                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
-              >
-                Lead Gen
-              </button>
-              <Link
-                href="/coming-soon"
-                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4"
-              >
-                Proof
-              </Link>
-              <button
-                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
-              >
-                Automations
-              </button>
-              <button
-                onClick={() => scrollToSection('book')}
-                className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left"
-              >
-                Book a Call
-              </button>
+              <Link href="/" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">Home</Link>
+              <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">About</Link>
+              <Link href="/ai-agents" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">AI Agents</Link>
+              <Link href="/automations" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">Automations</Link>
+              <Link href="/results" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">Results</Link>
+              <button onClick={() => scrollToSection('pricing')} className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left">Pricing</button>
+              <button onClick={() => scrollToSection('book')} className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left">Book a Call</button>
             </div>
             <div className="hidden md:block absolute right-0 top-0 bottom-0 w-px bg-border/50" />
           </div>
