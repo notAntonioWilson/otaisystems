@@ -73,7 +73,7 @@ export default function AboutPage() {
               { value: '1yr+', label: 'Building AI Systems' },
               { value: '6', label: 'Active Clients' },
               { value: '16hr', label: 'Days, Every Day' },
-              { value: '1,200+', label: 'Emails Sent Daily' },
+              { value: '270k+', label: 'Emails Sent' },
             ].map((stat, i) => (
               <motion.div key={stat.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="text-center">
                 <p className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</p>
