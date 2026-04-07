@@ -5,17 +5,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 
-const fadeUp = {
+const fadeUp: any = {
   hidden: { opacity: 0, y: 32 },
   visible: (i = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.55, delay: i * 0.1, ease: "easeOut" } }),
 };
 
-const fadeLeft = {
+const fadeLeft: any = {
   hidden: { opacity: 0, x: -32 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const fadeRight = {
+const fadeRight: any = {
   hidden: { opacity: 0, x: 32 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
