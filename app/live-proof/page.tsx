@@ -82,6 +82,27 @@ export default function LiveProofPage() {
                   </div>
                 ))}
               </div>
+
+              {/* Stats box */}
+              <div className="rounded-xl border border-primary/40 bg-primary/5 p-6 mb-6" style={{ boxShadow: '0 0 24px rgba(139,92,246,0.12)' }}>
+                <p className="text-xs text-primary tracking-widest uppercase font-semibold mb-5">What we've built</p>
+                <div className="grid grid-cols-2 gap-5">
+                  {[
+                    { value: '270k+', label: 'Emails sent' },
+                    { value: '20+', label: 'Businesses worked with' },
+                    { value: '75%+', label: 'Email open rate' },
+                    { value: '6', label: 'Active client systems' },
+                    { value: '3+', label: 'Years in marketing' },
+                    { value: '1yr+', label: 'Building AI systems' },
+                  ].map((stat) => (
+                    <div key={stat.label}>
+                      <p className="text-xl font-bold text-white">{stat.value}</p>
+                      <p className="text-xs text-muted-foreground">{stat.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               <p className="text-sm text-white/60 leading-[1.7]">
                 We review every booking before the call. If what you describe is something we can build a v1 for, we'll come prepared with something live to show you.
               </p>
