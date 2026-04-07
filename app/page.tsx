@@ -180,7 +180,7 @@ export default function Home() {
               { icon: '⚡', title: 'Automations', tagline: 'Workflow. Reactivation. Outreach.', description: 'End-to-end systems that eliminate manual work — from lead reactivation to document automation to 1,200+ daily email campaigns.', link: '/automations', items: ['Lead Reactivation', 'Email Outreach (1,200+/day)', 'Doc Automation', 'Workflow Systems'] },
               { icon: '📈', title: 'Growth Systems', tagline: 'Organic. Paid. Consulting.', description: 'We grow your brand alongside the AI. Organic content, Meta ads, newsletters, and strategic AI consulting embedded in your organization.', link: '/lead-gen', items: ['Organic Social', 'Meta Ad Systems', 'Newsletter Automation', 'AI Strategy Consulting'] },
             ].map((s, i) => (
-              <motion.div key={s.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="glass-card rounded-2xl p-7 flex flex-col group hover:border-primary/40 transition-all duration-300">
+              <motion.div key={s.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="glass-card rounded-2xl p-7 flex flex-col group hover:border-primary/40 transition-all duration-300 cursor-pointer" onClick={() => window.location.href = s.link}>
                 <div className="text-3xl mb-4">{s.icon}</div>
                 <div className="text-xs text-primary tracking-widest uppercase mb-2">{s.tagline}</div>
                 <h3 className="text-xl font-bold text-white mb-3">{s.title}</h3>

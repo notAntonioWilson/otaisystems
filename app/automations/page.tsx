@@ -27,18 +27,15 @@ export default function AutomationsPage() {
             <motion.h1 variants={fadeUp} custom={1} className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-[1.1]">
               Automation Systems That Remove You From the Equation.
             </motion.h1>
-            <motion.p variants={fadeUp} custom={2} className="text-lg text-muted-foreground leading-[1.7] max-w-2xl mx-auto mb-8">
+            <motion.p variants={fadeUp} custom={2} className="text-lg text-muted-foreground leading-[1.7] max-w-2xl mx-auto">
               Document storage, lead reactivation, outreach pipelines. We build the systems that run while you sleep — fully custom, no plug-and-play shortcuts.
             </motion.p>
-            <motion.div variants={fadeUp} custom={3}>
-              <Link href="/#book"><DripButton>Book a Strategy Call</DripButton></Link>
-            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* WHAT WE BUILD — 3 cards */}
-      <section className="py-14 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
+      {/* SERVICE CARDS */}
+      <section className="py-10 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
         <div className="container mx-auto max-w-5xl">
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -63,24 +60,21 @@ export default function AutomationsPage() {
 
       {/* VIDEO 1 — Document Storage */}
       <section className="py-16 px-6 lg:px-8">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }}>
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-5 gap-10 items-center">
+            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="lg:col-span-2">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Construction</Badge>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-[1.2]">Builders & Contractors Document Storage</h2>
-              <p className="text-muted-foreground leading-[1.8] mb-5">Contractors and builders drown in paperwork — permits, contracts, invoices, vendor docs. This automation handles intake, filing, and retrieval without a single human touch.</p>
-              <ul className="space-y-3 mb-6">
+              <p className="text-muted-foreground leading-[1.8] mb-5">Contractors and builders drown in paperwork. This automation handles intake, filing, and retrieval without a single human touch.</p>
+              <ul className="space-y-2.5">
                 {['Auto-processes incoming documents from any source', 'Files and tags everything into organized storage', 'Retrieves any document on demand in seconds', 'Reduces admin overhead by up to 80%'].map(p => (
                   <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <span className="text-primary mt-1 font-bold">→</span>{p}
                   </li>
                 ))}
               </ul>
-              <Link href="/#book" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
-                Build this for your business <ArrowRight className="w-4 h-4" />
-              </Link>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }}>
+            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="lg:col-span-3">
               <VideoCard poster="" src="xbJbe_r4G-Y" alt="Builders Document Storage Automation" videoId="doc-storage" isYouTube={true} />
             </motion.div>
           </div>
@@ -89,25 +83,22 @@ export default function AutomationsPage() {
 
       {/* VIDEO 2 — Realtor Reactivation */}
       <section className="py-16 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="order-2 lg:order-1">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-5 gap-10 items-center">
+            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="lg:col-span-3 order-2 lg:order-1">
               <VideoCard poster="" src="Hi_90-Qh6Yo" alt="Realtor Lead Reactivation" videoId="realtor-reactivation" isYouTube={true} />
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="order-1 lg:order-2">
+            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="lg:col-span-2 order-1 lg:order-2">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Real Estate</Badge>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-[1.2]">Realtor Lead Reactivation</h2>
-              <p className="text-muted-foreground leading-[1.8] mb-5">Most realtors have hundreds of cold leads sitting in their CRM doing nothing. This system re-engages them automatically — personalized outreach at scale that feels human.</p>
-              <ul className="space-y-3 mb-6">
+              <p className="text-muted-foreground leading-[1.8] mb-5">Most realtors have hundreds of cold leads doing nothing. This system re-engages them automatically — personalized outreach at scale that feels human.</p>
+              <ul className="space-y-2.5">
                 {['Pulls dormant leads from your CRM automatically', 'Sends personalized reactivation sequences', 'Qualifies responses and flags hot leads', 'Books calls directly into your calendar'].map(p => (
                   <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <span className="text-primary mt-1 font-bold">→</span>{p}
                   </li>
                 ))}
               </ul>
-              <Link href="/#book" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
-                Get this running on your leads <ArrowRight className="w-4 h-4" />
-              </Link>
             </motion.div>
           </div>
         </div>
@@ -115,55 +106,49 @@ export default function AutomationsPage() {
 
       {/* VIDEO 3 — Staffing Reactivation */}
       <section className="py-16 px-6 lg:px-8">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }}>
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-5 gap-10 items-center">
+            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="lg:col-span-2">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Staffing & Recruiting</Badge>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-[1.2]">Staffing & Recruiting Reactivation</h2>
-              <p className="text-muted-foreground leading-[1.8] mb-5">Staffing firms have massive candidate and client databases that go cold. This automation re-engages both sides — candidates who went dark and clients who haven't placed in months.</p>
-              <ul className="space-y-3 mb-6">
+              <p className="text-muted-foreground leading-[1.8] mb-5">Staffing firms have massive databases that go cold. This automation re-engages both candidates and clients — automatically, at scale.</p>
+              <ul className="space-y-2.5">
                 {['Reactivates cold candidates and inactive clients', 'Sends sequenced, personalized outreach automatically', 'Tracks replies and surfaces ready-to-place candidates', 'Runs 24/7 without a recruiter touching it'].map(p => (
                   <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <span className="text-primary mt-1 font-bold">→</span>{p}
                   </li>
                 ))}
               </ul>
-              <Link href="/#book" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
-                Build this for your firm <ArrowRight className="w-4 h-4" />
-              </Link>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }}>
+            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="lg:col-span-3">
               <VideoCard poster="" src="Hi_90-Qh6Yo" alt="Staffing Recruiting Reactivation" videoId="staffing-reactivation" isYouTube={true} />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* YT CTA */}
-      <section className="py-14 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
-        <div className="container mx-auto max-w-3xl text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <div className="w-14 h-14 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center mx-auto mb-4">
-              <Youtube className="w-7 h-7 text-red-500" />
-            </div>
-            <h3 className="text-2xl font-bold text-white mb-3">More automation demos on YouTube.</h3>
-            <p className="text-muted-foreground mb-6 leading-[1.7]">New builds, breakdowns, and walkthroughs posted regularly. See exactly how these systems work before we build yours.</p>
-            <a href="https://www.youtube.com/@antoniowilson_yt" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-red-500/10 border border-red-500/30 text-red-400 font-semibold rounded-lg hover:bg-red-500/20 transition-colors text-sm">
-              <Youtube className="w-4 h-4" /> Watch on YouTube <ArrowRight className="w-4 h-4" />
-            </a>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* FINAL CTA */}
-      <section className="py-16 px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 beam-bg opacity-50" />
-        <div className="container mx-auto max-w-2xl relative z-10 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <h2 className="text-3xl font-bold text-white mb-4">Ready to stop doing it manually?</h2>
-            <p className="text-muted-foreground mb-8 leading-[1.7]">Book a call. We'll identify which automations would hit hardest for your business and map out what the build looks like.</p>
-            <Link href="/#book"><DripButton>Book a Strategy Call</DripButton></Link>
-          </motion.div>
+      {/* YT + BOOKING SIDE BY SIDE */}
+      <section className="py-16 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-8">
+            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
+              <div className="w-14 h-14 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-4">
+                <Youtube className="w-7 h-7 text-red-500" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">More automation demos on YouTube.</h3>
+              <p className="text-muted-foreground leading-[1.7] mb-6 text-sm">New builds, breakdowns, and walkthroughs posted regularly. See how the systems work before we build yours.</p>
+              <a href="https://www.youtube.com/@antoniowilson_yt" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-red-500/10 border border-red-500/30 text-red-400 font-semibold rounded-lg hover:bg-red-500/20 transition-colors text-sm">
+                <Youtube className="w-4 h-4" /> Watch on YouTube <ArrowRight className="w-4 h-4" />
+              </a>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="glass-card rounded-2xl p-6">
+              <h3 className="text-lg font-bold text-white mb-1">Book a Strategy Call</h3>
+              <p className="text-xs text-muted-foreground mb-4">Free. 30 minutes. We'll identify which automations hit hardest for your business.</p>
+              <div className="rounded-lg overflow-hidden">
+                <iframe src="https://cal.com/otai-systems/30min-professional" style={{ width: '100%', height: '420px', border: 'none' }} />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
     </div>
