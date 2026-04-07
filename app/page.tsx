@@ -85,12 +85,12 @@ export default function Home() {
   ];
 
   const results = [
-    { client: 'J.Z.', role: 'Licensed Realtor', result: 'Full website, SEO infrastructure, and organic social system built and running. Lead reactivation automation in progress.', tag: 'Real Estate' },
-    { client: 'T.B.', role: 'Licensed Realtor', result: 'Website, SEO, and organic social system live. Lead reactivation campaign being deployed.', tag: 'Real Estate' },
-    { client: 'J.F.', role: 'Service Business', result: 'Custom website, SEO, AI chatbot, organic social, and full documentation automation system — all live.', tag: 'Automation' },
-    { client: 'D.G.', role: 'AI Startup Founder', result: 'Meta ad system with AI-generated creative and a full website + landing page built for conversion.', tag: 'AI Startup' },
-    { client: 'M.K.', role: 'AI Startup Founder', result: 'Automated email outreach system — 270k+ emails sent, 75%+ open rates, 3-5% positive reply rate.', tag: 'Lead Gen' },
-    { client: 'Macro Mate', role: 'App Company', result: 'Full organic social system and newsletter automation live. Consistent weekly content with zero manual effort.', tag: 'Marketing' },
+    { client: 'J.Z.', role: 'Realtor — The Ag. Realtors', result: 'Full website (1 day), SEO (1 hr), and social system across IG, FB & LinkedIn. 19,522 FB views, 8,365 IG views, 2,220 LinkedIn followers. 20+ in-person conversations started from content alone.', tag: 'Real Estate' },
+    { client: 'T.B.', role: 'Realtor — Cald.W Realtors', result: 'Website + SEO live in under 2 weeks. 13,601 total social views, 876 engagements, 321 FB engagements (+6,320%). Full presence deployed from zero in under 2 weeks.', tag: 'Real Estate' },
+    { client: 'J.F.', role: 'Owner — Next Level Carpentry', result: '4.88M+ social views, 45,491 engagements, 5,082 followers. SEO hitting position 3 for "Carpenter Near Me." $25,000+ revenue directly from captured website leads.', tag: 'Construction' },
+    { client: 'D.G.', role: 'AI Startup Founder', result: 'Full website + outbound system live in 48 hours. 94% email open rate. 18 Meta ad conversions across 3,344 reach. Startup launched from zero to lead-generating infrastructure in 2 days.', tag: 'AI Startup' },
+    { client: 'M.K.', role: 'AI Startup Founder', result: '1,057 sequences started, 91.86% open rate. 2 qualified opportunities generated — $7,000 pipeline value within the first 2 weeks of campaign launch.', tag: 'Outreach' },
+    { client: 'Macro Mate', role: 'App Company', result: 'Full organic social system and newsletter automation live. Consistent weekly content with zero manual effort. Brand presence built and running on autopilot.', tag: 'Marketing' },
   ];
 
   const faqs = [

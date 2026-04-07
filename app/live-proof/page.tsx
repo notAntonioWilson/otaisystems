@@ -89,10 +89,10 @@ export default function LiveProofPage() {
                 <div className="grid grid-cols-2 gap-5">
                   {[
                     { value: '270k+', label: 'Emails sent' },
+                    { value: '100+', label: 'Automations created' },
+                    { value: '50+', label: 'AI agents created' },
                     { value: '20+', label: 'Businesses worked with' },
-                    { value: '75%+', label: 'Email open rate' },
-                    { value: '6', label: 'Active client systems' },
-                    { value: '3+', label: 'Years in marketing' },
+                    { value: '3yr+', label: 'Years in marketing' },
                     { value: '1yr+', label: 'Building AI systems' },
                   ].map((stat) => (
                     <div key={stat.label}>
