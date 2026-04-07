@@ -138,7 +138,8 @@ export default function AIAgentsPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-8">
             {/* YT */}
-            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
+            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="glass-card rounded-2xl p-8 flex flex-col justify-between min-h-[340px]">
+              <div className="flex flex-col items-center text-center flex-grow justify-center">
               <div className="w-14 h-14 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-4">
                 <Youtube className="w-7 h-7 text-red-500" />
               </div>
@@ -147,6 +148,7 @@ export default function AIAgentsPage() {
               <a href="https://www.youtube.com/@antoniowilson_yt" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-red-500/10 border border-red-500/30 text-red-400 font-semibold rounded-lg hover:bg-red-500/20 transition-colors text-sm">
                 <Youtube className="w-4 h-4" /> Watch on YouTube <ArrowRight className="w-4 h-4" />
               </a>
+              </div>
             </motion.div>
             {/* BOOKING */}
             <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="glass-card rounded-2xl p-6">

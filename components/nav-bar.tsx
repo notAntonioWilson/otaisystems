@@ -39,7 +39,7 @@ export function NavBar() {
   };
 
   const navLinks = [
-    { label: 'Services', action: () => scrollToSection('demos') },
+    { label: 'Services', action: () => scrollToSection('services') },
     { label: 'Results', action: () => scrollToSection('results') },
     { label: 'About', href: '/about' },
   ];

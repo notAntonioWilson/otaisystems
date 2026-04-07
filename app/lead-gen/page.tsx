@@ -27,7 +27,7 @@ export default function LeadGenPage() {
               Outreach Systems That Fill Your Pipeline While You Sleep.
             </motion.h1>
             <motion.p variants={fadeUp} custom={2} className="text-lg text-muted-foreground leading-[1.7] max-w-2xl mx-auto">
-              1,200+ emails per day. 65%+ open rates. AI-personalized copy that reads like it was written by hand. Cold outreach that actually works.
+              270,000+ emails sent. 75%+ open rates. 3-5% positive reply rate. AI-personalized copy that reads like it was written by hand. Cold outreach that actually works.
             </motion.p>
           </motion.div>
         </div>
@@ -38,7 +38,7 @@ export default function LeadGenPage() {
         <div className="container mx-auto max-w-5xl">
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             {[
-              { icon: Mail, title: 'Email Outreach', desc: '1,200+ sends per day. AI-written icebreakers personalized to each prospect. Validated lists, deliverability-optimized, reply-rate focused.' },
+              { icon: Mail, title: 'Email Outreach', desc: '270k+ emails sent. AI-written icebreakers personalized to each prospect. Validated lists, deliverability-optimized, reply-rate focused.' },
               { icon: Share2, title: 'Social Media Outreach', desc: 'DM outreach across Instagram, LinkedIn, and Facebook. AI agents that hold real conversations and book calls from cold social traffic.' },
             ].map((item, i) => {
               const Icon = item.icon;
@@ -56,7 +56,7 @@ export default function LeadGenPage() {
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="glass-card rounded-xl p-6">
             <p className="text-xs text-primary tracking-widest uppercase font-semibold mb-4">Live campaign stats</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[{ value: '1,200+', label: 'Emails per day' }, { value: '65%+', label: 'Open rate' }, { value: '6', label: 'Active niches' }, { value: '1-3%', label: 'Reply rate' }].map((stat, i) => (
+              {[{ value: '270k+', label: 'Emails sent' }, { value: '75%+', label: 'Open rate' }, { value: '3-5%', label: 'Positive reply rate' }].map((stat, i) => (
                 <div key={stat.label} className="text-center">
                   <p className="text-2xl font-bold text-white mb-0.5">{stat.value}</p>
                   <p className="text-xs text-muted-foreground">{stat.label}</p>
@@ -76,7 +76,7 @@ export default function LeadGenPage() {
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-[1.2]">Automated Email Outreach System</h2>
               <p className="text-muted-foreground leading-[1.8] mb-5">AI scrapes your target prospects, validates their emails, generates a personalized icebreaker for each one, and sends at scale — every single day without you touching it.</p>
               <ul className="space-y-2.5">
-                {['Lead scraping + email validation built in', 'AI-personalized icebreakers per prospect', '1,200+ sends per day across multiple domains', '65%+ open rates on live campaigns'].map(p => (
+                {['Lead scraping + email validation built in', 'AI-personalized icebreakers per prospect', '270k+ emails sent to date', '75%+ open rates, 3-5% positive reply rate'].map(p => (
                   <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <span className="text-primary mt-1 font-bold">→</span>{p}
                   </li>
@@ -125,40 +125,12 @@ export default function LeadGenPage() {
         </div>
       </section>
 
-      {/* VIDEO 3 — Combined */}
-      <section className="py-16 px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-5 gap-10 items-center">
-            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="lg:col-span-2">
-              <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Full Stack</Badge>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-[1.2]">Combined Outreach Infrastructure</h2>
-              <p className="text-muted-foreground leading-[1.8] mb-5">Email + social running simultaneously. One unified system hitting prospects across every channel — multiplying touchpoints without multiplying your workload.</p>
-              <ul className="space-y-2.5">
-                {['Email and social outreach in one connected system', 'Unified reply management across all channels', 'Prospect data synced across every touchpoint', 'Full visibility into pipeline and performance'].map(p => (
-                  <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <span className="text-primary mt-1 font-bold">→</span>{p}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="lg:col-span-3">
-              <div className="glass-card rounded-xl aspect-video flex items-center justify-center border-2 border-dashed border-primary/20">
-                <div className="text-center">
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3"><span className="text-2xl">🎬</span></div>
-                  <p className="text-sm font-semibold text-white mb-1">Demo Coming Soon</p>
-                  <p className="text-xs text-muted-foreground">Video in production</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* YT + BOOKING SIDE BY SIDE */}
       <section className="py-16 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-8">
-            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="glass-card rounded-2xl p-8 flex flex-col items-center text-center">
+            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="glass-card rounded-2xl p-8 flex flex-col justify-between min-h-[340px]">
+              <div className="flex flex-col items-center text-center flex-grow justify-center">
               <div className="w-14 h-14 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-4">
                 <Youtube className="w-7 h-7 text-red-500" />
               </div>
@@ -167,6 +139,7 @@ export default function LeadGenPage() {
               <a href="https://www.youtube.com/@antoniowilson_yt" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-red-500/10 border border-red-500/30 text-red-400 font-semibold rounded-lg hover:bg-red-500/20 transition-colors text-sm">
                 <Youtube className="w-4 h-4" /> Watch on YouTube <ArrowRight className="w-4 h-4" />
               </a>
+              </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="glass-card rounded-2xl p-6">
               <h3 className="text-lg font-bold text-white mb-1">Book a Strategy Call</h3>

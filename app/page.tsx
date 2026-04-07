@@ -88,7 +88,7 @@ export default function Home() {
     { client: 'T.B.', role: 'Licensed Realtor', result: 'Website, SEO, and organic social system live. Lead reactivation campaign being deployed.', tag: 'Real Estate' },
     { client: 'J.F.', role: 'Service Business', result: 'Custom website, SEO, AI chatbot, organic social, and full documentation automation system — all live.', tag: 'Automation' },
     { client: 'D.G.', role: 'AI Startup Founder', result: 'Meta ad system with AI-generated creative and a full website + landing page built for conversion.', tag: 'AI Startup' },
-    { client: 'M.K.', role: 'AI Startup Founder', result: 'Automated email outreach system generating 1,200+ sends per day across targeted lead lists.', tag: 'Lead Gen' },
+    { client: 'M.K.', role: 'AI Startup Founder', result: 'Automated email outreach system — 270k+ emails sent, 75%+ open rates, 3-5% positive reply rate.', tag: 'Lead Gen' },
     { client: 'Macro Mate', role: 'App Company', result: 'Full organic social system and newsletter automation live. Consistent weekly content with zero manual effort.', tag: 'Marketing' },
   ];
 
@@ -164,7 +164,7 @@ export default function Home() {
       </section>
 
       {/* WHAT WE BUILD */}
-      <section className="py-20 px-6 lg:px-8">
+      <section id="services" className="py-20 px-6 lg:px-8">
         <div className="container mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-14">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">What We Build</Badge>
@@ -174,7 +174,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { icon: '🤖', title: 'AI Agents', tagline: 'Voice. Chat. Social.', description: 'Intelligent agents that handle inbound calls, qualify leads, answer questions, and book appointments — 24/7, without human intervention.', link: '/ai-agents', items: ['Voice Phone Agents', 'Chat Assistants', 'Social AI Agents', 'Lead Qualification'] },
-              { icon: '⚡', title: 'Automations', tagline: 'Workflow. Reactivation. Outreach.', description: 'End-to-end systems that eliminate manual work — from lead reactivation to document automation to 1,200+ daily email campaigns.', link: '/automations', items: ['Lead Reactivation', 'Email Outreach (1,200+/day)', 'Doc Automation', 'Workflow Systems'] },
+              { icon: '⚡', title: 'Automations', tagline: 'Workflow. Reactivation. Outreach.', description: 'End-to-end systems that eliminate manual work — from lead reactivation to document automation to 270k+ emails sent across campaigns.', link: '/automations', items: ['Lead Reactivation', 'Email Outreach (270k+ sent)', 'Doc Automation', 'Workflow Systems'] },
               { icon: '📈', title: 'Growth Systems', tagline: 'Organic. Paid. Consulting.', description: 'We grow your brand alongside the AI. Organic content, Meta ads, newsletters, and strategic AI consulting embedded in your organization.', link: '/lead-gen', items: ['Organic Social', 'Meta Ad Systems', 'Newsletter Automation', 'AI Strategy Consulting'] },
             ].map((s, i) => (
               <motion.div key={s.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="glass-card rounded-2xl p-7 flex flex-col group hover:border-primary/40 transition-all duration-300 cursor-pointer" onClick={() => window.location.href = s.link}>
@@ -202,9 +202,9 @@ export default function Home() {
       <section className="py-20 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeLeft} className="relative flex justify-center lg:justify-start">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeLeft} className="relative flex justify-center lg:justify-start pl-4">
               <div className="relative rounded-2xl overflow-hidden w-full max-w-md h-[520px]">
-                <Image src="/images/antonio-standing.jpg" alt="Antonio Wilson — Founder, OTAI Systems" fill className="object-cover object-top" style={{ objectPosition: '50% 5%' }} />
+                <Image src="/images/antonio-standing.jpg" alt="Antonio Wilson — Founder, OTAI Systems" fill className="object-cover" style={{ objectPosition: '55% 2%' }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5">
                   <p className="text-white font-bold text-lg">Antonio Wilson</p>
@@ -242,39 +242,16 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">Watch it work.</h2>
             <p className="text-muted-foreground max-w-xl mx-auto text-lg leading-[1.7]">Real systems, built for real niches. Every demo below is deployable.</p>
           </motion.div>
-          <div className="mb-12">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="text-xs text-primary tracking-widest uppercase font-semibold">AI Phone Agents</span>
-              <div className="flex-1 h-px bg-primary/15" />
-            </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              {demoAgents.map((v, i) => (
-                <motion.div key={v.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="glass-card rounded-xl p-4">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs bg-primary/10 text-primary border border-primary/20 rounded-full px-3 py-1">{v.niche}</span>
-                  </div>
-                  <p className="text-sm font-semibold text-white mb-3">{v.title}</p>
-                  <VideoCard poster="" src={v.id} alt={v.title} videoId={`agent-${i}`} isYouTube={true} />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <span className="text-xs text-primary tracking-widest uppercase font-semibold">Automation Systems</span>
-              <div className="flex-1 h-px bg-primary/15" />
-            </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              {demoAutomations.map((v, i) => (
-                <motion.div key={v.id + i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="glass-card rounded-xl p-4">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs bg-primary/10 text-primary border border-primary/20 rounded-full px-3 py-1">{v.niche}</span>
-                  </div>
-                  <p className="text-sm font-semibold text-white mb-3">{v.title}</p>
-                  <VideoCard poster="" src={v.id} alt={v.title} videoId={`auto-${i}`} isYouTube={true} />
-                </motion.div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[...demoAgents, ...demoAutomations].map((v, i) => (
+              <motion.div key={v.id + i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="glass-card rounded-xl p-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs bg-primary/10 text-primary border border-primary/20 rounded-full px-3 py-1">{v.niche}</span>
+                </div>
+                <p className="text-sm font-semibold text-white mb-3">{v.title}</p>
+                <VideoCard poster="" src={v.id} alt={v.title} videoId={`demo-${i}`} isYouTube={true} />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
