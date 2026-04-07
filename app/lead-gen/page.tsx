@@ -54,11 +54,11 @@ export default function LeadGenPage() {
             })}
           </div>
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="glass-card rounded-xl p-6">
-            <p className="text-xs text-primary tracking-widest uppercase font-semibold mb-4">Live campaign stats</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <p className="text-xs text-primary tracking-widest uppercase font-semibold mb-6 text-center">Live campaign stats</p>
+            <div className="flex flex-wrap justify-center gap-10">
               {[{ value: '270k+', label: 'Emails sent' }, { value: '75%+', label: 'Open rate' }, { value: '3-5%', label: 'Positive reply rate' }].map((stat, i) => (
                 <div key={stat.label} className="text-center">
-                  <p className="text-2xl font-bold text-white mb-0.5">{stat.value}</p>
+                  <p className="text-3xl font-bold text-white mb-0.5">{stat.value}</p>
                   <p className="text-xs text-muted-foreground">{stat.label}</p>
                 </div>
               ))}
