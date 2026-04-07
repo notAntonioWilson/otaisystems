@@ -207,7 +207,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeLeft} className="relative flex justify-center lg:justify-start">
               <div className="relative rounded-2xl overflow-hidden w-full max-w-md h-[520px]">
-                <Image src="/images/antonio-standing.jpg" alt="Antonio Wilson — Founder, OTAI Systems" fill className="object-cover object-center" />
+                <Image src="/images/antonio-standing.jpg" alt="Antonio Wilson — Founder, OTAI Systems" fill className="object-cover object-top" style={{ objectPosition: '50% 5%' }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5">
                   <p className="text-white font-bold text-lg">Antonio Wilson</p>
@@ -371,28 +371,6 @@ export default function Home() {
             <Link href="/results" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
               View full client portfolio <ArrowRight className="w-4 h-4" />
             </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* YOUTUBE SECTION */}
-      <section className="py-16 px-6 lg:px-8">
-        <div className="container mx-auto max-w-4xl">
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="glass-card rounded-2xl p-10 text-center">
-            <div className="w-16 h-16 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center mx-auto mb-5">
-              <svg className="w-8 h-8 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">See it all on YouTube.</h2>
-            <p className="text-muted-foreground leading-[1.8] max-w-xl mx-auto mb-7">I document builds, demos, and breakdowns on my channel. Every system on this site has a walkthrough. Watch how the AI works before we build yours.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://www.youtube.com/@antoniowilson_yt" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-colors text-sm">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                Visit the Channel
-              </a>
-              <a href="https://www.youtube.com/@antoniowilson_yt" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-3.5 border border-primary/30 text-white font-semibold rounded-lg hover:border-primary/60 hover:bg-primary/5 transition-colors text-sm">
-                Watch AI Demos →
-              </a>
-            </div>
           </motion.div>
         </div>
       </section>
