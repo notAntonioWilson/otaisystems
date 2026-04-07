@@ -76,14 +76,11 @@ export default function Home() {
 
   const demoAgents = [
     { title: 'Dental Office AI Phone Agent', id: 'Nbmwqsaa6RU', niche: 'Healthcare' },
-    { title: 'Law Firm AI Phone Agent', id: '6uJpYj0B2SE', niche: 'Legal' },
   ];
 
   const demoAutomations = [
     { title: 'Builders & Contractors Doc Storage', id: 'xbJbe_r4G-Y', niche: 'Construction' },
     { title: 'Realtor Lead Reactivation', id: 'Hi_90-Qh6Yo', niche: 'Real Estate' },
-    { title: 'Staffing & Recruiting Reactivation', id: 'Hi_90-Qh6Yob', niche: 'Staffing' },
-    { title: 'Mortgage Broker Reactivation', id: 'qzKZKjkCv-A', niche: 'Finance' },
   ];
 
   const results = [
