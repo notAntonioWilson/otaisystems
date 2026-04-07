@@ -1,318 +1,213 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { VideoCard } from '@/components/video-card';
 import { Badge } from '@/components/ui/badge';
 import { DripButton } from '@/components/drip-button';
-import { Mail, Phone, MessageCircle } from 'lucide-react';
+import { Mail, Share2, ArrowRight, Youtube } from 'lucide-react';
 import Link from 'next/link';
 
+const fadeUp: any = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.5, delay: i * 0.1, ease: 'easeOut' } }),
+};
+
 export default function LeadGenPage() {
-  const [activeSection, setActiveSection] = useState('email');
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 100;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-      setActiveSection(id);
-    }
-  };
-
-  const sections = [
-    { id: 'email', label: 'Email Outreach', icon: Mail },
-    { id: 'voice', label: 'Voice Outreach', icon: Phone },
-    { id: 'social', label: 'Social Outreach', icon: MessageCircle },
-  ];
-
   return (
     <div className="min-h-screen pt-20">
-      {/* Header Section */}
+
+      {/* HERO */}
+      <section className="relative py-16 px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 beam-bg" />
+        <div className="container mx-auto max-w-4xl relative z-10 text-center">
+          <motion.div initial="hidden" animate="visible" variants={{ visible: { transition: { staggerChildren: 0.1 } } }}>
+            <motion.div variants={fadeUp} custom={0}>
+              <Badge className="mb-5 bg-primary/10 text-primary border-primary/30 text-xs tracking-widest uppercase">Outreach</Badge>
+            </motion.div>
+            <motion.h1 variants={fadeUp} custom={1} className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-[1.1]">
+              Outreach Systems That Fill Your Pipeline While You Sleep.
+            </motion.h1>
+            <motion.p variants={fadeUp} custom={2} className="text-lg text-muted-foreground leading-[1.7] max-w-2xl mx-auto mb-8">
+              We run 1,200+ emails per day across 6 niches. 65%+ open rates. AI-personalized copy that reads like it was written by hand. Cold outreach that actually works.
+            </motion.p>
+            <motion.div variants={fadeUp} custom={3}>
+              <Link href="/#book"><DripButton>Book a Strategy Call</DripButton></Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* WHAT WE BUILD — 2 cards */}
+      <section className="py-14 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
+        <div className="container mx-auto max-w-4xl">
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              { icon: Mail, title: 'Email Outreach', desc: '1,200+ sends per day. AI-written icebreakers personalized to each prospect. Validated lists, deliverability-optimized, reply-rate focused.' },
+              { icon: Share2, title: 'Social Media Outreach', desc: 'DM outreach across Instagram, LinkedIn, and Facebook. AI agents that hold real conversations and book calls from cold social traffic.' },
+            ].map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div key={item.title} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i} className="glass-card rounded-xl p-6">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
+                    <Icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-[1.7]">{item.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* LIVE STATS */}
       <section className="py-12 px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-8"
-          >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white leading-[1.2]">
-              AI Lead Generation Systems That Fill Your Pipeline
-            </h1>
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              If you are looking for an AI system that researches your ideal prospects and sends fully personalized outreach at scale without you writing a single email, hit{' '}
-              <button onClick={() => scrollToSection('email')} className="font-semibold hover:underline cursor-pointer transition-all" style={{ color: '#a855f7' }}>Email Outreach</button>. If you are looking for an AI that calls your prospect list, qualifies leads in real time, and books appointments directly into your calendar, hit{' '}
-              <button onClick={() => scrollToSection('voice')} className="font-semibold hover:underline cursor-pointer transition-all" style={{ color: '#a855f7' }}>Voice Outreach</button>. If you are looking for an AI that slides into DMs across every social platform and converts cold followers into booked calls on autopilot, hit{' '}
-              <button onClick={() => scrollToSection('social')} className="font-semibold hover:underline cursor-pointer transition-all" style={{ color: '#a855f7' }}>Social Outreach</button>.
-            </p>
+        <div className="container mx-auto max-w-4xl">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="glass-card rounded-2xl p-8">
+            <p className="text-xs text-primary tracking-widest uppercase font-semibold mb-6">Live campaign stats</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                { value: '1,200+', label: 'Emails per day' },
+                { value: '65%+', label: 'Open rate' },
+                { value: '6', label: 'Active niches' },
+                { value: '1-3%', label: 'Reply rate' },
+              ].map((stat, i) => (
+                <motion.div key={stat.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="text-center">
+                  <p className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.value}</p>
+                  <p className="text-xs text-muted-foreground">{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Sidebar Navigation */}
-      <div className="fixed left-4 top-1/2 -translate-y-1/2 z-50 hidden lg:block">
-        <div className="flex flex-col gap-3">
-          {sections.map((section) => {
-            const Icon = section.icon;
-            return (
-              <button
-                key={section.id}
-                onClick={() => scrollToSection(section.id)}
-                className={`p-3 rounded-lg transition-all duration-300 ${
-                  activeSection === section.id
-                    ? 'bg-primary text-white shadow-lg shadow-primary/50'
-                    : 'bg-card/50 text-muted-foreground hover:bg-card hover:text-primary'
-                }`}
-                title={section.label}
-              >
-                <Icon className="w-5 h-5" />
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Email Outreach Section */}
-      <section id="email" className="py-14 px-6 lg:px-8 bg-card/30 backdrop-blur-sm scroll-mt-20">
-        <div className="container mx-auto max-w-7xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-bold text-center mb-12 text-white leading-[1.3]"
-          >
-            Mass Outreach That Reads Like It Was Written Personally. AI That Researches Every Prospect and Writes Copy Based on Their Real Current Business Information.
-          </motion.h2>
-
-          <div className="grid lg:grid-cols-2 gap-10 items-center mb-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <VideoCard
-                poster=""
-                src="placeholder"
-                alt="Email Outreach Demo"
-                videoId="email-outreach-video"
-                isYouTube={false}
-              />
+      {/* VIDEO 1 — Email Outreach */}
+      <section className="py-16 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }}>
+              <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Email</Badge>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-[1.2]">Automated Email Outreach System</h2>
+              <p className="text-muted-foreground leading-[1.8] mb-5">AI scrapes your target prospects, validates their emails, generates a personalized icebreaker for each one, and sends at scale — every single day without you touching it.</p>
+              <ul className="space-y-3 mb-6">
+                {['Lead scraping + email validation built in', 'AI-personalized icebreakers per prospect', '1,200+ sends per day across multiple domains', '65%+ open rates on live campaigns'].map(p => (
+                  <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <span className="text-primary mt-1 font-bold">→</span>{p}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/#book" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
+                Build this for your business <ArrowRight className="w-4 h-4" />
+              </Link>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-lg font-semibold mb-4 text-gray-200">Stats That Matter</h3>
-              <div className="space-y-3 text-gray-400 text-sm">
-                <p className="flex items-start gap-2">
-                  <span className="text-primary mt-1">+</span>
-                  <span>Businesses using AI-personalized email outreach see 3-5x higher reply rates than generic campaigns</span>
-                </p>
-                <p className="flex items-start gap-2">
-                  <span className="text-primary mt-1">+</span>
-                  <span>The average sales rep spends 40% of their time on prospecting and outreach that can be fully automated</span>
-                </p>
-                <p className="flex items-start gap-2">
-                  <span className="text-primary mt-1">+</span>
-                  <span>Personalized outreach sequences generate 6x more responses than one-size-fits-all messaging</span>
-                </p>
-                <p className="flex items-start gap-2">
-                  <span className="text-primary mt-1">+</span>
-                  <span>Businesses running automated outreach systems book 3x more meetings with the same size prospect list</span>
-                </p>
+            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }}>
+              <div className="glass-card rounded-xl aspect-video flex items-center justify-center border-2 border-dashed border-primary/20">
+                <div className="text-center">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                    <span className="text-2xl">🎬</span>
+                  </div>
+                  <p className="text-sm font-semibold text-white mb-1">Demo Coming Soon</p>
+                  <p className="text-xs text-muted-foreground">Video in production</p>
+                </div>
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
 
-          <div className="mb-8 text-center">
-            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap justify-center gap-2">
-              {['Business Consultants & Advisors', 'Marketing & Growth Agencies', 'B2B SaaS & Tech Companies', 'Recruiting & Staffing Firms', 'Financial & Accounting Services'].map((industry) => (
-                <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
-                  {industry}
-                </Badge>
-              ))}
-            </div>
+      {/* VIDEO 2 — Social Outreach */}
+      <section className="py-16 px-6 lg:px-8">
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="order-2 lg:order-1">
+              <div className="glass-card rounded-xl aspect-video flex items-center justify-center border-2 border-dashed border-primary/20">
+                <div className="text-center">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                    <span className="text-2xl">🎬</span>
+                  </div>
+                  <p className="text-sm font-semibold text-white mb-1">Demo Coming Soon</p>
+                  <p className="text-xs text-muted-foreground">Video in production</p>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="order-1 lg:order-2">
+              <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Social</Badge>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-[1.2]">Social Media Outreach System</h2>
+              <p className="text-muted-foreground leading-[1.8] mb-5">AI agents that reach out across Instagram, LinkedIn, and Facebook — holding real conversations in the DMs, qualifying prospects, and booking calls on autopilot.</p>
+              <ul className="space-y-3 mb-6">
+                {['Runs outreach across multiple platforms simultaneously', 'AI-driven conversations that feel human', 'Qualifies leads before routing to you', 'Books calls directly into your calendar'].map(p => (
+                  <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <span className="text-primary mt-1 font-bold">→</span>{p}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/#book" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
+                Build this for your brand <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
           </div>
+        </div>
+      </section>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <p className="text-base text-gray-400 mb-6">
-              If you are a business confident in your offer looking to get high-intent leads then book a meeting and start scaling:
-            </p>
-            <Link href="/#book">
-              <DripButton>Book a Meeting</DripButton>
-            </Link>
+      {/* VIDEO 3 — Placeholder */}
+      <section className="py-16 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }}>
+              <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Full Stack</Badge>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-[1.2]">Combined Outreach Infrastructure</h2>
+              <p className="text-muted-foreground leading-[1.8] mb-5">Email + social running simultaneously. One unified system that hits prospects across every channel — multiplying touchpoints without multiplying your workload.</p>
+              <ul className="space-y-3 mb-6">
+                {['Email and social outreach in one connected system', 'Unified reply management across all channels', 'Prospect data synced across every touchpoint', 'Full visibility into pipeline and performance'].map(p => (
+                  <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <span className="text-primary mt-1 font-bold">→</span>{p}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/#book" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
+                Build the full stack <ArrowRight className="w-4 h-4" />
+              </Link>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }}>
+              <div className="glass-card rounded-xl aspect-video flex items-center justify-center border-2 border-dashed border-primary/20">
+                <div className="text-center">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                    <span className="text-2xl">🎬</span>
+                  </div>
+                  <p className="text-sm font-semibold text-white mb-1">Demo Coming Soon</p>
+                  <p className="text-xs text-muted-foreground">Video in production</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* YT CTA */}
+      <section className="py-14 px-6 lg:px-8">
+        <div className="container mx-auto max-w-3xl text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+            <div className="w-14 h-14 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center mx-auto mb-4">
+              <Youtube className="w-7 h-7 text-red-500" />
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-3">See the outreach systems in action.</h3>
+            <p className="text-muted-foreground mb-6 leading-[1.7]">Full walkthroughs of the email system, the AI copy generation, and the full pipeline — all on the channel.</p>
+            <a href="https://www.youtube.com/@antoniowilson_yt" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-red-500/10 border border-red-500/30 text-red-400 font-semibold rounded-lg hover:bg-red-500/20 transition-colors text-sm">
+              <Youtube className="w-4 h-4" /> Watch on YouTube <ArrowRight className="w-4 h-4" />
+            </a>
           </motion.div>
         </div>
       </section>
 
-      {/* Voice Outreach Section */}
-      <section id="voice" className="py-14 px-6 lg:px-8 scroll-mt-20">
-        <div className="container mx-auto max-w-7xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-bold text-center mb-12 text-white leading-[1.3]"
-          >
-            An AI That Calls Your Prospect List, Qualifies Every Lead in Real Time, and Books the Appointment Directly Into Your Calendar at a Fraction of the Cost of a Human Caller.
-          </motion.h2>
-
-          <div className="grid lg:grid-cols-2 gap-10 items-center mb-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-lg font-semibold mb-4 text-gray-200">Industry Stats That Matter</h3>
-              <div className="space-y-3 text-gray-400 text-sm">
-                <p className="flex items-start gap-2">
-                  <span className="text-primary mt-1">+</span>
-                  <span>Businesses using human call centers for appointment setting spend $45-$120 per appointment booked</span>
-                </p>
-                <p className="flex items-start gap-2">
-                  <span className="text-primary mt-1">+</span>
-                  <span>AI voice callers reduce cost per appointment set by up to 80% while maintaining show rates</span>
-                </p>
-                <p className="flex items-start gap-2">
-                  <span className="text-primary mt-1">+</span>
-                  <span>The average human caller makes 40-60 calls per day — this system runs hundreds simultaneously</span>
-                </p>
-                <p className="flex items-start gap-2">
-                  <span className="text-primary mt-1">+</span>
-                  <span>Consistent scripting and tone from AI callers produces more predictable conversion rates than human teams</span>
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <VideoCard
-                poster=""
-                src="placeholder"
-                alt="Voice Outreach Demo"
-                videoId="voice-outreach-video"
-                isYouTube={false}
-              />
-            </motion.div>
-          </div>
-
-          <div className="mb-8 text-center">
-            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap justify-center gap-2">
-              {['Solar Installation Companies', 'Insurance Agencies & Brokers', 'Real Estate Teams & Brokerages', 'Home Services & Improvement Companies', 'Debt Settlement & Financial Services'].map((industry) => (
-                <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
-                  {industry}
-                </Badge>
-              ))}
-            </div>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <p className="text-base text-gray-400 mb-6">
-              If you have a big list of leads ready to be called but don't have the time set a meeting with the CEO and get this running:
-            </p>
-            <Link href="/#book">
-              <DripButton>Book a Meeting</DripButton>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Social Media Outreach Section */}
-      <section id="social" className="py-14 px-6 lg:px-8 bg-card/30 backdrop-blur-sm scroll-mt-20">
-        <div className="container mx-auto max-w-7xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl md:text-3xl font-bold text-center mb-12 text-white leading-[1.3]"
-          >
-            An AI System That Reaches Out Across Every Platform, Holds Real Human-Like Conversations in the DMs, and Converts Cold Followers Into Booked Calls on Autopilot.
-          </motion.h2>
-
-          <div className="grid lg:grid-cols-2 gap-10 items-center mb-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <VideoCard
-                poster=""
-                src="placeholder"
-                alt="Social Outreach Demo"
-                videoId="social-outreach-video"
-                isYouTube={false}
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-lg font-semibold mb-4 text-gray-200">Industry Stats That Matter</h3>
-              <div className="space-y-3 text-gray-400 text-sm">
-                <p className="flex items-start gap-2">
-                  <span className="text-primary mt-1">+</span>
-                  <span>Businesses that run systematic DM outreach generate 40-60% more booked calls than those relying on inbound alone</span>
-                </p>
-                <p className="flex items-start gap-2">
-                  <span className="text-primary mt-1">+</span>
-                  <span>The average business owner spends 5+ hours per week on manual social media outreach that could be automated</span>
-                </p>
-                <p className="flex items-start gap-2">
-                  <span className="text-primary mt-1">+</span>
-                  <span>Response rate on personalized DM outreach is 8x higher than cold email for personal brand businesses</span>
-                </p>
-                <p className="flex items-start gap-2">
-                  <span className="text-primary mt-1">+</span>
-                  <span>Businesses running AI DM outreach operate across multiple platforms simultaneously with zero additional effort</span>
-                </p>
-              </div>
-            </motion.div>
-          </div>
-
-          <div className="mb-8 text-center">
-            <h4 className="text-base font-semibold mb-4 text-gray-200">Top 5 Industries:</h4>
-            <div className="flex flex-wrap justify-center gap-2">
-              {['Online Coaches & Course Creators', 'Personal Development & Mindset Brands', 'Health & Fitness Online Businesses', 'Business & Entrepreneurship Coaches', 'Spiritual & Life Transformation Coaches'].map((industry) => (
-                <Badge key={industry} className="bg-primary/10 text-primary border-primary/30 px-4 py-2">
-                  {industry}
-                </Badge>
-              ))}
-            </div>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <p className="text-base text-gray-400 mb-6">
-              If you have a professional brand on social media with a powerful following and are looking to turn that into real money this is the outreach system for you, book a meeting with our CEO and get this rolling:
-            </p>
-            <Link href="/#book">
-              <DripButton>Book a Meeting</DripButton>
-            </Link>
+      {/* FINAL CTA */}
+      <section className="py-16 px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute inset-0 beam-bg opacity-50" />
+        <div className="container mx-auto max-w-2xl relative z-10 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+            <h2 className="text-3xl font-bold text-white mb-4">Ready to fill your pipeline?</h2>
+            <p className="text-muted-foreground mb-8 leading-[1.7]">Book a call. We'll map out the outreach system that fits your offer and your market — and tell you exactly what results to expect.</p>
+            <Link href="/#book"><DripButton>Book a Strategy Call</DripButton></Link>
           </motion.div>
         </div>
       </section>
