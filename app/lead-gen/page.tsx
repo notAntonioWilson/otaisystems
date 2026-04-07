@@ -5,6 +5,7 @@ import { VideoCard } from '@/components/video-card';
 import { Badge } from '@/components/ui/badge';
 import { Mail, Share2, ArrowRight, Youtube } from 'lucide-react';
 import Link from 'next/link';
+import { CalWidget } from '@/components/cal-widget';
 
 const fadeUp: any = {
   hidden: { opacity: 0, y: 24 },
@@ -144,9 +145,7 @@ export default function LeadGenPage() {
             <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="glass-card rounded-2xl p-6">
               <h3 className="text-lg font-bold text-white mb-1">Book a Strategy Call</h3>
               <p className="text-xs text-muted-foreground mb-4">Free. 30 minutes. We'll map out the outreach system that fits your offer and your market.</p>
-              <div className="rounded-lg overflow-hidden">
-                <iframe src="https://cal.com/otai-systems/30min-professional" style={{ width: '100%', height: '420px', border: 'none' }} />
-              </div>
+              <CalWidget height="420px" />
             </motion.div>
           </div>
         </div>

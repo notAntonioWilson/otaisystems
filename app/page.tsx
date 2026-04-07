@@ -13,6 +13,7 @@ import { RadarSweep } from '@/components/radar-sweep';
 import { CodeEditorAnimation } from '@/components/code-editor-animation';
 import { EnergyTransfer } from '@/components/energy-transfer';
 import { GrowthChart } from '@/components/growth-chart';
+import { CalWidget } from '@/components/cal-widget';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -342,8 +343,8 @@ export default function Home() {
             ))}
           </div>
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-10">
-            <Link href="/results" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
-              View full client portfolio <ArrowRight className="w-4 h-4" />
+            <Link href="/live-proof" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
+              See live proof <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         </div>
@@ -386,9 +387,7 @@ export default function Home() {
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.5 }} className="max-w-5xl mx-auto">
             <div className="bg-card border border-primary/30 rounded-2xl p-6 glow-accent-sm">
-              <div className="rounded-lg overflow-hidden">
-                <iframe src="https://cal.com/otai-systems/30min-professional" style={{ width: '100%', height: '650px', border: 'none' }} />
-              </div>
+              <CalWidget height="650px" />
             </div>
           </motion.div>
         </div>
