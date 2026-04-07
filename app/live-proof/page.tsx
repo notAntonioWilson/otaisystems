@@ -88,12 +88,12 @@ export default function LiveProofPage() {
                 <p className="text-xs text-primary tracking-widest uppercase font-semibold mb-5">What we've built</p>
                 <div className="grid grid-cols-2 gap-5">
                   {[
-                    { value: '270k+', label: 'Emails sent' },
                     { value: '100+', label: 'Automations created' },
                     { value: '50+', label: 'AI agents created' },
                     { value: '20+', label: 'Businesses worked with' },
+                    { value: '270k+', label: 'Emails sent' },
                     { value: '3yr+', label: 'Years in marketing' },
-                    { value: '1yr+', label: 'Building AI systems' },
+                    { value: '1yr+', label: 'Years building AI' },
                   ].map((stat) => (
                     <div key={stat.label}>
                       <p className="text-xl font-bold text-white">{stat.value}</p>
