@@ -67,8 +67,8 @@ export default function Home() {
   };
 
   const clients = [
-    { name: 'Coldwell Banker', label: 'Real Estate' },
-    { name: 'The Agency RE', label: 'Luxury Real Estate' },
+    { name: 'Cald.W Realtors', label: 'Real Estate' },
+    { name: 'The Ag. Realtors', label: 'Luxury Real Estate' },
     { name: 'Next Level Carpentry', img: '/images/nextlevel-logo.png', label: 'Contractors' },
     { name: 'Macro Mate', img: '/images/macromate-logo.jpg', label: 'App Company' },
     { name: 'AI Startups', label: 'Artificial Intelligence' },
