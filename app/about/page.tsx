@@ -52,6 +52,7 @@ export default function AboutPage() {
                   src="/images/antonio-standing.jpg"
                   alt="Antonio Wilson"
                   fill
+                  sizes="(max-width: 768px) 100vw, 384px"
                   className="object-cover object-top"
                   priority
                 />
@@ -143,6 +144,7 @@ export default function AboutPage() {
                   src="/images/antonio-working.jpg"
                   alt="Antonio Wilson working"
                   fill
+                  sizes="(max-width: 768px) 100vw, 384px"
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />

@@ -58,7 +58,7 @@ export function NavBar() {
           <div className="flex items-center justify-between h-20">
             <Link href="/" className="flex items-center gap-2 group">
               <div className="w-7 h-7 relative">
-                <Image src="/images/logo.png" alt="OTAI Systems Logo" width={28} height={28} className="object-contain brightness-0 invert" />
+                <Image src="/images/logo.png" alt="OTAI Systems Logo" width={28} height={28} sizes="28px" className="object-contain brightness-0 invert" />
               </div>
               <span className="text-xl font-bold text-primary">OTAI Systems</span>
             </Link>

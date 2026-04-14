@@ -149,7 +149,7 @@ export default function Home() {
               <motion.div key={client.name} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="flex flex-col items-center gap-2">
                 {client.img ? (
                   <div className="w-12 h-12 rounded-full overflow-hidden border border-primary/20 bg-white/5">
-                    <Image src={client.img} alt={client.name} width={48} height={48} className="object-cover w-full h-full" />
+                    <Image src={client.img} alt={client.name} width={48} height={48} sizes="48px" className="object-cover w-full h-full" />
                   </div>
                 ) : (
                   <div className="w-12 h-12 rounded-full border border-primary/20 bg-primary/5 flex items-center justify-center">
@@ -205,7 +205,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeLeft} className="relative flex justify-center lg:justify-start pl-4">
               <div className="relative rounded-2xl overflow-hidden w-full max-w-md h-[520px]">
-                <Image src="/images/antonio-standing.jpg" alt="Antonio Wilson — Founder, OTAI Systems" fill className="object-cover" style={{ objectPosition: '55% 2%' }} />
+                <Image src="/images/antonio-standing.jpg" alt="Antonio Wilson — Founder, OTAI Systems" fill sizes="(max-width: 768px) 100vw, 448px" className="object-cover" style={{ objectPosition: '55% 2%' }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5">
                   <p className="text-white font-bold text-lg">Antonio Wilson</p>

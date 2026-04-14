@@ -51,6 +51,7 @@ export function Footer() {
                   alt="OTAI Systems Logo"
                   width={28}
                   height={28}
+                  sizes="28px"
                   className="object-contain brightness-0 invert"
                 />
               </div>
