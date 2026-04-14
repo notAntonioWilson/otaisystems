@@ -14,12 +14,18 @@ const fadeUp: any = {
   }),
 };
 
-/* ── Proof images — all unique, used for lightbox navigation ── */
+/* All proof images flattened for lightbox navigation */
 const proofImages = [
-  // All images flattened from balanced columns
-  '/images/proof/IMAGE_2026-04-14_18_42_46.jpg','/images/proof/IMAGE_2026-04-14_18_46_18.jpg','/images/proof/IMAGE_2026-04-14_18_47_32.jpg','/images/proof/IMG_0693.PNG','/images/proof/IMG_0694.PNG','/images/proof/IMG_0689.PNG','/images/proof/IMG_0687.PNG','/images/proof/IMG_0690.PNG','/images/proof/Screenshot_2026-02-03_at_11_38_38_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_03_PM.png','/images/proof/Screenshot_2026-04-14_at_6_54_27_PM.png','/images/proof/Screenshot_2026-04-14_at_6_56_02_PM.png','/images/proof/Screenshot_2026-02-14_at_2_40_50_PM.png','/images/proof/Screenshot_2026-02-12_at_1_19_12_PM.png','/images/proof/Screenshot_2026-02-03_at_11_39_37_PM.png','/images/proof/Screenshot_2026-02-02_at_5_27_44_PM.png','/images/proof/IMAGE_2026-04-14_18_44_12.jpg','/images/proof/Screenshot_2026-01-04_at_1_25_31_PM.png','/images/proof/IMAGE_2026-04-14_18_43_51.jpg','/images/proof/Screenshot_2026-02-14_at_2_40_10_PM.png','/images/proof/IMAGE_2026-04-14_18_43_58.jpg','/images/proof/Screenshot_2026-04-14_at_6_53_38_PM.png','/images/proof/Screenshot_2026-01-05_at_1_22_30_PM.png','/images/proof/proof4.webp',
-  '/images/proof/IMAGE_2026-04-14_18_42_49.jpg','/images/proof/IMAGE_2026-04-14_18_47_08.jpg','/images/proof/IMG_1664.PNG','/images/proof/IMG_2416.PNG','/images/proof/IMG_0691.PNG','/images/proof/testimonail_joshFairchild.png','/images/proof/IMG_0688.PNG','/images/proof/IMG_0686.PNG','/images/proof/Screenshot_2026-04-14_at_6_55_18_PM.png','/images/proof/Screenshot_2026-04-14_at_6_53_54_PM.png','/images/proof/IMAGE_2026-04-14_18_44_18.jpg','/images/proof/IMAGE_2026-04-14_18_44_14.jpg','/images/proof/proof3.webp','/images/proof/Screenshot_2026-04-14_at_6_56_12_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_39_PM.png','/images/proof/Screenshot_2026-04-14_at_6_58_41_PM.png','/images/proof/IMAGE_2026-04-14_18_44_08.jpg','/images/proof/Screenshot_2025-10-14_at_11_00_45_AM.png','/images/proof/Screenshot_2026-02-12_at_1_19_03_PM.png','/images/proof/Screenshot_2025-10-14_at_11_00_21_AM.png','/images/proof/Screenshot_2026-02-02_at_5_27_50_PM.png','/images/proof/Screenshot_2026-02-14_at_2_40_39_PM.png','/images/proof/IMAGE_2026-04-14_18_43_54.jpg','/images/proof/Screenshot_2026-02-14_at_2_41_04_PM.png','/images/proof/IMAGE_2026-04-14_18_44_01.jpg',
-  '/images/proof/IMAGE_2026-04-14_18_45_54.jpg','/images/proof/IMAGE_2026-04-14_18_47_12.jpg','/images/proof/IMG_2047.PNG','/images/proof/IMG_0695.PNG','/images/proof/IMG_0696.PNG','/images/proof/IMG_0685.PNG','/images/proof/IMG_0442.PNG','/images/proof/IMG_0692.PNG','/images/proof/IMAGE_2026-04-14_18_43_42.jpg','/images/proof/Screenshot_2026-04-14_at_6_55_50_PM.png','/images/proof/IMAGE_2026-04-14_18_44_10.jpg','/images/proof/Screenshot_2026-04-14_at_6_54_38_PM.png','/images/proof/proof.webp','/images/proof/Screenshot_2026-04-14_at_6_53_05_PM.png','/images/proof/IMAGE_2026-04-14_18_43_56.jpg','/images/proof/proof2.webp','/images/proof/IMAGE_2026-04-14_18_43_46.jpg','/images/proof/IMAGE_2026-04-14_18_44_16.jpg','/images/proof/Screenshot_2026-02-05_at_12_42_04_PM.png','/images/proof/Screenshot_2026-01-05_at_1_22_42_PM.png','/images/proof/Screenshot_2026-02-14_at_2_41_20_PM.png','/images/proof/IMAGE_2026-04-14_18_43_59.jpg','/images/proof/Screenshot_2026-01-04_at_1_25_14_PM.png','/images/proof/IMAGE_2026-04-14_18_43_49.jpg','/images/proof/IMAGE_2026-04-14_18_43_45.jpg',
+  '/images/proof/IMAGE_2026-04-14_18_42_46.jpg','/images/proof/IMAGE_2026-04-14_18_46_18.jpg','/images/proof/Screenshot_2026-04-14_at_6_55_18_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_50_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_39_PM.png','/images/proof/IMAGE_2026-04-14_18_44_10.jpg','/images/proof/IMAGE_2026-04-14_18_43_56.jpg','/images/proof/Screenshot_2026-02-12_at_1_19_03_PM.png','/images/proof/IMAGE_2026-04-14_18_44_08.jpg','/images/proof/Screenshot_2025-10-14_at_11_00_21_AM.png','/images/proof/Screenshot_2026-01-04_at_1_25_31_PM.png','/images/proof/Screenshot_2026-02-02_at_5_27_50_PM.png','/images/proof/Screenshot_2026-01-04_at_1_25_14_PM.png','/images/proof/IMAGE_2026-04-14_18_43_45.jpg','/images/proof/IMG_2416.PNG','/images/proof/IMG_0695.PNG','/images/proof/IMG_0689.PNG','/images/proof/IMG_0442.PNG','/images/proof/IMG_0690.PNG','/images/proof/Screenshot_2026-02-14_at_2_40_50_PM.png','/images/proof/Screenshot_2026-02-14_at_2_40_39_PM.png','/images/proof/IMAGE_2026-04-14_18_47_08.jpg','/images/proof/proof.webp','/images/proof/proof3.webp',
+  '/images/proof/testimonail_joshFairchild.png','/images/proof/IMAGE_2026-04-14_18_45_54.jpg','/images/proof/Screenshot_2026-02-03_at_11_38_38_PM.png','/images/proof/Screenshot_2026-04-14_at_6_54_27_PM.png','/images/proof/Screenshot_2026-04-14_at_6_56_02_PM.png','/images/proof/IMAGE_2026-04-14_18_43_42.jpg','/images/proof/IMAGE_2026-04-14_18_44_18.jpg','/images/proof/Screenshot_2026-02-02_at_5_27_44_PM.png','/images/proof/IMAGE_2026-04-14_18_43_51.jpg','/images/proof/IMAGE_2026-04-14_18_44_16.jpg','/images/proof/Screenshot_2026-01-05_at_1_22_42_PM.png','/images/proof/IMAGE_2026-04-14_18_43_58.jpg','/images/proof/IMAGE_2026-04-14_18_43_49.jpg','/images/proof/IMAGE_2026-04-14_18_43_54.jpg','/images/proof/IMG_1664.PNG','/images/proof/IMG_0693.PNG','/images/proof/IMG_0691.PNG','/images/proof/IMG_0687.PNG','/images/proof/IMG_0688.PNG','/images/proof/Screenshot_2026-02-14_at_2_40_10_PM.png','/images/proof/Screenshot_2026-02-14_at_2_41_20_PM.png','/images/proof/Screenshot_2026-02-14_at_2_41_04_PM.png','/images/proof/IMAGE_2026-04-14_18_47_12.jpg','/images/proof/proof2.webp','/images/proof/proof4.webp',
+  '/images/proof/IMAGE_2026-04-14_18_42_49.jpg','/images/proof/Screenshot_2026-04-14_at_6_53_05_PM.png','/images/proof/Screenshot_2026-04-14_at_6_53_54_PM.png','/images/proof/Screenshot_2026-04-14_at_6_53_38_PM.png','/images/proof/Screenshot_2026-04-14_at_6_58_41_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_03_PM.png','/images/proof/Screenshot_2026-04-14_at_6_54_38_PM.png','/images/proof/Screenshot_2026-02-03_at_11_39_37_PM.png','/images/proof/Screenshot_2026-04-14_at_6_56_12_PM.png','/images/proof/IMAGE_2026-04-14_18_44_14.jpg','/images/proof/Screenshot_2026-02-12_at_1_19_12_PM.png','/images/proof/IMAGE_2026-04-14_18_43_46.jpg','/images/proof/IMAGE_2026-04-14_18_44_12.jpg','/images/proof/Screenshot_2025-10-14_at_11_00_45_AM.png','/images/proof/Screenshot_2026-02-05_at_12_42_04_PM.png','/images/proof/IMAGE_2026-04-14_18_43_59.jpg','/images/proof/Screenshot_2026-01-05_at_1_22_30_PM.png','/images/proof/IMAGE_2026-04-14_18_44_01.jpg','/images/proof/IMG_2047.PNG','/images/proof/IMG_0694.PNG','/images/proof/IMG_0696.PNG','/images/proof/IMG_0685.PNG','/images/proof/IMG_0692.PNG','/images/proof/IMG_0686.PNG','/images/proof/IMAGE_2026-04-14_18_47_32.jpg',
+];
+
+/* Balanced columns: texts > n8n > make > instantly > social > other */
+const columns: string[][] = [
+  ['/images/proof/IMAGE_2026-04-14_18_42_46.jpg','/images/proof/IMAGE_2026-04-14_18_46_18.jpg','/images/proof/Screenshot_2026-04-14_at_6_55_18_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_50_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_39_PM.png','/images/proof/IMAGE_2026-04-14_18_44_10.jpg','/images/proof/IMAGE_2026-04-14_18_43_56.jpg','/images/proof/Screenshot_2026-02-12_at_1_19_03_PM.png','/images/proof/IMAGE_2026-04-14_18_44_08.jpg','/images/proof/Screenshot_2025-10-14_at_11_00_21_AM.png','/images/proof/Screenshot_2026-01-04_at_1_25_31_PM.png','/images/proof/Screenshot_2026-02-02_at_5_27_50_PM.png','/images/proof/Screenshot_2026-01-04_at_1_25_14_PM.png','/images/proof/IMAGE_2026-04-14_18_43_45.jpg','/images/proof/IMG_2416.PNG','/images/proof/IMG_0695.PNG','/images/proof/IMG_0689.PNG','/images/proof/IMG_0442.PNG','/images/proof/IMG_0690.PNG','/images/proof/Screenshot_2026-02-14_at_2_40_50_PM.png','/images/proof/Screenshot_2026-02-14_at_2_40_39_PM.png','/images/proof/IMAGE_2026-04-14_18_47_08.jpg','/images/proof/proof.webp','/images/proof/proof3.webp'],
+  ['/images/proof/testimonail_joshFairchild.png','/images/proof/IMAGE_2026-04-14_18_45_54.jpg','/images/proof/Screenshot_2026-02-03_at_11_38_38_PM.png','/images/proof/Screenshot_2026-04-14_at_6_54_27_PM.png','/images/proof/Screenshot_2026-04-14_at_6_56_02_PM.png','/images/proof/IMAGE_2026-04-14_18_43_42.jpg','/images/proof/IMAGE_2026-04-14_18_44_18.jpg','/images/proof/Screenshot_2026-02-02_at_5_27_44_PM.png','/images/proof/IMAGE_2026-04-14_18_43_51.jpg','/images/proof/IMAGE_2026-04-14_18_44_16.jpg','/images/proof/Screenshot_2026-01-05_at_1_22_42_PM.png','/images/proof/IMAGE_2026-04-14_18_43_58.jpg','/images/proof/IMAGE_2026-04-14_18_43_49.jpg','/images/proof/IMAGE_2026-04-14_18_43_54.jpg','/images/proof/IMG_1664.PNG','/images/proof/IMG_0693.PNG','/images/proof/IMG_0691.PNG','/images/proof/IMG_0687.PNG','/images/proof/IMG_0688.PNG','/images/proof/Screenshot_2026-02-14_at_2_40_10_PM.png','/images/proof/Screenshot_2026-02-14_at_2_41_20_PM.png','/images/proof/Screenshot_2026-02-14_at_2_41_04_PM.png','/images/proof/IMAGE_2026-04-14_18_47_12.jpg','/images/proof/proof2.webp','/images/proof/proof4.webp'],
+  ['/images/proof/IMAGE_2026-04-14_18_42_49.jpg','/images/proof/Screenshot_2026-04-14_at_6_53_05_PM.png','/images/proof/Screenshot_2026-04-14_at_6_53_54_PM.png','/images/proof/Screenshot_2026-04-14_at_6_53_38_PM.png','/images/proof/Screenshot_2026-04-14_at_6_58_41_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_03_PM.png','/images/proof/Screenshot_2026-04-14_at_6_54_38_PM.png','/images/proof/Screenshot_2026-02-03_at_11_39_37_PM.png','/images/proof/Screenshot_2026-04-14_at_6_56_12_PM.png','/images/proof/IMAGE_2026-04-14_18_44_14.jpg','/images/proof/Screenshot_2026-02-12_at_1_19_12_PM.png','/images/proof/IMAGE_2026-04-14_18_43_46.jpg','/images/proof/IMAGE_2026-04-14_18_44_12.jpg','/images/proof/Screenshot_2025-10-14_at_11_00_45_AM.png','/images/proof/Screenshot_2026-02-05_at_12_42_04_PM.png','/images/proof/IMAGE_2026-04-14_18_43_59.jpg','/images/proof/Screenshot_2026-01-05_at_1_22_30_PM.png','/images/proof/IMAGE_2026-04-14_18_44_01.jpg','/images/proof/IMG_2047.PNG','/images/proof/IMG_0694.PNG','/images/proof/IMG_0696.PNG','/images/proof/IMG_0685.PNG','/images/proof/IMG_0692.PNG','/images/proof/IMG_0686.PNG','/images/proof/IMAGE_2026-04-14_18_47_32.jpg'],
 ];
 
 const websites = [
@@ -46,16 +52,6 @@ export default function ProofPage() {
       window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
   };
-
-  /* Pre-balanced columns — distributed by image aspect ratio so columns end at the same height */
-  const columns: string[][] = [
-    // Column 1 (24 images)
-    ['/images/proof/IMAGE_2026-04-14_18_42_46.jpg','/images/proof/IMAGE_2026-04-14_18_46_18.jpg','/images/proof/IMAGE_2026-04-14_18_47_32.jpg','/images/proof/IMG_0693.PNG','/images/proof/IMG_0694.PNG','/images/proof/IMG_0689.PNG','/images/proof/IMG_0687.PNG','/images/proof/IMG_0690.PNG','/images/proof/Screenshot_2026-02-03_at_11_38_38_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_03_PM.png','/images/proof/Screenshot_2026-04-14_at_6_54_27_PM.png','/images/proof/Screenshot_2026-04-14_at_6_56_02_PM.png','/images/proof/Screenshot_2026-02-14_at_2_40_50_PM.png','/images/proof/Screenshot_2026-02-12_at_1_19_12_PM.png','/images/proof/Screenshot_2026-02-03_at_11_39_37_PM.png','/images/proof/Screenshot_2026-02-02_at_5_27_44_PM.png','/images/proof/IMAGE_2026-04-14_18_44_12.jpg','/images/proof/Screenshot_2026-01-04_at_1_25_31_PM.png','/images/proof/IMAGE_2026-04-14_18_43_51.jpg','/images/proof/Screenshot_2026-02-14_at_2_40_10_PM.png','/images/proof/IMAGE_2026-04-14_18_43_58.jpg','/images/proof/Screenshot_2026-04-14_at_6_53_38_PM.png','/images/proof/Screenshot_2026-01-05_at_1_22_30_PM.png','/images/proof/proof4.webp'],
-    // Column 2 (25 images)
-    ['/images/proof/IMAGE_2026-04-14_18_42_49.jpg','/images/proof/IMAGE_2026-04-14_18_47_08.jpg','/images/proof/IMG_1664.PNG','/images/proof/IMG_2416.PNG','/images/proof/IMG_0691.PNG','/images/proof/testimonail_joshFairchild.png','/images/proof/IMG_0688.PNG','/images/proof/IMG_0686.PNG','/images/proof/Screenshot_2026-04-14_at_6_55_18_PM.png','/images/proof/Screenshot_2026-04-14_at_6_53_54_PM.png','/images/proof/IMAGE_2026-04-14_18_44_18.jpg','/images/proof/IMAGE_2026-04-14_18_44_14.jpg','/images/proof/proof3.webp','/images/proof/Screenshot_2026-04-14_at_6_56_12_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_39_PM.png','/images/proof/Screenshot_2026-04-14_at_6_58_41_PM.png','/images/proof/IMAGE_2026-04-14_18_44_08.jpg','/images/proof/Screenshot_2025-10-14_at_11_00_45_AM.png','/images/proof/Screenshot_2026-02-12_at_1_19_03_PM.png','/images/proof/Screenshot_2025-10-14_at_11_00_21_AM.png','/images/proof/Screenshot_2026-02-02_at_5_27_50_PM.png','/images/proof/Screenshot_2026-02-14_at_2_40_39_PM.png','/images/proof/IMAGE_2026-04-14_18_43_54.jpg','/images/proof/Screenshot_2026-02-14_at_2_41_04_PM.png','/images/proof/IMAGE_2026-04-14_18_44_01.jpg'],
-    // Column 3 (25 images)
-    ['/images/proof/IMAGE_2026-04-14_18_45_54.jpg','/images/proof/IMAGE_2026-04-14_18_47_12.jpg','/images/proof/IMG_2047.PNG','/images/proof/IMG_0695.PNG','/images/proof/IMG_0696.PNG','/images/proof/IMG_0685.PNG','/images/proof/IMG_0442.PNG','/images/proof/IMG_0692.PNG','/images/proof/IMAGE_2026-04-14_18_43_42.jpg','/images/proof/Screenshot_2026-04-14_at_6_55_50_PM.png','/images/proof/IMAGE_2026-04-14_18_44_10.jpg','/images/proof/Screenshot_2026-04-14_at_6_54_38_PM.png','/images/proof/proof.webp','/images/proof/Screenshot_2026-04-14_at_6_53_05_PM.png','/images/proof/IMAGE_2026-04-14_18_43_56.jpg','/images/proof/proof2.webp','/images/proof/IMAGE_2026-04-14_18_43_46.jpg','/images/proof/IMAGE_2026-04-14_18_44_16.jpg','/images/proof/Screenshot_2026-02-05_at_12_42_04_PM.png','/images/proof/Screenshot_2026-01-05_at_1_22_42_PM.png','/images/proof/Screenshot_2026-02-14_at_2_41_20_PM.png','/images/proof/IMAGE_2026-04-14_18_43_59.jpg','/images/proof/Screenshot_2026-01-04_at_1_25_14_PM.png','/images/proof/IMAGE_2026-04-14_18_43_49.jpg','/images/proof/IMAGE_2026-04-14_18_43_45.jpg'],
-  ];
 
   return (
     <div className="min-h-screen">
@@ -88,8 +84,8 @@ export default function ProofPage() {
         </div>
       </section>
 
-      {/* NOTE ABOUT N8N */}
-      <section className="px-6 lg:px-8 pb-8">
+      {/* N8N NOTE */}
+      <section className="px-6 lg:px-8 pb-10">
         <div className="container mx-auto">
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="glass-card rounded-xl p-5 text-center max-w-3xl mx-auto border border-primary/20">
             <p className="text-sm text-muted-foreground leading-[1.7]">
@@ -102,50 +98,25 @@ export default function ProofPage() {
         </div>
       </section>
 
-      {/* WEBSITES WE BUILT — compact strip above proof wall */}
-      <section id="websites" className="px-6 lg:px-8 pb-10">
-        <div className="container mx-auto">
-          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-6">
-            <h3 className="text-xl font-bold text-white mb-2">Websites we built.</h3>
-          </motion.div>
-          <div className="flex flex-wrap justify-center gap-3">
-            {websites.map((site, i) => (
-              <motion.a
-                key={site.url}
-                href={site.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.03, duration: 0.3 }}
-                className="glass-card rounded-lg px-4 py-2.5 flex items-center gap-2 group hover:border-primary/40 transition-all duration-300"
-              >
-                <ExternalLink className="w-3 h-3 text-primary/60 group-hover:text-primary transition-colors flex-shrink-0" />
-                <span className="text-sm text-white/80 group-hover:text-white transition-colors whitespace-nowrap">{site.name}</span>
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* MASONRY PROOF WALL */}
       <section id="wall" className="px-6 lg:px-8 pb-20">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {columns.map((col, colIndex) => (
               <div key={colIndex} className="flex flex-col gap-4">
-                {col.map((src, imgIndex) => {
-                  return (
-                    <motion.div
-                      key={src}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: '-50px' }}
-                      transition={{ delay: (imgIndex % 4) * 0.05, duration: 0.4 }}
-                      className="relative rounded-xl overflow-hidden border border-primary/10 hover:border-primary/40 transition-all duration-300 cursor-pointer group bg-card/40 p-1.5 glow-accent-sm"
-                      onClick={() => setLightboxIndex(proofImages.indexOf(src))}
-                    >
+                {col.map((src, imgIndex) => (
+                  <motion.div
+                    key={src}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-50px' }}
+                    transition={{ delay: (imgIndex % 4) * 0.05, duration: 0.4 }}
+                    className="relative rounded-xl overflow-hidden cursor-pointer group"
+                    style={{ boxShadow: '0 0 20px 2px rgba(139, 92, 246, 0.15), 0 0 6px 1px rgba(139, 92, 246, 0.1)' }}
+                    onClick={() => setLightboxIndex(proofImages.indexOf(src))}
+                  >
+                    <div className="absolute inset-0 rounded-xl border-2 border-primary/20 group-hover:border-primary/50 transition-colors duration-300 z-10 pointer-events-none" />
+                    <div className="bg-card/60 p-1.5 rounded-xl">
                       <div className="rounded-lg overflow-hidden">
                         <img
                           src={src}
@@ -154,11 +125,44 @@ export default function ProofPage() {
                           loading="lazy"
                         />
                       </div>
-                      <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                    </motion.div>
-                  );
-                })}
+                    </div>
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-primary/8 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  </motion.div>
+                ))}
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WEBSITES WE BUILT */}
+      <section id="websites" className="py-20 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
+        <div className="container mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-14">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Live Websites</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Websites we built.</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto text-lg leading-[1.7]">Every site below was designed, built, and deployed by OTAI Systems.</p>
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            {websites.map((site, i) => (
+              <motion.a
+                key={site.url}
+                href={site.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05, duration: 0.4 }}
+                className="glass-card rounded-xl p-5 flex flex-col group hover:border-primary/40 transition-all duration-300"
+              >
+                <span className="text-xs bg-primary/10 text-primary border border-primary/20 rounded-full px-3 py-1 self-start mb-3">{site.tag}</span>
+                <p className="text-sm font-semibold text-white mb-2 group-hover:text-primary transition-colors">{site.name}</p>
+                <div className="flex items-center gap-1 text-xs text-muted-foreground group-hover:text-primary/70 transition-colors mt-auto">
+                  <ExternalLink className="w-3 h-3" />
+                  <span className="truncate">{site.url.replace('https://', '').replace('http://', '').replace(/\/$/, '')}</span>
+                </div>
+              </motion.a>
             ))}
           </div>
         </div>
@@ -199,8 +203,6 @@ export default function ProofPage() {
             >
               <X className="w-6 h-6 text-white" />
             </motion.button>
-
-            {/* Prev/Next */}
             {lightboxIndex > 0 && (
               <button
                 onClick={(e) => { e.stopPropagation(); setLightboxIndex(lightboxIndex - 1); }}
@@ -219,7 +221,6 @@ export default function ProofPage() {
                 ›
               </button>
             )}
-
             <motion.img
               key={lightboxIndex}
               initial={{ scale: 0.9, opacity: 0 }}
