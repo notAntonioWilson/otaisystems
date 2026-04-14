@@ -350,18 +350,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* VIDEO TESTIMONIAL */}
+      {/* CLIENT TESTIMONIAL */}
       <section className="py-20 px-6 lg:px-8">
         <div className="container mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-10">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Client Testimonial</Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Hear it directly.</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto text-lg leading-[1.7]">Real feedback from a real client — unscripted, unedited.</p>
           </motion.div>
-          <div className="grid lg:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+          <div className="grid lg:grid-cols-3 gap-6 items-start max-w-6xl mx-auto">
+            {/* Left — Josh text testimonial */}
+            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="glass-card rounded-2xl p-2 border border-primary/20 overflow-hidden">
+              <img src="/images/proof/IMAGE_2026-04-14_18_45_54.jpg" alt="Client conversation" className="w-full h-auto rounded-xl" />
+            </motion.div>
+            {/* Center — Video */}
+            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
               <div className="glass-card rounded-2xl p-2 border border-primary/20">
-                <div className="relative w-full rounded-xl overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                <div className="relative w-full rounded-xl overflow-hidden" style={{ aspectRatio: '9/16' }}>
                   <iframe
                     src="https://drive.google.com/file/d/1lQjc98xaAjqYi4s4A_lat4zFFKyjvyyu/preview"
                     className="absolute inset-0 w-full h-full"
@@ -373,24 +377,16 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="flex flex-col gap-4">
-              <div className="glass-card rounded-xl p-5 border border-primary/10">
-                <p className="text-2xl font-bold text-white mb-1">270k+</p>
-                <p className="text-sm text-muted-foreground">Emails sent across all campaigns</p>
-              </div>
-              <div className="glass-card rounded-xl p-5 border border-primary/10">
-                <p className="text-2xl font-bold text-white mb-1">75%+</p>
-                <p className="text-sm text-muted-foreground">Average open rate</p>
-              </div>
-              <div className="glass-card rounded-xl p-5 border border-primary/10">
-                <p className="text-2xl font-bold text-white mb-1">$290k+</p>
-                <p className="text-sm text-muted-foreground">Pipeline value generated for clients</p>
-              </div>
-              <Link href="/proof" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors mt-2">
-                See all proof <ArrowRight className="w-4 h-4" />
-              </Link>
+            {/* Right — Email lead proof */}
+            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="glass-card rounded-2xl p-2 border border-primary/20 overflow-hidden">
+              <img src="/images/proof/IMAGE_2026-04-14_18_46_18.jpg" alt="Client lead captured" className="w-full h-auto rounded-xl" />
             </motion.div>
           </div>
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
+            <Link href="/proof" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
+              See all proof <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 

@@ -86,12 +86,9 @@ export default function ProofPage() {
       {/* N8N NOTE */}
       <section className="px-6 lg:px-8 pb-10">
         <div className="container mx-auto">
-          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="glass-card rounded-xl p-5 text-center max-w-3xl mx-auto border border-primary/20">
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="glass-card rounded-xl p-5 text-center mx-auto border border-primary/20">
             <p className="text-sm text-muted-foreground leading-[1.7]">
-              <span className="text-primary font-semibold">Full n8n automations and live workflow demos</span> are shown in our YouTube demo videos on the{' '}
-              <Link href="/#demos" className="text-primary hover:text-primary/80 underline underline-offset-4">homepage</Link>
-              {' '}and{' '}
-              <Link href="/automations" className="text-primary hover:text-primary/80 underline underline-offset-4">automations page</Link>.
+              <span className="text-primary font-semibold">Full n8n automations and live workflow demos</span> are shown in our YouTube demo videos on the <Link href="/#demos" className="text-primary hover:text-primary/80 underline underline-offset-4">homepage</Link> and <Link href="/automations" className="text-primary hover:text-primary/80 underline underline-offset-4">automations page</Link>.
             </p>
           </motion.div>
         </div>
