@@ -343,8 +343,38 @@ export default function Home() {
             ))}
           </div>
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-10">
-            <Link href="/live-proof" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
+            <Link href="/proof" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
               See live proof <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* VIDEO TESTIMONIAL */}
+      <section className="py-20 px-6 lg:px-8">
+        <div className="container mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-10">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Client Testimonial</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Hear it directly.</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto text-lg leading-[1.7]">Real feedback from a real client — unscripted, unedited.</p>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.5 }} className="max-w-3xl mx-auto">
+            <div className="glass-card rounded-2xl p-3 border border-primary/20">
+              <div className="relative w-full rounded-xl overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                <iframe
+                  src="https://drive.google.com/file/d/1lQjc98xaAjqYi4s4A_lat4zFFKyjvyyu/preview"
+                  className="absolute inset-0 w-full h-full"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  title="Client Video Testimonial"
+                  style={{ border: 'none' }}
+                />
+              </div>
+            </div>
+          </motion.div>
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
+            <Link href="/proof" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
+              See all proof <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         </div>

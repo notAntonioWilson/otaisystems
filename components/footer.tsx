@@ -86,6 +86,7 @@ export function Footer() {
               <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">About</Link>
               <Link href="/ai-agents" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">AI Agents</Link>
               <Link href="/automations" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">Automations</Link>
+              <Link href="/proof" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">Proof</Link>
               <button onClick={() => scrollToSection('results')} className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left">Results</button>
               <button onClick={() => scrollToSection('pricing')} className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left">Pricing</button>
               <button onClick={() => scrollToSection('book')} className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left">Book a Call</button>
