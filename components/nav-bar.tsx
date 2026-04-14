@@ -41,6 +41,7 @@ export function NavBar() {
   const navLinks = [
     { label: 'Services', action: () => scrollToSection('services') },
     { label: 'Results', action: () => scrollToSection('results') },
+    { label: 'Proof', href: '/proof' },
     { label: 'About', href: '/about' },
   ];
 

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { X, ExternalLink, ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { CalWidget } from '@/components/cal-widget';
 import Link from 'next/link';
 
 const fadeUp: any = {
@@ -14,18 +15,16 @@ const fadeUp: any = {
   }),
 };
 
-/* All proof images flattened for lightbox navigation */
 const proofImages = [
-  '/images/proof/IMAGE_2026-04-14_18_42_46.jpg','/images/proof/IMAGE_2026-04-14_18_46_18.jpg','/images/proof/Screenshot_2026-04-14_at_6_55_18_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_50_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_39_PM.png','/images/proof/IMAGE_2026-04-14_18_44_10.jpg','/images/proof/IMAGE_2026-04-14_18_43_56.jpg','/images/proof/Screenshot_2026-02-12_at_1_19_03_PM.png','/images/proof/IMAGE_2026-04-14_18_44_08.jpg','/images/proof/Screenshot_2025-10-14_at_11_00_21_AM.png','/images/proof/Screenshot_2026-01-04_at_1_25_31_PM.png','/images/proof/Screenshot_2026-02-02_at_5_27_50_PM.png','/images/proof/Screenshot_2026-01-04_at_1_25_14_PM.png','/images/proof/IMAGE_2026-04-14_18_43_45.jpg','/images/proof/IMG_2416.PNG','/images/proof/IMG_0695.PNG','/images/proof/IMG_0689.PNG','/images/proof/IMG_0442.PNG','/images/proof/IMG_0690.PNG','/images/proof/Screenshot_2026-02-14_at_2_40_50_PM.png','/images/proof/Screenshot_2026-02-14_at_2_40_39_PM.png','/images/proof/IMAGE_2026-04-14_18_47_08.jpg','/images/proof/proof.webp','/images/proof/proof3.webp',
-  '/images/proof/testimonail_joshFairchild.png','/images/proof/IMAGE_2026-04-14_18_45_54.jpg','/images/proof/Screenshot_2026-02-03_at_11_38_38_PM.png','/images/proof/Screenshot_2026-04-14_at_6_54_27_PM.png','/images/proof/Screenshot_2026-04-14_at_6_56_02_PM.png','/images/proof/IMAGE_2026-04-14_18_43_42.jpg','/images/proof/IMAGE_2026-04-14_18_44_18.jpg','/images/proof/Screenshot_2026-02-02_at_5_27_44_PM.png','/images/proof/IMAGE_2026-04-14_18_43_51.jpg','/images/proof/IMAGE_2026-04-14_18_44_16.jpg','/images/proof/Screenshot_2026-01-05_at_1_22_42_PM.png','/images/proof/IMAGE_2026-04-14_18_43_58.jpg','/images/proof/IMAGE_2026-04-14_18_43_49.jpg','/images/proof/IMAGE_2026-04-14_18_43_54.jpg','/images/proof/IMG_1664.PNG','/images/proof/IMG_0693.PNG','/images/proof/IMG_0691.PNG','/images/proof/IMG_0687.PNG','/images/proof/IMG_0688.PNG','/images/proof/Screenshot_2026-02-14_at_2_40_10_PM.png','/images/proof/Screenshot_2026-02-14_at_2_41_20_PM.png','/images/proof/Screenshot_2026-02-14_at_2_41_04_PM.png','/images/proof/IMAGE_2026-04-14_18_47_12.jpg','/images/proof/proof2.webp','/images/proof/proof4.webp',
-  '/images/proof/IMAGE_2026-04-14_18_42_49.jpg','/images/proof/Screenshot_2026-04-14_at_6_53_05_PM.png','/images/proof/Screenshot_2026-04-14_at_6_53_54_PM.png','/images/proof/Screenshot_2026-04-14_at_6_53_38_PM.png','/images/proof/Screenshot_2026-04-14_at_6_58_41_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_03_PM.png','/images/proof/Screenshot_2026-04-14_at_6_54_38_PM.png','/images/proof/Screenshot_2026-02-03_at_11_39_37_PM.png','/images/proof/Screenshot_2026-04-14_at_6_56_12_PM.png','/images/proof/IMAGE_2026-04-14_18_44_14.jpg','/images/proof/Screenshot_2026-02-12_at_1_19_12_PM.png','/images/proof/IMAGE_2026-04-14_18_43_46.jpg','/images/proof/IMAGE_2026-04-14_18_44_12.jpg','/images/proof/Screenshot_2025-10-14_at_11_00_45_AM.png','/images/proof/Screenshot_2026-02-05_at_12_42_04_PM.png','/images/proof/IMAGE_2026-04-14_18_43_59.jpg','/images/proof/Screenshot_2026-01-05_at_1_22_30_PM.png','/images/proof/IMAGE_2026-04-14_18_44_01.jpg','/images/proof/IMG_2047.PNG','/images/proof/IMG_0694.PNG','/images/proof/IMG_0696.PNG','/images/proof/IMG_0685.PNG','/images/proof/IMG_0692.PNG','/images/proof/IMG_0686.PNG','/images/proof/IMAGE_2026-04-14_18_47_32.jpg',
+  '/images/proof/IMAGE_2026-04-14_18_42_46.jpg','/images/proof/IMAGE_2026-04-14_18_46_18.jpg','/images/proof/Screenshot_2026-04-14_at_6_53_54_PM.png','/images/proof/Screenshot_2026-02-03_at_11_38_38_PM.png','/images/proof/Screenshot_2026-04-14_at_6_54_27_PM.png','/images/proof/Screenshot_2026-04-14_at_6_56_02_PM.png','/images/proof/Screenshot_2026-04-14_at_6_56_12_PM.png','/images/proof/IMAGE_2026-04-14_18_44_14.jpg','/images/proof/Screenshot_2026-02-12_at_1_19_12_PM.png','/images/proof/IMAGE_2026-04-14_18_43_46.jpg','/images/proof/IMAGE_2026-04-14_18_44_12.jpg','/images/proof/Screenshot_2025-10-14_at_11_00_45_AM.png','/images/proof/Screenshot_2026-02-05_at_12_42_04_PM.png','/images/proof/IMAGE_2026-04-14_18_43_59.jpg','/images/proof/Screenshot_2026-01-04_at_1_25_14_PM.png','/images/proof/IMAGE_2026-04-14_18_43_45.jpg','/images/proof/IMG_1664.PNG','/images/proof/IMG_0693.PNG','/images/proof/IMG_0696.PNG','/images/proof/IMG_0687.PNG','/images/proof/IMG_0692.PNG','/images/proof/Screenshot_2026-02-14_at_2_41_20_PM.png','/images/proof/Screenshot_2026-02-14_at_2_41_04_PM.png','/images/proof/IMAGE_2026-04-14_18_47_12.jpg',
+  '/images/proof/testimonail_joshFairchild.png','/images/proof/IMAGE_2026-04-14_18_45_54.jpg','/images/proof/Screenshot_2026-04-14_at_6_53_05_PM.png','/images/proof/Screenshot_2026-04-14_at_6_53_38_PM.png','/images/proof/Screenshot_2026-04-14_at_6_58_41_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_03_PM.png','/images/proof/Screenshot_2026-04-14_at_6_54_38_PM.png','/images/proof/Screenshot_2026-02-03_at_11_39_37_PM.png','/images/proof/IMAGE_2026-04-14_18_43_42.jpg','/images/proof/IMAGE_2026-04-14_18_44_18.jpg','/images/proof/Screenshot_2026-02-02_at_5_27_44_PM.png','/images/proof/IMAGE_2026-04-14_18_43_51.jpg','/images/proof/IMAGE_2026-04-14_18_44_16.jpg','/images/proof/Screenshot_2026-01-04_at_1_25_31_PM.png','/images/proof/IMAGE_2026-04-14_18_43_58.jpg','/images/proof/IMAGE_2026-04-14_18_43_49.jpg','/images/proof/IMAGE_2026-04-14_18_43_54.jpg','/images/proof/IMG_2416.PNG','/images/proof/IMG_0695.PNG','/images/proof/IMG_0689.PNG','/images/proof/IMG_0688.PNG','/images/proof/IMG_0690.PNG','/images/proof/Screenshot_2026-02-14_at_2_40_50_PM.png','/images/proof/IMAGE_2026-04-14_18_47_08.jpg',
+  '/images/proof/IMAGE_2026-04-14_18_42_49.jpg','/images/proof/proof.webp','/images/proof/proof2.webp','/images/proof/proof3.webp','/images/proof/proof4.webp','/images/proof/IMG_0442.PNG','/images/proof/Screenshot_2026-04-14_at_6_55_18_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_50_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_39_PM.png','/images/proof/IMAGE_2026-04-14_18_44_10.jpg','/images/proof/IMAGE_2026-04-14_18_43_56.jpg','/images/proof/Screenshot_2026-02-12_at_1_19_03_PM.png','/images/proof/IMAGE_2026-04-14_18_44_08.jpg','/images/proof/Screenshot_2025-10-14_at_11_00_21_AM.png','/images/proof/Screenshot_2026-01-05_at_1_22_42_PM.png','/images/proof/Screenshot_2026-02-02_at_5_27_50_PM.png','/images/proof/Screenshot_2026-01-05_at_1_22_30_PM.png','/images/proof/IMAGE_2026-04-14_18_44_01.jpg','/images/proof/IMG_2047.PNG','/images/proof/IMG_0694.PNG','/images/proof/IMG_0691.PNG','/images/proof/IMG_0685.PNG','/images/proof/IMG_0686.PNG','/images/proof/Screenshot_2026-02-14_at_2_40_10_PM.png','/images/proof/Screenshot_2026-02-14_at_2_40_39_PM.png','/images/proof/IMAGE_2026-04-14_18_47_32.jpg',
 ];
 
-/* Balanced columns: texts > n8n > make > instantly > social > other */
 const columns: string[][] = [
-  ['/images/proof/IMAGE_2026-04-14_18_42_46.jpg','/images/proof/IMAGE_2026-04-14_18_46_18.jpg','/images/proof/Screenshot_2026-04-14_at_6_55_18_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_50_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_39_PM.png','/images/proof/IMAGE_2026-04-14_18_44_10.jpg','/images/proof/IMAGE_2026-04-14_18_43_56.jpg','/images/proof/Screenshot_2026-02-12_at_1_19_03_PM.png','/images/proof/IMAGE_2026-04-14_18_44_08.jpg','/images/proof/Screenshot_2025-10-14_at_11_00_21_AM.png','/images/proof/Screenshot_2026-01-04_at_1_25_31_PM.png','/images/proof/Screenshot_2026-02-02_at_5_27_50_PM.png','/images/proof/Screenshot_2026-01-04_at_1_25_14_PM.png','/images/proof/IMAGE_2026-04-14_18_43_45.jpg','/images/proof/IMG_2416.PNG','/images/proof/IMG_0695.PNG','/images/proof/IMG_0689.PNG','/images/proof/IMG_0442.PNG','/images/proof/IMG_0690.PNG','/images/proof/Screenshot_2026-02-14_at_2_40_50_PM.png','/images/proof/Screenshot_2026-02-14_at_2_40_39_PM.png','/images/proof/IMAGE_2026-04-14_18_47_08.jpg','/images/proof/proof.webp','/images/proof/proof3.webp'],
-  ['/images/proof/testimonail_joshFairchild.png','/images/proof/IMAGE_2026-04-14_18_45_54.jpg','/images/proof/Screenshot_2026-02-03_at_11_38_38_PM.png','/images/proof/Screenshot_2026-04-14_at_6_54_27_PM.png','/images/proof/Screenshot_2026-04-14_at_6_56_02_PM.png','/images/proof/IMAGE_2026-04-14_18_43_42.jpg','/images/proof/IMAGE_2026-04-14_18_44_18.jpg','/images/proof/Screenshot_2026-02-02_at_5_27_44_PM.png','/images/proof/IMAGE_2026-04-14_18_43_51.jpg','/images/proof/IMAGE_2026-04-14_18_44_16.jpg','/images/proof/Screenshot_2026-01-05_at_1_22_42_PM.png','/images/proof/IMAGE_2026-04-14_18_43_58.jpg','/images/proof/IMAGE_2026-04-14_18_43_49.jpg','/images/proof/IMAGE_2026-04-14_18_43_54.jpg','/images/proof/IMG_1664.PNG','/images/proof/IMG_0693.PNG','/images/proof/IMG_0691.PNG','/images/proof/IMG_0687.PNG','/images/proof/IMG_0688.PNG','/images/proof/Screenshot_2026-02-14_at_2_40_10_PM.png','/images/proof/Screenshot_2026-02-14_at_2_41_20_PM.png','/images/proof/Screenshot_2026-02-14_at_2_41_04_PM.png','/images/proof/IMAGE_2026-04-14_18_47_12.jpg','/images/proof/proof2.webp','/images/proof/proof4.webp'],
-  ['/images/proof/IMAGE_2026-04-14_18_42_49.jpg','/images/proof/Screenshot_2026-04-14_at_6_53_05_PM.png','/images/proof/Screenshot_2026-04-14_at_6_53_54_PM.png','/images/proof/Screenshot_2026-04-14_at_6_53_38_PM.png','/images/proof/Screenshot_2026-04-14_at_6_58_41_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_03_PM.png','/images/proof/Screenshot_2026-04-14_at_6_54_38_PM.png','/images/proof/Screenshot_2026-02-03_at_11_39_37_PM.png','/images/proof/Screenshot_2026-04-14_at_6_56_12_PM.png','/images/proof/IMAGE_2026-04-14_18_44_14.jpg','/images/proof/Screenshot_2026-02-12_at_1_19_12_PM.png','/images/proof/IMAGE_2026-04-14_18_43_46.jpg','/images/proof/IMAGE_2026-04-14_18_44_12.jpg','/images/proof/Screenshot_2025-10-14_at_11_00_45_AM.png','/images/proof/Screenshot_2026-02-05_at_12_42_04_PM.png','/images/proof/IMAGE_2026-04-14_18_43_59.jpg','/images/proof/Screenshot_2026-01-05_at_1_22_30_PM.png','/images/proof/IMAGE_2026-04-14_18_44_01.jpg','/images/proof/IMG_2047.PNG','/images/proof/IMG_0694.PNG','/images/proof/IMG_0696.PNG','/images/proof/IMG_0685.PNG','/images/proof/IMG_0692.PNG','/images/proof/IMG_0686.PNG','/images/proof/IMAGE_2026-04-14_18_47_32.jpg'],
+  ['/images/proof/IMAGE_2026-04-14_18_42_46.jpg','/images/proof/IMAGE_2026-04-14_18_46_18.jpg','/images/proof/Screenshot_2026-04-14_at_6_53_54_PM.png','/images/proof/Screenshot_2026-02-03_at_11_38_38_PM.png','/images/proof/Screenshot_2026-04-14_at_6_54_27_PM.png','/images/proof/Screenshot_2026-04-14_at_6_56_02_PM.png','/images/proof/Screenshot_2026-04-14_at_6_56_12_PM.png','/images/proof/IMAGE_2026-04-14_18_44_14.jpg','/images/proof/Screenshot_2026-02-12_at_1_19_12_PM.png','/images/proof/IMAGE_2026-04-14_18_43_46.jpg','/images/proof/IMAGE_2026-04-14_18_44_12.jpg','/images/proof/Screenshot_2025-10-14_at_11_00_45_AM.png','/images/proof/Screenshot_2026-02-05_at_12_42_04_PM.png','/images/proof/IMAGE_2026-04-14_18_43_59.jpg','/images/proof/Screenshot_2026-01-04_at_1_25_14_PM.png','/images/proof/IMAGE_2026-04-14_18_43_45.jpg','/images/proof/IMG_1664.PNG','/images/proof/IMG_0693.PNG','/images/proof/IMG_0696.PNG','/images/proof/IMG_0687.PNG','/images/proof/IMG_0692.PNG','/images/proof/Screenshot_2026-02-14_at_2_41_20_PM.png','/images/proof/Screenshot_2026-02-14_at_2_41_04_PM.png','/images/proof/IMAGE_2026-04-14_18_47_12.jpg'],
+  ['/images/proof/testimonail_joshFairchild.png','/images/proof/IMAGE_2026-04-14_18_45_54.jpg','/images/proof/Screenshot_2026-04-14_at_6_53_05_PM.png','/images/proof/Screenshot_2026-04-14_at_6_53_38_PM.png','/images/proof/Screenshot_2026-04-14_at_6_58_41_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_03_PM.png','/images/proof/Screenshot_2026-04-14_at_6_54_38_PM.png','/images/proof/Screenshot_2026-02-03_at_11_39_37_PM.png','/images/proof/IMAGE_2026-04-14_18_43_42.jpg','/images/proof/IMAGE_2026-04-14_18_44_18.jpg','/images/proof/Screenshot_2026-02-02_at_5_27_44_PM.png','/images/proof/IMAGE_2026-04-14_18_43_51.jpg','/images/proof/IMAGE_2026-04-14_18_44_16.jpg','/images/proof/Screenshot_2026-01-04_at_1_25_31_PM.png','/images/proof/IMAGE_2026-04-14_18_43_58.jpg','/images/proof/IMAGE_2026-04-14_18_43_49.jpg','/images/proof/IMAGE_2026-04-14_18_43_54.jpg','/images/proof/IMG_2416.PNG','/images/proof/IMG_0695.PNG','/images/proof/IMG_0689.PNG','/images/proof/IMG_0688.PNG','/images/proof/IMG_0690.PNG','/images/proof/Screenshot_2026-02-14_at_2_40_50_PM.png','/images/proof/IMAGE_2026-04-14_18_47_08.jpg'],
+  ['/images/proof/IMAGE_2026-04-14_18_42_49.jpg','/images/proof/proof.webp','/images/proof/proof2.webp','/images/proof/proof3.webp','/images/proof/proof4.webp','/images/proof/IMG_0442.PNG','/images/proof/Screenshot_2026-04-14_at_6_55_18_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_50_PM.png','/images/proof/Screenshot_2026-04-14_at_6_55_39_PM.png','/images/proof/IMAGE_2026-04-14_18_44_10.jpg','/images/proof/IMAGE_2026-04-14_18_43_56.jpg','/images/proof/Screenshot_2026-02-12_at_1_19_03_PM.png','/images/proof/IMAGE_2026-04-14_18_44_08.jpg','/images/proof/Screenshot_2025-10-14_at_11_00_21_AM.png','/images/proof/Screenshot_2026-01-05_at_1_22_42_PM.png','/images/proof/Screenshot_2026-02-02_at_5_27_50_PM.png','/images/proof/Screenshot_2026-01-05_at_1_22_30_PM.png','/images/proof/IMAGE_2026-04-14_18_44_01.jpg','/images/proof/IMG_2047.PNG','/images/proof/IMG_0694.PNG','/images/proof/IMG_0691.PNG','/images/proof/IMG_0685.PNG','/images/proof/IMG_0686.PNG','/images/proof/Screenshot_2026-02-14_at_2_40_10_PM.png','/images/proof/Screenshot_2026-02-14_at_2_40_39_PM.png','/images/proof/IMAGE_2026-04-14_18_47_32.jpg'],
 ];
 
 const websites = [
@@ -70,14 +69,14 @@ export default function ProofPage() {
               This is some of our proof.
             </motion.h1>
             <motion.p variants={fadeUp} custom={2} className="text-lg text-muted-foreground mb-8 leading-[1.7] max-w-2xl mx-auto">
-              Real dashboards. Real client conversations. Real automation workflows. Real results — nothing fabricated, nothing staged.
+              Real client conversations. Real automation workflows. Real results — nothing fabricated, nothing staged.
             </motion.p>
             <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button onClick={() => scrollToSection('wall')} className="px-6 py-3 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors">
-                See the Proof Wall
-              </button>
-              <button onClick={() => scrollToSection('websites')} className="px-6 py-3 rounded-lg border border-primary/30 text-sm font-semibold text-white hover:border-primary/60 hover:bg-primary/5 transition-all duration-300">
+              <button onClick={() => scrollToSection('websites')} className="px-6 py-3 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors">
                 Websites We Built
+              </button>
+              <button onClick={() => scrollToSection('book')} className="px-6 py-3 rounded-lg border border-primary/30 text-sm font-semibold text-white hover:border-primary/60 hover:bg-primary/5 transition-all duration-300">
+                Book a Strategy Call →
               </button>
             </motion.div>
           </motion.div>
@@ -98,9 +97,12 @@ export default function ProofPage() {
         </div>
       </section>
 
-      {/* MASONRY PROOF WALL */}
+      {/* THE WALL OF PROOF */}
       <section id="wall" className="px-6 lg:px-8 pb-20">
         <div className="container mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-2">THE WALL OF PROOF</h2>
+          </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {columns.map((col, colIndex) => (
               <div key={colIndex} className="flex flex-col gap-4">
@@ -112,10 +114,10 @@ export default function ProofPage() {
                     viewport={{ once: true, margin: '-50px' }}
                     transition={{ delay: (imgIndex % 4) * 0.05, duration: 0.4 }}
                     className="relative rounded-xl overflow-hidden cursor-pointer group"
-                    style={{ boxShadow: '0 0 20px 2px rgba(139, 92, 246, 0.15), 0 0 6px 1px rgba(139, 92, 246, 0.1)' }}
+                    style={{ boxShadow: '0 0 24px 3px rgba(139, 92, 246, 0.2), 0 0 8px 2px rgba(139, 92, 246, 0.15)' }}
                     onClick={() => setLightboxIndex(proofImages.indexOf(src))}
                   >
-                    <div className="absolute inset-0 rounded-xl border-2 border-primary/20 group-hover:border-primary/50 transition-colors duration-300 z-10 pointer-events-none" />
+                    <div className="absolute inset-0 rounded-xl border-2 border-primary/25 group-hover:border-primary/60 transition-colors duration-300 z-10 pointer-events-none" />
                     <div className="bg-card/60 p-1.5 rounded-xl">
                       <div className="rounded-lg overflow-hidden">
                         <img
@@ -168,16 +170,18 @@ export default function ProofPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 beam-bg opacity-40" />
-        <div className="container mx-auto relative z-10 text-center">
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-[1.1]">Ready to be next?</h2>
-            <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-8 leading-[1.7]">Book a strategy call with Antonio. We&apos;ll show you exactly what we&apos;d build for your business.</p>
-            <Link href="/#book" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-primary text-white font-semibold hover:bg-primary/90 transition-colors">
-              Book a Strategy Call <ArrowRight className="w-4 h-4" />
-            </Link>
+      {/* BOOK A CALL */}
+      <section id="book" className="py-20 px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute inset-0 beam-bg opacity-60" />
+        <div className="container mx-auto relative z-10">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-[1.1]">Ready to be next?</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-[1.7]">Book a free strategy call with Antonio. We&apos;ll analyze your operation, identify the highest-impact AI opportunities, and tell you exactly what we&apos;d build.</p>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.5 }} className="max-w-5xl mx-auto">
+            <div className="bg-card border border-primary/30 rounded-2xl p-6 glow-accent-sm">
+              <CalWidget height="650px" />
+            </div>
           </motion.div>
         </div>
       </section>
