@@ -65,8 +65,8 @@ export default function ProofPage() {
                 Proof
               </Badge>
             </motion.div>
-            <motion.h1 variants={fadeUp} custom={1} className="font-bold mb-5 leading-[1.1] text-3xl md:text-4xl lg:text-5xl text-white">
-              This is some of our proof.
+            <motion.h1 variants={fadeUp} custom={1} className="font-bold mb-5 leading-[1.1] text-3xl md:text-4xl lg:text-5xl gradient-text">
+              THE WALL OF PROOF
             </motion.h1>
             <motion.p variants={fadeUp} custom={2} className="text-lg text-muted-foreground mb-8 leading-[1.7] max-w-2xl mx-auto">
               Real client conversations. Real automation workflows. Real results — nothing fabricated, nothing staged.

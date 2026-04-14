@@ -354,8 +354,8 @@ export default function Home() {
       <section className="py-20 px-6 lg:px-8">
         <div className="container mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-10">
-            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Client Testimonial</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Hear it directly.</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">Hear it directly.</h2>
+            <p className="text-lg text-muted-foreground">Client Testimonial</p>
           </motion.div>
           <div className="grid lg:grid-cols-3 gap-6 items-start max-w-6xl mx-auto">
             {/* Left — Josh text testimonial */}
@@ -383,8 +383,8 @@ export default function Home() {
             </motion.div>
           </div>
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
-            <Link href="/proof" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
-              See all proof <ArrowRight className="w-4 h-4" />
+            <Link href="/proof" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary/10 border border-primary/20 text-base font-semibold text-primary hover:bg-primary/20 hover:border-primary/40 transition-all">
+              See all proof <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
         </div>
