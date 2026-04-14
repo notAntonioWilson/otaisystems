@@ -35,6 +35,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
   const [isMuted, setIsMuted] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [ytActivated, setYtActivated] = useState(false);
   const [ytPlayer, setYtPlayer] = useState<any>(null);
   const [apiReady, setApiReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -61,20 +62,6 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
     if (isYouTubeVideo) {
       setIsLoading(false);
       setHasError(false);
-
-      if (!(window as any).YT) {
-        const tag = document.createElement('script');
-        tag.src = 'https://www.youtube.com/iframe_api';
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
-
-        (window as any).onYouTubeIframeAPIReady = () => {
-          setApiReady(true);
-        };
-      } else if ((window as any).YT.Player) {
-        setApiReady(true);
-      }
-
       return;
     }
 
@@ -101,8 +88,26 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
     };
   }, [isYouTubeVideo]);
 
+  // Only load YouTube iframe API after user clicks play (facade pattern)
   useEffect(() => {
-    if (isYouTubeVideo && apiReady && !ytPlayer) {
+    if (!ytActivated || !isYouTubeVideo) return;
+
+    if (!(window as any).YT) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+
+      (window as any).onYouTubeIframeAPIReady = () => {
+        setApiReady(true);
+      };
+    } else if ((window as any).YT.Player) {
+      setApiReady(true);
+    }
+  }, [ytActivated, isYouTubeVideo]);
+
+  useEffect(() => {
+    if (isYouTubeVideo && apiReady && ytActivated && !ytPlayer) {
       const initPlayer = () => {
         try {
           const player = new (window as any).YT.Player(iframeIdRef.current, {
@@ -121,7 +126,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
       const timer = setTimeout(initPlayer, 1000);
       return () => clearTimeout(timer);
     }
-  }, [isYouTubeVideo, apiReady, ytPlayer]);
+  }, [isYouTubeVideo, apiReady, ytActivated, ytPlayer]);
 
   const handleVideoLoaded = () => {
     setIsLoading(false);
@@ -221,24 +226,47 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
         <div className="relative aspect-video w-full border-2 border-primary/30 rounded-lg overflow-hidden bg-black">
           {isYouTubeVideo ? (
             <>
-              <div className="absolute inset-0 w-full h-full">
-                <iframe
-                  id={iframeIdRef.current}
-                  ref={iframeRef}
-                  src={`https://www.youtube.com/embed/${embedId}?autoplay=1&mute=1&loop=1&playlist=${embedId}&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
-                  className="absolute inset-0 w-full h-full pointer-events-none"
-                  style={{ border: 'none' }}
-                  allow="autoplay; encrypted-media; fullscreen"
-                  title={alt}
-                />
-              </div>
-              <div
-                className="absolute inset-0 pointer-events-none z-10"
-                style={{
-                  background: 'linear-gradient(to top, rgba(0,0,0,0) 85%, rgba(0,0,0,0.95) 100%)',
-                  mixBlendMode: 'normal'
-                }}
-              />
+              {!ytActivated ? (
+                /* Lightweight facade: thumbnail + play button, zero JS loaded */
+                <div
+                  className="absolute inset-0 w-full h-full cursor-pointer group"
+                  onClick={() => setYtActivated(true)}
+                >
+                  <img
+                    src={`https://i.ytimg.com/vi/${embedId}/hqdefault.jpg`}
+                    alt={alt}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-200" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-purple-600/90 group-hover:bg-purple-700 flex items-center justify-center transition-colors shadow-lg">
+                      <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <div className="absolute inset-0 w-full h-full">
+                    <iframe
+                      id={iframeIdRef.current}
+                      ref={iframeRef}
+                      src={`https://www.youtube.com/embed/${embedId}?autoplay=1&mute=1&loop=1&playlist=${embedId}&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
+                      className="absolute inset-0 w-full h-full pointer-events-none"
+                      style={{ border: 'none' }}
+                      allow="autoplay; encrypted-media; fullscreen"
+                      title={alt}
+                    />
+                  </div>
+                  <div
+                    className="absolute inset-0 pointer-events-none z-10"
+                    style={{
+                      background: 'linear-gradient(to top, rgba(0,0,0,0) 85%, rgba(0,0,0,0.95) 100%)',
+                      mixBlendMode: 'normal'
+                    }}
+                  />
+                </>
+              )}
             </>
           ) : (
             <video
@@ -262,7 +290,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
           )}
 
           <AnimatePresence>
-            {isHovered && !isModalOpen && (
+            {isHovered && !isModalOpen && (!isYouTubeVideo || ytActivated) && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -287,18 +315,21 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
             )}
           </AnimatePresence>
 
-          <motion.button
-            onClick={toggleMute}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-purple-600/90 hover:bg-purple-700 flex items-center justify-center transition-colors z-30 cursor-pointer shadow-lg"
-          >
-            {isMuted ? (
-              <VolumeX className="w-5 h-5 text-white" />
-            ) : (
-              <Volume2 className="w-5 h-5 text-white" />
-            )}
-          </motion.button>
+          {(!isYouTubeVideo || ytActivated) && (
+            <motion.button
+              onClick={toggleMute}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+              className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-purple-600/90 hover:bg-purple-700 flex items-center justify-center transition-colors z-30 cursor-pointer shadow-lg"
+            >
+              {isMuted ? (
+                <VolumeX className="w-5 h-5 text-white" />
+              ) : (
+                <Volume2 className="w-5 h-5 text-white" />
+              )}
+            </motion.button>
+          )}
         </div>
       </motion.div>
 
@@ -318,6 +349,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.2 }}
               onClick={handleCloseModal}
+              aria-label="Close video"
               className="absolute top-28 right-8 w-12 h-12 rounded-full bg-purple-600 hover:bg-purple-700 flex items-center justify-center transition-colors shadow-lg z-[110]"
             >
               <X className="w-6 h-6 text-white" />

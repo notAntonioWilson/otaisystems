@@ -52,6 +52,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Preconnect to font CDN for faster font loading */}
+        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
+        {/* Preconnect to Cal.com for faster widget load when user scrolls */}
+        <link rel="preconnect" href="https://app.cal.com" crossOrigin="anonymous" />
+        {/* Non-render-blocking font load with preload + swap */}
+        <link
+          rel="preload"
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap"
+          as="style"
+        />
         <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPSSG0S37G"></script>
         <script

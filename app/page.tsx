@@ -174,9 +174,9 @@ export default function Home() {
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: '🤖', title: 'AI Agents', tagline: 'Voice. Chat. Social.', description: 'Intelligent agents that handle inbound calls, qualify leads, answer questions, and book appointments — 24/7, without human intervention.', link: '/ai-agents', items: ['Voice Phone Agents', 'Chat Assistants', 'Social AI Agents', 'Lead Qualification'] },
-              { icon: '⚡', title: 'Automations', tagline: 'Workflow. Reactivation. Outreach.', description: 'End-to-end systems that eliminate manual work — from lead reactivation to document automation to 270k+ emails sent across campaigns.', link: '/automations', items: ['Lead Reactivation', 'Email Outreach (270k+ sent)', 'Doc Automation', 'Workflow Systems'] },
-              { icon: '📈', title: 'Growth Systems', tagline: 'Organic. Paid. Consulting.', description: 'We grow your brand alongside the AI. Organic content, Meta ads, newsletters, and strategic AI consulting embedded in your organization.', link: '/lead-gen', items: ['Organic Social', 'Meta Ad Systems', 'Newsletter Automation', 'AI Strategy Consulting'] },
+              { icon: '🤖', title: 'AI Agents', tagline: 'Voice. Chat. Social.', description: 'Intelligent agents that handle inbound calls, qualify leads, answer questions, and book appointments — 24/7, without human intervention.', link: '/ai-agents', cta: 'Explore AI Agents', items: ['Voice Phone Agents', 'Chat Assistants', 'Social AI Agents', 'Lead Qualification'] },
+              { icon: '⚡', title: 'Automations', tagline: 'Workflow. Reactivation. Outreach.', description: 'End-to-end systems that eliminate manual work — from lead reactivation to document automation to 270k+ emails sent across campaigns.', link: '/automations', cta: 'Explore Automations', items: ['Lead Reactivation', 'Email Outreach (270k+ sent)', 'Doc Automation', 'Workflow Systems'] },
+              { icon: '📈', title: 'Growth Systems', tagline: 'Organic. Paid. Consulting.', description: 'We grow your brand alongside the AI. Organic content, Meta ads, newsletters, and strategic AI consulting embedded in your organization.', link: '/lead-gen', cta: 'Explore Growth Systems', items: ['Organic Social', 'Meta Ad Systems', 'Newsletter Automation', 'AI Strategy Consulting'] },
             ].map((s, i) => (
               <motion.div key={s.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="glass-card rounded-2xl p-7 flex flex-col group hover:border-primary/40 transition-all duration-300 cursor-pointer" onClick={() => window.location.href = s.link}>
                 <div className="text-3xl mb-4">{s.icon}</div>
@@ -191,7 +191,7 @@ export default function Home() {
                   ))}
                 </ul>
                 <Link href={s.link} className="text-sm font-semibold text-primary hover:text-primary/80 flex items-center gap-1 transition-colors group-hover:gap-2">
-                  See more <ArrowRight className="w-4 h-4" />
+                  {s.cta} <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>
             ))}
@@ -224,7 +224,7 @@ export default function Home() {
                 <p>Honest when it's uncomfortable. Loyal once we're working together. Direct about what will and won't work. I don't build systems to impress — I build them to perform.</p>
               </div>
               <div className="mt-8 flex gap-6">
-                <div><p className="text-2xl font-bold text-white">3+</p><p className="text-xs text-muted-foreground">Years in Marketing</p></div>
+                <div><p className="text-2xl font-bold text-white">3yr+</p><p className="text-xs text-muted-foreground">Years in Marketing</p></div>
                 <div className="w-px bg-border" />
                 <div><p className="text-2xl font-bold text-white">1yr+</p><p className="text-xs text-muted-foreground">Building AI Systems</p></div>
                 <div className="w-px bg-border" />

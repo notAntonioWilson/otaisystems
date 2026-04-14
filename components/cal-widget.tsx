@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 declare global {
   interface Window {
@@ -9,7 +9,31 @@ declare global {
 }
 
 export function CalWidget({ height = '600px' }: { height?: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  // Only load Cal.com when the widget scrolls into view
   useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!shouldLoad) return;
+
     // Remove any existing Cal script to avoid duplication
     const existingScript = document.querySelector('script[data-cal-widget]');
     if (existingScript) existingScript.remove();
@@ -42,12 +66,19 @@ export function CalWidget({ height = '600px' }: { height?: string }) {
       const s = document.querySelector('script[data-cal-widget]');
       if (s) s.remove();
     };
-  }, []);
+  }, [shouldLoad]);
 
   return (
-    <div
-      id="my-cal-inline-website-link"
-      style={{ width: '100%', height, overflow: 'scroll' }}
-    />
+    <div ref={containerRef}>
+      <div
+        id="my-cal-inline-website-link"
+        style={{ width: '100%', height, overflow: 'scroll' }}
+      />
+      {!shouldLoad && (
+        <div style={{ width: '100%', height, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <p className="text-muted-foreground text-sm">Loading calendar...</p>
+        </div>
+      )}
+    </div>
   );
 }
