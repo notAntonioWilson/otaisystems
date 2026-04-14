@@ -14,6 +14,28 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.svg',
   },
+  openGraph: {
+    title: 'OTAI Systems — The Infrastructure Behind Business Growth.',
+    description: 'We build AI agents, workflow automations, and lead generation systems for ambitious business owners. Scale faster. Book your strategy call today.',
+    url: 'https://www.otaisystems.com',
+    siteName: 'OTAI Systems',
+    images: [
+      {
+        url: 'https://www.otaisystems.com/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'OTAI Systems — AI Agents, Automations, Growth Systems',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'OTAI Systems — The Infrastructure Behind Business Growth.',
+    description: 'AI agents, workflow automations, and lead generation systems built for ambitious business owners.',
+    images: ['https://www.otaisystems.com/images/og-image.png'],
+  },
   verification: {
     google: 'ych_NmdsvfuzAjUYoO__x5-BI-Hg1CGmX_KXCykOk_I',
   },
