@@ -71,7 +71,8 @@ export default function Home() {
     { name: 'Cald.W Realtors', label: 'Real Estate' },
     { name: 'The Ag. Realtors', label: 'Luxury Real Estate' },
     { name: 'Next Level Carpentry', img: '/images/nextlevel-logo.png', label: 'Contractors' },
-    { name: 'Macro Mate', img: '/images/macromate-logo.jpg', label: 'App Company' },
+    { name: 'Premier Sea Moss', img: '/images/premier-seamoss-logo.png', label: 'Health & Wellness' },
+    { name: 'Elite Paint', img: '/images/elite-paint-logo.jpg', label: 'Home Renovations' },
     { name: 'AI Startups', label: 'Artificial Intelligence' },
   ];
 
@@ -90,7 +91,6 @@ export default function Home() {
     { client: 'J.F.', role: 'Owner — Next Level Carpentry', result: '4.88M+ social views, 45,491 engagements, 5,082 followers. SEO hitting position 3 for "Carpenter Near Me." $25,000+ revenue directly from captured website leads.', tag: 'Construction' },
     { client: 'D.G.', role: 'AI Startup Founder', result: 'Full website + outbound system live in 48 hours. 94% email open rate. 18 Meta ad conversions across 3,344 reach. Startup launched from zero to lead-generating infrastructure in 2 days.', tag: 'AI Startup' },
     { client: 'M.K.', role: 'AI Startup Founder', result: '1,057 sequences started, 91.86% open rate. 2 qualified opportunities generated — $7,000 pipeline value within the first 2 weeks of campaign launch.', tag: 'Outreach' },
-    { client: 'Macro Mate', role: 'App Company', result: 'Full organic social system and newsletter automation live. Consistent weekly content with zero manual effort. Brand presence built and running on autopilot.', tag: 'Marketing' },
   ];
 
   const faqs = [
