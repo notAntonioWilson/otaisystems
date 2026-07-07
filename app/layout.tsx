@@ -12,7 +12,14 @@ export const metadata: Metadata = {
   description: 'We build AI agents, workflow automations, and lead generation systems for ambitious business owners. Scale faster. Book your strategy call today.',
   keywords: 'AI automation, sales automation, customer support AI, workflow automation, business automation, AI agents, lead generation',
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      { url: '/favicon.ico', sizes: '48x48' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
   },
   openGraph: {
     title: 'OTAI Systems — The Infrastructure Behind Business Growth.',
