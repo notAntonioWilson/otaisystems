@@ -1,14 +1,11 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Enterprise AI Strategy & Deployment | OTAI',
-  description: 'Enterprise-level AI agents and automation systems built for high-growth companies.',
+  title: 'Book an Enterprise Strategy Session',
+  description: "Book an Enterprise strategy session with OTAI Systems for full AI agent and automation deployment across your company.",
+  alternates: { canonical: '/schedule/enterprise' },
 };
 
-export default function EnterpriseScheduleLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ScheduleEnterpriseLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

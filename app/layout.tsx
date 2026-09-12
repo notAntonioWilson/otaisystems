@@ -3,14 +3,28 @@ import type { Metadata } from 'next';
 import { NavBar } from '@/components/nav-bar';
 import { Footer } from '@/components/footer';
 import { CursorTrail } from '@/components/cursor-trail';
+import { DeferredScripts } from '@/components/deferred-scripts';
+
+const SITE_URL = 'https://www.otaisystems.com';
+const SITE_TITLE = 'Custom AI Automation Agency in Michigan | OTAI Systems';
+const SITE_DESC = 'OTAI Systems builds custom AI automations, AI agents, automated outreach, and AI powered websites for contractors, realtors, and businesses across Michigan.';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'AI Automation Agency | AI Agents & Lead Gen Systems',
+    default: SITE_TITLE,
     template: '%s | OTAI Systems'
   },
-  description: 'We build AI agents, workflow automations, and lead generation systems for ambitious business owners. Scale faster. Book your strategy call today.',
-  keywords: 'AI automation, sales automation, customer support AI, workflow automation, business automation, AI agents, lead generation',
+  description: SITE_DESC,
+  keywords: [
+    'AI', 'automation', 'automations', 'automate', 'agent', 'agents', 'systems', 'workflow', 'workflows', 'backend',
+    'integration', 'integrations', 'custom', 'consulting', 'n8n',
+    'outreach', 'leads', 'lead', 'prospecting', 'reactivation', 'followup', 'chatbot', 'voicebot', 'receptionist', 'voice',
+    'scheduling', 'booking', 'CRM', 'software', 'app', 'apps', 'website', 'websites', 'SEO', 'development',
+    'contractors', 'contractor', 'realtors', 'realtor', 'builders', 'remodeling', 'roofing', 'HVAC', 'plumbing', 'landscaping', 'painting', 'carpentry',
+    'Michigan', 'OTAI', 'otaisystems'
+  ],
+  alternates: { canonical: '/' },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '48x48' },
@@ -22,16 +36,16 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   openGraph: {
-    title: 'OTAI Systems — The Infrastructure Behind Business Growth.',
-    description: 'We build AI agents, workflow automations, and lead generation systems for ambitious business owners. Scale faster. Book your strategy call today.',
-    url: 'https://www.otaisystems.com',
+    title: SITE_TITLE,
+    description: SITE_DESC,
+    url: SITE_URL,
     siteName: 'OTAI Systems',
     images: [
       {
-        url: 'https://www.otaisystems.com/images/og-image.png',
+        url: `${SITE_URL}/images/og-image.png`,
         width: 1200,
         height: 630,
-        alt: 'OTAI Systems — AI Agents, Automations, Growth Systems',
+        alt: 'OTAI Systems: AI Agents, Automations, Growth Systems',
       },
     ],
     locale: 'en_US',
@@ -39,9 +53,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OTAI Systems — The Infrastructure Behind Business Growth.',
-    description: 'AI agents, workflow automations, and lead generation systems built for ambitious business owners.',
-    images: ['https://www.otaisystems.com/images/og-image.png'],
+    title: SITE_TITLE,
+    description: SITE_DESC,
+    images: [`${SITE_URL}/images/og-image.png`],
   },
   verification: {
     google: 'ych_NmdsvfuzAjUYoO__x5-BI-Hg1CGmX_KXCykOk_I',
@@ -50,25 +64,50 @@ export const metadata: Metadata = {
 
 const schemaData = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://otaisystems.com/#business",
+  "@type": ["ProfessionalService", "LocalBusiness"],
+  "@id": `${SITE_URL}/#business`,
   "name": "OTAI Systems",
-  "url": "https://otaisystems.com/",
-  "description": "OTAI Systems builds AI agents, automation systems, and AI-powered lead generation systems for ambitious business owners looking to scale operations and revenue.",
-  "areaServed": {
-    "@type": "Country",
-    "name": "United States"
+  "alternateName": "OTAI",
+  "url": `${SITE_URL}/`,
+  "logo": `${SITE_URL}/images/logo.png`,
+  "image": `${SITE_URL}/images/og-image.png`,
+  "telephone": "+1-586-419-7309",
+  "description": "OTAI Systems builds custom AI automations, AI agents, AI receptionists, automated outreach, and AI powered websites for contractors, realtors, and businesses across Michigan.",
+  "founder": {
+    "@type": "Person",
+    "name": "Antonio Wilson",
+    "jobTitle": "Founder & CEO",
+    "url": `${SITE_URL}/about`
   },
+  "areaServed": [
+    { "@type": "State", "name": "Michigan" },
+    { "@type": "Country", "name": "United States" }
+  ],
+  "knowsAbout": [
+    "AI automation", "AI agents", "AI receptionists", "workflow automation", "backend systems", "automated outreach",
+    "cold email automation", "lead reactivation", "CRM automation", "AI web development", "n8n",
+    "contractors", "home services", "real estate"
+  ],
   "serviceType": [
+    "Backend Systems",
     "AI Agents",
-    "Business Automation",
-    "Lead Generation Systems",
-    "Workflow Automation",
-    "AI Sales Systems"
+    "Automated Outreach",
+    "AI Built Applications",
+    "Multi-Service AI Automation"
+  ],
+  "priceRange": "$$$",
+  "sameAs": [
+    "https://www.linkedin.com/company/otaisystems/",
+    "https://www.instagram.com/otai.systems",
+    "https://www.facebook.com/operationtransention",
+    "https://x.com/antoniowilsonx",
+    "https://www.youtube.com/@antoniowilson_yt"
   ],
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "sales",
+    "telephone": "+1-586-419-7309",
+    "areaServed": "US",
     "availableLanguage": ["English"]
   }
 };
@@ -93,17 +132,6 @@ export default function RootLayout({
           as="style"
         />
         <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPSSG0S37G"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-SPSSG0S37G');
-            `,
-          }}
-        />
       </head>
       <body>
         <script
@@ -116,26 +144,7 @@ export default function RootLayout({
         <NavBar />
         <main>{children}</main>
         <Footer />
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(d, t) {
-                  var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-                  v.onload = function() {
-                    window.voiceflow.chat.load({
-                      verify: { projectID: '6a548779d17110540ea5cfde' },
-                      url: 'https://general-runtime.voiceflow.com',
-                      voice: {
-                        url: "https://runtime-api.voiceflow.com"
-                      }
-                    });
-                  }
-                  v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-              })(document, 'script');
-            `,
-          }}
-        />
+        <DeferredScripts />
       </body>
     </html>
   );

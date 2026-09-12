@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
-import { Zap, Linkedin, Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
+import { Linkedin, Instagram, Facebook, Twitter, Youtube, Phone, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function Footer() {
@@ -32,7 +32,7 @@ export function Footer() {
   const socialLinks = [
     { icon: Linkedin, href: 'https://www.linkedin.com/company/otaisystems/', label: 'LinkedIn' },
     { icon: Instagram, href: 'https://www.instagram.com/otai.systems?igsh=bDRiaDQxdzdtcDR0&utm_source=qr', label: 'Instagram' },
-    { icon: Facebook, href: 'https://www.facebook.com/share/1Bi6GWYdqe/?mibextid=wwXIfr', label: 'Facebook' },
+    { icon: Facebook, href: 'https://www.facebook.com/operationtransention', label: 'Facebook' },
     { icon: Twitter, href: 'https://x.com/antoniowilsonx?s=21', label: 'Twitter' },
     { icon: Youtube, href: 'https://www.youtube.com/@antoniowilson_yt', label: 'YouTube' },
   ];
@@ -42,8 +42,8 @@ export function Footer() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#32005C]/20 via-transparent to-transparent pointer-events-none" />
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
       <div className="container mx-auto px-4 py-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
-          <div className="relative md:pr-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+          <div className="relative lg:pr-12">
             <Link href="/" className="flex items-center gap-2 mb-5 group">
               <div className="w-7 h-7 relative">
                 <Image
@@ -76,10 +76,10 @@ export function Footer() {
                 </motion.a>
               ))}
             </div>
-            <div className="hidden md:block absolute right-0 top-0 bottom-0 w-px bg-border/50" />
+            <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-px bg-border/50" />
           </div>
 
-          <div className="relative md:px-12">
+          <div className="relative lg:px-12">
             <h3 className="text-base font-semibold mb-3 text-white">Navigation</h3>
             <div className="grid grid-cols-2 gap-x-14 gap-y-2.5">
               <Link href="/" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">Home</Link>
@@ -91,10 +91,10 @@ export function Footer() {
               <button onClick={() => scrollToSection('pricing')} className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left">Pricing</button>
               <button onClick={() => scrollToSection('book')} className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left">Book a Call</button>
             </div>
-            <div className="hidden md:block absolute right-0 top-0 bottom-0 w-px bg-border/50" />
+            <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-px bg-border/50" />
           </div>
 
-          <div className="relative md:pl-12">
+          <div className="relative lg:px-12">
             <h3 className="text-base font-semibold mb-3 text-white">Legal</h3>
             <div className="flex flex-col gap-2.5">
               <Link
@@ -109,6 +109,49 @@ export function Footer() {
               >
                 Privacy Policy
               </Link>
+            </div>
+            <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-px bg-border/50" />
+          </div>
+
+          <div className="relative lg:pl-12">
+            <h3 className="text-base font-semibold mb-3 text-white">Contact</h3>
+            <a
+              href="tel:+15864197309"
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-2"
+            >
+              <Phone className="w-4 h-4 text-primary" />
+              <span>(586) 419-7309</span>
+            </a>
+            <p className="text-sm text-muted-foreground mb-4">Serving businesses across Michigan.</p>
+            <div className="flex items-center gap-4">
+              <div className="flex flex-col gap-2">
+                <a
+                  href="https://g.page/r/CU7b2OAq9e4CEAE/review"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 hover:glow-accent-sm transition-all duration-300"
+                >
+                  <Star className="w-4 h-4" />
+                  Review us on Google
+                </a>
+                <span className="text-xs text-muted-foreground">Or scan to leave a review</span>
+              </div>
+              <a
+                href="https://g.page/r/CU7b2OAq9e4CEAE/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Scan to review OTAI Systems on Google"
+                className="shrink-0 bg-white p-1.5 rounded-lg"
+              >
+                <Image
+                  src="/images/google-review-qr.png"
+                  alt="QR code to review OTAI Systems on Google"
+                  width={72}
+                  height={72}
+                  sizes="72px"
+                  className="w-[72px] h-[72px]"
+                />
+              </a>
             </div>
           </div>
         </div>

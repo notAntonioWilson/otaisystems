@@ -68,14 +68,14 @@ export default function LeadGenPage() {
         </div>
       </section>
 
-      {/* VIDEO 1 — Email Outreach */}
+      {/* VIDEO 1: Email Outreach */}
       <section className="py-16 px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-5 gap-10 items-center">
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="lg:col-span-2">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Email</Badge>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-[1.2]">Automated Email Outreach System</h2>
-              <p className="text-muted-foreground leading-[1.8] mb-5">AI scrapes your target prospects, validates their emails, generates a personalized icebreaker for each one, and sends at scale — every single day without you touching it.</p>
+              <p className="text-muted-foreground leading-[1.8] mb-5">AI scrapes your target prospects, validates their emails, generates a personalized icebreaker for each one, and sends at scale, every single day without you touching it.</p>
               <ul className="space-y-2.5">
                 {['Lead scraping + email validation built in', 'AI-personalized icebreakers per prospect', '270k+ emails sent to date', '75%+ open rates, 3-5% positive reply rate'].map(p => (
                   <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -97,7 +97,7 @@ export default function LeadGenPage() {
         </div>
       </section>
 
-      {/* VIDEO 2 — Social Outreach */}
+      {/* VIDEO 2: Social Outreach */}
       <section className="py-16 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-5 gap-10 items-center">
@@ -113,7 +113,7 @@ export default function LeadGenPage() {
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="lg:col-span-2 order-1 lg:order-2">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Social</Badge>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-[1.2]">Social Media Outreach System</h2>
-              <p className="text-muted-foreground leading-[1.8] mb-5">AI agents reach out across Instagram, LinkedIn, and Facebook — holding real conversations in the DMs, qualifying prospects, and booking calls on autopilot.</p>
+              <p className="text-muted-foreground leading-[1.8] mb-5">AI agents reach out across Instagram, LinkedIn, and Facebook, holding real conversations in the DMs, qualifying prospects, and booking calls on autopilot.</p>
               <ul className="space-y-2.5">
                 {['Runs outreach across multiple platforms simultaneously', 'AI-driven conversations that feel human', 'Qualifies leads before routing to you', 'Books calls directly into your calendar'].map(p => (
                   <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">

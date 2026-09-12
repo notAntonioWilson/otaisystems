@@ -24,7 +24,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen pt-20">
 
-      {/* HERO — standing photo */}
+      {/* HERO: standing photo */}
       <section className="relative py-20 px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 beam-bg" />
         <div className="container mx-auto relative z-10">
@@ -42,7 +42,7 @@ export default function AboutPage() {
                 Founder & CEO, OTAI Systems
               </motion.p>
               <motion.p variants={fadeUp} custom={3} className="text-muted-foreground leading-[1.8] text-base max-w-lg">
-                Building the biggest AI company in the world. 16 hours a day. Every day. Not a goal — a direction I don't deviate from.
+                Building the biggest AI company in the world. 16 hours a day. Every day. Not a goal. A direction I don't deviate from.
               </motion.p>
             </motion.div>
 
@@ -93,13 +93,13 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 leading-[1.15]">This isn't a side project.</h2>
             <div className="space-y-6 text-muted-foreground leading-[1.9] text-base">
               <p>
-                I work 16-hour days. Not as a badge — as a standard. Gym in the morning, then I'm building until midnight. That's the schedule, that's the pace, that's the expectation I hold myself to.
+                I work 16-hour days. Not as a badge. As a standard. Gym in the morning, then I'm building until midnight. That's the schedule, that's the pace, that's the expectation I hold myself to.
               </p>
               <p>
-                I started in marketing three years ago. I learned how businesses grow, what makes people buy, and what makes campaigns fail. Then AI showed up and changed everything — not just what's possible, but how fast you can get there. I went all in.
+                I started in marketing three years ago. I learned how businesses grow, what makes people buy, and what makes campaigns fail. Then AI showed up and changed everything. Not just what's possible, but how fast you can get there. I went all in.
               </p>
               <p>
-                Over the last year I've built AI systems professionally — voice agents, automation pipelines, outreach systems, client dashboards. I've worked with realtors, AI startups, contractors, and app companies. Every build is different. Every build is custom. I don't copy-paste and call it done.
+                Over the last year I've built AI systems professionally: voice agents, automation pipelines, outreach systems, client dashboards. I've worked with realtors, AI startups, contractors, and app companies. Every build is different. Every build is custom. I don't copy-paste and call it done.
               </p>
               <p className="text-white font-semibold text-lg">
                 The philosophy that runs everything I do: the easiest way to make money is to make the other person money first.
@@ -120,7 +120,7 @@ export default function AboutPage() {
               <div className="glass-card rounded-2xl p-8 space-y-6">
                 <h3 className="text-2xl font-bold text-white mb-2">What you can expect.</h3>
                 {[
-                  { label: 'Ruthless', desc: 'I push until it works. Iterations, fixes, rebuilds — whatever it takes to get the outcome right.' },
+                  { label: 'Ruthless', desc: 'I push until it works. Iterations, fixes, rebuilds. Whatever it takes to get the outcome right.' },
                   { label: 'Honest', desc: "If something isn't going to work, I'll say it before we waste time on it. I'd rather lose a deal than deliver something mediocre." },
                   { label: 'Loyal', desc: "Once we're working together, you have my full attention. I protect my clients' interests like they're my own." },
                   { label: 'Direct', desc: "No fluff, no long emails to nowhere. Here's what we're building, here's why, here's when it ships." },

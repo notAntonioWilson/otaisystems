@@ -86,11 +86,11 @@ export default function Home() {
   ];
 
   const results = [
-    { client: 'J.Z.', role: 'Realtor — The Ag. Realtors', result: 'Full website (1 day), SEO (1 hr), and social system across IG, FB & LinkedIn. 19,522 FB views, 8,365 IG views, 2,220 LinkedIn followers. 20+ in-person conversations started from content alone.', tag: 'Real Estate' },
-    { client: 'T.B.', role: 'Realtor — Cald.W Realtors', result: 'Website + SEO live in under 2 weeks. 13,601 total social views, 876 engagements, 321 FB engagements (+6,320%). Full presence deployed from zero in under 2 weeks.', tag: 'Real Estate' },
-    { client: 'J.F.', role: 'Owner — Next Level Carpentry', result: '4.88M+ social views, 45,491 engagements, 5,082 followers. SEO hitting position 3 for "Carpenter Near Me." $25,000+ revenue directly from captured website leads.', tag: 'Construction' },
+    { client: 'J.Z.', role: 'Realtor, The Ag. Realtors', result: 'Full website (1 day), SEO (1 hr), and social system across IG, FB & LinkedIn. 19,522 FB views, 8,365 IG views, 2,220 LinkedIn followers. 20+ in-person conversations started from content alone.', tag: 'Real Estate' },
+    { client: 'T.B.', role: 'Realtor, Cald.W Realtors', result: 'Website + SEO live in under 2 weeks. 13,601 total social views, 876 engagements, 321 FB engagements (+6,320%). Full presence deployed from zero in under 2 weeks.', tag: 'Real Estate' },
+    { client: 'J.F.', role: 'Owner, Next Level Carpentry', result: '4.88M+ social views, 45,491 engagements, 5,082 followers. SEO hitting position 3 for "Carpenter Near Me." $25,000+ revenue directly from captured website leads.', tag: 'Construction' },
     { client: 'D.G.', role: 'AI Startup Founder', result: 'Full website + outbound system live in 48 hours. 94% email open rate. 18 Meta ad conversions across 3,344 reach. Startup launched from zero to lead-generating infrastructure in 2 days.', tag: 'AI Startup' },
-    { client: 'M.K.', role: 'AI Startup Founder', result: '1,057 sequences started, 91.86% open rate. 2 qualified opportunities generated — $7,000 pipeline value within the first 2 weeks of campaign launch.', tag: 'Outreach' },
+    { client: 'M.K.', role: 'AI Startup Founder', result: '1,057 sequences started, 91.86% open rate. 2 qualified opportunities generated. $7,000 pipeline value within the first 2 weeks of campaign launch.', tag: 'Outreach' },
   ];
 
   const faqs = [
@@ -122,7 +122,7 @@ export default function Home() {
                 <span className="gradient-text">Behind Business Growth.</span>
               </motion.h1>
               <motion.p variants={fadeUp} custom={2} className="text-lg text-muted-foreground mb-8 leading-[1.7] max-w-xl">
-                We cut costs, make money, and provide speed to success. Custom AI systems — agents, automations, and growth infrastructure — built to perform from day one.
+                We cut costs, make money, and provide speed to success. Custom AI systems: agents, automations, and growth infrastructure, built to perform from day one.
               </motion.p>
               <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row gap-4">
                 <DripButton onClick={() => scrollToSection('demos')}>See It Working</DripButton>
@@ -174,8 +174,8 @@ export default function Home() {
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: '🤖', title: 'AI Agents', tagline: 'Voice. Chat. Social.', description: 'Intelligent agents that handle inbound calls, qualify leads, answer questions, and book appointments — 24/7, without human intervention.', link: '/ai-agents', cta: 'Explore AI Agents', items: ['Voice Phone Agents', 'Chat Assistants', 'Social AI Agents', 'Lead Qualification'] },
-              { icon: '⚡', title: 'Automations', tagline: 'Workflow. Reactivation. Outreach.', description: 'End-to-end systems that eliminate manual work — from lead reactivation to document automation to 270k+ emails sent across campaigns.', link: '/automations', cta: 'Explore Automations', items: ['Lead Reactivation', 'Email Outreach (270k+ sent)', 'Doc Automation', 'Workflow Systems'] },
+              { icon: '🤖', title: 'AI Agents', tagline: 'Voice. Chat. Social.', description: 'Intelligent agents that handle inbound calls, qualify leads, answer questions, and book appointments 24/7, without human intervention.', link: '/ai-agents', cta: 'Explore AI Agents', items: ['Voice Phone Agents', 'Chat Assistants', 'Social AI Agents', 'Lead Qualification'] },
+              { icon: '⚡', title: 'Automations', tagline: 'Workflow. Reactivation. Outreach.', description: 'End-to-end systems that eliminate manual work, from lead reactivation to document automation to 270k+ emails sent across campaigns.', link: '/automations', cta: 'Explore Automations', items: ['Lead Reactivation', 'Email Outreach (270k+ sent)', 'Doc Automation', 'Workflow Systems'] },
               { icon: '📈', title: 'Growth Systems', tagline: 'Organic. Paid. Consulting.', description: 'We grow your brand alongside the AI. Organic content, Meta ads, newsletters, and strategic AI consulting embedded in your organization.', link: '/lead-gen', cta: 'Explore Growth Systems', items: ['Organic Social', 'Meta Ad Systems', 'Newsletter Automation', 'AI Strategy Consulting'] },
             ].map((s, i) => (
               <motion.div key={s.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="glass-card rounded-2xl p-7 flex flex-col group hover:border-primary/40 transition-all duration-300 cursor-pointer" onClick={() => window.location.href = s.link}>
@@ -205,7 +205,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeLeft} className="relative flex justify-center lg:justify-start pl-4">
               <div className="relative rounded-2xl overflow-hidden w-full max-w-md h-[520px]">
-                <Image src="/images/antonio-standing.jpg" alt="Antonio Wilson — Founder, OTAI Systems" fill sizes="(max-width: 768px) 100vw, 448px" className="object-cover" style={{ objectPosition: '55% 2%' }} />
+                <Image src="/images/antonio-standing.jpg" alt="Antonio Wilson, Founder, OTAI Systems" fill sizes="(max-width: 768px) 100vw, 448px" className="object-cover" style={{ objectPosition: '55% 2%' }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5">
                   <p className="text-white font-bold text-lg">Antonio Wilson</p>
@@ -218,10 +218,10 @@ export default function Home() {
               <Badge className="mb-5 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Who Builds This</Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-[1.15]">Built by someone who works like it matters.</h2>
               <div className="space-y-5 text-muted-foreground leading-[1.8] text-base">
-                <p>I work 16-hour days. Every day. Not because I have to — because this is what I chose and I'm not stopping until OTAI is the biggest AI company in the world.</p>
-                <p>3 years in marketing. Over a year building AI systems professionally. I understand both sides — how to grow a business and how to automate it. That combination is rare and it's exactly why my clients get results.</p>
+                <p>I work 16-hour days. Every day. Not because I have to. Because this is what I chose and I'm not stopping until OTAI is the biggest AI company in the world.</p>
+                <p>3 years in marketing. Over a year building AI systems professionally. I understand both sides: how to grow a business and how to automate it. That combination is rare and it's exactly why my clients get results.</p>
                 <p>My philosophy is simple: <span className="text-white font-semibold">the easiest way to make money is to make the other person money first.</span> I'm ruthless about that. Your growth is the only metric I care about.</p>
-                <p>Honest when it's uncomfortable. Loyal once we're working together. Direct about what will and won't work. I don't build systems to impress — I build them to perform.</p>
+                <p>Honest when it's uncomfortable. Loyal once we're working together. Direct about what will and won't work. I don't build systems to impress. I build them to perform.</p>
               </div>
               <div className="mt-8 flex gap-6">
                 <div><p className="text-2xl font-bold text-white">3yr+</p><p className="text-xs text-muted-foreground">Years in Marketing</p></div>
@@ -290,7 +290,7 @@ export default function Home() {
               <Badge className="mb-5 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Strategic AI Consulting</Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-[1.15]">We also work inside your organization.</h2>
               <p className="text-muted-foreground leading-[1.8] mb-6 text-base">Beyond building systems, we embed directly into consulting firms, real estate organizations, AI startups, and service businesses to architect their AI strategy from the inside.</p>
-              <p className="text-muted-foreground leading-[1.8] mb-8 text-base">If your team needs someone who understands both the technology and the business outcome — and can wire the two together — that's exactly what we do.</p>
+              <p className="text-muted-foreground leading-[1.8] mb-8 text-base">If your team needs someone who understands both the technology and the business outcome, and can wire the two together, that's exactly what we do.</p>
               <div className="grid grid-cols-2 gap-4">
                 {['Real Estate Firms', 'AI Startups', 'Service Businesses', 'App Companies'].map((type, i) => (
                   <motion.div key={type} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="glass-card rounded-lg px-4 py-3 text-sm font-medium text-white/80 flex items-center gap-2">
@@ -358,11 +358,11 @@ export default function Home() {
             <p className="text-lg text-muted-foreground">Client Testimonial</p>
           </motion.div>
           <div className="grid lg:grid-cols-3 gap-6 items-start max-w-6xl mx-auto">
-            {/* Left — Josh text testimonial */}
+            {/* Left: Josh text testimonial */}
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="glass-card rounded-2xl p-2 border border-primary/20 overflow-hidden">
               <img src="/images/proof/IMAGE_2026-04-14_18_45_54.jpg" alt="Client conversation" className="w-full h-auto rounded-xl" />
             </motion.div>
-            {/* Center — Video */}
+            {/* Center: Video */}
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
               <div className="glass-card rounded-2xl p-2 border border-primary/20">
                 <div className="relative w-full rounded-xl overflow-hidden" style={{ aspectRatio: '9/16' }}>
@@ -377,7 +377,7 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
-            {/* Right — Email lead proof */}
+            {/* Right: Email lead proof */}
             <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="glass-card rounded-2xl p-2 border border-primary/20 overflow-hidden">
               <img src="/images/proof/IMAGE_2026-04-14_18_46_18.jpg" alt="Client lead captured" className="w-full h-auto rounded-xl" />
             </motion.div>
@@ -396,10 +396,10 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-14">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Investment</Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-[1.2]">Scoped to your business.</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto text-lg leading-[1.7]">Every engagement is custom. These tiers reflect the scope of work — not a price list.</p>
+            <p className="text-muted-foreground max-w-xl mx-auto text-lg leading-[1.7]">Every engagement is custom. These tiers reflect the scope of work, not a price list.</p>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6 mb-14">
-            <PricingCard label="Starter" description="One focused system. One problem solved. Ideal for businesses that know exactly what they need automated." features={['Single AI agent or automation', 'Full custom build — no templates', 'Integration with your existing tools', 'Direct access to founder', 'Post-launch support included']} popular={false} />
+            <PricingCard label="Starter" description="One focused system. One problem solved. Ideal for businesses that know exactly what they need automated." features={['Single AI agent or automation', 'Full custom build, no templates', 'Integration with your existing tools', 'Direct access to founder', 'Post-launch support included']} popular={false} />
             <PricingCard label="Professional" description="Multi-layer infrastructure for businesses ready to automate across multiple touchpoints." features={['Multiple connected AI systems', 'Custom analytics dashboard', 'Up to 15 integrations', '24/7 CEO & team access', 'Ongoing optimization retainer']} popular={true} />
             <PricingCard label="Enterprise" description="Full-scale AI ecosystem. For organizations serious about becoming the most efficient in their industry." features={['Complete automation infrastructure', 'Enterprise-grade compliance & security', 'Custom client dashboard', 'Unlimited integrations', 'Priority VIP support & SLA']} popular={false} />
           </div>

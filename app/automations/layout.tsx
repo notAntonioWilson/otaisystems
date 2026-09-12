@@ -1,14 +1,11 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Business Process Automation Services | OTAI',
-  description: 'We design automation systems that remove repetitive tasks, reduce costs, and increase execution speed. Automate intelligently.',
+  title: 'AI Automation & Backend Systems, Michigan',
+  description: "Custom workflow automation and backend systems for Michigan businesses. Lead reactivation, CRM automation, and follow up systems that run without you.",
+  alternates: { canonical: '/automations' },
 };
 
-export default function AutomationsLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function AutomationsLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

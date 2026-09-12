@@ -1,14 +1,11 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Professional AI Strategy Session | OTAI',
-  description: 'Ready to scale? Book your Professional AI Strategy Session and design your automation roadmap.',
+  title: 'Book a Professional Strategy Session',
+  description: "Book a Professional strategy session with OTAI Systems and map the AI automation roadmap for your business.",
+  alternates: { canonical: '/schedule/professional' },
 };
 
-export default function ProfessionalScheduleLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ScheduleProfessionalLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

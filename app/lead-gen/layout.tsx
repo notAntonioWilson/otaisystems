@@ -1,14 +1,11 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AI Lead Generation Systems | OTAI Systems',
-  description: 'Install AI-powered lead generation systems that consistently bring qualified prospects into your pipeline.',
+  title: 'Automated Outreach & AI Lead Generation',
+  description: "Automated cold email outreach and AI lead follow up systems for contractors, realtors, and Michigan businesses. Qualified leads delivered on autopilot.",
+  alternates: { canonical: '/lead-gen' },
 };
 
-export default function LeadGenLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function LeadGenLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

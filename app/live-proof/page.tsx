@@ -28,7 +28,7 @@ export default function LiveProofPage() {
               <span className="gradient-text">See it live.</span>
             </motion.h1>
             <motion.p variants={fadeUp} custom={2} className="text-lg text-muted-foreground leading-[1.7] max-w-2xl mx-auto">
-              Book a call. Tell us exactly what you're looking for. We'll show you a working system — and if the fit is right, we'll build a v1 version so you can see the actual power before committing.
+              Book a call. Tell us exactly what you're looking for. We'll show you a working system, and if the fit is right, we'll build a v1 version so you can see the actual power before committing.
             </motion.p>
           </motion.div>
         </div>
@@ -39,7 +39,7 @@ export default function LiveProofPage() {
         <div className="container mx-auto max-w-5xl">
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: Eye, title: 'See a Live Demo', desc: 'We pull up a working system built for your industry. You watch it operate in real time — not a mockup, not a screenshot.' },
+              { icon: Eye, title: 'See a Live Demo', desc: 'We pull up a working system built for your industry. You watch it operate in real time. Not a mockup, not a screenshot.' },
               { icon: Play, title: 'We Build a V1 for You', desc: "Tell us specifically what you need. If the scope makes sense, we build a first version so you can feel the actual output before any commitment." },
               { icon: Zap, title: 'Move Fast', desc: "No long sales processes. Book the call, show us the problem, and we'll tell you exactly what we'd build and how fast we can deploy it." },
             ].map((item, i) => {
@@ -67,7 +67,7 @@ export default function LiveProofPage() {
                 Book the call. Fill in the form. Walk away knowing exactly what's possible.
               </h2>
               <p className="text-muted-foreground leading-[1.8] mb-6">
-                When you book, fill in the details of what you're looking for — the industry, the problem, the system you want. The more specific you are, the more targeted the demo and the faster we can build your v1.
+                When you book, fill in the details of what you're looking for: the industry, the problem, the system you want. The more specific you are, the more targeted the demo and the faster we can build your v1.
               </p>
               <div className="space-y-4 mb-8">
                 {[

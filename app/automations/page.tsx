@@ -29,7 +29,7 @@ export default function AutomationsPage() {
               Automation Systems That Remove You From the Equation.
             </motion.h1>
             <motion.p variants={fadeUp} custom={2} className="text-lg text-muted-foreground leading-[1.7] max-w-2xl mx-auto">
-              Document storage, lead reactivation, outreach pipelines. We build the systems that run while you sleep — fully custom, no plug-and-play shortcuts.
+              Document storage, lead reactivation, outreach pipelines. We build the systems that run while you sleep. Fully custom, no plug-and-play shortcuts.
             </motion.p>
           </motion.div>
         </div>
@@ -59,7 +59,7 @@ export default function AutomationsPage() {
         </div>
       </section>
 
-      {/* VIDEO 1 — Document Storage */}
+      {/* VIDEO 1: Document Storage */}
       <section className="py-16 px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-5 gap-10 items-center">
@@ -82,7 +82,7 @@ export default function AutomationsPage() {
         </div>
       </section>
 
-      {/* VIDEO 2 — Realtor Reactivation */}
+      {/* VIDEO 2: Realtor Reactivation */}
       <section className="py-16 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-5 gap-10 items-center">
@@ -92,7 +92,7 @@ export default function AutomationsPage() {
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="lg:col-span-2 order-1 lg:order-2">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Real Estate</Badge>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-[1.2]">Realtor Lead Reactivation</h2>
-              <p className="text-muted-foreground leading-[1.8] mb-5">Most realtors have hundreds of cold leads doing nothing. This system re-engages them automatically — personalized outreach at scale that feels human.</p>
+              <p className="text-muted-foreground leading-[1.8] mb-5">Most realtors have hundreds of cold leads doing nothing. This system re-engages them automatically. Personalized outreach at scale that feels human.</p>
               <ul className="space-y-2.5">
                 {['Pulls dormant leads from your CRM automatically', 'Sends personalized reactivation sequences', 'Qualifies responses and flags hot leads', 'Books calls directly into your calendar'].map(p => (
                   <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -105,14 +105,14 @@ export default function AutomationsPage() {
         </div>
       </section>
 
-      {/* VIDEO 3 — Staffing Reactivation */}
+      {/* VIDEO 3: Staffing Reactivation */}
       <section className="py-16 px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-5 gap-10 items-center">
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="lg:col-span-2">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Staffing & Recruiting</Badge>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-[1.2]">Staffing & Recruiting Reactivation</h2>
-              <p className="text-muted-foreground leading-[1.8] mb-5">Staffing firms have massive databases that go cold. This automation re-engages both candidates and clients — automatically, at scale.</p>
+              <p className="text-muted-foreground leading-[1.8] mb-5">Staffing firms have massive databases that go cold. This automation re-engages both candidates and clients, automatically, at scale.</p>
               <ul className="space-y-2.5">
                 {['Reactivates cold candidates and inactive clients', 'Sends sequenced, personalized outreach automatically', 'Tracks replies and surfaces ready-to-place candidates', 'Runs 24/7 without a recruiter touching it'].map(p => (
                   <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">

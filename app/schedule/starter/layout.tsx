@@ -1,14 +1,11 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Book AI Starter Strategy Call | OTAI',
-  description: 'Schedule your AI Starter consultation and discover how automation can scale your business.',
+  title: 'Book a Starter Strategy Call',
+  description: "Book a Starter strategy call with OTAI Systems. One focused AI system, one problem solved, built for your business.",
+  alternates: { canonical: '/schedule/starter' },
 };
 
-export default function StarterScheduleLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ScheduleStarterLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

@@ -1,14 +1,11 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Custom AI Agents for Business',
-  description: 'Deploy custom AI agents that handle sales, support, follow-ups, and operations automatically. Built for growing companies ready to scale.',
+  title: 'AI Agents & AI Receptionists for Michigan',
+  description: "Custom AI voice agents, AI receptionists, and chat agents that answer every call, qualify leads, and book appointments for Michigan contractors and realtors.",
+  alternates: { canonical: '/ai-agents' },
 };
 
-export default function AIAgentsLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function AiAgentsLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

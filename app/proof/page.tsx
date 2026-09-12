@@ -69,7 +69,7 @@ export default function ProofPage() {
               THE WALL OF PROOF
             </motion.h1>
             <motion.p variants={fadeUp} custom={2} className="text-lg text-muted-foreground mb-8 leading-[1.7] max-w-2xl mx-auto">
-              Real client conversations. Real automation workflows. Real results — nothing fabricated, nothing staged.
+              Real client conversations. Real automation workflows. Real results. Nothing fabricated, nothing staged.
             </motion.p>
             <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row gap-4 justify-center">
               <button onClick={() => scrollToSection('websites')} className="px-6 py-3 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors">

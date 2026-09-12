@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Antonio Wilson | OTAI Systems',
-  description: 'Founder and CEO of OTAI Systems. 3 years in marketing, 1+ year building AI systems. Building the biggest AI company in the world.',
+  title: 'About Antonio Wilson, Founder & CEO',
+  description: "Antonio Wilson founded OTAI Systems to build custom AI automations, AI agents, and outreach systems for contractors, realtors, and businesses across Michigan.",
+  alternates: { canonical: '/about' },
 };
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {

@@ -29,7 +29,7 @@ export default function AIAgentsPage() {
               AI Agents That Work Your Business 24/7.
             </motion.h1>
             <motion.p variants={fadeUp} custom={2} className="text-lg text-muted-foreground leading-[1.7] max-w-2xl mx-auto">
-              Voice agents that answer every call. Chat agents that convert visitors. Social agents that work your DMs. All custom built — no templates, no shortcuts.
+              Voice agents that answer every call. Chat agents that convert visitors. Social agents that work your DMs. All custom built. No templates, no shortcuts.
             </motion.p>
           </motion.div>
         </div>
@@ -42,7 +42,7 @@ export default function AIAgentsPage() {
             {[
               { icon: Phone, title: 'Voice Agents', desc: 'Answers calls, qualifies leads, books appointments, and handles inbound 24/7. Transfers to a human the moment it matters.' },
               { icon: MessageSquare, title: 'Chat Agents', desc: 'Converts website visitors into booked calls. Handles support. Knows your business inside out and responds in under 3 seconds.' },
-              { icon: Share2, title: 'Social Agents', desc: 'Works your DMs like a trained rep. Responds, qualifies, and books calls from Instagram, Facebook, and beyond — automatically.' },
+              { icon: Share2, title: 'Social Agents', desc: 'Works your DMs like a trained rep. Responds, qualifies, and books calls from Instagram, Facebook, and beyond, automatically.' },
             ].map((item, i) => {
               const Icon = item.icon;
               return (
@@ -59,14 +59,14 @@ export default function AIAgentsPage() {
         </div>
       </section>
 
-      {/* VIDEO 1 — Dental */}
+      {/* VIDEO 1: Dental */}
       <section className="py-16 px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-5 gap-10 items-center">
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="lg:col-span-2">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Healthcare</Badge>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-[1.2]">Dental Office AI Phone Agent</h2>
-              <p className="text-muted-foreground leading-[1.8] mb-5">Every missed call is a missed booking. This agent answers every inbound call, handles scheduling, answers FAQs, and books appointments directly — without a receptionist.</p>
+              <p className="text-muted-foreground leading-[1.8] mb-5">Every missed call is a missed booking. This agent answers every inbound call, handles scheduling, answers FAQs, and books appointments directly, without a receptionist.</p>
               <ul className="space-y-2.5">
                 {['Answers 100% of inbound calls instantly', 'Books appointments directly into your calendar', 'Handles FAQs, insurance questions, and reminders', 'Transfers to a human when escalation is needed'].map(p => (
                   <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -82,7 +82,7 @@ export default function AIAgentsPage() {
         </div>
       </section>
 
-      {/* VIDEO 2 — Law Firm */}
+      {/* VIDEO 2: Law Firm */}
       <section className="py-16 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-5 gap-10 items-center">
@@ -92,7 +92,7 @@ export default function AIAgentsPage() {
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="lg:col-span-2 order-1 lg:order-2">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Legal</Badge>
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-[1.2]">Law Firm AI Phone Agent</h2>
-              <p className="text-muted-foreground leading-[1.8] mb-5">68% of potential clients choose the first firm that responds. This agent handles intake, qualifies cases, and books consultations — while staying within your compliance requirements.</p>
+              <p className="text-muted-foreground leading-[1.8] mb-5">68% of potential clients choose the first firm that responds. This agent handles intake, qualifies cases, and books consultations, while staying within your compliance requirements.</p>
               <ul className="space-y-2.5">
                 {['Handles inbound intake 24/7', 'Qualifies cases before routing to attorneys', 'Books consultations into your calendar automatically', 'Compliant handoff to human when required'].map(p => (
                   <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -105,16 +105,16 @@ export default function AIAgentsPage() {
         </div>
       </section>
 
-      {/* VIDEO 3 — Human Handoff placeholder */}
+      {/* VIDEO 3: Human Handoff placeholder */}
       <section className="py-16 px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-5 gap-10 items-center">
             <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, ease: 'easeOut' }} className="lg:col-span-2">
               <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Live Handoff</Badge>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-[1.2]">AI to Human Handoff — Live Demo</h2>
-              <p className="text-muted-foreground leading-[1.8] mb-5">The moment a conversation needs a human, the agent transfers seamlessly — no drop, no confusion. The human picks up exactly where the AI left off with full context.</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-[1.2]">AI to Human Handoff: Live Demo</h2>
+              <p className="text-muted-foreground leading-[1.8] mb-5">The moment a conversation needs a human, the agent transfers seamlessly. No drop, no confusion. The human picks up exactly where the AI left off with full context.</p>
               <ul className="space-y-2.5">
-                {['Detects escalation triggers in real time', 'Transfers call with full conversation context', 'Zero dead air — seamless for the caller', 'Works across voice, chat, and social channels'].map(p => (
+                {['Detects escalation triggers in real time', 'Transfers call with full conversation context', 'Zero dead air, seamless for the caller', 'Works across voice, chat, and social channels'].map(p => (
                   <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <span className="text-primary mt-1 font-bold">→</span>{p}
                   </li>
