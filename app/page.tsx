@@ -35,6 +35,22 @@ const fadeRight: any = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
+
+function CtaRow({ onBook, secondaryHref, secondaryLabel, align = 'center' }: { onBook: () => void; secondaryHref?: string; secondaryLabel?: string; align?: 'center' | 'left' }) {
+  return (
+    <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className={`flex flex-col sm:flex-row gap-3 ${align === 'center' ? 'justify-center items-center' : 'justify-start items-start'} mt-10`}>
+      <button onClick={onBook} className="px-6 py-3 rounded-lg bg-primary text-white font-semibold text-sm hover:bg-primary/90 hover:glow-accent-sm transition-all duration-300">
+        Book a Strategy Call →
+      </button>
+      {secondaryHref && (
+        <Link href={secondaryHref} className="px-6 py-3 rounded-lg border border-primary/30 text-sm font-semibold text-white hover:border-primary/60 hover:bg-primary/5 transition-all duration-300 inline-flex items-center gap-2">
+          {secondaryLabel} <ArrowRight className="w-4 h-4" />
+        </Link>
+      )}
+    </motion.div>
+  );
+}
+
 export default function Home() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -85,16 +101,10 @@ export default function Home() {
     { title: 'Realtor Lead Reactivation', id: 'Hi_90-Qh6Yo', niche: 'Real Estate' },
   ];
 
-  const results = [
-    { client: 'J.Z.', role: 'Realtor, The Ag. Realtors', result: 'Full website (1 day), SEO (1 hr), and social system across IG, FB & LinkedIn. 19,522 FB views, 8,365 IG views, 2,220 LinkedIn followers. 20+ in-person conversations started from content alone.', tag: 'Real Estate' },
-    { client: 'T.B.', role: 'Realtor, Cald.W Realtors', result: 'Website + SEO live in under 2 weeks. 13,601 total social views, 876 engagements, 321 FB engagements (+6,320%). Full presence deployed from zero in under 2 weeks.', tag: 'Real Estate' },
-    { client: 'J.F.', role: 'Owner, Next Level Carpentry', result: '4.88M+ social views, 45,491 engagements, 5,082 followers. SEO hitting position 3 for "Carpenter Near Me." $25,000+ revenue directly from captured website leads.', tag: 'Construction' },
-    { client: 'D.G.', role: 'AI Startup Founder', result: 'Full website + outbound system live in 48 hours. 94% email open rate. 18 Meta ad conversions across 3,344 reach. Startup launched from zero to lead-generating infrastructure in 2 days.', tag: 'AI Startup' },
-    { client: 'M.K.', role: 'AI Startup Founder', result: '1,057 sequences started, 91.86% open rate. 2 qualified opportunities generated. $7,000 pipeline value within the first 2 weeks of campaign launch.', tag: 'Outreach' },
-  ];
-
   const faqs = [
-    { question: 'Can you help my specific company?', answer: 'Absolutely. We help companies of all sizes integrate AI and automation across every channel, from phone and chat to social media and internal systems. Our team specializes in building intelligent workflows that save time, boost efficiency, and elevate your customer experience.' },
+    { question: 'Do you work with businesses outside Michigan?', answer: 'Yes. We are based in Michigan and most of our clients are here, but every system we build is remote-first. We work with contractors, realtors, and service businesses anywhere in the United States.' },
+    { question: 'How much does AI automation cost for a small business?', answer: 'It depends on the system. A single AI agent or automation is a focused build with a fixed scope. Multi-system infrastructure is priced by the number of systems and integrations. Every project is 50% upfront and 50% on completion, with optional monthly retainers for ongoing optimization. We scope it on the strategy call so you know the number before anything is built.' },
+    { question: 'Can you help my specific company?', answer: 'Absolutely. We help companies of all sizes integrate AI and automation across every channel, from phone and chat to CRM and internal systems. We specialize in building intelligent workflows that save time, boost efficiency, and elevate your customer experience. Most of our clients are contractors, home service businesses, and realtors.' },
     { question: 'What industries can benefit the most from AI automation?', answer: "AI and automation can transform any industry, but the right approach depends on your business model. For B2B companies, AI works best on the front end by handling leads, outreach, and communication. For B2C businesses, automation shines on the back end by streamlining support, order management, and marketing." },
     { question: 'Is the system difficult to integrate?', answer: "Not at all. We handle the entire integration process, whether you're implementing a completely new AI system or connecting automation to your existing tools. Everything follows a transparent, step-by-step flow to ensure a smooth and stress-free setup." },
     { question: 'Do I need any technical experience to use your AI solutions?', answer: 'No technical experience required. We take care of all the heavy lifting including setup, connections, and configurations. If your input is ever needed, our team walks you through it step-by-step.' },
@@ -114,7 +124,7 @@ export default function Home() {
             <motion.div initial="hidden" animate="visible" variants={{ visible: { transition: { staggerChildren: 0.1 } } }}>
               <motion.div variants={fadeUp} custom={0}>
                 <Badge className="mb-5 bg-primary/10 text-primary border-primary/30 text-xs tracking-widest uppercase">
-                  AI Automation · AI Agents · Growth Systems
+                  AI Automation · AI Agents · Automated Outreach
                 </Badge>
               </motion.div>
               <motion.h1 variants={fadeUp} custom={1} className="font-bold mb-5 leading-[1.1] text-3xl md:text-4xl lg:text-5xl">
@@ -122,7 +132,7 @@ export default function Home() {
                 <span className="gradient-text">Behind Business Growth.</span>
               </motion.h1>
               <motion.p variants={fadeUp} custom={2} className="text-lg text-muted-foreground mb-8 leading-[1.7] max-w-xl">
-                We cut costs, make money, and provide speed to success. Custom AI systems: agents, automations, and growth infrastructure, built to perform from day one.
+                We cut costs, make money, and provide speed to success. Custom AI systems for contractors, realtors, and businesses across Michigan: backend automations, AI agents, and outreach systems built to perform from day one.
               </motion.p>
               <motion.div variants={fadeUp} custom={3} className="flex flex-col sm:flex-row gap-4">
                 <DripButton onClick={() => scrollToSection('demos')}>See It Working</DripButton>
@@ -164,19 +174,69 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHAT WE BUILD */}
+      {/* RESULT STRIP */}
+      <section className="py-16 px-6 lg:px-8">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              { value: '150+', label: 'Automations Built' },
+              { value: '100+', label: 'AI Agents Built' },
+              { value: '6 Figures', label: 'Generated From Automated Outreach' },
+            ].map((stat, i) => (
+              <motion.div key={stat.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="glass-card rounded-2xl p-8 text-center border border-primary/20 hover:border-primary/40 transition-colors">
+                <p className="text-4xl md:text-5xl font-bold gradient-text mb-2">{stat.value}</p>
+                <p className="text-sm text-muted-foreground tracking-wide uppercase">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
+          <CtaRow onBook={() => scrollToSection('book')} secondaryHref="/testimonials" secondaryLabel="See the results" />
+        </div>
+      </section>
+
+      {/* THE PROBLEM */}
+      <section id="problem" className="py-20 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
+        <div className="container mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-14">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">The Problem We Solve</Badge>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">You are losing money in the gaps.</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-[1.7]">Most contractors and realtors do not have a lead problem. They have a follow through problem. The calls, the follow ups, the paperwork, the leads that went cold. That is where the revenue leaks.</p>
+          </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: 'Missed calls', desc: 'You are on a roof, at a showing, or on a job. The phone rings. It goes to voicemail. That caller hires the next company that picks up.' },
+              { title: 'Slow follow up', desc: 'A lead comes in at 9pm. Nobody responds until tomorrow. By then they have talked to three other businesses.' },
+              { title: 'Manual admin', desc: 'Quotes, invoices, scheduling, review requests, CRM updates. Hours every week that should be spent selling or building.' },
+              { title: 'Cold databases', desc: 'Hundreds of old leads and past customers sitting in a spreadsheet doing nothing. Every one of them is money you already paid for.' },
+            ].map((item, i) => (
+              <motion.div key={item.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="glass-card rounded-2xl p-7">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
+                  <span className="text-primary font-bold">{i + 1}</span>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-[1.7]">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center text-white font-semibold text-lg mt-12 max-w-2xl mx-auto">
+            We build the systems that close those gaps. Automatically. Every day. Without adding headcount.
+          </motion.p>
+          <CtaRow onBook={() => scrollToSection('book')} secondaryHref="/services" secondaryLabel="See what we build" />
+        </div>
+      </section>
+
+      {/* SERVICES */}
       <section id="services" className="py-20 px-6 lg:px-8">
         <div className="container mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-14">
-            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">What We Build</Badge>
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Services</Badge>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">Every system. Custom built.</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-[1.7]">No templates. No copy-paste. Every build is engineered for your specific operation.</p>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 mb-6">
             {[
-              { icon: '🤖', title: 'AI Agents', tagline: 'Voice. Chat. Social.', description: 'Intelligent agents that handle inbound calls, qualify leads, answer questions, and book appointments 24/7, without human intervention.', link: '/ai-agents', cta: 'Explore AI Agents', items: ['Voice Phone Agents', 'Chat Assistants', 'Social AI Agents', 'Lead Qualification'] },
-              { icon: '⚡', title: 'Automations', tagline: 'Workflow. Reactivation. Outreach.', description: 'End-to-end systems that eliminate manual work, from lead reactivation to document automation to 270k+ emails sent across campaigns.', link: '/automations', cta: 'Explore Automations', items: ['Lead Reactivation', 'Email Outreach (270k+ sent)', 'Doc Automation', 'Workflow Systems'] },
-              { icon: '📈', title: 'Growth Systems', tagline: 'Organic. Paid. Consulting.', description: 'We grow your brand alongside the AI. Organic content, Meta ads, newsletters, and strategic AI consulting embedded in your organization.', link: '/lead-gen', cta: 'Explore Growth Systems', items: ['Organic Social', 'Meta Ad Systems', 'Newsletter Automation', 'AI Strategy Consulting'] },
+              { icon: '⚡', title: 'Backend Systems', tagline: 'Workflow. CRM. Reactivation.', description: 'End-to-end automations that eliminate manual work, from lead reactivation to document automation to CRM and follow up systems that run while you sleep.', link: '/services/backend-systems', cta: 'Explore Backend Systems', items: ['Workflow Automation', 'CRM Automation', 'Lead Reactivation', 'Document Automation'] },
+              { icon: '🤖', title: 'AI Agents', tagline: 'Voice. Chat. Social.', description: 'Intelligent agents that answer every call, qualify leads, answer questions, and book appointments 24/7, without a receptionist.', link: '/services/ai-agents', cta: 'Explore AI Agents', items: ['AI Voice Agents', 'AI Receptionists', 'Chat Agents', 'Social DM Agents'] },
+              { icon: '📤', title: 'Automated Outreach', tagline: 'Email. Follow Up. Speed to Lead.', description: 'Cold email systems and AI follow up that put qualified prospects in your pipeline every day. 270k+ emails sent across campaigns.', link: '/services/automated-outreach', cta: 'Explore Automated Outreach', items: ['Cold Email Systems', 'AI Lead Follow Up', 'Speed to Lead', 'Database Reactivation'] },
             ].map((s, i) => (
               <motion.div key={s.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="glass-card rounded-2xl p-7 flex flex-col group hover:border-primary/40 transition-all duration-300 cursor-pointer" onClick={() => window.location.href = s.link}>
                 <div className="text-3xl mb-4">{s.icon}</div>
@@ -196,42 +256,30 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* IDENTITY */}
-      <section className="py-20 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeLeft} className="relative flex justify-center lg:justify-start pl-4">
-              <div className="relative rounded-2xl overflow-hidden w-full max-w-md h-[520px]">
-                <Image src="/images/antonio-standing.jpg" alt="Antonio Wilson, Founder, OTAI Systems" fill sizes="(max-width: 768px) 100vw, 448px" className="object-cover" style={{ objectPosition: '55% 2%' }} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                <div className="absolute bottom-5 left-5 right-5">
-                  <p className="text-white font-bold text-lg">Antonio Wilson</p>
-                  <p className="text-primary text-sm">Founder & CEO, OTAI Systems</p>
-                </div>
-              </div>
-              <div className="absolute -top-4 -right-4 w-32 h-32 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
-            </motion.div>
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeRight}>
-              <Badge className="mb-5 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Who Builds This</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-[1.15]">Built by someone who works like it matters.</h2>
-              <div className="space-y-5 text-muted-foreground leading-[1.8] text-base">
-                <p>I work 16-hour days. Every day. Not because I have to. Because this is what I chose and I'm not stopping until OTAI is the biggest AI company in the world.</p>
-                <p>3 years in marketing. Over a year building AI systems professionally. I understand both sides: how to grow a business and how to automate it. That combination is rare and it's exactly why my clients get results.</p>
-                <p>My philosophy is simple: <span className="text-white font-semibold">the easiest way to make money is to make the other person money first.</span> I'm ruthless about that. Your growth is the only metric I care about.</p>
-                <p>Honest when it's uncomfortable. Loyal once we're working together. Direct about what will and won't work. I don't build systems to impress. I build them to perform.</p>
-              </div>
-              <div className="mt-8 flex gap-6">
-                <div><p className="text-2xl font-bold text-white">3yr+</p><p className="text-xs text-muted-foreground">Years in Marketing</p></div>
-                <div className="w-px bg-border" />
-                <div><p className="text-2xl font-bold text-white">1yr+</p><p className="text-xs text-muted-foreground">Building AI Systems</p></div>
-                <div className="w-px bg-border" />
-                <div><p className="text-2xl font-bold text-white">20+</p><p className="text-xs text-muted-foreground">Businesses Worked With</p></div>
-              </div>
-            </motion.div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              { icon: '🖥️', title: 'AI Built Applications', tagline: 'Websites. SEO. Apps.', description: 'AI powered websites, SEO built to rank in Michigan, and custom web apps and client portals that turn traffic into booked jobs.', link: '/services/ai-built-applications', cta: 'Explore AI Built Applications', items: ['AI Powered Websites', 'SEO', 'Custom Web Apps', 'Client Portals'] },
+              { icon: '🏗️', title: 'Multi-Service', tagline: 'The Full Stack.', description: 'Fully automated business infrastructure. Backend, agents, outreach, and applications built together as one system that runs your operation.', link: '/services/multi-service', cta: 'Explore Multi-Service', items: ['Complete Automation Infrastructure', 'Connected AI Systems', 'Custom Dashboards', 'Ongoing Optimization'] },
+            ].map((s, i) => (
+              <motion.div key={s.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="glass-card rounded-2xl p-7 flex flex-col group hover:border-primary/40 transition-all duration-300 cursor-pointer" onClick={() => window.location.href = s.link}>
+                <div className="text-3xl mb-4">{s.icon}</div>
+                <div className="text-xs text-primary tracking-widest uppercase mb-2">{s.tagline}</div>
+                <h3 className="text-xl font-bold text-white mb-3">{s.title}</h3>
+                <p className="text-sm text-muted-foreground leading-[1.7] mb-5 flex-grow">{s.description}</p>
+                <ul className="grid grid-cols-2 gap-2 mb-6">
+                  {s.items.map(item => (
+                    <li key={item} className="flex items-center gap-2 text-sm text-foreground/80">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />{item}
+                    </li>
+                  ))}
+                </ul>
+                <Link href={s.link} className="text-sm font-semibold text-primary hover:text-primary/80 flex items-center gap-1 transition-colors group-hover:gap-2">
+                  {s.cta} <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            ))}
           </div>
+          <CtaRow onBook={() => scrollToSection('book')} secondaryHref="/services" secondaryLabel="All services" />
         </div>
       </section>
 
@@ -254,99 +302,7 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS */}
-      <section id="process" className="py-20 px-3 sm:px-6 lg:px-8 bg-card/30 backdrop-blur-sm">
-        <div className="container mx-auto">
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-12">
-            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">The Process</Badge>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">How we build.</h2>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-[1.7]">Four steps. No fluff. We analyze, build, deploy, and evolve your system with full accountability at every phase.</p>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-7xl mx-auto">
-            {processSteps.map((step, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1, duration: 0.5 }} className="glass-card rounded-xl p-6">
-                <div className="mb-4">
-                  <div className="text-xs font-semibold text-primary mb-1.5 tracking-widest uppercase">Step {index + 1}</div>
-                  <h3 className="text-xl font-bold mb-2 text-white leading-[1.2]">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-[1.6]">{step.description}</p>
-                </div>
-                <div className="mt-5 min-h-[200px] flex items-center justify-center">
-                  <div className="w-full scale-90">{getAnim(step.animationType)}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CONSULTING */}
-      <section className="py-20 px-6 lg:px-8">
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeLeft}>
-              <Badge className="mb-5 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Strategic AI Consulting</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-[1.15]">We also work inside your organization.</h2>
-              <p className="text-muted-foreground leading-[1.8] mb-6 text-base">Beyond building systems, we embed directly into consulting firms, real estate organizations, AI startups, and service businesses to architect their AI strategy from the inside.</p>
-              <p className="text-muted-foreground leading-[1.8] mb-8 text-base">If your team needs someone who understands both the technology and the business outcome, and can wire the two together, that's exactly what we do.</p>
-              <div className="grid grid-cols-2 gap-4">
-                {['Real Estate Firms', 'AI Startups', 'Service Businesses', 'App Companies'].map((type, i) => (
-                  <motion.div key={type} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="glass-card rounded-lg px-4 py-3 text-sm font-medium text-white/80 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />{type}
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeRight}>
-              <div className="glass-card rounded-2xl p-8">
-                <div className="text-5xl mb-4">🧠</div>
-                <h3 className="text-xl font-bold text-white mb-3">What Consulting Looks Like</h3>
-                <ul className="space-y-4">
-                  {['Audit your current operations for AI leverage points', 'Design a custom AI roadmap for your organization', 'Build and deploy the systems within your existing stack', 'Train your team on the new infrastructure', 'Monitor, optimize, and evolve as your business grows'].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground leading-[1.6]">
-                      <span className="text-primary font-bold text-base leading-none mt-0.5">{i + 1}.</span>{item}
-                    </li>
-                  ))}
-                </ul>
-                <button onClick={() => scrollToSection('book')} className="mt-7 w-full py-3 rounded-lg bg-primary text-white font-semibold text-sm hover:bg-primary/90 transition-colors">
-                  Talk to Antonio Directly →
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* RESULTS */}
-      <section id="results" className="py-20 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
-        <div className="container mx-auto">
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-14">
-            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Results</Badge>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">Proof in motion.</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto text-lg leading-[1.7]">Real clients. Real systems. Real outcomes.</p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {results.map((item, i) => (
-              <motion.div key={item.client} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="glass-card rounded-xl p-6 flex flex-col">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
-                    <span className="text-primary font-bold text-sm">{item.client[0]}</span>
-                  </div>
-                  <span className="text-xs bg-primary/10 text-primary border border-primary/20 rounded-full px-3 py-1">{item.tag}</span>
-                </div>
-                <p className="font-bold text-white mb-1">{item.client}</p>
-                <p className="text-xs text-muted-foreground mb-4">{item.role}</p>
-                <p className="text-sm text-muted-foreground leading-[1.7] flex-grow">{item.result}</p>
-              </motion.div>
-            ))}
-          </div>
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-10">
-            <Link href="/proof" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
-              See live proof <ArrowRight className="w-4 h-4" />
-            </Link>
-          </motion.div>
+          <CtaRow onBook={() => scrollToSection('book')} secondaryHref="/testimonials" secondaryLabel="See client results" />
         </div>
       </section>
 
@@ -355,7 +311,7 @@ export default function Home() {
         <div className="container mx-auto">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">Hear it directly.</h2>
-            <p className="text-lg text-muted-foreground">Client Testimonial</p>
+            <p className="text-lg text-muted-foreground">Client testimonials from Michigan contractors and realtors.</p>
           </motion.div>
           <div className="grid lg:grid-cols-3 gap-6 items-start max-w-6xl mx-auto">
             {/* Left: Josh text testimonial */}
@@ -383,28 +339,147 @@ export default function Home() {
             </motion.div>
           </div>
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mt-8">
-            <Link href="/proof" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary/10 border border-primary/20 text-base font-semibold text-primary hover:bg-primary/20 hover:border-primary/40 transition-all">
-              See all proof <ArrowRight className="w-5 h-5" />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <button onClick={() => scrollToSection('book')} className="px-6 py-3 rounded-lg bg-primary text-white font-semibold text-base hover:bg-primary/90 hover:glow-accent-sm transition-all duration-300">
+                Book a Strategy Call →
+              </button>
+              <Link href="/testimonials" className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary/10 border border-primary/20 text-base font-semibold text-primary hover:bg-primary/20 hover:border-primary/40 transition-all">
+                See all proof <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* PRICING */}
-      <section id="pricing" className="py-20 px-6 lg:px-8">
+      {/* HOW IT WORKS */}
+      <section id="process" className="py-20 px-3 sm:px-6 lg:px-8 bg-card/30 backdrop-blur-sm">
         <div className="container mx-auto">
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-14">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-12">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">The Process</Badge>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">How we build.</h2>
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-[1.7]">Four steps. No fluff. We analyze, build, deploy, and evolve your system with full accountability at every phase.</p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-7xl mx-auto">
+            {processSteps.map((step, index) => (
+              <motion.div key={index} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1, duration: 0.5 }} className="glass-card rounded-xl p-6">
+                <div className="mb-4">
+                  <div className="text-xs font-semibold text-primary mb-1.5 tracking-widest uppercase">Step {index + 1}</div>
+                  <h3 className="text-xl font-bold mb-2 text-white leading-[1.2]">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-[1.6]">{step.description}</p>
+                </div>
+                <div className="mt-5 min-h-[200px] flex items-center justify-center">
+                  <div className="w-full scale-90">{getAnim(step.animationType)}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <CtaRow onBook={() => scrollToSection('book')} />
+        </div>
+      </section>
+
+      {/* CONSULTING */}
+      <section className="py-20 px-6 lg:px-8">
+        <div className="container mx-auto">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeLeft}>
+              <Badge className="mb-5 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Strategic AI Consulting</Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-[1.15]">We also work inside your organization.</h2>
+              <p className="text-muted-foreground leading-[1.8] mb-6 text-base">Beyond building systems, we embed directly into contracting companies, real estate teams, home service businesses, and AI startups to architect their AI strategy from the inside.</p>
+              <p className="text-muted-foreground leading-[1.8] mb-8 text-base">If your team needs someone who understands both the technology and the business outcome, and can wire the two together, that's exactly what we do.</p>
+              <div className="grid grid-cols-2 gap-4">
+                {['Contractors & Builders', 'Real Estate Teams', 'Home Service Businesses', 'AI Startups'].map((type, i) => (
+                  <motion.div key={type} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="glass-card rounded-lg px-4 py-3 text-sm font-medium text-white/80 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />{type}
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeRight}>
+              <div className="glass-card rounded-2xl p-8">
+                <div className="text-5xl mb-4">🧠</div>
+                <h3 className="text-xl font-bold text-white mb-3">What Consulting Looks Like</h3>
+                <ul className="space-y-4">
+                  {['Audit your current operations for AI leverage points', 'Design a custom AI roadmap for your organization', 'Build and deploy the systems within your existing stack', 'Train your team on the new infrastructure', 'Monitor, optimize, and evolve as your business grows'].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground leading-[1.6]">
+                      <span className="text-primary font-bold text-base leading-none mt-0.5">{i + 1}.</span>{item}
+                    </li>
+                  ))}
+                </ul>
+                <button onClick={() => scrollToSection('book')} className="mt-7 w-full py-3 rounded-lg bg-primary text-white font-semibold text-sm hover:bg-primary/90 transition-colors">
+                  Talk to Antonio Directly →
+                </button>
+              </div>
+            </motion.div>
+          </div>
+
+          <div id="pricing" className="scroll-mt-24">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-14 mt-24">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Investment</Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-[1.2]">Scoped to your business.</h2>
             <p className="text-muted-foreground max-w-xl mx-auto text-lg leading-[1.7]">Every engagement is custom. These tiers reflect the scope of work, not a price list.</p>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-6 mb-14">
+          <div className="grid md:grid-cols-3 gap-6">
             <PricingCard label="Starter" description="One focused system. One problem solved. Ideal for businesses that know exactly what they need automated." features={['Single AI agent or automation', 'Full custom build, no templates', 'Integration with your existing tools', 'Direct access to founder', 'Post-launch support included']} popular={false} />
             <PricingCard label="Professional" description="Multi-layer infrastructure for businesses ready to automate across multiple touchpoints." features={['Multiple connected AI systems', 'Custom analytics dashboard', 'Up to 15 integrations', '24/7 CEO & team access', 'Ongoing optimization retainer']} popular={true} />
             <PricingCard label="Enterprise" description="Full-scale AI ecosystem. For organizations serious about becoming the most efficient in their industry." features={['Complete automation infrastructure', 'Enterprise-grade compliance & security', 'Custom client dashboard', 'Unlimited integrations', 'Priority VIP support & SLA']} popular={false} />
           </div>
+          </div>
+          <CtaRow onBook={() => scrollToSection('book')} />
+        </div>
+      </section>
+
+      {/* FOUNDER */}
+      <section className="py-20 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
+        <div className="container mx-auto">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeLeft} className="relative flex justify-center lg:justify-start pl-4">
+              <div className="relative rounded-2xl overflow-hidden w-full max-w-md h-[520px]">
+                <Image src="/images/antonio-standing.jpg" alt="Antonio Wilson, Founder, OTAI Systems" fill sizes="(max-width: 768px) 100vw, 448px" className="object-cover" style={{ objectPosition: '55% 2%' }} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <div className="absolute bottom-5 left-5 right-5">
+                  <p className="text-white font-bold text-lg">Antonio Wilson</p>
+                  <p className="text-primary text-sm">Founder & CEO, OTAI Systems, Michigan</p>
+                </div>
+              </div>
+              <div className="absolute -top-4 -right-4 w-32 h-32 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
+            </motion.div>
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeRight}>
+              <Badge className="mb-5 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">Who Builds This</Badge>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-[1.15]">Built in Michigan by someone who works like it matters.</h2>
+              <div className="space-y-5 text-muted-foreground leading-[1.8] text-base">
+                <p>I work 16-hour days. Every day. Not because I have to. Because this is what I chose and I'm not stopping until OTAI is the biggest AI company in the world.</p>
+                <p>3 years in marketing. Over a year building AI automation systems professionally for contractors, realtors, and businesses across Michigan. I understand both sides: how to grow a business and how to automate it. That combination is rare and it's exactly why my clients get results.</p>
+                <p>My philosophy is simple: <span className="text-white font-semibold">the easiest way to make money is to make the other person money first.</span> I'm ruthless about that. Your growth is the only metric I care about.</p>
+                <p>Honest when it's uncomfortable. Loyal once we're working together. Direct about what will and won't work. I don't build systems to impress. I build them to perform.</p>
+              </div>
+              <div className="mt-8 flex gap-6">
+                <div><p className="text-2xl font-bold text-white">3yr+</p><p className="text-xs text-muted-foreground">Years in Marketing</p></div>
+                <div className="w-px bg-border" />
+                <div><p className="text-2xl font-bold text-white">1yr+</p><p className="text-xs text-muted-foreground">Building AI Systems</p></div>
+                <div className="w-px bg-border" />
+                <div><p className="text-2xl font-bold text-white">20+</p><p className="text-xs text-muted-foreground">Businesses Worked With</p></div>
+              </div>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <button onClick={() => scrollToSection('book')} className="px-6 py-3 rounded-lg bg-primary text-white font-semibold text-sm hover:bg-primary/90 hover:glow-accent-sm transition-all duration-300">
+                  Book a Strategy Call →
+                </button>
+                <Link href="/about" className="px-6 py-3 rounded-lg border border-primary/30 text-sm font-semibold text-white hover:border-primary/60 hover:bg-primary/5 transition-all duration-300 inline-flex items-center gap-2">
+                  More about Antonio <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-20 px-6 lg:px-8 bg-card/20 border-y border-primary/10">
+        <div className="container mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-10">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 text-xs tracking-widest uppercase">FAQ</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Frequently asked questions.</h2>
+          </motion.div>
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mx-auto">
-            <h3 className="text-xl font-bold mb-6 text-center text-white">Frequently Asked Questions</h3>
             <Accordion type="single" collapsible className="space-y-3">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="border border-border rounded-lg px-6 bg-card/50 backdrop-blur-sm">
@@ -414,6 +489,7 @@ export default function Home() {
               ))}
             </Accordion>
           </motion.div>
+          <CtaRow onBook={() => scrollToSection('book')} />
         </div>
       </section>
 

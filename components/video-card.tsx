@@ -36,8 +36,6 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [ytActivated, setYtActivated] = useState(false);
-  const [ytPlayer, setYtPlayer] = useState<any>(null);
-  const [apiReady, setApiReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const modalVideoRef = useRef<HTMLVideoElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -88,46 +86,6 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
     };
   }, [isYouTubeVideo]);
 
-  // Only load YouTube iframe API after user clicks play (facade pattern)
-  useEffect(() => {
-    if (!ytActivated || !isYouTubeVideo) return;
-
-    if (!(window as any).YT) {
-      const tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
-
-      (window as any).onYouTubeIframeAPIReady = () => {
-        setApiReady(true);
-      };
-    } else if ((window as any).YT.Player) {
-      setApiReady(true);
-    }
-  }, [ytActivated, isYouTubeVideo]);
-
-  useEffect(() => {
-    if (isYouTubeVideo && apiReady && ytActivated && !ytPlayer) {
-      const initPlayer = () => {
-        try {
-          const player = new (window as any).YT.Player(iframeIdRef.current, {
-            events: {
-              onReady: (event: any) => {
-                setYtPlayer(event.target);
-                event.target.mute();
-              },
-            },
-          });
-        } catch (error) {
-          console.error('Error initializing YouTube player:', error);
-        }
-      };
-
-      const timer = setTimeout(initPlayer, 1000);
-      return () => clearTimeout(timer);
-    }
-  }, [isYouTubeVideo, apiReady, ytActivated, ytPlayer]);
-
   const handleVideoLoaded = () => {
     setIsLoading(false);
   };
@@ -177,19 +135,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
 
   const toggleMute = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (isYouTubeVideo && ytPlayer && ytPlayer.unMute) {
-      try {
-        if (isMuted) {
-          ytPlayer.unMute();
-          ytPlayer.setVolume(100);
-        } else {
-          ytPlayer.mute();
-        }
-        setIsMuted(!isMuted);
-      } catch (error) {
-        console.error('Error toggling mute:', error);
-      }
-    } else if (videoRef.current) {
+    if (videoRef.current) {
       const newMutedState = !videoRef.current.muted;
       videoRef.current.muted = newMutedState;
       setIsMuted(newMutedState);
@@ -240,31 +186,30 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-200" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-purple-600/90 group-hover:bg-purple-700 flex items-center justify-center transition-colors shadow-lg">
-                      <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-purple-600/90 group-hover:bg-purple-700 group-hover:scale-105 flex items-center justify-center transition-all shadow-lg glow-accent-sm">
+                      <Play className="w-9 h-9 md:w-11 md:h-11 text-white ml-1" fill="white" />
                     </div>
                   </div>
                 </div>
               ) : (
                 <>
-                  <div className="absolute inset-0 w-full h-full">
-                    <iframe
-                      id={iframeIdRef.current}
-                      ref={iframeRef}
-                      src={`https://www.youtube.com/embed/${embedId}?autoplay=1&mute=1&loop=1&playlist=${embedId}&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
-                      className="absolute inset-0 w-full h-full pointer-events-none"
-                      style={{ border: 'none' }}
-                      allow="autoplay; encrypted-media; fullscreen"
-                      title={alt}
-                    />
-                  </div>
-                  <div
-                    className="absolute inset-0 pointer-events-none z-10"
-                    style={{
-                      background: 'linear-gradient(to top, rgba(0,0,0,0) 85%, rgba(0,0,0,0.95) 100%)',
-                      mixBlendMode: 'normal'
-                    }}
+                  <iframe
+                    id={iframeIdRef.current}
+                    ref={iframeRef}
+                    src={`https://www.youtube.com/embed/${embedId}?autoplay=1&mute=0&controls=1&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3`}
+                    className="absolute inset-0 w-full h-full"
+                    style={{ border: 'none' }}
+                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    title={alt}
                   />
+                  <button
+                    onClick={handlePlayClick}
+                    aria-label="Expand video"
+                    className="absolute top-3 right-3 w-9 h-9 rounded-full bg-purple-600/90 hover:bg-purple-700 flex items-center justify-center transition-colors z-30 shadow-lg"
+                  >
+                    <Maximize2 className="w-4 h-4 text-white" />
+                  </button>
                 </>
               )}
             </>
@@ -290,7 +235,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
           )}
 
           <AnimatePresence>
-            {isHovered && !isModalOpen && (!isYouTubeVideo || ytActivated) && (
+            {isHovered && !isModalOpen && !isYouTubeVideo && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -315,7 +260,7 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
             )}
           </AnimatePresence>
 
-          {(!isYouTubeVideo || ytActivated) && (
+          {!isYouTubeVideo && (
             <motion.button
               onClick={toggleMute}
               whileHover={{ scale: 1.1 }}
@@ -366,9 +311,9 @@ export function VideoCard({ poster, src, alt = 'Video', className = '', isYouTub
               {isYouTubeVideo ? (
                 <iframe
                   ref={modalIframeRef}
-                  src={`https://www.youtube.com/embed/${embedId}?autoplay=1&mute=0&controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3`}
+                  src={`https://www.youtube.com/embed/${embedId}?autoplay=1&mute=0&controls=1&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3`}
                   className="w-full h-full rounded-lg"
-                  allow="autoplay; encrypted-media"
+                  allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
                   allowFullScreen
                   title={alt}
                 />

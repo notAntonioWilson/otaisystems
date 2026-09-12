@@ -58,8 +58,8 @@ export function Footer() {
               <span className="text-xl font-bold gradient-text">OTAI Systems</span>
             </Link>
             <p className="text-sm text-muted-foreground mb-5 leading-[1.6]">
-              Empowering businesses with AI automation solutions. Stay connected and see what's
-              next, follow us on Social Media.
+              Custom AI automations, AI agents, and outreach systems for contractors, realtors, and
+              businesses across Michigan.
             </p>
             <div className="flex gap-4">
               {socialLinks.map(({ icon: Icon, href, label }) => (
@@ -83,11 +83,11 @@ export function Footer() {
             <h3 className="text-base font-semibold mb-3 text-white">Navigation</h3>
             <div className="grid grid-cols-2 gap-x-14 gap-y-2.5">
               <Link href="/" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">Home</Link>
+              <Link href="/services" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">Services</Link>
+              <Link href="/testimonials" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">Testimonials</Link>
+              <Link href="/blog" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">Blog</Link>
+              <Link href="/newsletter" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">Newsletter</Link>
               <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">About</Link>
-              <Link href="/ai-agents" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">AI Agents</Link>
-              <Link href="/automations" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">Automations</Link>
-              <Link href="/proof" className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">Proof</Link>
-              <button onClick={() => scrollToSection('results')} className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left">Results</button>
               <button onClick={() => scrollToSection('pricing')} className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left">Pricing</button>
               <button onClick={() => scrollToSection('book')} className="text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4 text-left">Book a Call</button>
             </div>
@@ -156,10 +156,18 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-6 border-t border-border/50 text-center">
+        <div className="pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-sm text-muted-foreground">
             © OTAI Systems 2026. All Rights Reserved.
           </p>
+          <a
+            href="https://www.otaimarketing.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-muted-foreground hover:text-primary transition-colors"
+          >
+            Engineered By – <span className="font-semibold text-white/80 hover:text-primary">OTAI Marketing</span>
+          </a>
         </div>
       </div>
     </footer>
