@@ -1,6 +1,6 @@
 # OTAI Systems
 
-> OTAI Systems is a custom AI automation agency based in Michigan. We build backend systems, AI agents, automated outreach, and AI built applications for contractors, home service businesses, realtors, and growing companies across Michigan and the United States. Founded and run by Antonio Wilson.
+> OTAI Systems is a custom AI automation agency based in Michigan. We build backend systems, AI agents, automated outreach, and AI websites for contractors, home service businesses, realtors, and growing companies across Michigan and the United States. Founded and run by Antonio Wilson.
 
 Tagline: We cut costs, make money, and provide speed to success.
 
@@ -9,7 +9,7 @@ Tagline: We cut costs, make money, and provide speed to success.
 - Backend Systems: custom workflow automation, CRM automation, lead reactivation, follow up systems, document automation, and integrations built on n8n, Supabase, and custom code.
 - AI Agents: AI voice agents, AI receptionists, AI phone agents, and chat agents that answer every call, qualify leads, and book appointments 24/7.
 - Automated Outreach: cold email automation, AI lead follow up, speed to lead systems, and database reactivation campaigns.
-- AI Built Applications: AI powered websites, SEO, custom web apps, and client portals.
+- AI Websites: AI powered websites, SEO, custom web apps, and client portals.
 - Multi-Service: fully automated business systems combining the above.
 
 ## Who we serve

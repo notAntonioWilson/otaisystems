@@ -92,7 +92,7 @@ const schemaData = {
     "Backend Systems",
     "AI Agents",
     "Automated Outreach",
-    "AI Built Applications",
+    "AI Websites",
     "Multi-Service AI Automation"
   ],
   "priceRange": "$$$",

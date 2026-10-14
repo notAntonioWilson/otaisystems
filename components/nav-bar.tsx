@@ -45,7 +45,7 @@ export function NavBar() {
     { label: 'Backend Systems', href: '/services/backend-systems' },
     { label: 'AI Agents', href: '/services/ai-agents' },
     { label: 'Automated Outreach', href: '/services/automated-outreach' },
-    { label: 'AI Built Applications', href: '/services/ai-built-applications' },
+    { label: 'AI Websites', href: '/services/ai-built-applications' },
     { label: 'Multi-Service', href: '/services/multi-service' },
   ];
 

@@ -258,7 +258,7 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { icon: '🖥️', title: 'AI Built Applications', tagline: 'Websites. SEO. Apps.', description: 'AI powered websites, SEO built to rank in Michigan, and custom web apps and client portals that turn traffic into booked jobs.', link: '/services/ai-built-applications', cta: 'Explore AI Built Applications', items: ['AI Powered Websites', 'SEO', 'Custom Web Apps', 'Client Portals'] },
+              { icon: '🖥️', title: 'AI Websites', tagline: 'Websites. SEO. Apps.', description: 'AI powered websites, SEO built to rank in Michigan, and custom web apps and client portals that turn traffic into booked jobs.', link: '/services/ai-built-applications', cta: 'Explore AI Websites', items: ['AI Powered Websites', 'SEO', 'Custom Web Apps', 'Client Portals'] },
               { icon: '🏗️', title: 'Multi-Service', tagline: 'The Full Stack.', description: 'Fully automated business infrastructure. Backend, agents, outreach, and applications built together as one system that runs your operation.', link: '/services/multi-service', cta: 'Explore Multi-Service', items: ['Complete Automation Infrastructure', 'Connected AI Systems', 'Custom Dashboards', 'Ongoing Optimization'] },
             ].map((s, i) => (
               <motion.div key={s.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.5 }} className="glass-card rounded-2xl p-7 flex flex-col group hover:border-primary/40 transition-all duration-300 cursor-pointer" onClick={() => window.location.href = s.link}>
